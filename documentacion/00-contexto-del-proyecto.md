@@ -46,7 +46,7 @@ La solución propuesta es una aplicación de escritorio tipo builder que traslad
 
 El flujo esperado es:
 
-`@text
+```text
 Desarrollador
     ↓
 Prepara y valida la aplicación Windows
@@ -60,7 +60,7 @@ Usuario final
 Instala el APK
     ↓
 Abre la aplicación
-`@
+```
 
 El builder deberá encargarse progresivamente de actividades como:
 
@@ -332,7 +332,7 @@ La redistribución de un APK basado en estos componentes solo se considerará de
 
 La documentación inicial se organiza así:
 
-`@text
+```text
 documentacion/
 ├── index.md
 ├── 00-contexto-del-proyecto.md
@@ -340,7 +340,7 @@ documentacion/
 
 especificaciones/
 └── app-minima.md
-`@
+```
 
 El paso `00` funciona como referencia general. El paso `01` registra la decisión del caso de prueba y los dispositivos. La carpeta `especificaciones/` contiene requisitos más detallados que deben utilizarse durante la construcción y las pruebas.
 
