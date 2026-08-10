@@ -13,3 +13,10 @@ Esta carpeta reúne las decisiones, avances y evidencias del desarrollo del proy
 El documento `00-contexto-del-proyecto.md` establece el problema, el propósito, el alcance, las restricciones, la planificación y las decisiones base de la tesis.
 
 Los documentos numerados posteriores registran las decisiones y avances principales en el orden en que se incorporan al proyecto. Las especificaciones técnicas se mantienen en la carpeta `especificaciones/` para servir como referencia durante la implementación y las pruebas.
+
+## Registro experimental
+
+- [Bitácora de fallos y limitaciones](../bitacora/index.md)
+- [Ejecuciones y matrices de prueba](../ejecuciones/index.md)
+- [Plantilla de métricas](../ejecuciones/plantilla-metricas.md)
+- [Limitación 01: inicialización de CoreCLR en Winlator](../limitaciones/01-error-coreclr-gc-winlator.md)
