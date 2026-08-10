@@ -1,0 +1,650 @@
+[
+  {
+    "index": 1,
+    "title": "Security implications of running windows software on a Linux system using Wine: a malware analysis study",
+    "first_author": "Duncan, R.",
+    "keyword": "WINE",
+    "doi": "10.1007/s11416-018-0319-9",
+    "ris_urls": ["https://link.springer.com/article/10.1007/s11416-018-0319-9"],
+    "filename": "WINE_security_implications_of_running_windows_software_on_a_linux_system_using_wine_a_malware_analysis_study-Duncan_R.pdf"
+  },
+  {
+    "index": 2,
+    "title": "Virtual operating system for Windows to Linux migration",
+    "first_author": "Giri, N. H.",
+    "keyword": "WINE",
+    "doi": "",
+    "ris_urls": ["https://ieeexplore.ieee.org/abstract/document/8389825/"],
+    "filename": "WINE_virtual_operating_system_for_windows_to_linux_migration-Giri_N_H.pdf"
+  },
+  {
+    "index": 3,
+    "title": "A robust and flexible operating system compatibility architecture",
+    "first_author": "Saeki, T.",
+    "keyword": "OS_COMPATIBILITY",
+    "doi": "10.1145/3381052.3381327",
+    "ris_urls": ["https://dl.acm.org/doi/10.1145/3381052.3381327"],
+    "filename": "OS_COMPATIBILITY_a_robust_and_flexible_operating_system_compatibility_architecture-Saeki_T.pdf"
+  },
+  {
+    "index": 4,
+    "title": "A study on windows-based ransomware implications on linux operating system using compatibility layer wine based on dynamic analysis",
+    "first_author": "Septiasari, R.",
+    "keyword": "WINE",
+    "doi": "10.1088/1757-899X/1007/1/012120",
+    "ris_urls": ["https://iopscience.iop.org/article/10.1088/1757-899X/1007/1/012120/meta"],
+    "filename": "WINE_a_study_on_windows_based_ransomware_implications_on_linux_operating_system_using_compatibility_layer_wine_based_on_dynamic_analysis-Septiasari_R.pdf"
+  },
+  {
+    "index": 5,
+    "title": "MEGA X: molecular evolutionary genetics analysis across computing platforms",
+    "first_author": "Kumar, S.",
+    "keyword": "WINE",
+    "doi": "10.1093/molbev/msy096",
+    "ris_urls": ["https://academic.oup.com/mbe/article/35/6/1547/4990887"],
+    "filename": "WINE_mega_x_molecular_evolutionary_genetics_analysis_across_computing_platforms-Kumar_S.pdf"
+  },
+  {
+    "index": 6,
+    "title": "Interactive launch of 16,000 microsoft windows instances on a supercomputer",
+    "first_author": "Jones, M.",
+    "keyword": "WINE",
+    "doi": "",
+    "ris_urls": ["https://ieeexplore.ieee.org/abstract/document/8547782/"],
+    "filename": "WINE_interactive_launch_of_16000_microsoft_windows_instances_on_a_supercomputer-Jones_M.pdf"
+  },
+  {
+    "index": 7,
+    "title": "Loupe: Driving the development of OS compatibility layers",
+    "first_author": "Lefeuvre, H.",
+    "keyword": "OS_COMPATIBILITY",
+    "doi": "10.1145/3617232.3624861",
+    "ris_urls": ["https://dl.acm.org/doi/10.1145/3617232.3624861"],
+    "filename": "OS_COMPATIBILITY_loupe_driving_the_development_of_os_compatibility_layers-Lefeuvre_H.pdf"
+  },
+  {
+    "index": 8,
+    "title": "Cider: Native execution of iOS apps on Android",
+    "first_author": "Andrus, J.",
+    "keyword": "ANDROID",
+    "doi": "10.1145/2654822.2541972",
+    "ris_urls": ["https://dl.acm.org/doi/10.1145/2654822.2541972"],
+    "filename": "ANDROID_cider_native_execution_of_ios_apps_on_android-Andrus_J.pdf"
+  },
+  {
+    "index": 9,
+    "title": "System call interposition without compromise",
+    "first_author": "Jacobs, A.",
+    "keyword": "SYSTEM_CALLS",
+    "doi": "10.1109/DSN58291.2024.00030",
+    "ris_urls": ["https://ieeexplore.ieee.org/abstract/document/10646964/"],
+    "filename": "SYSTEM_CALLS_system_call_interposition_without_compromise-Jacobs_A.pdf"
+  },
+  {
+    "index": 10,
+    "title": "Research on cross-operating system and cross-CPU compatible technologies for application software",
+    "first_author": "Zhai, Y.",
+    "keyword": "WINE",
+    "doi": "10.1117/12.3109726",
+    "ris_urls": ["https://www.spiedigitallibrary.org/conference-proceedings-of-spie/14133/141331D/Research-on-cross-operating-system-and-cross-CPU-compatible-technologies/10.1117/12.3109726.short"],
+    "filename": "WINE_research_on_cross_operating_system_and_cross_cpu_compatible_technologies_for_application_software-Zhai_Y.pdf"
+  },
+  {
+    "index": 11,
+    "title": "Analysis and Research on BOX64's Core Technologies for Cross-Architecture Software Migration",
+    "first_author": "Zhang, J.",
+    "keyword": "BOX64",
+    "doi": "10.1109/FRSE58934.2023.00064",
+    "ris_urls": ["https://ieeexplore.ieee.org/abstract/document/10242759/"],
+    "filename": "BOX64_analysis_and_research_on_box64s_core_technologies_for_cross_architecture_software_migration-Zhang_J.pdf"
+  },
+  {
+    "index": 12,
+    "title": "Efficient condition code emulation for dynamic binary translation systems",
+    "first_author": "Zeng, H.",
+    "keyword": "DYNAMIC_BINARY_TRANSLATION",
+    "doi": "10.1117/12.2660798",
+    "ris_urls": ["https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12462/124621P/Efficient-condition-code-emulation-for-dynamic-binary-translation-systems/10.1117/12.2660798.short"],
+    "filename": "DYNAMIC_BINARY_TRANSLATION_efficient_condition_code_emulation_for_dynamic_binary_translation_systems-Zeng_H.pdf"
+  },
+  {
+    "index": 13,
+    "title": "Low overhead dynamic binary translation on ARM",
+    "first_author": "d'Antras, A.",
+    "keyword": "DBT",
+    "doi": "10.1145/3062341.3062371",
+    "ris_urls": ["https://dl.acm.org/doi/10.1145/3062341.3062371"],
+    "filename": "DBT_low_overhead_dynamic_binary_translation_on_arm-dAntras_A.pdf"
+  },
+  {
+    "index": 14,
+    "title": "Efficient LLVM-based dynamic binary translation",
+    "first_author": "Engelke, A.",
+    "keyword": "LLVM",
+    "doi": "10.1145/3453933.3454022",
+    "ris_urls": ["https://dl.acm.org/doi/10.1145/3453933.3454022"],
+    "filename": "LLVM_efficient_llvm_based_dynamic_binary_translation-Engelke_A.pdf"
+  },
+  {
+    "index": 15,
+    "title": "Improving SIMD parallelism via dynamic binary translation",
+    "first_author": "Hong, D.-Y.",
+    "keyword": "SIMD",
+    "doi": "10.1145/3173456",
+    "ris_urls": ["https://dl.acm.org/doi/10.1145/3173456"],
+    "filename": "SIMD_improving_simd_parallelism_via_dynamic_binary_translation-Hong_D_Y.pdf"
+  },
+  {
+    "index": 16,
+    "title": "Exploiting asymmetric SIMD register configurations in ARM-to-x86 dynamic binary translation",
+    "first_author": "Liu, Y.-P.",
+    "keyword": "SIMD",
+    "doi": "10.1109/PACT.2017.57",
+    "ris_urls": ["https://ieeexplore.ieee.org/abstract/document/8091256/"],
+    "filename": "SIMD_exploiting_asymmetric_simd_register_configurations_in_arm_to_x86_dynamic_binary_translation-Liu_Y_P.pdf"
+  },
+  {
+    "index": 17,
+    "title": "Exploiting SIMD asymmetry in ARM-to-x86 dynamic binary translation",
+    "first_author": "Liu, Y.-P.",
+    "keyword": "SIMD",
+    "doi": "10.1145/3301488",
+    "ris_urls": ["https://dl.acm.org/doi/10.1145/3301488"],
+    "filename": "SIMD_exploiting_simd_asymmetry_in_arm_to_x86_dynamic_binary_translation-Liu_Y_P.pdf"
+  },
+  {
+    "index": 18,
+    "title": "Efficient and retargetable SIMD translation in a dynamic binary translator",
+    "first_author": "Fu, S.-Y.",
+    "keyword": "SIMD",
+    "doi": "10.1002/spe.2573",
+    "ris_urls": ["https://onlinelibrary.wiley.com/doi/10.1002/spe.2573"],
+    "filename": "SIMD_efficient_and_retargetable_simd_translation_in_a_dynamic_binary_translator-Fu_S_Y.pdf"
+  },
+  {
+    "index": 19,
+    "title": "An instruction inflation analyzing framework for dynamic binary translators",
+    "first_author": "Xie, B.",
+    "keyword": "DBT",
+    "doi": "10.1145/3640813",
+    "ris_urls": ["https://dl.acm.org/doi/10.1145/3640813"],
+    "filename": "DBT_an_instruction_inflation_analyzing_framework_for_dynamic_binary_translators-Xie_B.pdf"
+  },
+  {
+    "index": 20,
+    "title": "Towards Efficient Dynamic Binary Translation Optimizations Based on RISC Architectural Features",
+    "first_author": "Xie, W. B.",
+    "keyword": "DBT",
+    "doi": "10.1142/S0218126624501044",
+    "ris_urls": ["https://www.worldscientific.com/doi/10.1142/S0218126624501044"],
+    "filename": "DBT_towards_efficient_dynamic_binary_translation_optimizations_based_on_risc_architectural_features-Xie_W_B.pdf"
+  },
+  {
+    "index": 21,
+    "title": "Optimizing data permutations in structured loads/stores translation and SIMD register mapping for a cross-ISA dynamic binary translator",
+    "first_author": "Fu, S.-Y.",
+    "keyword": "SIMD",
+    "doi": "10.1016/j.sysarc.2019.101653",
+    "ris_urls": ["https://www.sciencedirect.com/science/article/pii/S1383762119300554"],
+    "filename": "SIMD_optimizing_data_permutations_in_structured_loads_stores_translation_and_simd_register_mapping_for_a_cross_isa_dynamic_binary_translator-Fu_S_Y.pdf"
+  },
+  {
+    "index": 22,
+    "title": "Effective exploitation of SIMD resources in cross-ISA virtualization",
+    "first_author": "Wu, J.",
+    "keyword": "SIMD",
+    "doi": "10.1145/3453933.3454016",
+    "ris_urls": ["https://dl.acm.org/doi/10.1145/3453933.3454016"],
+    "filename": "SIMD_effective_exploitation_of_simd_resources_in_cross_isa_virtualization-Wu_J.pdf"
+  },
+  {
+    "index": 23,
+    "title": "A system-level dynamic binary translator using automatically-learned translation rules",
+    "first_author": "Jiang, J.",
+    "keyword": "DBT",
+    "doi": "10.1109/HPCA57654.2024.00061",
+    "ris_urls": ["https://ieeexplore.ieee.org/abstract/document/10444850/"],
+    "filename": "DBT_a_system_level_dynamic_binary_translator_using_automatically_learned_translation_rules-Jiang_J.pdf"
+  },
+  {
+    "index": 24,
+    "title": "Instrew: Leveraging LLVM for high performance dynamic binary instrumentation",
+    "first_author": "Engelke, A.",
+    "keyword": "LLVM",
+    "doi": "10.1145/3381052.3381319",
+    "ris_urls": ["https://dl.acm.org/doi/10.1145/3381052.3381319"],
+    "filename": "LLVM_instrew_leveraging_llvm_for_high_performance_dynamic_binary_instrumentation-Engelke_A.pdf"
+  },
+  {
+    "index": 25,
+    "title": "HQEMU: a multi-threaded and retargetable dynamic binary translator on multicores",
+    "first_author": "Hong, D.-Y.",
+    "keyword": "QEMU",
+    "doi": "10.1145/2259016.2259030",
+    "ris_urls": ["https://dl.acm.org/doi/10.1145/2259016.2259030"],
+    "filename": "QEMU_hqemu_a_multi_threaded_and_retargetable_dynamic_binary_translator_on_multicores-Hong_D_Y.pdf"
+  },
+  {
+    "index": 26,
+    "title": "Dynamically Translating x86 to LLVM using QEMU",
+    "first_author": "Chipounov, V.",
+    "keyword": "X86",
+    "doi": "",
+    "ris_urls": ["https://infoscience.epfl.ch/bitstreams/112e0eb6-d151-46b7-ad9d-3db87be5bf45/download"],
+    "filename": "X86_dynamically_translating_x86_to_llvm_using_qemu-Chipounov_V.pdf"
+  },
+  {
+    "index": 27,
+    "title": "A retargetable static binary translator for the ARM architecture",
+    "first_author": "Shen, B.-Y.",
+    "keyword": "ARM",
+    "doi": "10.1145/2629335",
+    "ris_urls": ["https://dl.acm.org/doi/10.1145/2629335"],
+    "filename": "ARM_a_retargetable_static_binary_translator_for_the_arm_architecture-Shen_B_Y.pdf"
+  },
+  {
+    "index": 28,
+    "title": "Efficient dual-ISA support in a retargetable, asynchronous dynamic binary translator",
+    "first_author": "Spink, T.",
+    "keyword": "DUAL_ISA",
+    "doi": "10.1109/TPDS.2015.2508193",
+    "ris_urls": ["https://ieeexplore.ieee.org/abstract/document/7363665/"],
+    "filename": "DUAL_ISA_efficient_dual_isa_support_in_a_retargetable_asynchronous_dynamic_binary_translator-Spink_T.pdf"
+  },
+  {
+    "index": 29,
+    "title": "Instruction emulation and OS supports of a hybrid binary translator for x86 instruction set architecture",
+    "first_author": "Liu, I.-C.",
+    "keyword": "X86",
+    "doi": "10.1109/ICCE-TW.2015.7216880",
+    "ris_urls": ["https://ieeexplore.ieee.org/abstract/document/7518377/"],
+    "filename": "X86_instruction_emulation_and_os_supports_of_a_hybrid_binary_translator_for_x86_instruction_set_architecture-Liu_I_C.pdf"
+  },
+  {
+    "index": 30,
+    "title": "An LLVM-based hybrid binary translation system",
+    "first_author": "Shen, B.-Y.",
+    "keyword": "LLVM",
+    "doi": "10.1109/PACT.2012.30",
+    "ris_urls": ["https://ieeexplore.ieee.org/abstract/document/6356589/"],
+    "filename": "LLVM_an_llvm_based_hybrid_binary_translation_system-Shen_B_Y.pdf"
+  },
+  {
+    "index": 31,
+    "title": "Accelerating Shared Library Execution in a DBT",
+    "first_author": "Spink, T.",
+    "keyword": "DBT",
+    "doi": "10.1145/3652032.3657565",
+    "ris_urls": ["https://dl.acm.org/doi/10.1145/3652032.3657565"],
+    "filename": "DBT_accelerating_shared_library_execution_in_a_dbt-Spink_T.pdf"
+  },
+  {
+    "index": 32,
+    "title": "Cross-ISA machine instrumentation using fast and scalable dynamic binary translation",
+    "first_author": "Cota, E. G.",
+    "keyword": "CROSS_ISA",
+    "doi": "10.1145/3313808.3313811",
+    "ris_urls": ["https://dl.acm.org/doi/10.1145/3313808.3313811"],
+    "filename": "CROSS_ISA_cross_isa_machine_instrumentation_using_fast_and_scalable_dynamic_binary_translation-Cota_E_G.pdf"
+  },
+  {
+    "index": 33,
+    "title": "MAMBO: A low-overhead dynamic binary modification tool for ARM",
+    "first_author": "Gorgovan, C.",
+    "keyword": "ARM",
+    "doi": "10.1145/2896451",
+    "ris_urls": ["https://dl.acm.org/doi/10.1145/2896451"],
+    "filename": "ARM_mambo_a_low_overhead_dynamic_binary_modification_tool_for_arm-Gorgovan_C.pdf"
+  },
+  {
+    "index": 34,
+    "title": "Hardware-accelerated cross-architecture full-system virtualization",
+    "first_author": "Spink, T.",
+    "keyword": "CROSS_ARCHITECTURE",
+    "doi": "10.1145/2996798",
+    "ris_urls": ["https://dl.acm.org/doi/10.1145/2996798"],
+    "filename": "CROSS_ARCHITECTURE_hardware_accelerated_cross_architecture_full_system_virtualization-Spink_T.pdf"
+  },
+  {
+    "index": 35,
+    "title": "A retargetable system-level DBT hypervisor",
+    "first_author": "Spink, T.",
+    "keyword": "DBT",
+    "doi": "10.1145/3386161",
+    "ris_urls": ["https://dl.acm.org/doi/10.1145/3386161"],
+    "filename": "DBT_a_retargetable_system_level_dbt_hypervisor-Spink_T.pdf"
+  },
+  {
+    "index": 36,
+    "title": "Translating the ARM Neon and VFP instructions in a binary translator",
+    "first_author": "Guo, Y.-C.",
+    "keyword": "ARM",
+    "doi": "10.1002/spe.2394",
+    "ris_urls": ["https://onlinelibrary.wiley.com/doi/10.1002/spe.2394"],
+    "filename": "ARM_translating_the_arm_neon_and_vfp_instructions_in_a_binary_translator-Guo_Y_C.pdf"
+  },
+  {
+    "index": 37,
+    "title": "Practical and Efficient x86-64 Emulation on RISC-V",
+    "first_author": "Tan, X.",
+    "keyword": "BOX64",
+    "doi": "10.1145/3767295.3803574",
+    "ris_urls": ["https://dl.acm.org/doi/10.1145/3767295.3803574"],
+    "filename": "BOX64_practical_and_efficient_x86_64_emulation_on_risc_v-Tan_X.pdf"
+  },
+  {
+    "index": 38,
+    "title": "RISCing it All: Accelerating Binary Translation Using Software-Only Validated Flag Speculation",
+    "first_author": "Yen, J.",
+    "keyword": "X86",
+    "doi": "",
+    "ris_urls": ["https://ieeexplore.ieee.org/abstract/document/11627413/"],
+    "filename": "X86_riscing_it_all_accelerating_binary_translation_using_software_only_validated_flag_speculation-Yen_J.pdf"
+  },
+  {
+    "index": 39,
+    "title": "“Is Proton Good Enough?”—A Performance Comparison Between Gaming on Windows and Linux",
+    "first_author": "Kopel, M.",
+    "keyword": "PROTON",
+    "doi": "10.1007/978-3-031-41456-5_48",
+    "ris_urls": ["https://link.springer.com/chapter/10.1007/978-3-031-41456-5_48"],
+    "filename": "PROTON_is_proton_good_enough_a_performance_comparison_between_gaming_on_windows_and_linux-Kopel_M.pdf"
+  },
+  {
+    "index": 40,
+    "title": "Programming Interfaces for Cross-platform Image Rendering and Deep Learning GPGPU",
+    "first_author": "Georgiev, G. G.",
+    "keyword": "DIRECT3D",
+    "doi": "",
+    "ris_urls": ["https://ieeexplore.ieee.org/abstract/document/10315835/"],
+    "filename": "DIRECT3D_programming_interfaces_for_cross_platform_image_rendering_and_deep_learning_gpgpu-Georgiev_G_G.pdf"
+  },
+  {
+    "index": 41,
+    "title": "A Survey of the Ability of the Linux Operating System to Support Online Game Execution",
+    "first_author": "Peoples, C.",
+    "keyword": "LINUX_GAMING",
+    "doi": "",
+    "ris_urls": ["https://d-nb.info/117412279X/34"],
+    "filename": "LINUX_GAMING_a_survey_of_the_ability_of_the_linux_operating_system_to_support_online_game_execution-Peoples_C.pdf"
+  },
+  {
+    "index": 42,
+    "title": "Automated Diagnosis and Testing of Game Compatibility Layers",
+    "first_author": "Dai, H.",
+    "keyword": "PROTON",
+    "doi": "10.1145/3803437.3804876",
+    "ris_urls": ["https://dl.acm.org/doi/10.1145/3803437.3804876"],
+    "filename": "PROTON_automated_diagnosis_and_testing_of_game_compatibility_layers-Dai_H.pdf"
+  },
+  {
+    "index": 43,
+    "title": "A Cross-Platform Graphics API Solution for Modern and Legacy Development Styles",
+    "first_author": "Konrad, R.",
+    "keyword": "VULKAN",
+    "doi": "10.1007/978-3-031-44751-8_4",
+    "ris_urls": ["https://link.springer.com/chapter/10.1007/978-3-031-44751-8_4"],
+    "filename": "VULKAN_a_cross_platform_graphics_api_solution_for_modern_and_legacy_development_styles-Konrad_R.pdf"
+  },
+  {
+    "index": 44,
+    "title": "Multithreaded rendering for cross-platform 3D visualization based on Vulkan API",
+    "first_author": "Ioannidis, C.",
+    "keyword": "VULKAN",
+    "doi": "",
+    "ris_urls": ["https://isprs-archives.copernicus.org/articles/XLIV-4-W1-2020/57/2020/"],
+    "filename": "VULKAN_multithreaded_rendering_for_cross_platform_3d_visualization_based_on_vulkan_api-Ioannidis_C.pdf"
+  },
+  {
+    "index": 45,
+    "title": "Shader components: modular and high performance shader development",
+    "first_author": "He, Y.",
+    "keyword": "SHADERS",
+    "doi": "10.1145/3072959.3073648",
+    "ris_urls": ["https://dl.acm.org/doi/10.1145/3072959.3073648"],
+    "filename": "SHADERS_shader_components_modular_and_high_performance_shader_development-He_Y.pdf"
+  },
+  {
+    "index": 46,
+    "title": "Vulkan all the way: Transitioning to a modern low-level graphics API in academia",
+    "first_author": "Unterguggenberger, J.",
+    "keyword": "VULKAN",
+    "doi": "10.1016/j.cag.2023.02.004",
+    "ris_urls": ["https://www.sciencedirect.com/science/article/pii/S0097849323000249"],
+    "filename": "VULKAN_vulkan_all_the_way_transitioning_to_a_modern_low_level_graphics_api_in_academia-Unterguggenberger_J.pdf"
+  },
+  {
+    "index": 47,
+    "title": "Automated testing of graphics shader compilers",
+    "first_author": "Donaldson, A. F.",
+    "keyword": "SHADER_COMPILER",
+    "doi": "10.1145/3133917",
+    "ris_urls": ["https://dl.acm.org/doi/10.1145/3133917"],
+    "filename": "SHADER_COMPILER_automated_testing_of_graphics_shader_compilers-Donaldson_A_F.pdf"
+  },
+  {
+    "index": 48,
+    "title": "Metamorphic shader fusion for testing graphics shader compilers",
+    "first_author": "Xiao, D.",
+    "keyword": "SHADER_COMPILER",
+    "doi": "10.1109/ICST57152.2023.00043",
+    "ris_urls": ["https://ieeexplore.ieee.org/abstract/document/10172737/"],
+    "filename": "SHADER_COMPILER_metamorphic_shader_fusion_for_testing_graphics_shader_compilers-Xiao_D.pdf"
+  },
+  {
+    "index": 49,
+    "title": "DarthShader: Fuzzing WebGPU shader translators & compilers",
+    "first_author": "Bernhard, L.",
+    "keyword": "SHADER_TRANSLATION",
+    "doi": "10.1145/3658644.3690209",
+    "ris_urls": ["https://dl.acm.org/doi/10.1145/3658644.3690209"],
+    "filename": "SHADER_TRANSLATION_darthshader_fuzzing_webgpu_shader_translators_compilers-Bernhard_L.pdf"
+  },
+  {
+    "index": 50,
+    "title": "GPUReplay: a 50-KB GPU stack for client ML",
+    "first_author": "Park, H.",
+    "keyword": "ANDROID",
+    "doi": "10.1145/3503222.3507754",
+    "ris_urls": ["https://dl.acm.org/doi/10.1145/3503222.3507754"],
+    "filename": "ANDROID_gpureplay_a_50_kb_gpu_stack_for_client_ml-Park_H.pdf"
+  },
+  {
+    "index": 51,
+    "title": "QEMU, a Fast and Portable Dynamic Translator",
+    "first_author": "Bellard, Fabrice",
+    "keyword": "QEMU",
+    "doi": "",
+    "ris_urls": ["https://www.usenix.org/legacy/event/usenix05/tech/freenix/full_papers/bellard/bellard.pdf"],
+    "filename": "QEMU_qemu_a_fast_and_portable_dynamic_translator-Bellard_Fabrice.pdf"
+  },
+  {
+    "index": 52,
+    "title": "Efficient and Retargetable Dynamic Binary Translation on Multicores",
+    "first_author": "Hong, Ding-Yong",
+    "keyword": "DBT",
+    "doi": "10.1109/TPDS.2012.119",
+    "ris_urls": ["https://ieeexplore.ieee.org/abstract/document/6471968/"],
+    "filename": "DBT_efficient_and_retargetable_dynamic_binary_translation_on_multicores-Hong_Ding_Yong.pdf"
+  },
+  {
+    "index": 53,
+    "title": "Efficient Memory Virtualization for Cross-ISA System Mode Emulation",
+    "first_author": "Chang, Chia-Jung",
+    "keyword": "MEMORY_VIRTUALIZATION",
+    "doi": "10.1145/2576195.2576201",
+    "ris_urls": ["https://dl.acm.org/doi/10.1145/2576195.2576201"],
+    "filename": "MEMORY_VIRTUALIZATION_efficient_memory_virtualization_for_cross_isa_system_mode_emulation-Chang_Chia_Jung.pdf"
+  },
+  {
+    "index": 54,
+    "title": "Cross-ISA Machine Emulation for Multicores",
+    "first_author": "Cota, Emilio G.",
+    "keyword": "CROSS_ISA",
+    "doi": "10.1109/CGO.2017.7863741",
+    "ris_urls": ["https://ieeexplore.ieee.org/abstract/document/7863741/"],
+    "filename": "CROSS_ISA_cross_isa_machine_emulation_for_multicores-Cota_Emilio_G.pdf"
+  },
+  {
+    "index": 55,
+    "title": "CrossDBT: An LLVM-Based User-Level Dynamic Binary Translation Emulator",
+    "first_author": "Li, W.",
+    "keyword": "CROSSDBT",
+    "doi": "10.1007/978-3-031-12597-3_1",
+    "ris_urls": ["https://link.springer.com/chapter/10.1007/978-3-031-12597-3_1"],
+    "filename": "CROSSDBT_crossdbt_an_llvm_based_user_level_dynamic_binary_translation_emulator-Li_W.pdf"
+  },
+  {
+    "index": 56,
+    "title": "CrossMapping: Harmonizing Memory Consistency in Cross-ISA Binary Translation",
+    "first_author": "Gao, Chen",
+    "keyword": "CROSSMAPPING",
+    "doi": "",
+    "ris_urls": ["https://www.usenix.org/conference/atc24/presentation/gao-chen"],
+    "filename": "CROSSMAPPING_crossmapping_harmonizing_memory_consistency_in_cross_isa_binary_translation-Gao_Chen.pdf"
+  },
+  {
+    "index": 57,
+    "title": "BTBench: A Benchmark for Comprehensive Binary Translation Performance Evaluation",
+    "first_author": "Li, X.",
+    "keyword": "BTBENCH",
+    "doi": "",
+    "ris_urls": ["https://ieeexplore.ieee.org/abstract/document/10590057/"],
+    "filename": "BTBENCH_btbench_a_benchmark_for_comprehensive_binary_translation_performance_evaluation-Li_X.pdf"
+  },
+  {
+    "index": 58,
+    "title": "ARMing x86 Games: Accelerating Binary Translation Using Software-Only Validated Flag Speculation",
+    "first_author": "Yen, J.",
+    "keyword": "BINARY_TRANSLATION",
+    "doi": "10.1145/3711875.3729163",
+    "ris_urls": ["https://dl.acm.org/doi/10.1145/3711875.3729163"],
+    "filename": "BINARY_TRANSLATION_arming_x86_games_accelerating_binary_translation_using_software_only_validated_flag_speculation-Yen_J.pdf"
+  },
+  {
+    "index": 59,
+    "title": "NativeGuard: Protecting Android Applications from Third-Party Native Libraries",
+    "first_author": "Sun, M.",
+    "keyword": "ANDROID_SECURITY",
+    "doi": "10.1145/2627393.2627396",
+    "ris_urls": ["https://dl.acm.org/doi/10.1145/2627393.2627396"],
+    "filename": "ANDROID_SECURITY_nativeguard_protecting_android_applications_from_third_party_native_libraries-Sun_M.pdf"
+  },
+  {
+    "index": 60,
+    "title": "NaClDroid: Native Code Isolation for Android Applications",
+    "first_author": "Athanasopoulos, Elias",
+    "keyword": "ANDROID_SECURITY",
+    "doi": "10.1007/978-3-319-45744-4_21",
+    "ris_urls": ["https://link.springer.com/chapter/10.1007/978-3-319-45744-4_21"],
+    "filename": "ANDROID_SECURITY_nacldroid_native_code_isolation_for_android_applications-Athanasopoulos_Elias.pdf"
+  },
+  {
+    "index": 61,
+    "title": "Dynamic Security Analysis on Android: A Systematic Literature Review",
+    "first_author": "Sutter, T.",
+    "keyword": "ANDROID_SECURITY",
+    "doi": "10.1109/ACCESS.2024.3382074",
+    "ris_urls": ["https://ieeexplore.ieee.org/abstract/document/10504267/"],
+    "filename": "ANDROID_SECURITY_dynamic_security_analysis_on_android_a_systematic_literature_review-Sutter_T.pdf"
+  },
+  {
+    "index": 62,
+    "title": "Contemporary Software Modernization: Strategies, Driving Forces, and Research Opportunities",
+    "first_author": "Assunção, Wesley K. G.",
+    "keyword": "SOFTWARE_MODERNIZATION",
+    "doi": "10.1145/3708527",
+    "ris_urls": ["https://dl.acm.org/doi/10.1145/3708527"],
+    "filename": "SOFTWARE_MODERNIZATION_contemporary_software_modernization_strategies_driving_forces_and_research_opportunities-Assuncao_Wesley_K_G.pdf"
+  },
+  {
+    "index": 63,
+    "title": "Molecular Evolutionary Genetics Analysis (MEGA) for macOS",
+    "first_author": "Stecher, Glen",
+    "keyword": "MEGA",
+    "doi": "10.1093/molbev/msz312",
+    "ris_urls": ["https://academic.oup.com/mbe/article-abstract/37/4/1237/5697095"],
+    "filename": "MEGA_molecular_evolutionary_genetics_analysis_mega_for_macos-Stecher_Glen.pdf"
+  },
+  {
+    "index": 64,
+    "title": "Towards an Efficient Containerized Cloud Gaming Platform",
+    "first_author": "Gegout, A.",
+    "keyword": "CLOUD_GAMING",
+    "doi": "",
+    "ris_urls": ["https://ieeexplore.ieee.org/abstract/document/11105974/"],
+    "filename": "CLOUD_GAMING_towards_an_efficient_containerized_cloud_gaming_platform-Gegout_A.pdf"
+  },
+  {
+    "index": 65,
+    "title": "Too Quiet in the Library: An Empirical Study of Security Updates in Android Apps' Native Code",
+    "first_author": "Almanee, S.",
+    "keyword": "ANDROID_SECURITY",
+    "doi": "10.1109/ICSE43902.2021.00078",
+    "ris_urls": ["https://ieeexplore.ieee.org/abstract/document/9402004/"],
+    "filename": "ANDROID_SECURITY_too_quiet_in_the_library_an_empirical_study_of_security_updates_in_android_apps_native_code-Almanee_S.pdf"
+  },
+  {
+    "index": 66,
+    "title": "Containers for Computational Reproducibility",
+    "first_author": "Moreau, D.",
+    "keyword": "CONTAINERIZATION",
+    "doi": "10.1038/s43586-023-00236-9",
+    "ris_urls": ["https://www.nature.com/articles/s43586-023-00236-9"],
+    "filename": "CONTAINERIZATION_containers_for_computational_reproducibility-Moreau_D.pdf"
+  },
+  {
+    "index": 67,
+    "title": "Emerging Trends, Techniques and Open Issues of Containerization: A Review",
+    "first_author": "Watada, Junzo",
+    "keyword": "CONTAINERIZATION",
+    "doi": "10.1109/ACCESS.2019.2945930",
+    "ris_urls": ["https://www.researchgate.net/profile/Arunava-Roy-2/publication/336339880_Emerging_Trends_Techniques_and_Open_Issues_of_Containerization_A_Review/"],
+    "filename": "CONTAINERIZATION_emerging_trends_techniques_and_open_issues_of_containerization_a_review-Watada_Junzo.pdf"
+  },
+  {
+    "index": 68,
+    "title": "Leveraging Legacy Code to Deploy Desktop Applications on the Web",
+    "first_author": "Douceur, John R.",
+    "keyword": "LEGACY_CODE",
+    "doi": "",
+    "ris_urls": ["https://www.usenix.org/event/osdi08/tech/full_papers/douceur/douceur_html"],
+    "filename": "LEGACY_CODE_leveraging_legacy_code_to_deploy_desktop_applications_on_the_web-Douceur_John_R.pdf"
+  },
+  {
+    "index": 69,
+    "title": "Arancini: A Hybrid Binary Translator for Weak Memory Model Architectures",
+    "first_author": "Reimers, S.",
+    "keyword": "BINARY_TRANSLATION",
+    "doi": "10.1145/3779212.3790127",
+    "ris_urls": ["https://dl.acm.org/doi/10.1145/3779212.3790127"],
+    "filename": "BINARY_TRANSLATION_arancini_a_hybrid_binary_translator_for_weak_memory_model_architectures-Reimers_S.pdf"
+  },
+  {
+    "index": 70,
+    "title": "Research on Third-Party Libraries in Android Apps: A Taxonomy and Systematic Literature Review",
+    "first_author": "Zhan, X.",
+    "keyword": "ANDROID_LIBRARIES",
+    "doi": "10.1109/TSE.2021.3112143",
+    "ris_urls": ["https://ieeexplore.ieee.org/abstract/document/9542854/"],
+    "filename": "ANDROID_LIBRARIES_research_on_third_party_libraries_in_android_apps_a_taxonomy_and_systematic_literature_review-Zhan_X.pdf"
+  },
+  {
+    "index": 71,
+    "title": "A Survey on Various Threats and Current State of Security in Android Platform",
+    "first_author": "Bhat, P.",
+    "keyword": "ANDROID_SECURITY",
+    "doi": "10.1145/3301285",
+    "ris_urls": ["https://dl.acm.org/doi/10.1145/3301285"],
+    "filename": "ANDROID_SECURITY_a_survey_on_various_threats_and_current_state_of_security_in_android_platform-Bhat_P.pdf"
+  },
+  {
+    "index": 72,
+    "title": "Risotto: A Dynamic Binary Translator for Weak Memory Model Architectures",
+    "first_author": "Gouicem, Redha",
+    "keyword": "BINARY_TRANSLATION",
+    "doi": "10.1145/3567955.3567962",
+    "ris_urls": ["https://dl.acm.org/doi/10.1145/3567955.3567962"],
+    "filename": "BINARY_TRANSLATION_risotto_a_dynamic_binary_translator_for_weak_memory_model_architectures-Gouicem_Redha.pdf"
+  }
+]
