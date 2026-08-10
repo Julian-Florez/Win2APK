@@ -71,3 +71,11 @@ La solución confirmada corresponde a la nueva publicación de la aplicación, n
 
 - [Configuración del recolector de basura de .NET](https://learn.microsoft.com/en-us/dotnet/core/runtime-config/garbage-collector)
 - [Valores HRESULT comunes: `E_OUTOFMEMORY`](https://learn.microsoft.com/en-us/windows/win32/seccrypto/common-hresult-values)
+
+## Registro experimental asociado
+
+El fallo se detectó en la publicación inicial y la solución se evaluó posteriormente mediante una ejecución manual en una Lenovo Tab P11 (`TB-J606F`, Android 16/API 36, ABI `arm64-v8a`, `armeabi-v7a`, `armeabi`).
+
+La ejecución asociada es [EXEC-001: línea base manual en Winlator](../ejecuciones/01-linea-base-manual-winlator-tb-j606f/matriz.md). En la captura de esa ejecución se observa la publicación por carpeta `win-x64-folder/` iniciando, la ventana de `Win2APK Test` y la alternancia del texto. La versión exacta de Winlator y la configuración del contenedor no fueron registradas.
+
+Este resultado confirma la corrección experimental en las condiciones documentadas, pero no elimina la limitación para otras versiones de Winlator, otros dispositivos, la publicación single-file o aplicaciones de mayor tamaño.
