@@ -6,7 +6,8 @@ Esta carpeta reúne las decisiones, avances y evidencias del desarrollo del proy
 
 0. [00. Contexto general del proyecto](./00-contexto-del-proyecto.md)
 1. [01. Aplicación mínima y dispositivos objetivo](./01-app-minima-y-dispositivos-objetivo.md)
-2. [Especificación de la aplicación mínima](../especificaciones/app-minima.md)
+2. [02. Plan de Winlator Core](./02-plan-winlator-core.md)
+3. [Especificación de la aplicación mínima](../especificaciones/app-minima.md)
 
 ## Criterio de organización
 
