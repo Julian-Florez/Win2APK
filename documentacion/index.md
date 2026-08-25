@@ -8,6 +8,8 @@ Esta carpeta reúne las decisiones, avances y evidencias del desarrollo del proy
 1. [01. Aplicación mínima y dispositivos objetivo](./01-app-minima-y-dispositivos-objetivo.md)
 2. [02. Plan de Winlator Core](./02-plan-winlator-core.md)
 3. [Especificación de la aplicación mínima](../especificaciones/app-minima.md)
+4. [Plan de distribución segmentada para Cuphead](./03-plan-distribucion-segmentada-cuphead.md)
+5. [Plan de acceso directo a asset packs de Cuphead](./04-plan-acceso-directo-assetpack-cuphead.md)
 
 ## Criterio de organización
 
