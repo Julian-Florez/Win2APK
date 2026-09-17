@@ -1,0 +1,82 @@
+ACTIVITY MANAGER PROCESS EXIT INFO (dumpsys activity exit-info)
+Last Timestamp of Persistence Into Persistent Storage: 2026-08-25 19:58:27.631
+  package: com.cuphead
+    Historical Process Exit for uid=10435
+        ApplicationExitInfo #0:
+          timestamp=2026-08-25 20:11:53.223 pid=26725 realUid=10435 packageUid=10435 definingUid=10435 user=0 startSeq=1744
+          process=com.cuphead reason=3 (LOW_MEMORY) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=0,00 rss=3,1GB state=empty trace=null
+          description=null
+          anrInfo=null
+        ApplicationExitInfo #1:
+          timestamp=2026-08-25 20:09:10.364 pid=25260 realUid=10435 packageUid=10435 definingUid=10435 user=0 startSeq=1734
+          process=com.cuphead reason=9 (EXCESSIVE RESOURCE USAGE) subreason=7 (EXCESSIVE CPU USAGE) status=0
+          importance=400 pss=0,00 rss=1,2GB state=empty trace=null
+          description=Caused by child process: excessive cpu 236490 during 300034 dur=209108 limit=25
+          anrInfo=null
+        ApplicationExitInfo #2:
+          timestamp=2026-08-25 13:56:25.209 pid=30696 realUid=10435 packageUid=10435 definingUid=10435 user=0 startSeq=1323
+          process=com.cuphead reason=3 (LOW_MEMORY) subreason=0 (UNKNOWN) status=0
+          importance=400 pss=0,00 rss=189MB state=empty trace=null
+          description=null
+          anrInfo=null
+        ApplicationExitInfo #3:
+          timestamp=2026-08-25 13:49:22.324 pid=30072 realUid=10435 packageUid=10435 definingUid=10435 user=0 startSeq=1320
+          process=com.cuphead reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=100 pss=0,00 rss=0,00 state=empty trace=null
+          description=stop com.cuphead due to from pid 30617
+          anrInfo=null
+        ApplicationExitInfo #4:
+          timestamp=2026-08-25 13:47:37.059 pid=26448 realUid=10435 packageUid=10435 definingUid=10435 user=0 startSeq=1286
+          process=com.cuphead reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=100 pss=0,00 rss=1,4GB state=empty trace=null
+          description=stop com.cuphead due to from pid 29983
+          anrInfo=null
+        ApplicationExitInfo #5:
+          timestamp=2026-08-25 13:21:21.405 pid=22334 realUid=10435 packageUid=10435 definingUid=10435 user=0 startSeq=1241
+          process=com.cuphead reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=100 pss=0,00 rss=0,00 state=empty trace=null
+          description=stop com.cuphead due to from pid 22954
+          anrInfo=null
+        ApplicationExitInfo #6:
+          timestamp=2026-08-25 13:14:31.110 pid=17995 realUid=10435 packageUid=10435 definingUid=10435 user=0 startSeq=1169
+          process=com.cuphead reason=3 (LOW_MEMORY) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=0,00 rss=341MB state=empty trace=null
+          description=null
+          anrInfo=null
+        ApplicationExitInfo #7:
+          timestamp=2026-08-25 13:11:42.503 pid=13992 realUid=10435 packageUid=10435 definingUid=10435 user=0 startSeq=1097
+          process=com.cuphead reason=3 (LOW_MEMORY) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=0,00 rss=337MB state=empty trace=null
+          description=null
+          anrInfo=null
+        ApplicationExitInfo #8:
+          timestamp=2026-08-25 13:08:14.107 pid=5653 realUid=10435 packageUid=10435 definingUid=10435 user=0 startSeq=943
+          process=com.cuphead reason=3 (LOW_MEMORY) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=0,00 rss=342MB state=empty trace=null
+          description=null
+          anrInfo=null
+        ApplicationExitInfo #9:
+          timestamp=2026-08-25 13:04:34.519 pid=31646 realUid=10435 packageUid=10435 definingUid=10435 user=0 startSeq=841
+          process=com.cuphead reason=3 (LOW_MEMORY) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=0,00 rss=343MB state=empty trace=null
+          description=null
+          anrInfo=null
+        ApplicationExitInfo #10:
+          timestamp=2026-08-24 23:57:45.798 pid=30515 realUid=10435 packageUid=10435 definingUid=10435 user=0 startSeq=366
+          process=com.cuphead reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=100 pss=0,00 rss=0,00 state=empty trace=null
+          description=stop com.cuphead due to from pid 31044
+          anrInfo=null
+        ApplicationExitInfo #11:
+          timestamp=2026-08-24 23:55:30.712 pid=29198 realUid=10435 packageUid=10435 definingUid=10435 user=0 startSeq=357
+          process=com.cuphead reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=100 pss=0,00 rss=0,00 state=empty trace=null
+          description=stop com.cuphead due to from pid 30094
+          anrInfo=null
+        ApplicationExitInfo #12:
+          timestamp=2026-08-24 23:52:55.334 pid=15040 realUid=10435 packageUid=10435 definingUid=10435 user=0 startSeq=83
+          process=com.cuphead reason=3 (LOW_MEMORY) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=0,00 rss=346MB state=empty trace=null
+          description=null
+          anrInfo=null

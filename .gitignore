@@ -1,0 +1,11 @@
+/node_modules/
+/outputs/
+/review_output/
+/cuphead/
+/winlator/
+*.apk
+*.aab
+*.apks
+*.bin
+*.tzst
+*.zip

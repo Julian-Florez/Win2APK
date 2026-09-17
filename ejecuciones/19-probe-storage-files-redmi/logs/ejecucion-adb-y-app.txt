@@ -1,0 +1,115 @@
+package_path
+package:/data/app/~~kRl-jm-8kAhE2GjQ_hDrjQ==/com.win2apk.storageprobe-GTvZcoeBciHGZuEQ4hDtBQ==/base.apk
+package:/data/app/~~kRl-jm-8kAhE2GjQ_hDrjQ==/com.win2apk.storageprobe-GTvZcoeBciHGZuEQ4hDtBQ==/split_config.es.apk
+package:/data/app/~~kRl-jm-8kAhE2GjQ_hDrjQ==/com.win2apk.storageprobe-GTvZcoeBciHGZuEQ4hDtBQ==/split_config.xxhdpi.apk
+package_dump
+    codePath=/data/app/~~kRl-jm-8kAhE2GjQ_hDrjQ==/com.win2apk.storageprobe-GTvZcoeBciHGZuEQ4hDtBQ==
+    versionCode=1 minSdk=26 targetSdk=28
+    versionName=1.0-probe
+    splits=[base, config.es, config.xxhdpi]
+    User 0: ceDataInode=77963 deDataInode=82236 installed=true hidden=false suspended=false distractionFlags=0 stopped=true notLaunched=true enabled=0 instant=false virtual=false quarantined=false
+      dataDir=/data/user/0/com.win2apk.storageprobe
+df_after_install
+Filesystem            1K-blocks     Used Available Use% Mounted on
+/dev/block/mmcblk0p87  51320812 48878672   2442140  96% /data/user/0
+logcat_clear
+start
+Starting: Intent { cmp=com.win2apk.storageprobe/.MainActivity }
+activity
+  * Task{8b701f #183 type=standard A=10388:com.win2apk.storageprobe U=0 visible=true visibleRequested=true mode=fullscreen translucent=false sz=1}
+    topResumedActivity=ActivityRecord{198072254 u0 com.win2apk.storageprobe/.MainActivity t183}
+    * Hist  #0: ActivityRecord{198072254 u0 com.win2apk.storageprobe/.MainActivity t183}
+      packageName=com.win2apk.storageprobe processName=com.win2apk.storageprobe
+      app=ProcessRecord{f00ef3b 21491:com.win2apk.storageprobe/u0a388}
+      Intent { flg=0x10000000 xflg=0x5 cmp=com.win2apk.storageprobe/.MainActivity }
+      rootOfTask=true task=Task{8b701f #183 type=standard A=10388:com.win2apk.storageprobe}
+      taskAffinity=10388:com.win2apk.storageprobe
+      mActivityComponent=com.win2apk.storageprobe/.MainActivity
+      baseDir=/data/app/~~kRl-jm-8kAhE2GjQ_hDrjQ==/com.win2apk.storageprobe-GTvZcoeBciHGZuEQ4hDtBQ==/base.apk
+      dataDir=/data/user/0/com.win2apk.storageprobe
+      splitDir=[/data/app/~~kRl-jm-8kAhE2GjQ_hDrjQ==/com.win2apk.storageprobe-GTvZcoeBciHGZuEQ4hDtBQ==/split_config.es.apk, /data/app/~~kRl-jm-8kAhE2GjQ_hDrjQ==/com.win2apk.storageprobe-GTvZcoeBciHGZuEQ4hDtBQ==/split_config.xxhdpi.apk]
+      windows=[Window{815a2f4 u0 com.win2apk.storageprobe/com.win2apk.storageprobe.MainActivity}]
+    Resumed: ActivityRecord{198072254 u0 com.win2apk.storageprobe/.MainActivity t183}
+  ResumedActivity: ActivityRecord{198072254 u0 com.win2apk.storageprobe/.MainActivity t183}
+  topDisplayFocusedRootTask=Task{8b701f #183 type=standard A=10388:com.win2apk.storageprobe}
+  deepestLastOrientationSource=ActivityRecord{198072254 u0 com.win2apk.storageprobe/.MainActivity t183}
+  mImeLayeringTarget=Window{815a2f4 u0 com.win2apk.storageprobe/com.win2apk.storageprobe.MainActivity}
+  mImeInputTarget=Window{815a2f4 u0 com.win2apk.storageprobe/com.win2apk.storageprobe.MainActivity}
+  mImeControlTarget=Window{815a2f4 u0 com.win2apk.storageprobe/com.win2apk.storageprobe.MainActivity}
+logcat_probe
+08-24 23:21:48.495 E/AppOpService( 1836): java.lang.RuntimeException
+08-24 23:21:48.496 E/AppOpService( 1836): java.lang.RuntimeException
+08-24 23:21:48.544 E/AppOpService( 1836): java.lang.RuntimeException
+08-24 23:21:48.545 E/AppOpService( 1836): java.lang.RuntimeException
+08-24 23:21:48.832 E/WifiStaIfaceAidlImpl( 1836): getCachedScanData failed with service-specific exception: android.os.ServiceSpecificException:  (code 4)
+08-24 23:21:50.384 W/Finsky  (17333): [2] STU: Failed to get storage stats for package 'com.android.permission' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+08-24 23:21:50.385 W/Finsky  (17333): [2] STU: Failed to get storage stats for package 'com.android.configinfrastructure' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+08-24 23:21:50.386 W/Finsky  (17333): [2] STU: Failed to get storage stats for package 'com.android.wifi' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+08-24 23:21:50.397 W/Finsky  (17333): [2] STU: Failed to get storage stats for package 'com.android.adservices' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+08-24 23:21:50.398 W/Finsky  (17333): [2] STU: Failed to get storage stats for package 'com.android.ondevicepersonalization' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+08-24 23:21:50.404 W/Finsky  (17333): [2] STU: Failed to get storage stats for package 'com.android.nfcservices' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+08-24 23:21:50.408 W/Finsky  (17333): [2] STU: Failed to get storage stats for package 'com.android.conscrypt' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+08-24 23:21:50.515 W/Finsky  (17333): [2] STU: Failed to get storage stats for package 'com.android.ipsec' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+08-24 23:21:50.573 W/Finsky  (17333): [2] STU: Failed to get storage stats for package 'com.android.extservices' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+08-24 23:21:50.596 W/Finsky  (17333): [2] STU: Failed to get storage stats for package 'com.android.apex.cts.shim' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+08-24 23:21:50.672 W/Finsky  (17333): [2] STU: Failed to get storage stats for package 'com.android.bt' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+08-24 23:21:50.759 W/Finsky  (17333): [2] STU: Failed to get storage stats for package 'com.android.virt' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+08-24 23:21:50.760 W/Finsky  (17333): [2] STU: Failed to get storage stats for package 'com.android.mediaprovider' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+08-24 23:21:50.922 W/Finsky  (17333): [2] STU: Failed to get storage stats for package 'com.android.crashrecovery' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+08-24 23:21:51.059 W/Finsky  (17333): [2] STU: Failed to get storage stats for package 'com.android.runtime' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+08-24 23:21:51.069 W/Finsky  (17333): [2] STU: Failed to get storage stats for package 'com.android.adbd' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+08-24 23:21:51.093 W/Finsky  (17333): [2] STU: Failed to get storage stats for package 'com.android.os.statsd' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+08-24 23:21:51.195 W/Finsky  (17333): [2] STU: Failed to get storage stats for package 'com.android.scheduling' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+08-24 23:21:51.196 W/Finsky  (17333): [2] STU: Failed to get storage stats for package 'com.android.cellbroadcast' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+08-24 23:21:51.255 W/Finsky  (17333): [2] STU: Failed to get storage stats for package 'com.android.media' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+08-24 23:21:51.340 W/Finsky  (17333): [2] STU: Failed to get storage stats for package 'com.android.sdkext' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+08-24 23:21:51.357 W/Finsky  (17333): [2] STU: Failed to get storage stats for package 'com.android.media.swcodec' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+08-24 23:21:51.498 W/Finsky  (17333): [2] STU: Failed to get storage stats for package 'com.android.resolv' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+08-24 23:21:51.582 W/Finsky  (17333): [2] STU: Failed to get storage stats for package 'com.android.uprobestats' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+08-24 23:21:51.602 W/Finsky  (17333): [2] STU: Failed to get storage stats for package 'com.android.profiling' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+08-24 23:21:51.606 W/Finsky  (17333): [2] STU: Failed to get storage stats for package 'com.android.tzdata' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+08-24 23:21:51.628 W/Finsky  (17333): [2] STU: Failed to get storage stats for package 'com.android.appsearch' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+08-24 23:21:51.815 W/Finsky  (17333): [2] STU: Failed to get storage stats for package 'com.android.i18n' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+08-24 23:21:51.843 W/Finsky  (17333): [2] STU: Failed to get storage stats for package 'com.android.neuralnetworks' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+08-24 23:21:51.858 W/Finsky  (17333): [2] STU: Failed to get storage stats for package 'com.android.healthfitness' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+08-24 23:21:51.859 E/WifiStaIfaceAidlImpl( 1836): getCachedScanData failed with service-specific exception: android.os.ServiceSpecificException:  (code 4)
+08-24 23:21:51.871 W/Finsky  (17333): [2] STU: Failed to get storage stats for package 'com.android.devicelock' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+08-24 23:21:51.940 W/Finsky  (17333): [2] STU: Failed to get storage stats for package 'com.android.tethering' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+08-24 23:21:51.964 W/Finsky  (17333): [2] STU: Failed to get storage stats for package 'com.android.uwb' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+08-24 23:21:52.063 W/Finsky  (17333): [2] STU: Failed to get storage stats for package 'com.android.rkpd' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+08-24 23:21:52.095 W/Finsky  (17333): [2] STU: Failed to get storage stats for package 'com.android.art' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+08-24 23:21:54.885 E/WifiStaIfaceAidlImpl( 1836): getCachedScanData failed with service-specific exception: android.os.ServiceSpecificException:  (code 4)
+08-24 23:21:54.958 W/ip      (21546): type=1400 audit(0.0:453722): avc:  denied  { bind } for  scontext=u:r:untrusted_app:s0:c111,c257,c512,c768 tcontext=u:r:untrusted_app:s0:c111,c257,c512,c768 tclass=netlink_route_socket permissive=0 bug=b/155595000 app=com.tailscale.ipn
+08-24 23:21:54.978 W/ip      (21547): type=1400 audit(0.0:453723): avc:  denied  { bind } for  scontext=u:r:untrusted_app:s0:c111,c257,c512,c768 tcontext=u:r:untrusted_app:s0:c111,c257,c512,c768 tclass=netlink_route_socket permissive=0 bug=b/155595000 app=com.tailscale.ipn
+08-24 23:21:55.748 W/ip      (21548): type=1400 audit(0.0:453724): avc:  denied  { bind } for  scontext=u:r:untrusted_app:s0:c111,c257,c512,c768 tcontext=u:r:untrusted_app:s0:c111,c257,c512,c768 tclass=netlink_route_socket permissive=0 bug=b/155595000 app=com.tailscale.ipn
+08-24 23:21:57.909 E/WifiStaIfaceAidlImpl( 1836): getCachedScanData failed with service-specific exception: android.os.ServiceSpecificException:  (code 4)
+08-24 23:22:00.939 E/WifiStaIfaceAidlImpl( 1836): getCachedScanData failed with service-specific exception: android.os.ServiceSpecificException:  (code 4)
+08-24 23:22:03.965 E/WifiStaIfaceAidlImpl( 1836): getCachedScanData failed with service-specific exception: android.os.ServiceSpecificException:  (code 4)
+08-24 23:22:06.993 E/WifiStaIfaceAidlImpl( 1836): getCachedScanData failed with service-specific exception: android.os.ServiceSpecificException:  (code 4)
+app_log
+START package=com.win2apk.storageprobe api=36
+filesDir=/data/user/0/com.win2apk.storageprobe/files
+selinux app_enabled=true enforced_status=recorded_by_adb
+fetch_complete success=true exception=none
+pack_state status=NOT_INSTALLED code=8 bytes=0/8542
+listener=probe_assets status=1 bytes=0/8542
+listener=probe_assets status=3 bytes=8542/8542
+listener=probe_assets status=3 bytes=8542/8542
+pack_state status=COMPLETED code=4 bytes=8542/8542
+LOCATION storage_method=0 path=/data/user/0/com.win2apk.storageprobe/files/assetpacks/probe_assets/1/1 assets_path=/data/user/0/com.win2apk.storageprobe/files/assetpacks/probe_assets/1/1/assets
+SOURCE_BEFORE dev=66359 ino=114867 size=698 sha256=cabc6f6ed54ad4f3cde9229ba6c4d5d61252e4ce34b04553b105a3f9df06ed30
+SELINUX_SOURCE /data/user/0/com.win2apk.storageprobe/files/assetpacks/probe_assets/1/1/assets/payload.txt=u:object_r:app_data_file:s0:c132,c257,c512,c768 
+SELINUX_FILES_DIR /data/user/0/com.win2apk.storageprobe/files=u:object_r:app_data_file:s0:c132,c257,c512,c768 
+FILESYSTEM_SOURCE_DEV=66359 FILES_DIR_DEV=66359
+FILES_MOVE_OK destination=/data/user/0/com.win2apk.storageprobe/files/payload-moved.txt dev=66359 ino=114867 size=698 sha256=cabc6f6ed54ad4f3cde9229ba6c4d5d61252e4ce34b04553b105a3f9df06ed30 inode_preserved=true bytes_preserved=true
+FILES_MOVE_SOURCE_EXISTS=false DEST_EXISTS=true
+OS_RENAME_RESTORE_OK dev=66359 ino=114867 size=698 sha256=cabc6f6ed54ad4f3cde9229ba6c4d5d61252e4ce34b04553b105a3f9df06ed30 inode_preserved=true bytes_preserved=true
+AFTER_CYCLE_A source_exists=true moved_exists=false
+OS_RENAME_OK destination=/data/user/0/com.win2apk.storageprobe/files/payload-moved.txt dev=66359 ino=114867 size=698 sha256=cabc6f6ed54ad4f3cde9229ba6c4d5d61252e4ce34b04553b105a3f9df06ed30 inode_preserved=true bytes_preserved=true
+FILES_MOVE_RESTORE_OK dev=66359 ino=114867 size=698 sha256=cabc6f6ed54ad4f3cde9229ba6c4d5d61252e4ce34b04553b105a3f9df06ed30 inode_preserved=true bytes_preserved=true
+FINAL source_exists=true moved_exists=false
+FINAL_STAT dev=66359 ino=114867 size=698 sha256=cabc6f6ed54ad4f3cde9229ba6c4d5d61252e4ce34b04553b105a3f9df06ed30
+listener=probe_assets status=4 bytes=8542/8542
+df_after_probe
+Filesystem            1K-blocks     Used Available Use% Mounted on
+/dev/block/mmcblk0p87  51320812 48878940   2441872  96% /data/user/0

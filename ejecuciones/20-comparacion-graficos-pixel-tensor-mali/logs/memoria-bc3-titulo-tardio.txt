@@ -1,0 +1,13 @@
+Medición ADB observada durante la variante ETC2 con preservación RGBA de BC3.
+Fecha: 2026-08-25
+Estado: pantalla de título; proceso vivo.
+
+pid=19021
+Graphics: 1323300 kB
+TOTAL PSS: 1410418 kB
+TOTAL RSS: 1482540 kB
+TOTAL SWAP PSS: 25722 kB
+MemAvailable: 585424 kB
+SwapFree: 256936 kB
+
+La variante fue detenida voluntariamente después de que el usuario confirmara que el defecto visual continuaba. No corresponde a un crash.

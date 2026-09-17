@@ -1,0 +1,232 @@
+assets_file,path_id,name,width,height,format,mip_count,stream_path,stream_offset,stream_size
+resources.assets,16,sactx-1024x1024-BC7-Speech_Bubble-0c5aa77b,1024,1024,25,1,resources.assets.resS,0,1048576
+resources.assets,17,sactx-2048x2048-BC7-EquipCard_Loc-4f57bc54,2048,2048,25,1,resources.assets.resS,1048576,4194304
+resources.assets,18,sactx-2048x2048-BC7-Slot_Select-8a964608,2048,2048,25,1,resources.assets.resS,5242880,4194304
+resources.assets,19,sactx-128x64-BC7-Xbox_btn-a6272cd5,128,64,25,1,resources.assets.resS,9437184,8192
+resources.assets,20,sactx-1024x1024-BC7-JoinCard-ab0959e6,1024,1024,25,1,resources.assets.resS,9445376,1048576
+resources.assets,21,sactx-512x256-BC7-RewiredControlMapper-b8cea846,512,256,25,1,resources.assets.resS,10493952,131072
+resources.assets,22,sactx-2048x4096-BC7-ControlMapper-f2e5dce5,2048,4096,25,1,resources.assets.resS,10625024,8388608
+resources.assets,23,UISprite,32,32,4,6,resources.assets.resS,19013632,5460
+resources.assets,24,Background,32,32,4,6,resources.assets.resS,19019092,5460
+resources.assets,25,Knob,64,64,4,7,resources.assets.resS,19024552,21844
+resources.assets,26,wolrd_map_equip_new_icon_0001,128,128,12,1,resources.assets.resS,19046396,16384
+resources.assets,27,LDR_LLL1_28,64,64,1,1,resources.assets.resS,19062780,4096
+resources.assets,28,Font Texture,0,0,4,1,,0,0
+resources.assets,29,img_text_icons,64,320,12,1,resources.assets.resS,19066876,20480
+resources.assets,30,LDR_LLL1_26,64,64,1,1,resources.assets.resS,19087356,4096
+resources.assets,31,LDR_LLL1_35,64,64,1,1,resources.assets.resS,19091452,4096
+resources.assets,32,world_map_equip_icon,114,29,4,1,resources.assets.resS,19095548,13224
+resources.assets,33,LDR_LLL1_30,64,64,1,1,resources.assets.resS,19108772,4096
+resources.assets,34,LDR_LLL1_61,64,64,1,1,resources.assets.resS,19112868,4096
+resources.assets,35,LDR_LLL1_47,64,64,1,1,resources.assets.resS,19116964,4096
+resources.assets,36,LDR_LLL1_16,64,64,1,1,resources.assets.resS,19121060,4096
+resources.assets,37,LDR_LLL1_44,64,64,1,1,resources.assets.resS,19125156,4096
+resources.assets,38,LDR_LLL1_40,64,64,1,1,resources.assets.resS,19129252,4096
+resources.assets,39,LDR_LLL1_37,64,64,1,1,resources.assets.resS,19133348,4096
+resources.assets,40,irisA_0006,512,288,12,1,resources.assets.resS,19137444,147456
+resources.assets,41,irisA_0014,512,288,12,1,resources.assets.resS,19284900,147456
+resources.assets,42,irisA_0015,512,288,12,1,resources.assets.resS,19432356,147456
+resources.assets,43,irisA_0010,512,288,12,1,resources.assets.resS,19579812,147456
+resources.assets,44,irisA_0016,512,288,12,1,resources.assets.resS,19727268,147456
+resources.assets,45,LDR_LLL1_15,64,64,1,1,resources.assets.resS,19874724,4096
+resources.assets,46,LDR_LLL1_34,64,64,1,1,resources.assets.resS,19878820,4096
+resources.assets,47,LDR_LLL1_24,64,64,1,1,resources.assets.resS,19882916,4096
+resources.assets,48,Font Texture,0,0,4,1,,0,0
+resources.assets,49,LDR_LLL1_36,64,64,1,1,resources.assets.resS,19887012,4096
+resources.assets,50,irisA_0011,512,288,12,1,resources.assets.resS,19891108,147456
+resources.assets,51,irisA_0013,512,288,12,1,resources.assets.resS,20038564,147456
+resources.assets,52,LDR_LLL1_3,64,64,1,1,resources.assets.resS,20186020,4096
+resources.assets,53,control_mapper_player_selection_box,50,50,4,1,resources.assets.resS,20190116,10000
+resources.assets,54,LDR_LLL1_7,64,64,1,1,resources.assets.resS,20200116,4096
+resources.assets,55,LDR_LLL1_1,64,64,1,1,resources.assets.resS,20204212,4096
+resources.assets,56,world_map_equip_text,87,62,4,1,resources.assets.resS,20208308,21576
+resources.assets,57,LDR_LLL1_49,64,64,1,1,resources.assets.resS,20229884,4096
+resources.assets,58,LDR_LLL1_60,64,64,1,1,resources.assets.resS,20233980,4096
+resources.assets,59,LDR_LLL1_63,64,64,1,1,resources.assets.resS,20238076,4096
+resources.assets,60,cheev_toast_text_chaos_tile,70,109,4,1,resources.assets.resS,20242172,30520
+resources.assets,61,LDR_LLL1_0,64,64,1,1,resources.assets.resS,20272692,4096
+resources.assets,62,Placeholder_Toast,63,63,4,1,resources.assets.resS,20276788,15876
+resources.assets,63,LDR_LLL1_39,64,64,1,1,resources.assets.resS,20292664,4096
+resources.assets,64,irisA_0008,512,288,12,1,resources.assets.resS,20296760,147456
+resources.assets,65,irisA_0004,512,288,12,1,resources.assets.resS,20444216,147456
+resources.assets,66,Default Sprite Asset,512,512,12,1,resources.assets.resS,20591672,262144
+resources.assets,67,LDR_LLL1_55,64,64,1,1,resources.assets.resS,20853816,4096
+resources.assets,68,LDR_LLL1_13,64,64,1,1,resources.assets.resS,20857912,4096
+resources.assets,69,irisA_0012,512,288,12,1,resources.assets.resS,20862008,147456
+resources.assets,70,irisA_0005,512,288,12,1,resources.assets.resS,21009464,147456
+resources.assets,71,LDR_LLL1_31,64,64,1,1,resources.assets.resS,21156920,4096
+resources.assets,72,LDR_LLL1_20,64,64,1,1,resources.assets.resS,21161016,4096
+resources.assets,73,LDR_LLL1_4,64,64,1,1,resources.assets.resS,21165112,4096
+resources.assets,74,LDR_LLL1_56,64,64,1,1,resources.assets.resS,21169208,4096
+resources.assets,75,LDR_LLL1_9,64,64,1,1,resources.assets.resS,21173304,4096
+resources.assets,76,LDR_LLL1_43,64,64,1,1,resources.assets.resS,21177400,4096
+resources.assets,77,LDR_LLL1_19,64,64,1,1,resources.assets.resS,21181496,4096
+resources.assets,78,LDR_LLL1_18,64,64,1,1,resources.assets.resS,21185592,4096
+resources.assets,79,irisA_0009,512,288,12,1,resources.assets.resS,21189688,147456
+resources.assets,80,LDR_LLL1_11,64,64,1,1,resources.assets.resS,21337144,4096
+resources.assets,81,LDR_LLL1_6,64,64,1,1,resources.assets.resS,21341240,4096
+resources.assets,82,cheev_toast_card_combined,552,109,4,1,resources.assets.resS,21345336,240672
+resources.assets,83,irisA_0001,512,288,12,1,resources.assets.resS,21586008,147456
+resources.assets,84,Font Texture,0,0,4,1,,0,0
+resources.assets,85,LDR_LLL1_58,64,64,1,1,resources.assets.resS,21733464,4096
+resources.assets,86,LDR_LLL1_32,64,64,1,1,resources.assets.resS,21737560,4096
+resources.assets,87,LDR_LLL1_46,64,64,1,1,resources.assets.resS,21741656,4096
+resources.assets,88,LDR_LLL1_54,64,64,1,1,resources.assets.resS,21745752,4096
+resources.assets,89,LDR_LLL1_38,64,64,1,1,resources.assets.resS,21749848,4096
+resources.assets,90,LDR_LLL1_12,64,64,1,1,resources.assets.resS,21753944,4096
+resources.assets,91,LDR_LLL1_62,64,64,1,1,resources.assets.resS,21758040,4096
+resources.assets,92,LDR_LLL1_5,64,64,1,1,resources.assets.resS,21762136,4096
+resources.assets,93,LDR_LLL1_2,64,64,1,1,resources.assets.resS,21766232,4096
+resources.assets,94,sprite_square,32,32,10,1,resources.assets.resS,21770328,512
+resources.assets,95,LDR_LLL1_29,64,64,1,1,resources.assets.resS,21770840,4096
+resources.assets,96,LDR_LLL1_10,64,64,1,1,resources.assets.resS,21774936,4096
+resources.assets,97,LDR_LLL1_48,64,64,1,1,resources.assets.resS,21779032,4096
+resources.assets,98,LDR_LLL1_42,64,64,1,1,resources.assets.resS,21783128,4096
+resources.assets,99,LDR_LLL1_33,64,64,1,1,resources.assets.resS,21787224,4096
+resources.assets,100,LDR_LLL1_21,64,64,1,1,resources.assets.resS,21791320,4096
+resources.assets,101,Font Texture,0,0,4,1,,0,0
+resources.assets,102,LDR_LLL1_45,64,64,1,1,resources.assets.resS,21795416,4096
+resources.assets,103,LDR_LLL1_27,64,64,1,1,resources.assets.resS,21799512,4096
+resources.assets,104,LDR_LLL1_17,64,64,1,1,resources.assets.resS,21803608,4096
+resources.assets,105,LDR_LLL1_23,64,64,1,1,resources.assets.resS,21807704,4096
+resources.assets,106,LDR_LLL1_8,64,64,1,1,resources.assets.resS,21811800,4096
+resources.assets,107,LDR_LLL1_53,64,64,1,1,resources.assets.resS,21815896,4096
+resources.assets,108,LDR_LLL1_41,64,64,1,1,resources.assets.resS,21819992,4096
+resources.assets,109,LDR_LLL1_52,64,64,1,1,resources.assets.resS,21824088,4096
+resources.assets,110,LDR_LLL1_51,64,64,1,1,resources.assets.resS,21828184,4096
+resources.assets,111,LDR_LLL1_50,64,64,1,1,resources.assets.resS,21832280,4096
+resources.assets,112,LDR_LLL1_59,64,64,1,1,resources.assets.resS,21836376,4096
+resources.assets,113,Font Texture,0,0,4,1,,0,0
+resources.assets,114,Font Texture,0,0,4,1,,0,0
+resources.assets,115,LDR_LLL1_22,64,64,1,1,resources.assets.resS,21840472,4096
+resources.assets,116,LDR_LLL1_57,64,64,1,1,resources.assets.resS,21844568,4096
+resources.assets,117,irisA_0000,512,288,10,1,resources.assets.resS,21848664,73728
+resources.assets,118,irisA_0002,512,288,12,1,resources.assets.resS,21922392,147456
+resources.assets,119,irisA_0007,512,288,12,1,resources.assets.resS,22069848,147456
+resources.assets,120,wolrd_map_equip_new_icon_0000,128,128,12,1,resources.assets.resS,22217304,16384
+resources.assets,121,LDR_LLL1_25,64,64,1,1,resources.assets.resS,22233688,4096
+resources.assets,122,LDR_LLL1_14,64,64,1,1,resources.assets.resS,22237784,4096
+resources.assets,123,irisA_0003,512,288,12,1,resources.assets.resS,22241880,147456
+resources.assets,124,CupheadVogue-ExtraBold SDF Atlas,512,512,1,1,,0,0
+resources.assets,125,ARIAL SDF Atlas,1024,1024,1,1,,0,0
+resources.assets,126,Dimbo Regular SDF Atlas,1024,1024,1,1,,0,0
+resources.assets,127,CupheadMemphis-Medium SDF Atlas,512,512,1,1,,0,0
+resources.assets,128,CupheadVogue-Bold SDF Atlas,1024,1024,1,1,,0,0
+resources.assets,129,CupheadVogue-Bold-merged SDF Atlas,1024,1024,1,1,,0,0
+sharedassets1.assets,3,CupheadVogue-ExtraBold SDF Atlas,512,512,1,1,,0,0
+sharedassets13.assets,7,tallfrog_slotman_slot_TEMP,66,301,3,1,sharedassets13.assets.resS,0,59598
+sharedassets13.assets,8,tallfrog_slotman_slot_left_0001,64,256,12,9,sharedassets13.assets.resS,59600,21904
+sharedassets13.assets,9,tallfrog_slotman_slot_flash_TEMP,66,301,4,1,sharedassets13.assets.resS,81504,79464
+sharedassets17.assets,2,img_temp_head_jared,128,128,12,1,sharedassets17.assets.resS,0,16384
+sharedassets2.assets,6,sactx-128x128-BC7-Slot_Select_DLC-32e44153,128,128,25,1,sharedassets2.assets.resS,0,16384
+sharedassets2.assets,7,sactx-2048x1024-BC7-Slot_Select_BG-340d582c,2048,1024,25,1,sharedassets2.assets.resS,16384,2097152
+sharedassets2.assets,8,sactx-1024x1024-BC7-Slot_Select_CharactersActive-47184620,1024,1024,25,1,sharedassets2.assets.resS,2113536,1048576
+sharedassets2.assets,9,player_avatar_cuphead,104,104,12,1,sharedassets2.assets.resS,3162112,10816
+sharedassets2.assets,10,sprite_circled_square_white_128,128,128,12,1,sharedassets2.assets.resS,3172928,16384
+sharedassets2.assets,11,options_bg_chaos,592,524,12,1,sharedassets2.assets.resS,3189312,310208
+sharedassets2.assets,12,cheev_selection_circle_0001,96,96,12,1,sharedassets2.assets.resS,3499520,9216
+sharedassets2.assets,13,pause_menu,512,296,12,1,sharedassets2.assets.resS,3508736,151552
+sharedassets2.assets,14,options_bg,592,524,12,1,sharedassets2.assets.resS,3660288,310208
+sharedassets2.assets,15,player_avatar_mugman,104,104,12,1,sharedassets2.assets.resS,3970496,10816
+sharedassets2.assets,16,sprite_circle_white_256,256,256,12,1,sharedassets2.assets.resS,3981312,65536
+sharedassets2.assets,17,img_sprite_white,128,128,12,1,sharedassets2.assets.resS,4046848,16384
+sharedassets2.assets,18,world_map_equip_console_glyph,36,35,4,1,sharedassets2.assets.resS,4063232,5040
+sharedassets2.assets,19,Placeholder_Small,96,96,12,1,sharedassets2.assets.resS,4068272,9216
+sharedassets2.assets,20,Placeholder_Large,264,264,12,1,sharedassets2.assets.resS,4077488,69696
+sharedassets2.assets,21,pause_menu_noise,512,296,12,1,sharedassets2.assets.resS,4147184,151552
+sharedassets2.assets,22,cheev_selection_circle_0002,96,96,12,1,sharedassets2.assets.resS,4298736,9216
+sharedassets2.assets,23,world_map_equip_pc_glyph(long),44,29,4,1,sharedassets2.assets.resS,4307952,5104
+sharedassets2.assets,24,cheev_selection_circle_0003,96,96,12,1,sharedassets2.assets.resS,4313056,9216
+sharedassets2.assets,25,CupheadVogue-ExtraBold-merged SDF Atlas,1024,512,1,1,,0,0
+sharedassets2.assets,26,CupheadMemphis-Medium-merged SDF Atlas,1024,1024,1,1,,0,0
+sharedassets20.assets,3,light_ray_skyglow,2048,512,12,1,sharedassets20.assets.resS,0,1048576
+sharedassets20.assets,4,light_ray_shadow,2048,512,12,1,sharedassets20.assets.resS,1048576,1048576
+sharedassets21.assets,3,sactx-64x64-BC7-WhiteSquareMask-ca60fbf2,64,64,25,1,sharedassets21.assets.resS,0,4096
+sharedassets22.assets,2,sprite_circle,256,256,12,1,sharedassets22.assets.resS,0,65536
+sharedassets3.assets,18,sactx-64x64-BC7-transparentSquareMask-a76065ea,64,64,25,1,sharedassets3.assets.resS,0,4096
+sharedassets3.assets,19,sactx-1024x1024-BC7-Map_HUD_Coin_Numbers-bcc06763,1024,1024,25,1,sharedassets3.assets.resS,4096,1048576
+sharedassets3.assets,20,sactx-1024x512-BC7-Platform_Select-d80f3d43,1024,512,25,1,sharedassets3.assets.resS,1052672,524288
+sharedassets3.assets,21,sactx-2048x2048-BC7-EquipCard-f6d5ded7,2048,2048,25,1,sharedassets3.assets.resS,1576960,4194304
+sharedassets3.assets,22,sactx-1024x1024-BC7-EquipCard_DLC-fdab9ab1,1024,1024,25,1,sharedassets3.assets.resS,5771264,1048576
+sharedassets3.assets,23,tooltip_professional,544,544,12,1,sharedassets3.assets.resS,6819840,295936
+sharedassets3.assets,24,tooltip_chalice,544,544,12,1,sharedassets3.assets.resS,7115776,295936
+sharedassets3.assets,25,img_map_ui_bubble_stem_003,40,40,12,1,sharedassets3.assets.resS,7411712,1600
+sharedassets3.assets,26,tooltip_legendary_chalice,544,544,12,1,sharedassets3.assets.resS,7413312,295936
+sharedassets3.assets,27,tooltip_chalicefan,544,544,12,1,sharedassets3.assets.resS,7709248,295936
+sharedassets3.assets,28,equip_checklist_arrow_0005,29,23,4,1,sharedassets3.assets.resS,8005184,2668
+sharedassets3.assets,29,tooltip_canteen,544,544,12,1,sharedassets3.assets.resS,8007852,295936
+sharedassets3.assets,30,title_card_fader,1280,720,29,1,sharedassets3.assets.resS,8303788,111418
+sharedassets3.assets,31,img_map_ui_bubble_Stem_001,40,40,12,1,sharedassets3.assets.resS,8415208,1600
+sharedassets3.assets,32,world_map_PC_glyph_box,42,51,4,1,sharedassets3.assets.resS,8416808,8568
+sharedassets3.assets,33,title_card_difficulty_jp,404,177,4,1,sharedassets3.assets.resS,8425376,286032
+sharedassets3.assets,34,equip_checklist_arrow_0002,29,23,4,1,sharedassets3.assets.resS,8711408,2668
+sharedassets3.assets,35,equip_arrow,14,24,4,1,sharedassets3.assets.resS,8714076,1344
+sharedassets3.assets,36,dialog_vignette,1280,720,12,1,sharedassets3.assets.resS,8715420,921600
+sharedassets3.assets,37,title_card_legal_line,404,80,29,1,sharedassets3.assets.resS,9637020,5234
+sharedassets3.assets,38,title_card_in_b,76,52,29,1,sharedassets3.assets.resS,9642256,1226
+sharedassets3.assets,39,tooltip_pig,544,544,12,1,sharedassets3.assets.resS,9643484,295936
+sharedassets3.assets,40,tooltip_saltbaker_b,544,544,12,1,sharedassets3.assets.resS,9939420,295936
+sharedassets3.assets,41,title_card_background,776,568,29,1,sharedassets3.assets.resS,10235356,68284
+sharedassets3.assets,42,title_card_tilde_b,76,52,29,1,sharedassets3.assets.resS,10303640,574
+sharedassets3.assets,43,Font Texture,0,0,4,1,,0,0
+sharedassets3.assets,44,tooltip_turtle,544,544,12,1,sharedassets3.assets.resS,10304216,295936
+sharedassets3.assets,45,title_card_background_general_area,540,300,12,1,sharedassets3.assets.resS,10600152,162000
+sharedassets3.assets,46,tooltip_king_dice,544,544,12,1,sharedassets3.assets.resS,10762152,295936
+sharedassets3.assets,47,world_map_PC_glyph_tail,42,51,4,1,sharedassets3.assets.resS,11058088,8568
+sharedassets3.assets,48,tooltip_boatman,544,544,12,1,sharedassets3.assets.resS,11066656,295936
+sharedassets3.assets,49,title_card_tilde_a,76,52,29,1,sharedassets3.assets.resS,11362592,606
+sharedassets3.assets,50,equip_checklist_arrow_0004,29,23,4,1,sharedassets3.assets.resS,11363200,2668
+sharedassets3.assets,51,Font Texture,0,0,4,1,,0,0
+sharedassets3.assets,52,img_map_ui_bubble_stem_002,40,40,12,1,sharedassets3.assets.resS,11365868,1600
+sharedassets3.assets,53,sprite_circle_white_64,64,64,12,1,sharedassets3.assets.resS,11367468,4096
+sharedassets3.assets,54,Font Texture,0,0,4,1,,0,0
+sharedassets3.assets,55,tooltip_saltbaker_a,544,544,12,1,sharedassets3.assets.resS,11371564,295936
+sharedassets3.assets,56,equip_checklist_arrow_0001,29,23,4,1,sharedassets3.assets.resS,11667500,2668
+sharedassets3.assets,57,equip_checklist_arrow_0003,29,23,4,1,sharedassets3.assets.resS,11670168,2668
+sharedassets3.assets,58,CupheadHenriette-A-merged SDF Atlas,1024,1024,1,1,,0,0
+sharedassets3.assets,59,CupheadFelix-Regular SDF Atlas,1024,1024,1,1,,0,0
+sharedassets3.assets,60,CupheadPoster-Regular(Cyr_Lat_English) SDF Atlas,1024,1024,1,1,,0,0
+sharedassets3.assets,61,CupheadHenriette-A SDF Atlas,512,512,1,1,,0,0
+sharedassets3.assets,62,CupheadVogue-ExtraBold SDF_Credits Atlas,1024,1024,1,1,,0,0
+sharedassets32.assets,2,sprite_circle_white_32,32,32,12,1,sharedassets32.assets.resS,0,1024
+sharedassets39.assets,2,sactx-4096x4096-BC7-FightText_Mausoleum-e7a84016,4096,4096,25,1,sharedassets39.assets.resS,0,16777216
+sharedassets39.assets,3,sactx-4096x4096-BC7-FightText_Mausoleum-e7a84016,4096,4096,25,1,sharedassets39.assets.resS,16777216,16777216
+sharedassets39.assets,4,illumijared,65,68,4,1,sharedassets39.assets.resS,33554432,17680
+sharedassets41.assets,2,sactx-4096x4096-BC7-FightText_Platforming-94baf897,4096,4096,25,1,sharedassets41.assets.resS,0,16777216
+sharedassets41.assets,3,sactx-4096x4096-BC7-FightText_Platforming-94baf897,4096,4096,25,1,sharedassets41.assets.resS,16777216,16777216
+sharedassets41.assets,4,sactx-4096x4096-BC7-FightText_Platforming-94baf897,4096,4096,25,1,sharedassets41.assets.resS,33554432,16777216
+sharedassets48.assets,5,white_arrow,40,32,4,1,sharedassets48.assets.resS,0,5120
+sharedassets48.assets,6,Font Texture,0,0,4,1,,0,0
+sharedassets48.assets,7,Font Texture,0,0,4,1,,0,0
+sharedassets48.assets,8,Font Texture,0,0,4,1,,0,0
+sharedassets5.assets,2,world3_mainland_top_03_bush,101,109,4,1,sharedassets5.assets.resS,0,44036
+sharedassets51.assets,4,CupheadVogue-Bold SDF_ShmupTutorial Atlas,1024,1024,1,1,,0,0
+sharedassets53.assets,2,credits_MDHR_logo,400,60,12,1,sharedassets53.assets.resS,0,24000
+sharedassets53.assets,3,made-with-unity-white,301,165,4,1,sharedassets53.assets.resS,24000,198660
+sharedassets53.assets,4,chad_jared_signatures,376,92,12,1,sharedassets53.assets.resS,222660,34592
+sharedassets60.assets,3,sprite_circle_weird,256,256,12,1,sharedassets60.assets.resS,0,65536
+sharedassets63.assets,3,hall_end_shadow_mask,1024,1024,10,1,sharedassets63.assets.resS,0,524288
+sharedassets66.assets,8,04-sb_ph1_ph2_mid_table,1400,296,25,1,sharedassets66.assets.resS,0,414400
+sharedassets7.assets,2,UIMask,32,32,4,6,sharedassets7.assets.resS,0,5460
+sharedassets71.assets,3,sactx-2048x4096-BC7-FightText_EnGarde-b8cb7bdb,2048,4096,25,1,sharedassets71.assets.resS,0,8388608
+sharedassets78.assets,2,end_Credits_fin_lores,292,236,25,1,sharedassets78.assets.resS,0,68912
+sharedassets8.assets,15,sactx-4096x4096-BC7-FightText_YouDied-15079729,4096,4096,25,1,sharedassets8.assets.resS,0,16777216
+sharedassets8.assets,16,sactx-512x256-BC7-Death_Card_DLC-367d22a3,512,256,25,1,sharedassets8.assets.resS,16777216,131072
+sharedassets8.assets,17,sactx-2048x2048-BC7-Death_Card-b1bf1b88,2048,2048,25,1,sharedassets8.assets.resS,16908288,4194304
+sharedassets8.assets,18,sactx-256x256-BC7-HUD-bdd85eb4,256,256,25,1,sharedassets8.assets.resS,21102592,65536
+sharedassets8.assets,19,img_map_ui_bubble_002,80,80,12,1,sharedassets8.assets.resS,21168128,6400
+sharedassets8.assets,20,a_mushroom_fx_puff_trail_0001,48,48,4,1,sharedassets8.assets.resS,21174528,9216
+sharedassets8.assets,21,img_map_ui_bubble_004,80,80,12,1,sharedassets8.assets.resS,21183744,6400
+sharedassets8.assets,22,hud_hp_9,78,32,4,1,sharedassets8.assets.resS,21190144,9984
+sharedassets8.assets,23,blimp_enemy_bullet_a_0001,69,69,4,1,sharedassets8.assets.resS,21200128,19044
+sharedassets8.assets,24,tutorial_descend_arrow,19,24,4,1,sharedassets8.assets.resS,21219172,1824
+sharedassets8.assets,25,blimp_enemy_bullet_pinkA_0001,69,69,4,1,sharedassets8.assets.resS,21220996,19044
+sharedassets8.assets,26,img_map_ui_bubble_001,80,80,12,1,sharedassets8.assets.resS,21240040,6400
+sharedassets8.assets,27,img_map_ui_bubble_003,80,80,12,1,sharedassets8.assets.resS,21246440,6400
+sharedassets8.assets,28,blimp_enemy_bullet_c_0007,69,69,4,1,sharedassets8.assets.resS,21252840,19044
+sharedassets8.assets,29,CupheadVogue-ExtraBold SDF Atlas,512,512,1,1,,0,0
+sharedassets8.assets,30,CupheadMemphis-Medium SDF Atlas,512,512,1,1,,0,0
+sharedassets8.assets,31,CupheadVogue-Bold SDF Atlas,1024,1024,1,1,,0,0
+sharedassets8.assets,32,CupheadVogue-ExtraBold SDF2 Atlas,1024,1024,1,1,,0,0
+sharedassets9.assets,5,sactx-4096x4096-BC7-FightText-65020859,4096,4096,25,1,sharedassets9.assets.resS,0,16777216
+sharedassets9.assets,6,img_swatch_transparent,32,32,12,6,sharedassets9.assets.resS,16777216,1392

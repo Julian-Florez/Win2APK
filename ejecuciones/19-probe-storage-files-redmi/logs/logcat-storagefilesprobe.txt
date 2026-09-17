@@ -1,0 +1,24 @@
+--------- beginning of main
+08-24 23:21:47.536 I/StorageFilesProbe(21491): START package=com.win2apk.storageprobe api=36
+08-24 23:21:47.554 I/StorageFilesProbe(21491): filesDir=/data/user/0/com.win2apk.storageprobe/files
+08-24 23:21:47.555 I/StorageFilesProbe(21491): selinux app_enabled=true enforced_status=recorded_by_adb
+08-24 23:21:47.632 I/StorageFilesProbe(21491): fetch_complete success=true exception=none
+08-24 23:21:47.634 I/StorageFilesProbe(21491): pack_state status=NOT_INSTALLED code=8 bytes=0/8542
+08-24 23:21:47.773 I/StorageFilesProbe(21491): listener=probe_assets status=1 bytes=0/8542
+08-24 23:21:47.777 I/StorageFilesProbe(21491): listener=probe_assets status=3 bytes=8542/8542
+08-24 23:21:47.792 I/StorageFilesProbe(21491): listener=probe_assets status=3 bytes=8542/8542
+08-24 23:21:47.796 I/StorageFilesProbe(21491): pack_state status=COMPLETED code=4 bytes=8542/8542
+08-24 23:21:47.802 I/StorageFilesProbe(21491): LOCATION storage_method=0 path=/data/user/0/com.win2apk.storageprobe/files/assetpacks/probe_assets/1/1 assets_path=/data/user/0/com.win2apk.storageprobe/files/assetpacks/probe_assets/1/1/assets
+08-24 23:21:47.813 I/StorageFilesProbe(21491): SOURCE_BEFORE dev=66359 ino=114867 size=698 sha256=cabc6f6ed54ad4f3cde9229ba6c4d5d61252e4ce34b04553b105a3f9df06ed30
+08-24 23:21:47.817 I/StorageFilesProbe(21491): SELINUX_SOURCE /data/user/0/com.win2apk.storageprobe/files/assetpacks/probe_assets/1/1/assets/payload.txt=u:object_r:app_data_file:s0:c132,c257,c512,c768À€
+08-24 23:21:47.823 I/StorageFilesProbe(21491): SELINUX_FILES_DIR /data/user/0/com.win2apk.storageprobe/files=u:object_r:app_data_file:s0:c132,c257,c512,c768À€
+08-24 23:21:47.826 I/StorageFilesProbe(21491): FILESYSTEM_SOURCE_DEV=66359 FILES_DIR_DEV=66359
+08-24 23:21:47.836 I/StorageFilesProbe(21491): FILES_MOVE_OK destination=/data/user/0/com.win2apk.storageprobe/files/payload-moved.txt dev=66359 ino=114867 size=698 sha256=cabc6f6ed54ad4f3cde9229ba6c4d5d61252e4ce34b04553b105a3f9df06ed30 inode_preserved=true bytes_preserved=true
+08-24 23:21:47.842 I/StorageFilesProbe(21491): FILES_MOVE_SOURCE_EXISTS=false DEST_EXISTS=true
+08-24 23:21:47.850 I/StorageFilesProbe(21491): OS_RENAME_RESTORE_OK dev=66359 ino=114867 size=698 sha256=cabc6f6ed54ad4f3cde9229ba6c4d5d61252e4ce34b04553b105a3f9df06ed30 inode_preserved=true bytes_preserved=true
+08-24 23:21:47.853 I/StorageFilesProbe(21491): AFTER_CYCLE_A source_exists=true moved_exists=false
+08-24 23:21:47.861 I/StorageFilesProbe(21491): OS_RENAME_OK destination=/data/user/0/com.win2apk.storageprobe/files/payload-moved.txt dev=66359 ino=114867 size=698 sha256=cabc6f6ed54ad4f3cde9229ba6c4d5d61252e4ce34b04553b105a3f9df06ed30 inode_preserved=true bytes_preserved=true
+08-24 23:21:47.869 I/StorageFilesProbe(21491): FILES_MOVE_RESTORE_OK dev=66359 ino=114867 size=698 sha256=cabc6f6ed54ad4f3cde9229ba6c4d5d61252e4ce34b04553b105a3f9df06ed30 inode_preserved=true bytes_preserved=true
+08-24 23:21:47.873 I/StorageFilesProbe(21491): FINAL source_exists=true moved_exists=false
+08-24 23:21:47.880 I/StorageFilesProbe(21491): FINAL_STAT dev=66359 ino=114867 size=698 sha256=cabc6f6ed54ad4f3cde9229ba6c4d5d61252e4ce34b04553b105a3f9df06ed30
+08-24 23:21:47.905 I/StorageFilesProbe(21491): listener=probe_assets status=4 bytes=8542/8542

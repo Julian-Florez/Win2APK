@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <boolean name="open_android_browser_from_wine" value="true" />
+    <boolean name="save_logs_to_file" value="true" />
+    <string name="wine_debug_channels">err,warn,+loaddll,+module,+file</string>
+    <boolean name="capture_pointer_on_external_mouse" value="true" />
+    <float name="overlay_opacity" value="0.4" />
+    <boolean name="move_cursor_to_touchpoint" value="false" />
+    <float name="cursor_speed" value="1.0" />
+    <string name="midi_input_device">auto</string>
+    <string name="gpu_renderer">Mali-G715</string>
+    <boolean name="enable_wine_debug" value="true" />
+    <int name="cursor_color" value="16777215" />
+    <string name="gpu_vendor">ARM</string>
+    <int name="app_theme" value="1" />
+    <string name="current_box64_version">0.4.0</string>
+    <float name="cursor_scale" value="1.0" />
+    <int name="lc_index" value="-1" />
+    <int name="box64_logs" value="2" />
+    <string name="gpu_version">OpenGL ES 3.2 v1.r54p3-00eac0.44603346b7f0666d385a72285181f505</string>
+    <boolean name="use_android_clipboard_on_wine" value="false" />
+</map>

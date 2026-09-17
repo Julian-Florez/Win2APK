@@ -1,0 +1,32 @@
+Initialize engine version: 2017.4.9f1 (6d84dfc57ccf)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Vortek (Mali-G715) (ID=0xb8a20000)
+    Vendor:   Unknown (ID=13b5)
+    VRAM:     1024 MB
+Begin MonoManager ReloadAssembly
+- Completed reload, in  0.294 seconds
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 43.996800 ms
+Fallback handler could not load library C:/Cuphead/Cuphead_Data/Mono/data-000000014C70F750.dll
+Fallback handler could not load library C:/Cuphead/Cuphead_Data/Mono/data-000000014C7833A0.dll
+Fallback handler could not load library C:/Cuphead/Cuphead_Data/Mono/data-0000000158F30040.dll
+Rewired: Searching for compatible XInput library...
+Rewired: Found Xinput1_4.dll.
+Galaxy SDK was initialized
+ 
+(Filename: C:\buildslave\unity\build\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 79)
+UnloadTime: 14.742300 ms
+Build version 1.3.4
+ 
+(Filename: C:\buildslave\unity\build\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+
+Unloading 308 unused Assets to reduce memory usage. Loaded Objects now: 11736.
+Total: 65.060200 ms (FindLiveObjects: 2.498800 ms CreateObjectMapping: 1.428800 ms MarkObjects: 58.570200 ms  DeleteObjects: 2.427300 ms)
+

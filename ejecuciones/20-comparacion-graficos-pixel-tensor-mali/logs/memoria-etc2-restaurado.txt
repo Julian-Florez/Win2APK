@@ -1,0 +1,42 @@
+sample=1 time=2026-08-25T20:54:35-05:00
+20516
+         Native Heap:    46284                          47348
+            Graphics:   737816                         737816
+           TOTAL PSS:   873797            TOTAL RSS:   980472       TOTAL SWAP PSS:      171
+MemAvailable:     871828 kB
+SwapFree:         642800 kB
+sample=2 time=2026-08-25T20:54:40-05:00
+20516
+         Native Heap:    45420                          46484
+            Graphics:  1139856                        1139856
+           TOTAL PSS:  1256343            TOTAL RSS:  1361332       TOTAL SWAP PSS:       91
+MemAvailable:     398504 kB
+SwapFree:         508364 kB
+sample=3 time=2026-08-25T20:54:46-05:00
+20516
+         Native Heap:    36936                          37984
+            Graphics:  1136848                        1136848
+           TOTAL PSS:  1252719            TOTAL RSS:  1341568       TOTAL SWAP PSS:    14708
+MemAvailable:     476328 kB
+SwapFree:         316288 kB
+sample=4 time=2026-08-25T20:54:51-05:00
+20516
+         Native Heap:    37552                          38600
+            Graphics:  1143024                        1143024
+           TOTAL PSS:  1259532            TOTAL RSS:  1348428       TOTAL SWAP PSS:    14668
+MemAvailable:     440480 kB
+SwapFree:         340864 kB
+sample=5 time=2026-08-25T20:54:56-05:00
+20516
+         Native Heap:    37848                          38896
+            Graphics:  1143040                        1143040
+           TOTAL PSS:  1259841            TOTAL RSS:  1348740       TOTAL SWAP PSS:    14668
+MemAvailable:     427444 kB
+SwapFree:         351616 kB
+sample=6 time=2026-08-25T20:55:01-05:00
+20516
+         Native Heap:    38172                          39220
+            Graphics:  1145108                        1145108
+           TOTAL PSS:  1262209            TOTAL RSS:  1351140       TOTAL SWAP PSS:    14668
+MemAvailable:     423108 kB
+SwapFree:         386688 kB

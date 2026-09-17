@@ -1,0 +1,24 @@
+2026-08-25T20:01:38-05:00
+25260
+MemAvailable:    1232500 kB
+SwapFree:         642624 kB
+Gpu:              498032 kB
+ION_heap:         668284 kB
+2026-08-25T20:01:48-05:00
+25260
+MemAvailable:     995404 kB
+SwapFree:         655936 kB
+Gpu:              503892 kB
+ION_heap:         709316 kB
+2026-08-25T20:01:58-05:00
+25260
+MemAvailable:     205668 kB
+SwapFree:          15904 kB
+Gpu:              622716 kB
+ION_heap:        1741640 kB
+2026-08-25T20:02:08-05:00
+25260
+MemAvailable:     279768 kB
+SwapFree:          36540 kB
+Gpu:              546720 kB
+ION_heap:        1741640 kB

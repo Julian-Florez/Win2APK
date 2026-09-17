@@ -1,0 +1,22 @@
+getenforce
+Enforcing
+df_final_before_cleanup
+Filesystem            1K-blocks     Used Available Use% Mounted on
+/dev/block/mmcblk0p87  51320812 48878860   2441952  96% /data/user/0
+package_storage
+    codePath=/data/app/~~kRl-jm-8kAhE2GjQ_hDrjQ==/com.win2apk.storageprobe-GTvZcoeBciHGZuEQ4hDtBQ==
+    versionCode=1 minSdk=26 targetSdk=28
+    versionName=1.0-probe
+    splits=[base, config.es, config.xxhdpi]
+    User 0: ceDataInode=77963 deDataInode=82236 installed=true hidden=false suspended=false distractionFlags=0 stopped=false notLaunched=false enabled=0 instant=false virtual=false quarantined=false
+      dataDir=/data/user/0/com.win2apk.storageprobe
+run_as_stat_source
+66359
+run_as_stat_moved
+stat: '%i': No such file or directory
+stat: '%s': No such file or directory
+stat: '%n': No such file or directory
+stat: 'files/payload-moved.txt': No such file or directory
+run_as_selinux
+-rw------- 1 u0_a388 u0_a388 u:object_r:app_data_file:s0:c132,c257,c512,c768  698 2026-08-24 23:21 files/assetpacks/probe_assets/1/1/assets/payload.txt
+drwxrwx--x 3 u0_a388 u0_a388 u:object_r:app_data_file:s0:c132,c257,c512,c768  3488 2026-08-24 23:21 files

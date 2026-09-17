@@ -1,0 +1,66 @@
+Initialize engine version: 2017.4.9f1 (6d84dfc57ccf)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Vortek (Mali-G715) (ID=0xb8a20000)
+    Vendor:   Unknown (ID=13b5)
+    VRAM:     1024 MB
+Begin MonoManager ReloadAssembly
+- Completed reload, in  0.340 seconds
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 48.651700 ms
+Fallback handler could not load library C:/Cuphead/Cuphead_Data/Mono/data-000000014C70BA40.dll
+Fallback handler could not load library C:/Cuphead/Cuphead_Data/Mono/data-000000014C778610.dll
+Fallback handler could not load library C:/Cuphead/Cuphead_Data/Mono/data-0000000159760040.dll
+Rewired: Searching for compatible XInput library...
+Rewired: Found Xinput1_4.dll.
+Galaxy SDK was initialized
+ 
+(Filename: C:\buildslave\unity\build\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 79)
+UnloadTime: 23.607200 ms
+Build version 1.3.4
+ 
+(Filename: C:\buildslave\unity\build\artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+
+Unloading 308 unused Assets to reduce memory usage. Loaded Objects now: 11736.
+Total: 86.840200 ms (FindLiveObjects: 2.430300 ms CreateObjectMapping: 2.065400 ms MarkObjects: 79.604800 ms  DeleteObjects: 2.644300 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 79)
+UnloadTime: 55.029000 ms
+
+Unloading 218 unused Assets to reduce memory usage. Loaded Objects now: 11606.
+Total: 98.840400 ms (FindLiveObjects: 1.937800 ms CreateObjectMapping: 2.501700 ms MarkObjects: 85.930700 ms  DeleteObjects: 8.467900 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 81)
+UnloadTime: 5.782600 ms
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 13288.
+Total: 67.576400 ms (FindLiveObjects: 1.325600 ms CreateObjectMapping: 0.526400 ms MarkObjects: 65.438200 ms  DeleteObjects: 0.283900 ms)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 81)
+
+Unloading 0 unused Assets to reduce memory usage. Loaded Objects now: 13551.
+Total: 64.256500 ms (FindLiveObjects: 1.573500 ms CreateObjectMapping: 0.502500 ms MarkObjects: 61.995400 ms  DeleteObjects: 0.182000 ms)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 15.155500 ms
+
+Unloading 930 unused Assets to reduce memory usage. Loaded Objects now: 11208.
+Total: 64.165900 ms (FindLiveObjects: 1.263500 ms CreateObjectMapping: 0.397400 ms MarkObjects: 54.236000 ms  DeleteObjects: 8.267400 ms)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 19)
+UnloadTime: 37.555400 ms
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 26393.
+Total: 421.923400 ms (FindLiveObjects: 15.813400 ms CreateObjectMapping: 6.022300 ms MarkObjects: 397.256600 ms  DeleteObjects: 2.828400 ms)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 20)
+
+Unloading 0 unused Assets to reduce memory usage. Loaded Objects now: 26451.
+Total: 668.572000 ms (FindLiveObjects: 33.576900 ms CreateObjectMapping: 4.619500 ms MarkObjects: 629.779200 ms  DeleteObjects: 0.579500 ms)
+

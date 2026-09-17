@@ -1,0 +1,30 @@
+2026-08-25T13:44:55-05:00
+26448
+MemAvailable:     175964 kB
+SwapFree:         997496 kB
+Gpu:              637144 kB
+ION_heap:        2649560 kB
+2026-08-25T13:45:05-05:00
+26448
+MemAvailable:     130788 kB
+SwapFree:        1023608 kB
+Gpu:              637180 kB
+ION_heap:        2649560 kB
+2026-08-25T13:45:15-05:00
+26448
+MemAvailable:     301508 kB
+SwapFree:         893176 kB
+Gpu:              620060 kB
+ION_heap:        2649560 kB
+2026-08-25T13:45:25-05:00
+26448
+MemAvailable:     279244 kB
+SwapFree:         914424 kB
+Gpu:              620100 kB
+ION_heap:        2649560 kB
+2026-08-25T13:45:35-05:00
+26448
+MemAvailable:     275580 kB
+SwapFree:         911388 kB
+Gpu:              620144 kB
+ION_heap:        2649560 kB

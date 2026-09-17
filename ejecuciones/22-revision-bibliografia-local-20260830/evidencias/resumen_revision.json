@@ -1,0 +1,20 @@
+{
+  "registros_lista_final": 72,
+  "archivos_pdf_presentes": 69,
+  "registros_sin_archivo": 3,
+  "pdfs_con_texto_extraible": 51,
+  "pdfs_sin_texto_suficiente": 18,
+  "duplicados_scopus": 8,
+  "candidatos_adicionales": 61,
+  "candidatos_directos": 43,
+  "candidatos_complementarios": 18,
+  "candidatos_en_ventana_2020_2026": 10,
+  "candidatos_fuera_ventana": 36,
+  "candidatos_ventana_no_registrada": 15,
+  "criterio": {
+    "directa": "Palabras clave centradas en Wine, compatibilidad de SO, traducción binaria, emulación, ISA, QEMU/LLVM, migración de software o capas de compatibilidad.",
+    "complementaria": "Palabras clave sobre contenedores, virtualización de aplicaciones, seguridad nativa Android, gráficos/API o reproducibilidad que pueden apoyar el diseño, pero no sustituyen evidencia directa.",
+    "duplicado": "Coincidencia exacta por DOI o título con los 533 registros Scopus.",
+    "limitacion": "La clasificación es por metadatos y texto inicial disponible; no equivale a inclusión final en la síntesis PRISMA."
+  }
+}

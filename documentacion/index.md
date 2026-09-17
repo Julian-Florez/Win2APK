@@ -10,6 +10,8 @@ Esta carpeta reúne las decisiones, avances y evidencias del desarrollo del proy
 3. [Especificación de la aplicación mínima](../especificaciones/app-minima.md)
 4. [Plan de distribución segmentada para Cuphead](./03-plan-distribucion-segmentada-cuphead.md)
 5. [Plan de acceso directo a asset packs de Cuphead](./04-plan-acceso-directo-assetpack-cuphead.md)
+6. [Decisión de perfil gráfico para Pixel Tensor/Mali](./05-decision-perfil-grafico-pixel-tensor-mali.md)
+7. [Integración de fuentes para el estado del arte](./06-integracion-fuentes-estado-arte.md)
 
 ## Criterio de organización
 
@@ -22,4 +24,5 @@ Los documentos numerados posteriores registran las decisiones y avances principa
 - [Bitácora de fallos y limitaciones](../bitacora/index.md)
 - [Ejecuciones y matrices de prueba](../ejecuciones/index.md)
 - [Plantilla de métricas](../ejecuciones/plantilla-metricas.md)
+- [Especificación de distribución de datos del juego](../especificaciones/distribucion-datos-juego.md)
 - [Limitación 01: inicialización de CoreCLR en Winlator](../limitaciones/01-error-coreclr-gc-winlator.md)

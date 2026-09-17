@@ -26,6 +26,12 @@ No es válido crear un enlace simbólico a `assetsPath` en esta variante. El req
 2. Diseñar una capa virtual de archivos que traduzca las aperturas de Wine hacia `AssetManager`/APK assets.
 3. Mantener el fallback de extracción segmentada para bundletool y dispositivos donde no haya ruta directa.
 
+## Resultado posterior
+
+[EXEC-018](../ejecuciones/18-prototipo-direct-files-pixel/matriz.md) probó una configuración diferente: un pack `on-demand` llegó como `STORAGE_FILES`, ofreció un `assetsPath` real y admitió lectura, `seek`, `mmap` y enlaces simbólicos. Por tanto, el límite permanece reproducido para los packs `install-time` de `EXEC-015`, pero no debe generalizarse a todos los modos PAD.
+
+La prueba reducida todavía no demuestra por sí sola que Cuphead completo se ejecute desde enlaces; esa validación se registra por separado.
+
 ## Estado
 
-Reproducida en la instalación local con bundletool; acceso directo por ruta no viable en esta configuración.
+Reproducida para `install-time`/`APK_ASSETS`; alternativa `on-demand`/`STORAGE_FILES` verificada experimentalmente en una carga reducida.

@@ -1,0 +1,8 @@
+target=16f88243
+model=Redmi Note 8
+api=36
+selinux=Enforcing
+df_before
+Filesystem            1K-blocks     Used Available Use% Mounted on
+/dev/block/mmcblk0p87  51320812 48872624   2448188  96% /data/user/0
+package_before
