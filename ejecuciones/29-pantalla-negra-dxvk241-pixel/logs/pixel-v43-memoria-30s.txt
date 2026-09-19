@@ -1,0 +1,21 @@
+Publicación: versionCode 43, 11.1-direct-files-auto-gpu-recovery-v13-fcharan-dxvk241-bcnfull
+Dispositivo: Pixel 9a, 4A021JEBF06953
+Corte: aproximadamente 30 s después del lanzamiento
+
+Proceso Android com.cuphead:
+PSS: 575576 KiB
+RSS: 695036 KiB
+Graphics: 488676 KiB
+
+Proceso Cuphead.exe:
+PSS: 384040 KiB
+RSS: 407852 KiB
+Graphics: 0 KiB
+
+Combinado:
+PSS: 959616 KiB
+RSS: 1102888 KiB
+
+MemAvailable: 1319108 KiB
+
+Observación visual asociada: captura negra excepto por el cursor.

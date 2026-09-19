@@ -1,0 +1,27 @@
+# Monitor v40 en Pixel
+
+## Primer corte
+
+```text
+timestamp=2026-09-18T20:38:18-05:00
+com.cuphead=3830
+Cuphead.exe=4950
+Graphics: 2104936 KiB
+TOTAL PSS: 2179056 KiB
+TOTAL RSS: 2243208 KiB
+files=815
+bytes=5847372363
+```
+
+## Cierre
+
+```text
+timestamp=2026-09-18 20:38:49.639
+pid=3830
+reason=3 (LOW_MEMORY)
+subreason=0 (UNKNOWN)
+status=0
+rss=350MB
+```
+
+La línea del selector gráfico de v40 no quedó disponible en el corte final de logcat. El perfil se reconstruye de la configuración publicada y del cambio aislado, por lo que se marca como esperado y no como una observación runtime completa.

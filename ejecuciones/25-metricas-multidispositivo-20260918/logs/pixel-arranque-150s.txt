@@ -1,0 +1,27 @@
+# Evidencia: arranque y permanencia del Pixel 9a
+
+Dispositivo: `4A021JEBF06953`, paquete `com.cuphead`, versión instalada `versionCode=34`, `versionName=11.1-direct-files-auto-gpu-recovery-v4`.
+
+Intervención: se ejecutó `adb shell am force-stop com.cuphead` para dejar el caso en un estado conocido y luego `adb shell monkey -p com.cuphead 1`. No se desinstaló ni se borraron archivos.
+
+```text
+START_HOST=2026-09-18T19:29:53-05:00
+Events injected: 1
+CUPHEAD_FIRST_SEEN_HOST=2026-09-18T19:29:58-05:00 PID=24272 APP_PID=24027
+POLL i=60 host=2026-09-18T19:31:03-05:00 app=24027 cuphead=24272
+POLL i=70 host=2026-09-18T19:31:15-05:00 app=N/R cuphead=N/R
+END_HOST=2026-09-18T19:32:53-05:00
+```
+
+Salida de Android:
+
+```text
+ApplicationExitInfo #0:
+  timestamp=2026-09-18 19:31:05.513
+  process=com.cuphead
+  reason=3 (LOW_MEMORY) subreason=0 (UNKNOWN) status=0
+```
+
+La primera detección de `Cuphead.exe` ocurrió aproximadamente cinco segundos después del disparo del launcher. El proceso permaneció observable al menos desde 19:29:58 hasta la salida registrada a las 19:31:05.513, aproximadamente 67,5 s. El sondeo no permite afirmar el instante exacto de creación del proceso ni de carga completa de gameplay.
+
+El comando inicial que intentaba imprimir segundos decimales falló por un escape de `awk`; por eso no se usa ese valor como medición y se conservan los timestamps crudos anteriores.

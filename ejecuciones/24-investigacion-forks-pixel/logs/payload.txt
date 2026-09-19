@@ -1,0 +1,10 @@
+# Estado del payload directo tras F-03
+
+Dispositivo: Pixel 9a, serial `4A021JEBF06953`.
+
+```text
+files=815
+bytes=5847372363
+```
+
+El conteo de archivos bajo `files/rootfs/home/xuser-1/.wine/drive_c/Cuphead` también devolvió `815`. No se reinstaló ni se copió el contenido de Cuphead durante la prueba.

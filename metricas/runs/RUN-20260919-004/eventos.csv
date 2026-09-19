@@ -1,0 +1,82 @@
+run_id,device_id,timestamp_utc,elapsed_ms,event_type,severity,message,evidence_relpath
+RUN-20260919-004,pixel-9a,2026-09-19T14:39:24.581Z,1210,launch_requested,info,"bash arg: -p
+  bash arg: com.cuphead
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=25ms (0ms mobile, 0ms wifi, 25ms not connected)
+args: [-p, com.cuphead, -c, android.intent.category.LAUNCHER, 1]
+ arg: ""-p""
+ arg: ""com.cuphead""
+ arg: ""-c""
+ arg: ""android.intent.category.LAUNCHER""
+ arg: ""1""
+data=""com.cuphead""
+data=""android.intent.category.LAUNCHER""",metricas/runs/RUN-20260919-004/logs/pixel-9a/launch.log
+RUN-20260919-004,pixel-9a,2026-09-19T14:39:24.770Z,1399,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20260919-004,pixel-9a,2026-09-19T14:40:24.324Z,60952,screenshot_captured,info,Captura canónica T+60s,metricas/runs/RUN-20260919-004/screenshots/pixel-9a/t060.png
+RUN-20260919-004,pixel-9a,2026-09-19T14:41:00.572Z,97201,game_process_first_seen,info,Cuphead.exe observado: 1,
+RUN-20260919-004,pixel-9a,2026-09-19T14:41:05.383Z,102012,first_game_frame_observed,info,Primer timestamp de presentación observado en la superficie del juego,
+RUN-20260919-004,pixel-9a,2026-09-19T14:44:24.858Z,301487,monitor_finished,info,301 muestras registradas,metricas/runs/RUN-20260919-004/logs/pixel-9a/exit-info.txt
+RUN-20260919-004,lenovo-tb-j606f,2026-09-19T14:53:08.884Z,2065,launch_requested,info,"bash arg: -p
+  bash arg: com.cuphead
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=83ms (0ms mobile, 0ms wifi, 83ms not connected)
+args: [-p, com.cuphead, -c, android.intent.category.LAUNCHER, 1]
+ arg: ""-p""
+ arg: ""com.cuphead""
+ arg: ""-c""
+ arg: ""android.intent.category.LAUNCHER""
+ arg: ""1""
+data=""com.cuphead""
+data=""android.intent.category.LAUNCHER""",metricas/runs/RUN-20260919-004/logs/lenovo-tb-j606f/launch.log
+RUN-20260919-004,lenovo-tb-j606f,2026-09-19T14:53:09.156Z,2337,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20260919-004,lenovo-tb-j606f,2026-09-19T14:54:08.149Z,61330,screenshot_captured,info,Captura canónica T+60s,metricas/runs/RUN-20260919-004/screenshots/lenovo-tb-j606f/t060.png
+RUN-20260919-004,lenovo-tb-j606f,2026-09-19T14:56:22.626Z,195807,game_process_first_seen,info,Cuphead.exe observado: 1,
+RUN-20260919-004,lenovo-tb-j606f,2026-09-19T14:56:25.505Z,198686,first_game_frame_observed,info,Primer timestamp de presentación observado en la superficie del juego,
+RUN-20260919-004,lenovo-tb-j606f,2026-09-19T14:58:11.104Z,304285,monitor_finished,info,291 muestras registradas,metricas/runs/RUN-20260919-004/logs/lenovo-tb-j606f/exit-info.txt
+RUN-20260919-004,redmi-note-8,2026-09-19T15:01:20.393Z,,install_failed,error,	... 7 more,metricas/runs/RUN-20260919-004/logs/redmi-note-8/install-apks.log
+RUN-20260919-004,redmi-note-8,2026-09-19T15:01:20.403Z,,device_skipped_after_install_failure,error,cold_install.py terminó con código 1,
+RUN-20260919-004,mi-a3,2026-09-19T15:04:43.393Z,1499,launch_requested,info,"bash arg: -p
+  bash arg: com.cuphead
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=88ms (0ms mobile, 0ms wifi, 88ms not connected)
+args: [-p, com.cuphead, -c, android.intent.category.LAUNCHER, 1]
+ arg: ""-p""
+ arg: ""com.cuphead""
+ arg: ""-c""
+ arg: ""android.intent.category.LAUNCHER""
+ arg: ""1""
+data=""com.cuphead""
+data=""android.intent.category.LAUNCHER""",metricas/runs/RUN-20260919-004/logs/mi-a3/launch.log
+RUN-20260919-004,mi-a3,2026-09-19T15:04:46.329Z,4434,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20260919-004,mi-a3,2026-09-19T15:05:43.029Z,61134,screenshot_captured,info,Captura canónica T+60s,metricas/runs/RUN-20260919-004/screenshots/mi-a3/t060.png
+RUN-20260919-004,mi-a3,2026-09-19T15:08:08.037Z,206143,game_process_first_seen,info,Cuphead.exe observado: 1,
+RUN-20260919-004,mi-a3,2026-09-19T15:08:10.379Z,208484,first_game_frame_observed,info,Primer timestamp de presentación observado en la superficie del juego,
+RUN-20260919-004,mi-a3,2026-09-19T15:09:44.909Z,303014,monitor_finished,info,301 muestras registradas,metricas/runs/RUN-20260919-004/logs/mi-a3/exit-info.txt
+RUN-20260919-004,redmi-note-8,2026-09-19T15:10:47.002Z,,install_failed,error,	... 11 more,metricas/runs/RUN-20260919-004/logs/redmi-note-8/install-apks.log
+RUN-20260919-004,redmi-note-8,2026-09-19T15:16:46.139Z,1847,launch_requested,info,"bash arg: -p
+  bash arg: com.cuphead
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=71ms (0ms mobile, 0ms wifi, 71ms not connected)
+args: [-p, com.cuphead, -c, android.intent.category.LAUNCHER, 1]
+ arg: ""-p""
+ arg: ""com.cuphead""
+ arg: ""-c""
+ arg: ""android.intent.category.LAUNCHER""
+ arg: ""1""
+data=""com.cuphead""
+data=""android.intent.category.LAUNCHER""",metricas/runs/RUN-20260919-004/logs/redmi-note-8/launch.log
+RUN-20260919-004,redmi-note-8,2026-09-19T15:16:48.729Z,4438,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20260919-004,redmi-note-8,2026-09-19T15:17:45.713Z,61421,screenshot_captured,info,Captura canónica T+60s,metricas/runs/RUN-20260919-004/screenshots/redmi-note-8/t060.png
+RUN-20260919-004,redmi-note-8,2026-09-19T15:21:46.983Z,302691,monitor_finished,info,301 muestras registradas,metricas/runs/RUN-20260919-004/logs/redmi-note-8/exit-info.txt

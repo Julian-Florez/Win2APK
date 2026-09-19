@@ -1,0 +1,28 @@
+# Aislamiento de `largeHeap` en Lenovo
+
+La instalación inicial de v37 sin `-d` fue rechazada porque el dispositivo ya tenía versionCode 38:
+
+```text
+Failure [INSTALL_FAILED_VERSION_DOWNGRADE: Downgrade detected: Update version code 37 is older than current 38]
+```
+
+La segunda orden usó `adb install -r -d`:
+
+```text
+Performing Streamed Install
+Success
+status=0 elapsed_ms=26457
+```
+
+Después del arranque de v37, en el corte `2026-09-18T20:22:46-05:00`:
+
+```text
+com.cuphead=10602
+Cuphead.exe=10875
+09-18 20:22:06.438 I/Win2APKGraphicsProfile(10602): device=LENOVO/Lenovo TB-J606F hardware=qcom renderer=Adreno (TM) 610 vendor=Qualcomm profile=Adreno / Turnip + Gladio / DXVK graphicsDriver=turnip,gladio dxwrapper=dxvk
+09-18 20:22:09.861 I/WinlatorProcess(10602): Starting: ... wine explorer /desktop=nogui,1280x720 ... "Cuphead.exe"
+TOTAL PSS: 118777 KiB
+TOTAL RSS: 187976 KiB
+```
+
+La sesión llevaba aproximadamente 30 s en ese corte. Es un aislamiento preliminar, no una prueba de estabilidad prolongada.

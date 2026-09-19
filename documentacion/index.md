@@ -12,6 +12,8 @@ Esta carpeta reúne las decisiones, avances y evidencias del desarrollo del proy
 5. [Plan de acceso directo a asset packs de Cuphead](./04-plan-acceso-directo-assetpack-cuphead.md)
 6. [Decisión de perfil gráfico para Pixel Tensor/Mali](./05-decision-perfil-grafico-pixel-tensor-mali.md)
 7. [Integración de fuentes para el estado del arte](./06-integracion-fuentes-estado-arte.md)
+8. [Decisión experimental de DXVK 2.4.1 para Mali y Adreno](./07-decision-dxvk241-multidispositivo.md)
+9. [Decisión sobre la capa BCn Android para Pixel Tensor/Mali](./08-decision-capa-bcn-android-pixel.md)
 
 ## Criterio de organización
 

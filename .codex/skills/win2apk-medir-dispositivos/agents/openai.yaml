@@ -1,0 +1,4 @@
+interface:
+  display_name: "Métricas Win2APK multidispositivo"
+  short_description: "Mide instalaciones y rendimiento Android con evidencia visual."
+  default_prompt: "Usa $win2apk-medir-dispositivos para registrar esta prueba en dispositivos Android con métricas reproducibles y clasificación visual de la captura T+60."

@@ -1,0 +1,13 @@
+Initialize engine version: 2017.4.9f1 (6d84dfc57ccf)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: Vortek (Mali-G715) (ID=0xb8a20000)
+    Vendor:   Unknown (ID=13b5)
+    VRAM:     1024 MB
+Begin MonoManager ReloadAssembly
+- Completed reload, in  0.302 seconds
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 88.476200 ms

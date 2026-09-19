@@ -1,0 +1,4 @@
+interface:
+  display_name: "Win2APK Publicar Repos"
+  short_description: "Commit y push separados para Win2APK"
+  default_prompt: "Usa $win2apk-publicar-repos para revisar, commitear y publicar por separado los repositorios de Win2APK y Winlator."

@@ -1,0 +1,5 @@
+# FPS de F-03
+
+`N/R`: no se conectó el control físico ni se activó un HUD o contador de
+framerate durante esta muestra. No se infiere FPS a partir de la permanencia
+del proceso.

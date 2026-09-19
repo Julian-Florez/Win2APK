@@ -10,6 +10,8 @@
 *.bin
 *.tzst
 *.zip
+**/__pycache__/
+*.pyc
 /bibliografia/estado_del_arte/export_*.csv
 /ejecuciones/22-revision-bibliografia-local-20260830/evidencias/candidatos_adicionales.csv
 /ejecuciones/22-revision-bibliografia-local-20260830/evidencias/duplicados_scopus.csv

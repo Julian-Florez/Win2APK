@@ -1,0 +1,100 @@
+ACTIVITY MANAGER PROCESS EXIT INFO (dumpsys activity exit-info)
+Last Timestamp of Persistence Into Persistent Storage: 2026-09-18 21:41:36.817
+  package: com.cuphead
+    Historical Process Exit for uid=10436
+        ApplicationExitInfo #0:
+          timestamp=2026-09-18 21:48:31.774 pid=17380 realUid=10436 packageUid=10436 definingUid=10436 user=0 startSeq=4309
+          process=com.cuphead reason=3 (LOW_MEMORY) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=0,00 rss=350MB state=empty trace=null
+          description=null
+          anrInfo=null
+        ApplicationExitInfo #1:
+          timestamp=2026-09-18 21:39:47.616 pid=15171 realUid=10436 packageUid=10436 definingUid=10436 user=0 startSeq=4291
+          process=com.cuphead reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=100 pss=0,00 rss=0,00 state=empty trace=null
+          description=stop com.cuphead due to from pid 15493
+          anrInfo=null
+        ApplicationExitInfo #2:
+          timestamp=2026-09-18 21:38:08.778 pid=10432 realUid=10436 packageUid=10436 definingUid=10436 user=0 startSeq=4271
+          process=com.cuphead reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=100 pss=0,00 rss=682MB state=empty trace=null
+          description=stop com.cuphead due to from pid 15138
+          anrInfo=null
+        ApplicationExitInfo #3:
+          timestamp=2026-09-18 20:38:49.639 pid=3830 realUid=10436 packageUid=10436 definingUid=10436 user=0 startSeq=4166
+          process=com.cuphead reason=3 (LOW_MEMORY) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=0,00 rss=350MB state=empty trace=null
+          description=null
+          anrInfo=null
+        ApplicationExitInfo #4:
+          timestamp=2026-09-18 20:32:10.069 pid=29805 realUid=10436 packageUid=10436 definingUid=10436 user=0 startSeq=4068
+          process=com.cuphead reason=3 (LOW_MEMORY) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=0,00 rss=339MB state=empty trace=null
+          description=null
+          anrInfo=null
+        ApplicationExitInfo #5:
+          timestamp=2026-09-18 20:19:12.175 pid=23533 realUid=10436 packageUid=10436 definingUid=10436 user=0 startSeq=3968
+          process=com.cuphead reason=3 (LOW_MEMORY) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=0,00 rss=350MB state=empty trace=null
+          description=null
+          anrInfo=null
+        ApplicationExitInfo #6:
+          timestamp=2026-09-18 20:11:40.028 pid=19255 realUid=10436 packageUid=10436 definingUid=10436 user=0 startSeq=3901
+          process=com.cuphead reason=3 (LOW_MEMORY) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=0,00 rss=342MB state=empty trace=null
+          description=null
+          anrInfo=null
+        ApplicationExitInfo #7:
+          timestamp=2026-09-18 20:06:20.129 pid=14258 realUid=10436 packageUid=10436 definingUid=10436 user=0 startSeq=3804
+          process=com.cuphead reason=3 (LOW_MEMORY) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=0,00 rss=346MB state=empty trace=null
+          description=null
+          anrInfo=null
+        ApplicationExitInfo #8:
+          timestamp=2026-09-18 20:04:35.641 pid=10410 realUid=10436 packageUid=10436 definingUid=10436 user=0 startSeq=3740
+          process=com.cuphead reason=3 (LOW_MEMORY) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=0,00 rss=345MB state=empty trace=null
+          description=null
+          anrInfo=null
+        ApplicationExitInfo #9:
+          timestamp=2026-09-18 19:57:03.474 pid=4923 realUid=10436 packageUid=10436 definingUid=10436 user=0 startSeq=3658
+          process=com.cuphead reason=3 (LOW_MEMORY) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=0,00 rss=340MB state=empty trace=null
+          description=null
+          anrInfo=null
+        ApplicationExitInfo #10:
+          timestamp=2026-09-18 19:43:52.957 pid=30385 realUid=10436 packageUid=10436 definingUid=10436 user=0 startSeq=3568
+          process=com.cuphead reason=3 (LOW_MEMORY) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=0,00 rss=347MB state=empty trace=null
+          description=null
+          anrInfo=null
+        ApplicationExitInfo #11:
+          timestamp=2026-09-18 19:31:05.513 pid=24027 realUid=10436 packageUid=10436 definingUid=10436 user=0 startSeq=3478
+          process=com.cuphead reason=3 (LOW_MEMORY) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=0,00 rss=341MB state=empty trace=null
+          description=null
+          anrInfo=null
+        ApplicationExitInfo #12:
+          timestamp=2026-09-18 19:21:02.836 pid=19743 realUid=10436 packageUid=10436 definingUid=10436 user=0 startSeq=3399
+          process=com.cuphead reason=3 (LOW_MEMORY) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=0,00 rss=339MB state=empty trace=null
+          description=null
+          anrInfo=null
+        ApplicationExitInfo #13:
+          timestamp=2026-09-18 19:19:52.867 pid=19436 realUid=10436 packageUid=10436 definingUid=10436 user=0 startSeq=3398
+          process=com.cuphead reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=100 pss=0,00 rss=0,00 state=empty trace=null
+          description=stop com.cuphead due to from pid 19724
+          anrInfo=null
+        ApplicationExitInfo #14:
+          timestamp=2026-09-18 19:19:45.189 pid=18182 realUid=10436 packageUid=10436 definingUid=10436 user=0 startSeq=3392
+          process=com.cuphead reason=16 (PACKAGE UPDATED) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=0,00 rss=0,00 state=empty trace=null
+          description=stop com.cuphead due to killDueToPackageUpdate
+          anrInfo=null
+        ApplicationExitInfo #15:
+          timestamp=2026-09-18 19:01:03.630 pid=10767 realUid=10436 packageUid=10436 definingUid=10436 user=0 startSeq=3290
+          process=com.cuphead reason=3 (LOW_MEMORY) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=0,00 rss=335MB state=empty trace=null
+          description=null
+          anrInfo=null

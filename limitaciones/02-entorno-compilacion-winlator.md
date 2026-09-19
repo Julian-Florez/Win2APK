@@ -51,6 +51,8 @@ La compilación parcial de Java fue satisfactoria. En una ejecución posterior, 
 
 La limitación de herramientas ausentes quedó resuelta experimentalmente en [EXEC-003](../ejecuciones/03-build-apk-winlator/matriz.md).
 
+En [EXEC-031](../ejecuciones/31-restauracion-perfil-historico-pixel/matriz.md), una compilación posterior con JDK 21 falló durante R8 con `java.lang.NullPointerException` al procesar `ControlsProfile.class`, incluso después de limpiar el proyecto. El mismo árbol compiló con JDK 17 mediante `nix shell nixpkgs#jdk17 -c bash ./gradlew :app:bundleDebug` y terminó con `BUILD SUCCESSFUL in 3m 43s`. Esta observación reafirma JDK 17 como herramienta reproducible del proyecto; no demuestra un defecto de `ControlsProfile`.
+
 ## Limitaciones pendientes
 
 - CMake 3.22.1 no está instalado.
@@ -66,3 +68,4 @@ La limitación de herramientas ausentes quedó resuelta experimentalmente en [EX
 ## Ejecuciones asociadas
 
 - [EXEC-002: verificación de compilación de Winlator](../ejecuciones/02-compilacion-winlator/matriz.md)
+- [EXEC-031: restauración del perfil histórico del Pixel](../ejecuciones/31-restauracion-perfil-historico-pixel/matriz.md)

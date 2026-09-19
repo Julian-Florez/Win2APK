@@ -1,0 +1,25 @@
+# Crash de Lenovo con v38
+
+Ruta del registro recuperado mediante `run-as`:
+
+`files/rootfs/home/xuser-1/.wine/drive_c/users/xuser/AppData/LocalLow/Studio MDHR/Cuphead/Crashes/Crash_2026-09-19_011812/error.log`
+
+Mensaje exacto al inicio del informe:
+
+```text
+Cuphead [version: Unity 2017.4.9f1 (6d84dfc57ccf)]
+
+UnityPlayer.dll caused an Access Violation (0xc0000005)
+  in module UnityPlayer.dll at 0033:7ecddb53.
+
+Error occurred at 2026-09-19_011826.
+C:\Cuphead\Cuphead.exe, run by xuser.
+65% memory in use.
+5678 MB physical memory [1978 MB free].
+8750 MB paging file [4056 MB free].
+134217728 MB user address space [134217334 MB free].
+Write to location 022c48b5 caused an access violation.
+```
+
+El logcat asociado también registró `WinlatorProcess Finished with status 0` y varios `java.io.IOException: Failed to send data` al cerrarse la sesión. Se conserva el error de Unity como evidencia primaria del crash del juego.
+

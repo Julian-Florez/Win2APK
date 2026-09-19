@@ -1,0 +1,22 @@
+run_id,device_id,timestamp_utc,elapsed_ms,event_type,severity,message,evidence_relpath
+RUN-20260919-001,pixel-9a,2026-09-19T04:35:15.458Z,,device_skipped_after_install_failure,error,cold_install.py terminó con código 1,
+RUN-20260919-001,pixel-9a,2026-09-19T04:39:49.782Z,2244,launch_requested,info,"bash arg: -p
+  bash arg: com.cuphead
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=33ms (0ms mobile, 0ms wifi, 33ms not connected)
+args: [-p, com.cuphead, -c, android.intent.category.LAUNCHER, 1]
+ arg: ""-p""
+ arg: ""com.cuphead""
+ arg: ""-c""
+ arg: ""android.intent.category.LAUNCHER""
+ arg: ""1""
+data=""com.cuphead""
+data=""android.intent.category.LAUNCHER""",metricas/runs/RUN-20260919-001/logs/pixel-9a/launch.log
+RUN-20260919-001,pixel-9a,2026-09-19T04:39:49.988Z,2449,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20260919-001,pixel-9a,2026-09-19T04:40:48.385Z,60846,screenshot_captured,info,Captura canónica T+60s,metricas/runs/RUN-20260919-001/screenshots/pixel-9a/t060.png
+RUN-20260919-001,pixel-9a,2026-09-19T04:41:29.052Z,101513,game_process_first_seen,info,Cuphead.exe observado: 1,
+RUN-20260919-001,pixel-9a,2026-09-19T04:44:48.975Z,301436,monitor_finished,info,301 muestras registradas,metricas/runs/RUN-20260919-001/logs/pixel-9a/exit-info.txt
+RUN-20260919-001,pixel-9a,2026-09-19T04:46:23.406Z,,instrumentation_limitation,error,SurfaceFlinger --list devolvió RequestedLayerState{...}; el detector no extrajo el nombre de capa y no registró FPS ni primer frame.,metricas/runs/RUN-20260919-001/eventos.csv

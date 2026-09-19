@@ -1,0 +1,231 @@
+09-18 21:47:09.061  1781  1860 W System  : A resource failed to call close. 
+09-18 21:47:09.486  1781  1910 V WindowManager:     startWCT=WindowContainerTransaction { changes= {} hops= [] flags= 0 errorCallbackToken=null taskFragmentOrganizer=null }
+09-18 21:47:09.602 17380 17397 D vulkan  : searching for layers in '/data/app/~~Ev9xzZWUnI4RdvapXqfzcw==/com.cuphead-x7ty8upi004-arwP9C7iKw==/lib/arm64'
+09-18 21:47:09.602 17380 17397 D vulkan  : searching for layers in '/data/app/~~Ev9xzZWUnI4RdvapXqfzcw==/com.cuphead-x7ty8upi004-arwP9C7iKw==/base.apk!/lib/arm64-v8a'
+09-18 21:47:09.664 17380 17408 I Win2APKGraphicsProfile: device=Google/Pixel 9a hardware=tegu renderer=Mali-G715 vendor=ARM profile=Mali/unknown / Vortek + Gladio / DXVK 1.7.2 + Fcharan BCn ETC2 auto graphicsDriver=vortek,gladio dxwrapper=dxvk
+09-18 21:47:09.741  1781  1910 V WindowManager:     startWCT=WindowContainerTransaction { changes= {} hops= [] flags= 0 errorCallbackToken=null taskFragmentOrganizer=null }
+09-18 21:47:09.894 17380 17408 I Win2APKAssetPack: direct-files installation already complete; skipping asset extraction
+09-18 21:47:10.016  1781  1910 V WindowManager:     startWCT=WindowContainerTransaction { changes= {} hops= [] flags= 0 errorCallbackToken=null taskFragmentOrganizer=null }
+09-18 21:47:10.790 17380 17427 D nativeloader: Load /data/app/~~Ev9xzZWUnI4RdvapXqfzcw==/com.cuphead-x7ty8upi004-arwP9C7iKw==/lib/arm64/libvortekrenderer.so using class loader ns clns-9 (caller=/data/app/~~Ev9xzZWUnI4RdvapXqfzcw==/com.cuphead-x7ty8upi004-arwP9C7iKw==/base.apk): ok
+09-18 21:47:12.195  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:47:12.195  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:47:12.195  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:47:12.195  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:47:12.195  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:47:12.195  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:47:12.195  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:47:12.195  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:47:12.195  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:47:12.195  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:47:12.195  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:47:12.196  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:47:12.196  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:47:12.196  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:47:12.196  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:47:12.196  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:47:12.196  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:47:12.196  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:47:12.196  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:47:12.196  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:47:12.196  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:47:12.196  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:47:12.196  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:47:12.196  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:47:12.196  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:47:12.196  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:47:12.196  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:47:12.196  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:47:12.196  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:47:12.196  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:47:12.196  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:47:12.196  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:47:12.268 17380 17477 I vulkan  : CreateInfoWrapper::FilterExtension: already have 'VK_KHR_get_physical_device_properties2'.
+09-18 21:47:12.976 17380 17440 W System.err: java.io.IOException: Failed to send data.
+09-18 21:47:13.281  1129  1129 E BatteryDefender: Failed to read /sys/devices/platform/google,charger/adv_state
+09-18 21:47:13.282  1129  1129 E BatteryDefender: Failed to write /sys/devices/platform/google,charger/adv_state
+09-18 21:47:13.283  1129  1129 E BatteryDefender: Failed to read /sys/devices/platform/google,charger/adv_state
+09-18 21:47:13.322  1129  1129 E BatteryDefender: Failed to read /sys/devices/platform/google,charger/adv_state
+09-18 21:47:13.322  1129  1129 E BatteryDefender: Failed to write /sys/devices/platform/google,charger/adv_state
+09-18 21:47:13.326  1129  1129 E BatteryDefender: Failed to read /sys/devices/platform/google,charger/adv_state
+09-18 21:47:13.610 17380 17517 I vulkan  : CreateInfoWrapper::FilterExtension: already have 'VK_KHR_get_physical_device_properties2'.
+09-18 21:47:16.377  4160  4408 W BluetoothMetrics: system/metrics/src/android/metrics.cc:103 LogBluetoothEvent: Failed BluetoothEvent Upload - Address is Empty
+09-18 21:47:16.378  4160  4398 I rfcomm  : system/stack/rfcomm/port_rfc.cc:1089 port_rfc_closed: RFCOMM connection closed, port_handle=21, state=2, reason=PORT_PEER_CONNECTION_FAILED(0x10), UUID=0x1101, bd_addr=xx:xx:xx:xx:1c:e9, is_server=false
+09-18 21:47:16.379  7673  8228 E SppClient_7673_8228: socket loop read error:bt socket closed, read return: -1
+09-18 21:47:16.382  7673  7673 I DeviceManagerComponent_7673_7673: report() called with: eventName = connect_v3, params = {duration=10, device_version=, device_model=lchz.watch.n65bgl, error_info=spp disconnected, name=connect_duration, tip=56.8.2.1.15236, error_code=2000, duration_sec=10, who=}
+09-18 21:47:16.401  7673  8110 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:47:16.483  9095  9117 W CDAS-LeftBehind: Failed to get local node ID
+09-18 21:47:16.483  9095  9117 W CDAS-LeftBehind: com.google.android.gms.common.api.ApiException: 13: ERROR
+09-18 21:47:16.489  9095  9116 W CDAS-LockOnDisconnect: Failed to get local node ID
+09-18 21:47:16.489  9095  9116 W CDAS-LockOnDisconnect: com.google.android.gms.common.api.ApiException: 13: ERROR
+09-18 21:47:16.490  9095  9117 W CDAS-App: Failed to get local node ID
+09-18 21:47:16.490  9095  9117 W CDAS-App: com.google.android.gms.common.api.ApiException: 13: ERROR
+09-18 21:47:16.898 16997 17003 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:47:16.898 16997 17003 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:47:16.898 16997 17003 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:47:16.898 16997 17003 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:47:16.898 16997 17003 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:47:16.898 16997 17003 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:47:16.898 16997 17003 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:47:16.898 16997 17003 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:47:16.898 16997 17003 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:47:16.898 16997 17003 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:47:16.898 16997 17003 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:47:16.898 16997 17003 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:47:16.898 16997 17003 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:47:16.898 16997 17003 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:47:16.898 16997 17003 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:47:16.898 16997 17003 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:47:16.899 16997 17003 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:47:16.899 16997 17003 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:47:16.899 16997 17003 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:47:16.899 16997 17003 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:47:16.899 16997 17003 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:47:16.899 16997 17003 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:47:16.899 16997 17003 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:47:16.899 16997 17003 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:47:17.764 17530 17530 W Cuphead.exe: type=1400 audit(0.0:175894): avc:  granted  { execute } for  path="/data/user/0/com.cuphead/files/rootfs/usr/lib/libbcn_layer.so" dev="dm-79" ino=1453193 scontext=u:r:untrusted_app_27:s0:c180,c257,c512,c768 tcontext=u:object_r:app_data_file:s0:c180,c257,c512,c768 tclass=file app=com.cuphead
+09-18 21:47:20.188  1129  1129 E BatteryDefender: Failed to read /sys/devices/platform/google,charger/adv_state
+09-18 21:47:20.188  1129  1129 E BatteryDefender: Failed to write /sys/devices/platform/google,charger/adv_state
+09-18 21:47:20.190  1129  1129 E BatteryDefender: Failed to read /sys/devices/platform/google,charger/adv_state
+09-18 21:47:20.196  1129  1129 E BatteryDefender: Failed to read /sys/devices/platform/google,charger/adv_state
+09-18 21:47:20.196  1129  1129 E BatteryDefender: Failed to write /sys/devices/platform/google,charger/adv_state
+09-18 21:47:20.197  1129  1129 E BatteryDefender: Failed to read /sys/devices/platform/google,charger/adv_state
+09-18 21:47:20.304  9095  9117 W CDAS-LeftBehind: Failed to get local node ID
+09-18 21:47:20.304  9095  9117 W CDAS-LeftBehind: com.google.android.gms.common.api.ApiException: 13: ERROR
+09-18 21:47:20.321  9095  9116 W CDAS-LockOnDisconnect: Failed to get local node ID
+09-18 21:47:20.321  9095  9116 W CDAS-LockOnDisconnect: com.google.android.gms.common.api.ApiException: 13: ERROR
+09-18 21:47:20.324  9095  9117 W CDAS-App: Failed to get local node ID
+09-18 21:47:20.324  9095  9117 W CDAS-App: com.google.android.gms.common.api.ApiException: 13: ERROR
+09-18 21:47:20.522  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.uprobestats' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:20.573  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.uwb' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:20.578  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.bt' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:20.578  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.widevine.nonupdatable' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:20.610  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.gmssystem' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:20.639  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.devicelock' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:20.668  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.apex.cts.shim' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:20.697  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.appsearch' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:20.702  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.art' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:20.706  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.hardware.biometrics.face' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:20.718  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.profiling' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:20.737  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.mediaprovider' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:20.754  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.pixel.camera.hal' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:20.754  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.crashrecovery' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:20.761  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.resolv' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:20.770  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.configinfrastructure' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:20.771  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.media' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:20.834  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.sdkext' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:20.847  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.hardware.biometrics.fingerprint.virtual' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:20.854  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.adservices' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:20.854  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.tethering' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:20.904  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.cellbroadcast' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:20.904  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.pixel.wifi.ext' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:20.917  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.rkpd' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:20.995  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.pixel.euicc.update' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:21.005  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.compos' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:21.009  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.tzdata6' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:21.022  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.permission' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:21.047  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.wifi' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:21.064  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.telephonycore' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:21.544  7673  8222 I DeviceManagerComponent_7673_8222: report() called with: eventName = connect_v3, params = {device_version=, device_model=lchz.watch.n65bgl, error_info=, count=2, device_type=6, duration_sec=3.0, result=true, is_auto=false, name=connect_process, type_str=1, tip=56.8.2.1.15235, error_code=0, from=2, duration_dict={}, who=}
+09-18 21:47:21.554  7673  8017 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:47:21.763  7673  7673 I Device-Sync_7673_7673: Type(101) call error did=854936716, code=1
+09-18 21:47:21.763  7673  7673 I FITNESS.AppInstall_7673_7673: getInstalledWatchApp from device onError code:1
+09-18 21:47:21.825 16997 16997 E XiaomiFit_16997_16997: HttpFlow:Cannot get Response because throw ApiException={errorCode=600, message=End of input at line 1 column 64 path $.result, cause=java.io.EOFException: End of input at line 1 column 64 path $.result}@-1753328554
+09-18 21:47:21.825 16997 16997 I PaymentComponent_16997_16997: syncAuthorization fail: ApiException={errorCode=600, message=End of input at line 1 column 64 path $.result, cause=java.io.EOFException: End of input at line 1 column 64 path $.result}@-1753328554
+09-18 21:47:21.861  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.media.swcodec' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:21.933  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.adbd' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:21.953  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.i18n' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:21.962  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.conscrypt' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:21.973  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.hardware.cas' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:21.997  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.neuralnetworks' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:21.998  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.webapp' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:21.999  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.runtime' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:22.000  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.ipsec' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:22.006  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.ondevicepersonalization' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:22.021  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.healthfitness' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:22.053  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.extservices' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:22.053  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.virt' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:22.061  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.nfcservices' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:22.073  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.os.statsd' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:22.087  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.npumanager' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:22.095  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.scheduling' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:22.101  6419  6419 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.hardware.biometrics.face.virtual' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+09-18 21:47:27.197  1129  1129 E BatteryDefender: Failed to read /sys/devices/platform/google,charger/adv_state
+09-18 21:47:27.197  1129  1129 E BatteryDefender: Failed to write /sys/devices/platform/google,charger/adv_state
+09-18 21:47:27.198  1129  1129 E BatteryDefender: Failed to read /sys/devices/platform/google,charger/adv_state
+09-18 21:47:27.206  1129  1129 E BatteryDefender: Failed to read /sys/devices/platform/google,charger/adv_state
+09-18 21:47:27.206  1129  1129 E BatteryDefender: Failed to write /sys/devices/platform/google,charger/adv_state
+09-18 21:47:27.207  1129  1129 E BatteryDefender: Failed to read /sys/devices/platform/google,charger/adv_state
+09-18 21:47:34.213  1129  1129 E BatteryDefender: Failed to read /sys/devices/platform/google,charger/adv_state
+09-18 21:47:34.213  1129  1129 E BatteryDefender: Failed to write /sys/devices/platform/google,charger/adv_state
+09-18 21:47:34.214  1129  1129 E BatteryDefender: Failed to read /sys/devices/platform/google,charger/adv_state
+09-18 21:47:34.223  1129  1129 E BatteryDefender: Failed to read /sys/devices/platform/google,charger/adv_state
+09-18 21:47:34.223  1129  1129 E BatteryDefender: Failed to write /sys/devices/platform/google,charger/adv_state
+09-18 21:47:34.223  1129  1129 E BatteryDefender: Failed to read /sys/devices/platform/google,charger/adv_state
+09-18 21:47:41.223  1129  1129 E BatteryDefender: Failed to read /sys/devices/platform/google,charger/adv_state
+09-18 21:47:41.223  1129  1129 E BatteryDefender: Failed to write /sys/devices/platform/google,charger/adv_state
+09-18 21:47:41.223  1129  1129 E BatteryDefender: Failed to read /sys/devices/platform/google,charger/adv_state
+09-18 21:47:41.232  1129  1129 E BatteryDefender: Failed to read /sys/devices/platform/google,charger/adv_state
+09-18 21:47:41.232  1129  1129 E BatteryDefender: Failed to write /sys/devices/platform/google,charger/adv_state
+09-18 21:47:41.232  1129  1129 E BatteryDefender: Failed to read /sys/devices/platform/google,charger/adv_state
+09-18 21:47:43.340  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:47:43.340  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:47:43.340  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:47:43.340  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:47:43.340  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:47:43.340  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:47:43.340  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:47:43.340  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:47:43.340  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:47:43.340  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:47:43.340  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:47:43.340  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:47:43.340  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:47:43.340  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:47:43.340  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:47:43.340  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:47:43.341  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:47:43.341  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:47:43.341  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:47:43.341  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:47:43.341  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:47:43.341  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:47:43.341  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:47:43.341  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:47:43.341  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:47:43.341  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:47:43.341  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:47:43.341  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:47:43.341  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:47:43.341  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:47:43.341  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:47:43.341  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:47:46.331  4160  4408 W BluetoothMetrics: system/metrics/src/android/metrics.cc:103 LogBluetoothEvent: Failed BluetoothEvent Upload - Address is Empty
+09-18 21:47:46.336  7673  8228 E SppClient_7673_8228: socket loop read error:bt socket closed, read return: -1
+09-18 21:47:46.336  4160  4398 I rfcomm  : system/stack/rfcomm/port_rfc.cc:1089 port_rfc_closed: RFCOMM connection closed, port_handle=22, state=2, reason=PORT_PEER_CONNECTION_FAILED(0x10), UUID=0x1101, bd_addr=xx:xx:xx:xx:1c:e9, is_server=false
+09-18 21:47:46.343  7673  7673 I DeviceManagerComponent_7673_7673: report() called with: eventName = connect_v3, params = {duration=20, device_version=, device_model=lchz.watch.n65bgl, error_info=spp disconnected, name=connect_duration, tip=56.8.2.1.15236, error_code=2000, duration_sec=24, who=}
+09-18 21:47:46.357  7673  8115 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:47:46.444  9095  9117 W CDAS-LeftBehind: Failed to get local node ID
+09-18 21:47:46.444  9095  9117 W CDAS-LeftBehind: com.google.android.gms.common.api.ApiException: 13: ERROR
+09-18 21:47:46.448  9095  9116 W CDAS-LockOnDisconnect: Failed to get local node ID
+09-18 21:47:46.448  9095  9116 W CDAS-LockOnDisconnect: com.google.android.gms.common.api.ApiException: 13: ERROR
+09-18 21:47:46.449  9095  9116 W CDAS-App: Failed to get local node ID
+09-18 21:47:46.449  9095  9116 W CDAS-App: com.google.android.gms.common.api.ApiException: 13: ERROR
+09-18 21:47:48.250  1129  1129 E BatteryDefender: Failed to read /sys/devices/platform/google,charger/adv_state
+09-18 21:47:48.250  1129  1129 E BatteryDefender: Failed to write /sys/devices/platform/google,charger/adv_state
+09-18 21:47:48.251  1129  1129 E BatteryDefender: Failed to read /sys/devices/platform/google,charger/adv_state
+09-18 21:47:48.257  1129  1129 E BatteryDefender: Failed to read /sys/devices/platform/google,charger/adv_state
+09-18 21:47:48.257  1129  1129 E BatteryDefender: Failed to write /sys/devices/platform/google,charger/adv_state
+09-18 21:47:48.258  1129  1129 E BatteryDefender: Failed to read /sys/devices/platform/google,charger/adv_state
+09-18 21:47:50.266  9095  9117 W CDAS-LeftBehind: Failed to get local node ID
+09-18 21:47:50.266  9095  9117 W CDAS-LeftBehind: com.google.android.gms.common.api.ApiException: 13: ERROR
+09-18 21:47:50.297  9095  9116 W CDAS-LockOnDisconnect: Failed to get local node ID
+09-18 21:47:50.297  9095  9116 W CDAS-LockOnDisconnect: com.google.android.gms.common.api.ApiException: 13: ERROR
+09-18 21:47:50.300  9095  9117 W CDAS-App: Failed to get local node ID
+09-18 21:47:50.300  9095  9117 W CDAS-App: com.google.android.gms.common.api.ApiException: 13: ERROR
+09-18 21:47:54.159  7673  8222 I DeviceManagerComponent_7673_8222: report() called with: eventName = connect_v3, params = {device_version=, device_model=lchz.watch.n65bgl, error_info=, count=2, device_type=6, duration_sec=5.0, result=true, is_auto=false, name=connect_process, type_str=1, tip=56.8.2.1.15235, error_code=0, from=2, duration_dict={}, who=}
+09-18 21:47:54.176  7673  8017 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:47:54.419  7673  7673 I Device-Sync_7673_7673: Type(101) call error did=854936716, code=1
+09-18 21:47:54.419  7673  7673 I FITNESS.AppInstall_7673_7673: getInstalledWatchApp from device onError code:1
+09-18 21:47:54.510 16997 16997 E XiaomiFit_16997_16997: HttpFlow:Cannot get Response because throw ApiException={errorCode=600, message=End of input at line 1 column 64 path $.result, cause=java.io.EOFException: End of input at line 1 column 64 path $.result}@-1753328554
+09-18 21:47:54.510 16997 16997 I PaymentComponent_16997_16997: syncAuthorization fail: ApiException={errorCode=600, message=End of input at line 1 column 64 path $.result, cause=java.io.EOFException: End of input at line 1 column 64 path $.result}@-1753328554

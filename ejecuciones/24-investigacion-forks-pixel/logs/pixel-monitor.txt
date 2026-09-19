@@ -1,0 +1,40 @@
+# Monitorización de F-03: Sarek 1.11.1 + bcn_layer shader-v3
+
+## Inicio
+
+```text
+versionCode=35
+versionName=11.1-direct-files-auto-gpu-recovery-v5-bcn-sarek
+09-18 19:42:41.878 I/Win2APKGraphicsProfile(30385): device=Google/Pixel 9a hardware=tegu renderer=Mali-G715 vendor=ARM profile=Mali/unknown / Vortek + Gladio / DXVK-Sarek 1.11.1 + BCn ETC2 graphicsDriver=vortek,gladio dxwrapper=dxvk
+09-18 19:42:43.053 I/WinlatorProcess(30385): Starting: ... box64 wine explorer /desktop=nogui,1280x720 ... "Cuphead.exe"
+```
+
+A los aproximadamente 20 segundos estaban vivos los PID `30385` (`com.cuphead`) y `30565` (`Cuphead.exe`). El proceso del juego cargó la capa:
+
+```text
+09-18 19:42:49.932 E/Cuphead.exe(30565): avc: granted { execute } for path=".../files/rootfs/usr/lib/libbcn_layer.so" ...
+```
+
+## Memoria intermedia
+
+Muestra alrededor de los 20 segundos:
+
+```text
+EGL mtrack  1869244 kB
+GL mtrack    302236 kB
+Graphics    2171480 kB
+TOTAL PSS   2258660 kB
+TOTAL RSS   2348008 kB
+```
+
+## Salida
+
+Los dos PID ya no estaban vivos en la muestra siguiente, tomada después de aproximadamente 50--60 segundos. `dumpsys activity exit-info` registró:
+
+```text
+timestamp=2026-09-18 19:43:52.957 pid=30385
+process=com.cuphead reason=3 (LOW_MEMORY) subreason=0 (UNKNOWN) status=0
+importance=100 pss=0,00 rss=347MB state=empty
+```
+
+Interpretación: F-03 demuestra carga de la capa BCn y un primer inicio del ejecutable, pero no supera el criterio de permanencia de esta ejecución. El cierre sigue siendo una terminación de Android por presión de memoria; no se observó un error WineD3D.

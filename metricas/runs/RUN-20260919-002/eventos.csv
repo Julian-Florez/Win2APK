@@ -1,0 +1,25 @@
+run_id,device_id,timestamp_utc,elapsed_ms,event_type,severity,message,evidence_relpath
+RUN-20260919-002,pixel-9a,2026-09-19T04:48:06.064Z,,install_failed,error,	... 6 more,metricas/runs/RUN-20260919-002/logs/pixel-9a/install-apks.log
+RUN-20260919-002,pixel-9a,2026-09-19T04:48:06.085Z,,device_skipped_after_install_failure,error,cold_install.py terminó con código 1,
+RUN-20260919-002,pixel-9a,2026-09-19T04:53:10.148Z,2401,launch_requested,info,"bash arg: -p
+  bash arg: com.cuphead
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=30ms (0ms mobile, 0ms wifi, 30ms not connected)
+args: [-p, com.cuphead, -c, android.intent.category.LAUNCHER, 1]
+ arg: ""-p""
+ arg: ""com.cuphead""
+ arg: ""-c""
+ arg: ""android.intent.category.LAUNCHER""
+ arg: ""1""
+data=""com.cuphead""
+data=""android.intent.category.LAUNCHER""",metricas/runs/RUN-20260919-002/logs/pixel-9a/launch.log
+RUN-20260919-002,pixel-9a,2026-09-19T04:53:10.302Z,2556,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20260919-002,pixel-9a,2026-09-19T04:54:09.133Z,61386,screenshot_captured,info,Captura canónica T+60s,metricas/runs/RUN-20260919-002/screenshots/pixel-9a/t060.png
+RUN-20260919-002,pixel-9a,2026-09-19T04:54:39.425Z,91679,game_process_first_seen,info,Cuphead.exe observado: 1,
+RUN-20260919-002,pixel-9a,2026-09-19T04:54:45.352Z,97605,first_game_frame_observed,info,Primer timestamp de presentación observado en la superficie del juego,
+RUN-20260919-002,pixel-9a,2026-09-19T04:55:15.780Z,128033,app_process_disappeared,error,El proceso principal dejó de observarse,
+RUN-20260919-002,pixel-9a,2026-09-19T04:55:15.780Z,128033,game_process_disappeared,error,Cuphead.exe dejó de observarse,
+RUN-20260919-002,pixel-9a,2026-09-19T04:58:08.780Z,301033,monitor_finished,info,301 muestras registradas,metricas/runs/RUN-20260919-002/logs/pixel-9a/exit-info.txt

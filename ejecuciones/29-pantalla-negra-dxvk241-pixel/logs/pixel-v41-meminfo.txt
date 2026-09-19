@@ -1,0 +1,77 @@
+Applications Memory Usage (in Kilobytes):
+Uptime: 123275553 Realtime: 166356311
+
+** MEMINFO in pid 10432 [com.cuphead] **
+                   Pss  Private  Private  SwapPss      Rss     Heap     Heap     Heap
+                 Total    Dirty    Clean    Dirty    Total     Size    Alloc     Free
+                ------   ------   ------   ------   ------   ------   ------   ------
+  Native Heap    24722    24704        0       30    25856    46912    40747     2716
+  Dalvik Heap     8699     6144     2288       20    10224   262144    14885   247259
+ Dalvik Other    11080     1976       16        3    20332                           
+        Stack     2700     2700        0        0     2708                           
+       Ashmem     8789     4360        0        0    14072                           
+    Other dev        4        0        4        0      384                           
+     .so mmap     4743      252      960        7    49960                           
+    .jar mmap     1461        0        0        0    46304                           
+    .apk mmap      284        0        8        0     2392                           
+    .ttf mmap      128        0        0        0      672                           
+    .dex mmap     4602     4596        0        0     5524                           
+    .oat mmap       15        0        0        1     1784                           
+    .art mmap     9711     7916     1076       37    19636                           
+   Other mmap       44        4       32        0      992                           
+   EGL mtrack   451728   451728        0        0   451728                           
+    GL mtrack    23364    23364        0        0    23364                           
+        Memfd        2        0        0        0        4                           
+      Unknown      763      644       92        8     1420                           
+        TOTAL   552945   528388     4476      106   677356   309056    55632   249975
+ 
+ App Summary
+                       Pss(KB)                        Rss(KB)
+                        ------                         ------
+           Java Heap:    15136                          29860
+         Native Heap:    24704                          25856
+                Code:     6068                         125048
+               Stack:     2700                           2708
+            Graphics:   475092                         475092
+       Private Other:     9164
+              System:    20081
+             Unknown:                                   18792
+ 
+           TOTAL PSS:   552945            TOTAL RSS:   677356       TOTAL SWAP PSS:      106
+ 
+ Objects
+               Views:       26         ViewRootImpl:        1
+         AppContexts:        5           Activities:        1
+              Assets:       31        AssetManagers:        0
+       Local Binders:       22        Proxy Binders:       67
+       Parcel memory:       11         Parcel count:       44
+    Death Recipients:        1             WebViews:        0
+ 
+ Native Allocations
+                         Count                       Total(kB)
+                        ------                         ------
+   Bitmap (malloced):        4                            330
+    Other (malloced):      462                             42
+ Other (nonmalloced):       95                             67
+    Other (malloced):        4                              0
+ 
+ Shared Bitmaps
+                         Count                       Size(KB)
+                        ------                         ------
+              Mapped:        0                              0
+  (Enable debug.hwui.bitmap_ashmem_long_name sysprop to count unique bitmap allocations)
+ 
+ SQL
+         MEMORY_USED:      250
+  PAGECACHE_OVERFLOW:       84          MALLOC_SIZE:       46
+ 
+ DATABASES
+      pgsz     dbsz   Lookaside(b) cache hits cache misses cache size  Dbname
+PER CONNECTION STATS
+         4      104            111     4    70     6  /data/user/0/com.cuphead/no_backup/androidx.work.workdb
+         4        8                    0     0     0    (attached) temp
+         4      104             32     4    39     3  /data/user/0/com.cuphead/no_backup/androidx.work.workdb (2)
+POOL STATS
+     cache hits  cache misses    cache size  Dbname
+              8           113             9  /data/user/0/com.cuphead/no_backup/androidx.work.workdb
+ 

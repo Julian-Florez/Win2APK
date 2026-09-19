@@ -1,0 +1,5 @@
+# Regresión en Adreno
+
+`N/R` en esta fase. F-03 se probó sólo en el Pixel. La verificación de Lenovo,
+Redmi Note 8 y Mi A3 se conserva como paso posterior; sus mediciones previas
+pertenecen a EXEC-025 y a las ejecuciones anteriores.

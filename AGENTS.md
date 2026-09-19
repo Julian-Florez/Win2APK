@@ -7,9 +7,10 @@ Este archivo define cómo debe trabajar Codex dentro del repositorio. Antes de e
 | Situación | Guías que se deben leer | Acción obligatoria | Skill relacionada |
 |---|---|---|---|
 | Aparece un error, fallo o limitación | `limitaciones/AGENTS.md`, `bitacora/AGENTS.md` | Crear o actualizar el informe numerado y el índice | `$win2apk-registrar-fallos` |
-| Se realiza una prueba o intento | `ejecuciones/AGENTS.md` | Crear una carpeta numerada con `matriz.md` y evidencias | `$win2apk-metricas-ejecucion` |
+| Se realiza una prueba o intento en un dispositivo Android | `ejecuciones/AGENTS.md` | Ejecutar la medición, crear una carpeta numerada con `matriz.md` y conservar CSV, logs y captura T+60 | `$win2apk-medir-dispositivos` |
 | Se toma una decisión del proyecto | `documentacion/AGENTS.md` | Añadir o actualizar un documento numerado | Ninguna específica |
 | Se define un requisito o criterio | `especificaciones/AGENTS.md` | Actualizar la especificación con IDs y trazabilidad | Ninguna específica |
+| Se publican cambios en GitHub | Revisar el estado de cada repo | Separar commits, validar rutas y publicar sin mezclar repositorios | `$win2apk-publicar-repos` |
 
 Si una misma actividad contiene una prueba y un error, aplicar las dos skills: primero registrar la ejecución y después el fallo, enlazando ambos documentos.
 

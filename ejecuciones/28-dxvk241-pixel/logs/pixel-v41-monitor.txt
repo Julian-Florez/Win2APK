@@ -1,0 +1,56 @@
+# Monitor de v41
+
+## Primer corte del Pixel
+
+```text
+timestamp=2026-09-18T20:44:47-05:00
+com.cuphead=10432
+Cuphead.exe=10654
+Graphics: 475084 KiB
+TOTAL PSS: 552584 KiB
+TOTAL RSS: 676852 KiB
+files=815
+bytes=5847372363
+```
+
+## Corte final común
+
+```text
+timestamp=2026-09-18T20:48:38-05:00
+Pixel:  app=10432 game=10654 Graphics=475084 KiB PSS=555304 KiB RSS=681212 KiB
+Lenovo: app=13602 game=13739 Graphics=58144 KiB PSS=108953 KiB RSS=165348 KiB
+Redmi:  app=21986 game=22112 Graphics=63264 KiB PSS=122552 KiB RSS=191428 KiB
+Mi A3:  app=27653 game=27770 Graphics=34200 KiB PSS=93192 KiB RSS=152800 KiB
+```
+
+`top` en el mismo corte:
+
+```text
+Pixel:  com.cuphead 418%, Cuphead.exe 45.4%, MemAvailable 2059900 kB
+Lenovo: com.cuphead 20.0%, Cuphead.exe 203%, MemAvailable 1159680 kB
+Redmi:  com.cuphead 19.3%, Cuphead.exe 209%, MemAvailable 272792 kB
+Mi A3:  com.cuphead 23.3%, Cuphead.exe 173%, MemAvailable 292564 kB
+```
+
+No hubo cierre nuevo de v41 en ese corte. El FPS real es `N/R`; no se usó `gfxinfo` como sustituto.
+
+## Corte prolongado posterior a la limpieza
+
+```text
+timestamp=2026-09-18T20:55:06-05:00
+Pixel:  app=10432 game=10654 Graphics=475092 KiB PSS=553148 KiB RSS=677420 KiB
+Lenovo: app=13602 game=13739 Graphics=58144 KiB PSS=127368 KiB RSS=184996 KiB
+Redmi:  app=21986 game=22112 Graphics=63264 KiB PSS=125078 KiB RSS=193868 KiB
+Mi A3:  app=27653 game=27770 Graphics=34200 KiB PSS=98929 KiB RSS=158592 KiB
+```
+
+`top` en el mismo corte:
+
+```text
+Pixel:  com.cuphead 421%, Cuphead.exe 45.4%
+Lenovo: com.cuphead 20.0%, Cuphead.exe 206%
+Redmi:  com.cuphead 19.3%, Cuphead.exe 196%
+Mi A3:  com.cuphead 20.0%, Cuphead.exe 186%
+```
+
+Los cuatro procesos siguieron vivos. El Pixel había ejecutado v41 durante aproximadamente 11 minutos y permaneció vivo durante aproximadamente 45 s después de retirar `local_testing`.

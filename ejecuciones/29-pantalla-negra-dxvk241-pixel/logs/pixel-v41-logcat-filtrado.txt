@@ -1,0 +1,370 @@
+09-18 20:44:12.517  1781  6433 E AppOps  : attributionTag  not declared in manifest of com.cuphead
+09-18 20:44:12.518  1781  1862 E AppOps  : attributionTag  not declared in manifest of com.cuphead
+09-18 20:44:31.784  7673  8115 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:45:57.465  7673  8017 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:46:07.527  7673  8115 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:46:12.460  7673  8110 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:46:37.457  7673  8115 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:46:42.650  7673  8110 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:47:07.413  7673  8115 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:47:12.739  7673  8019 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:47:37.814  7673  8110 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:47:43.177  7673  8110 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:48:03.649  1781  6478 W SoundTriggerHelper: Unload error: Attempting unload invalid generic model with id:9f6ad62a-1f0b-11e7-87c5-40a8f03d3f15
+09-18 20:48:03.731  1781  6478 W SoundTriggerService: error onStart(): Model 9f6ad62a-1f0b-11e7-87c5-40a8f03d3f15 already started
+09-18 20:48:03.732  1781  6478 W SoundTriggerHelper: Unload error: Attempting unload invalid generic model with id:12caddb1-acdb-4dce-8cb0-2e95a2313aee
+09-18 20:48:03.732  1781  6478 I SoundTriggerService: error onStop(): Model 12caddb1-acdb-4dce-8cb0-2e95a2313aee has no stats available
+09-18 20:48:08.234  7673  8115 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:49:33.627  7673  8115 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:49:43.998  7673  8019 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:49:48.693  7673  8017 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:50:13.948  7673  8019 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:50:18.759  7673  8110 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:50:43.845  7673  8019 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:50:48.854  7673  8017 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:51:13.780  7673  8110 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:51:14.632 11375 11417 E ActivityThread: Failed to find provider info for com.microsoft.cloudswitcher.provider
+09-18 20:51:18.839  7673  8115 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:51:43.725  7673  8110 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:51:48.948  7673  8019 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:52:13.632  7673  8018 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:52:18.983  7673  8019 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:52:44.038  7673  8110 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:52:49.449  7673  8018 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:53:14.477  7673  8019 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:53:19.627  7673  8110 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:53:40.399  1781  4201 D WindowManager: setClientSurface Surface(name=VRI-NotificationShade#80)/@0x6a0ff11 for e3d3a14 NotificationShade
+09-18 20:53:42.598  1781  2198 I ImeTracker: com.cuphead:208533cc: onRequestHide at ORIGIN_SERVER reason HIDE_SAME_WINDOW_FOCUSED_WITHOUT_EDITOR fromUser false userId 0 displayId 0
+09-18 20:53:42.599 10432 10432 I ImeTracker: com.cuphead:208533cc: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+09-18 20:53:42.615  1781  4201 W PackageConfigPersister: App-specific configuration not found for packageName: com.cuphead and userId: 0
+09-18 20:53:43.697 11707 11846 E ActivityThread: Failed to find provider info for com.zhiliaoapp.musically.apm
+09-18 20:53:43.698 11707 11846 E ActivityThread: Failed to find provider info for com.zhiliaoapp.musically.apm
+09-18 20:53:43.702 11707 11846 E ActivityThread: Failed to find provider info for com.zhiliaoapp.musically.apm
+09-18 20:53:44.375  7673  8110 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:53:44.955  1781  1863 W AppOps  : noteOperation: error due to unable to resolve uid: 10318
+09-18 20:53:45.159  1781  1863 W AppOps  : noteOperation: error due to unable to resolve uid: 10230
+09-18 20:53:45.286  1781  1863 W AppOps  : noteOperation: error due to unable to resolve uid: 10230
+09-18 20:53:45.421  1781  1863 D WindowManager: setClientSurface Surface(name=VRI-NotificationShade#80)/@0x153a136 for e3d3a14 NotificationShade
+09-18 20:53:47.597  1781  1863 W AppOps  : noteOperation: error due to unable to resolve uid: 10318
+09-18 20:53:47.860  1781  5961 W AppOps  : noteOperation: error due to unable to resolve uid: 10230
+09-18 20:53:47.895  1781  1863 W AppOps  : noteOperation: error due to unable to resolve uid: 10230
+09-18 20:53:49.792  7673  8115 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:54:14.818  7673  8019 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:54:20.054  7673  8017 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:54:20.456   653 26059 I keystore2: system/security/keystore2/src/error.rs:69 - system/security/keystore2/src/security_level.rs:340
+09-18 20:54:20.456   653 26059 I keystore2:     1: Error::Km(r#KEY_USER_NOT_AUTHENTICATED) for AppUid(10151)
+09-18 20:54:20.805   653 26059 I keystore2: system/security/keystore2/src/error.rs:69 - system/security/keystore2/src/security_level.rs:340
+09-18 20:54:20.805   653 26059 I keystore2:     1: Error::Km(r#KEY_USER_NOT_AUTHENTICATED) for AppUid(10151)
+09-18 20:54:21.186   653 26059 I keystore2: system/security/keystore2/src/error.rs:69 - system/security/keystore2/src/security_level.rs:340
+09-18 20:54:21.186   653 26059 I keystore2:     1: Error::Km(r#KEY_USER_NOT_AUTHENTICATED) for AppUid(10151)
+09-18 20:54:21.630   653 26059 I keystore2: system/security/keystore2/src/error.rs:69 - system/security/keystore2/src/security_level.rs:340
+09-18 20:54:21.630   653 26059 I keystore2:     1: Error::Km(r#KEY_USER_NOT_AUTHENTICATED) for AppUid(10151)
+09-18 20:54:22.015   653 26059 I keystore2: system/security/keystore2/src/error.rs:69 - system/security/keystore2/src/security_level.rs:340
+09-18 20:54:22.015   653 26059 I keystore2:     1: Error::Km(r#KEY_USER_NOT_AUTHENTICATED) for AppUid(10151)
+09-18 20:54:45.289  7673  8019 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:54:50.852  7673  8115 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:55:15.683  7673  8019 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:55:15.755  7673  7673 E ActivityThread: Failed to find provider info for com.android.deskclock.additionProvider
+09-18 20:55:21.148  7673  8115 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:55:23.750  7673  7673 E ActivityThread: Failed to find provider info for com.android.deskclock.additionProvider
+09-18 20:55:46.099  7673  8017 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:55:51.508  7673  8110 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:56:16.523  7673  8115 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:56:21.831  7673  8019 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:56:46.979  7673  8115 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:56:52.595  7673  8110 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:57:17.376  7673  8115 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:58:43.445  7673  8110 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:58:53.631  7673  8018 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:58:58.615  7673  8017 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:59:23.558  7673  8018 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:59:29.013  7673  8018 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:59:53.990  7673  8017 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 20:59:59.363  7673  8019 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:00:24.416  7673  8019 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:00:29.778  7673  8110 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:00:54.841  7673  8017 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:01:00.784  7673  8115 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:01:25.255  7673  8017 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:01:33.776  7673  8019 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:01:58.184  7673  8017 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:03:23.687  7673  8018 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:03:33.917  7673  8017 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:03:38.907  7673  8115 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:04:03.854  7673  8018 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:04:11.616  7673  8115 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:04:36.803  7673  8018 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:06:02.771  7673  8115 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:06:13.060  7673  8110 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:06:18.400  7673  8018 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:06:43.464  7673  8110 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:06:48.618  7673  8017 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:07:13.925  7673  8110 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:07:19.751  7673  8018 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:07:44.330  7673  8110 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:07:52.555  7673  8018 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:08:17.233  7673  8110 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:08:22.518  7673  8019 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:08:47.169  7673  8019 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:08:52.509  7673  8017 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:09:17.593  7673  8019 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:09:25.695  7673  8115 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:09:50.540  7673  8019 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:09:56.224  7673  8017 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:10:20.949  7673  8019 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:10:26.776  7673  8110 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:10:51.352  7673  8017 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:11:36.812  1781  4201 W ActivityManager: pid 7673 com.xiaomi.wearable:device sent binder code 4 with flags 2 and got error -2147483639
+09-18 21:11:36.813  1781  2181 I ActivityManager: binder error: kill 7647 Sync transaction while frozen
+09-18 21:11:36.854  1781  2181 I ActivityManager: binder error: kill 11375 Async binder space running out while frozen
+09-18 21:12:19.719  7673  8017 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:12:30.134  7673  8018 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:12:35.147  7673  8017 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:13:00.017  7673  8115 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:13:04.849  7673  8017 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:13:29.955  7673  8017 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:14:29.075  1781  2195 W AppOps  : noteOperation: error due to unable to resolve uid: 10230
+09-18 21:14:29.136  1781  2195 W AppOps  : noteOperation: error due to unable to resolve uid: 10230
+09-18 21:14:29.159  1781  2195 W AppOps  : noteOperation: error due to unable to resolve uid: 10230
+09-18 21:14:29.210  1781  2195 W AppOps  : noteOperation: error due to unable to resolve uid: 10230
+09-18 21:14:56.143  7673  8018 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:15:06.217  7673  8019 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:16:32.241  7673  8019 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:16:42.467  7673  8017 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:16:47.749  7673  8019 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:17:12.896  7673  8019 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:17:18.012  7673  8019 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:17:43.361  7673  8019 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:17:48.982  7673  8115 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:18:13.746  7673  8110 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:19:39.724  7673  8115 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:19:49.501  7673  8110 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:19:54.886  7673  8019 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:20:19.939  7673  8017 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:20:25.760  7673  8019 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:20:50.368  7673  8017 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:20:55.768  7673  8017 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:21:20.799  7673  8018 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:21:26.108  7673  8110 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:21:51.206  7673  8018 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:21:56.695  7673  8018 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:22:18.232 13754 13788 E ActivityThread: Failed to find provider info for com.microsoft.cloudswitcher.provider
+09-18 21:22:21.635  7673  8110 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:23:47.679  7673  8018 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:23:57.890  7673  8019 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:24:03.206  7673  8017 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:24:28.305  7673  8019 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:24:33.706  7673  8017 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:24:58.741  7673  8019 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:25:04.165  7673  8017 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:25:29.166  7673  8019 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:26:54.944  7673  8018 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:27:04.916  7673  8110 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:27:10.099  7673  8115 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:27:35.363  7673  8018 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:27:40.454  7673  8115 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:28:05.301  7673  8018 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:28:13.316  7673  8018 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:28:38.202  7673  8018 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:30:06.514  7673  8115 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:30:16.993  7673  8018 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:30:22.046  7673  8017 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:30:47.391  7673  8018 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:30:52.646  7673  8018 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:31:17.807  7673  8017 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:31:23.041  7673  8115 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:31:47.752  7673  8017 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:31:53.110  7673  8110 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:32:18.151  7673  8017 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:32:23.558  7673  8110 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:32:48.583  7673  8017 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:32:54.140  7673  8018 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:33:19.016  7673  8018 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:33:24.071  7673  8115 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:33:29.233  1781  2195 D WindowManager: setClientSurface Surface(name=VRI-NotificationShade#80)/@0xbebd2ea for e3d3a14 NotificationShade
+09-18 21:33:32.356 11707 11848 E ActivityThread: Failed to find provider info for com.zhiliaoapp.musically.apm
+09-18 21:33:33.038  1781  2198 I ImeTracker: com.cuphead:5beb6eee: onRequestHide at ORIGIN_SERVER reason HIDE_SAME_WINDOW_FOCUSED_WITHOUT_EDITOR fromUser false userId 0 displayId 0
+09-18 21:33:33.040 10432 10432 I ImeTracker: com.cuphead:5beb6eee: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+09-18 21:33:33.049  1781  6485 W PackageConfigPersister: App-specific configuration not found for packageName: com.cuphead and userId: 0
+09-18 21:33:49.413  7673  8017 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:33:54.590  7673  8110 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:34:19.817  7673  7673 I DeviceManagerComponent_7673_7673: report() called with: eventName = connect_v3, params = {duration=20, device_version=, device_model=lchz.watch.n65bgl, error_info=spp disconnected, name=connect_duration, tip=56.8.2.1.15236, error_code=2000, duration_sec=25, who=}
+09-18 21:34:19.852  7673  8017 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:34:19.888  9095  9116 W CDAS-LeftBehind: Failed to get local node ID
+09-18 21:34:19.888  9095  9116 W CDAS-LeftBehind: com.google.android.gms.common.api.ApiException: 13: ERROR
+09-18 21:34:19.908  9095  9117 W CDAS-LockOnDisconnect: Failed to get local node ID
+09-18 21:34:19.908  9095  9117 W CDAS-LockOnDisconnect: com.google.android.gms.common.api.ApiException: 13: ERROR
+09-18 21:34:19.911  9095  9117 W CDAS-App: Failed to get local node ID
+09-18 21:34:19.911  9095  9117 W CDAS-App: com.google.android.gms.common.api.ApiException: 13: ERROR
+09-18 21:34:23.803  9095  9116 W CDAS-LeftBehind: Failed to get local node ID
+09-18 21:34:23.803  9095  9116 W CDAS-LeftBehind: com.google.android.gms.common.api.ApiException: 13: ERROR
+09-18 21:34:23.851  9095  9116 W CDAS-LockOnDisconnect: Failed to get local node ID
+09-18 21:34:23.851  9095  9116 W CDAS-LockOnDisconnect: com.google.android.gms.common.api.ApiException: 13: ERROR
+09-18 21:34:23.856  9095  9116 W CDAS-App: Failed to get local node ID
+09-18 21:34:23.856  9095  9116 W CDAS-App: com.google.android.gms.common.api.ApiException: 13: ERROR
+09-18 21:34:25.182  7673  8222 I DeviceManagerComponent_7673_8222: report() called with: eventName = connect_v3, params = {device_version=, device_model=lchz.watch.n65bgl, error_info=, count=2, device_type=6, duration_sec=3.0, result=true, is_auto=false, name=connect_process, type_str=1, tip=56.8.2.1.15235, error_code=0, from=2, duration_dict={}, who=}
+09-18 21:34:25.208  7673  8110 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:34:25.473  7673  7673 I Device-Sync_7673_7673: Type(101) call error did=854936716, code=1
+09-18 21:34:25.473  7673  7673 I FITNESS.AppInstall_7673_7673: getInstalledWatchApp from device onError code:1
+09-18 21:34:25.511 13196 13196 E XiaomiFit_13196_13196: HttpFlow:Cannot get Response because throw ApiException={errorCode=600, message=End of input at line 1 column 64 path $.result, cause=java.io.EOFException: End of input at line 1 column 64 path $.result}@-1753328554
+09-18 21:34:25.511 13196 13196 I PaymentComponent_13196_13196: syncAuthorization fail: ApiException={errorCode=600, message=End of input at line 1 column 64 path $.result, cause=java.io.EOFException: End of input at line 1 column 64 path $.result}@-1753328554
+09-18 21:34:32.519  9141 14863 I AuthorizationUtilities: ProcessId: 9141, Thread: Pool-Auth-Thread-6, clearLastKnownAADServiceError on authenticatedUser.
+09-18 21:34:32.523  9141 14862 I AuthorizationUtilities: ProcessId: 9141, Thread: Pool-Auth-Thread-5, clearLastKnownAADServiceError on authenticatedUser.
+09-18 21:34:39.419  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:34:39.419  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:34:39.419  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:34:39.419  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:34:39.419  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:34:39.419  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:34:39.419  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:34:39.419  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:34:39.419  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:34:39.419  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:34:39.419  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:34:39.419  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:34:39.419  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:34:39.419  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:34:39.420  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:34:39.420  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:34:39.420  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:34:39.420  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:34:39.420  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:34:39.420  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:34:39.420  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:34:39.420  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:34:39.420  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:34:39.420  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:34:39.420  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:34:39.420  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:34:39.420  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:34:39.420  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:34:39.420  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:34:39.420  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:34:39.420  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:34:39.420  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:34:50.232  4160  4408 W BluetoothMetrics: system/metrics/src/android/metrics.cc:103 LogBluetoothEvent: Failed BluetoothEvent Upload - Address is Empty
+09-18 21:34:50.233  4160  4398 I rfcomm  : system/stack/rfcomm/port_rfc.cc:1089 port_rfc_closed: RFCOMM connection closed, port_handle=28, state=2, reason=PORT_PEER_CONNECTION_FAILED(0x10), UUID=0x1101, bd_addr=xx:xx:xx:xx:1c:e9, is_server=false
+09-18 21:34:50.234  7673  8228 E SppClient_7673_8228: socket loop read error:bt socket closed, read return: -1
+09-18 21:34:50.236  7673  7673 I DeviceManagerComponent_7673_7673: report() called with: eventName = connect_v3, params = {duration=20, device_version=, device_model=lchz.watch.n65bgl, error_info=spp disconnected, name=connect_duration, tip=56.8.2.1.15236, error_code=2000, duration_sec=25, who=}
+09-18 21:34:50.281  7673  8110 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:34:50.311  9095  9116 W CDAS-LeftBehind: Failed to get local node ID
+09-18 21:34:50.311  9095  9116 W CDAS-LeftBehind: com.google.android.gms.common.api.ApiException: 13: ERROR
+09-18 21:34:50.324  9095  9116 W CDAS-LockOnDisconnect: Failed to get local node ID
+09-18 21:34:50.324  9095  9116 W CDAS-LockOnDisconnect: com.google.android.gms.common.api.ApiException: 13: ERROR
+09-18 21:34:50.326  9095  9116 W CDAS-App: Failed to get local node ID
+09-18 21:34:50.326  9095  9116 W CDAS-App: com.google.android.gms.common.api.ApiException: 13: ERROR
+09-18 21:34:54.201  9095  9116 W CDAS-LeftBehind: Failed to get local node ID
+09-18 21:34:54.201  9095  9116 W CDAS-LeftBehind: com.google.android.gms.common.api.ApiException: 13: ERROR
+09-18 21:34:54.236  9095  9116 W CDAS-LockOnDisconnect: Failed to get local node ID
+09-18 21:34:54.236  9095  9116 W CDAS-LockOnDisconnect: com.google.android.gms.common.api.ApiException: 13: ERROR
+09-18 21:34:54.246  9095  9117 W CDAS-App: Failed to get local node ID
+09-18 21:34:54.246  9095  9117 W CDAS-App: com.google.android.gms.common.api.ApiException: 13: ERROR
+09-18 21:34:55.563  7673  8222 I DeviceManagerComponent_7673_8222: report() called with: eventName = connect_v3, params = {device_version=, device_model=lchz.watch.n65bgl, error_info=, count=2, device_type=6, duration_sec=3.0, result=true, is_auto=false, name=connect_process, type_str=1, tip=56.8.2.1.15235, error_code=0, from=2, duration_dict={}, who=}
+09-18 21:34:55.582  7673  8115 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:34:55.825 13196 13196 E XiaomiFit_13196_13196: HttpFlow:Cannot get Response because throw ApiException={errorCode=600, message=End of input at line 1 column 64 path $.result, cause=java.io.EOFException: End of input at line 1 column 64 path $.result}@-1753328554
+09-18 21:34:55.825 13196 13196 I PaymentComponent_13196_13196: syncAuthorization fail: ApiException={errorCode=600, message=End of input at line 1 column 64 path $.result, cause=java.io.EOFException: End of input at line 1 column 64 path $.result}@-1753328554
+09-18 21:34:55.915  7673  7673 I Device-Sync_7673_7673: Type(101) call error did=854936716, code=1
+09-18 21:34:55.915  7673  7673 I FITNESS.AppInstall_7673_7673: getInstalledWatchApp from device onError code:1
+09-18 21:35:00.026   665   790 D SurfaceFlinger: setDesiredMode 4619827612623940864 {mode={fps=120.00 Hz, modePtr={id=1, vsyncRate=120.00 Hz, peakRefreshRate=120.00 Hz}}, emitEvent=false, force=false}
+09-18 21:35:00.028   665   665 D SurfaceFlinger: initiateModeChange 4619827612623940864 {mode={fps=120.00 Hz, modePtr={id=1, vsyncRate=120.00 Hz, peakRefreshRate=120.00 Hz}}, emitEvent=false, force=false}
+09-18 21:35:01.028   665   790 D SurfaceFlinger: setDesiredMode 4619827612623940864 {mode={fps=60.00 Hz, modePtr={id=0, vsyncRate=60.00 Hz, peakRefreshRate=60.00 Hz}}, emitEvent=false, force=false}
+09-18 21:35:01.029   665   665 D SurfaceFlinger: initiateModeChange 4619827612623940864 {mode={fps=60.00 Hz, modePtr={id=0, vsyncRate=60.00 Hz, peakRefreshRate=60.00 Hz}}, emitEvent=false, force=false}
+09-18 21:35:11.581  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:35:11.581  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:35:11.581  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:35:11.581  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:35:11.581  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:35:11.581  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:35:11.581  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:35:11.581  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:35:11.581  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:35:11.581  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:35:11.581  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:35:11.581  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:35:11.581  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:35:11.582  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:35:11.582  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:35:11.582  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:35:11.582  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:35:11.582  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:35:11.582  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:35:11.582  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:35:11.582  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:35:11.582  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:35:11.582  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:35:11.582  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:35:11.582  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:35:11.582  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:35:11.582  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:35:11.582  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:35:11.582  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:35:11.582  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:35:11.582  7673  7701 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:35:11.582  7673  7701 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:35:13.278  1129  1129 E BatteryDefender: Failed to read /sys/devices/platform/google,charger/adv_state
+09-18 21:35:13.278  1129  1129 E BatteryDefender: Failed to write /sys/devices/platform/google,charger/adv_state
+09-18 21:35:13.279  1129  1129 E BatteryDefender: Failed to read /sys/devices/platform/google,charger/adv_state
+09-18 21:35:13.285  1129  1129 E BatteryDefender: Failed to read /sys/devices/platform/google,charger/adv_state
+09-18 21:35:13.286  1129  1129 E BatteryDefender: Failed to write /sys/devices/platform/google,charger/adv_state
+09-18 21:35:13.287  1129  1129 E BatteryDefender: Failed to read /sys/devices/platform/google,charger/adv_state
+09-18 21:35:20.663  4160  4408 W BluetoothMetrics: system/metrics/src/android/metrics.cc:103 LogBluetoothEvent: Failed BluetoothEvent Upload - Address is Empty
+09-18 21:35:20.664  4160  4398 I rfcomm  : system/stack/rfcomm/port_rfc.cc:1089 port_rfc_closed: RFCOMM connection closed, port_handle=29, state=2, reason=PORT_PEER_CONNECTION_FAILED(0x10), UUID=0x1101, bd_addr=xx:xx:xx:xx:1c:e9, is_server=false
+09-18 21:35:20.667  7673  8228 E SppClient_7673_8228: socket loop read error:bt socket closed, read return: -1
+09-18 21:35:20.669  7673  7673 I DeviceManagerComponent_7673_7673: report() called with: eventName = connect_v3, params = {duration=20, device_version=, device_model=lchz.watch.n65bgl, error_info=spp disconnected, name=connect_duration, tip=56.8.2.1.15236, error_code=2000, duration_sec=25, who=}
+09-18 21:35:20.688  7673  8019 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:35:20.735  9095  9116 W CDAS-LeftBehind: Failed to get local node ID
+09-18 21:35:20.735  9095  9116 W CDAS-LeftBehind: com.google.android.gms.common.api.ApiException: 13: ERROR
+09-18 21:35:20.743  9095  9116 W CDAS-LockOnDisconnect: Failed to get local node ID
+09-18 21:35:20.743  9095  9116 W CDAS-LockOnDisconnect: com.google.android.gms.common.api.ApiException: 13: ERROR
+09-18 21:35:20.745  9095  9116 W CDAS-App: Failed to get local node ID
+09-18 21:35:20.745  9095  9116 W CDAS-App: com.google.android.gms.common.api.ApiException: 13: ERROR
+09-18 21:35:24.623  9095  9116 W CDAS-LeftBehind: Failed to get local node ID
+09-18 21:35:24.623  9095  9116 W CDAS-LeftBehind: com.google.android.gms.common.api.ApiException: 13: ERROR
+09-18 21:35:24.678  9095  9117 W CDAS-LockOnDisconnect: Failed to get local node ID
+09-18 21:35:24.678  9095  9117 W CDAS-LockOnDisconnect: com.google.android.gms.common.api.ApiException: 13: ERROR
+09-18 21:35:24.683  9095  9116 W CDAS-App: Failed to get local node ID
+09-18 21:35:24.683  9095  9116 W CDAS-App: com.google.android.gms.common.api.ApiException: 13: ERROR
+09-18 21:35:26.181  7673  8222 I DeviceManagerComponent_7673_8222: report() called with: eventName = connect_v3, params = {device_version=, device_model=lchz.watch.n65bgl, error_info=, count=2, device_type=6, duration_sec=3.0, result=true, is_auto=false, name=connect_process, type_str=1, tip=56.8.2.1.15235, error_code=0, from=2, duration_dict={}, who=}
+09-18 21:35:26.214  7673  8017 E ActivityThread: Failed to find provider info for com.milink.service.device
+09-18 21:35:26.544 13196 13196 E XiaomiFit_13196_13196: HttpFlow:Cannot get Response because throw ApiException={errorCode=600, message=End of input at line 1 column 64 path $.result, cause=java.io.EOFException: End of input at line 1 column 64 path $.result}@-1753328554
+09-18 21:35:26.545 13196 13196 I PaymentComponent_13196_13196: syncAuthorization fail: ApiException={errorCode=600, message=End of input at line 1 column 64 path $.result, cause=java.io.EOFException: End of input at line 1 column 64 path $.result}@-1753328554
+09-18 21:35:26.605  7673  7673 I Device-Sync_7673_7673: Type(101) call error did=854936716, code=1
+09-18 21:35:26.605  7673  7673 I FITNESS.AppInstall_7673_7673: getInstalledWatchApp from device onError code:1
+09-18 21:35:27.641   665   790 D SurfaceFlinger: setDesiredMode 4619827612623940864 {mode={fps=120.00 Hz, modePtr={id=1, vsyncRate=120.00 Hz, peakRefreshRate=120.00 Hz}}, emitEvent=false, force=false}
+09-18 21:35:27.650   665   665 D SurfaceFlinger: initiateModeChange 4619827612623940864 {mode={fps=120.00 Hz, modePtr={id=1, vsyncRate=120.00 Hz, peakRefreshRate=120.00 Hz}}, emitEvent=false, force=false}
+09-18 21:35:27.823  4192  4210 W System  : A resource failed to call close. 
+09-18 21:35:27.824  4192  4210 W System  : A resource failed to call close. 
+09-18 21:35:28.666  1148  1148 E vendor.google.radioext@1.0-service: Failed to write to display ssc_mode sysfs node
+09-18 21:35:29.041   665   790 D SurfaceFlinger: setDesiredMode 4619827612623940864 {mode={fps=60.00 Hz, modePtr={id=0, vsyncRate=60.00 Hz, peakRefreshRate=60.00 Hz}}, emitEvent=false, force=false}
+09-18 21:35:29.047   665   665 D SurfaceFlinger: initiateModeChange 4619827612623940864 {mode={fps=60.00 Hz, modePtr={id=0, vsyncRate=60.00 Hz, peakRefreshRate=60.00 Hz}}, emitEvent=false, force=false}
+09-18 21:35:29.957   665   790 D SurfaceFlinger: setDesiredMode 4619827612623940864 {mode={fps=120.00 Hz, modePtr={id=1, vsyncRate=120.00 Hz, peakRefreshRate=120.00 Hz}}, emitEvent=false, force=false}
+09-18 21:35:29.966   665   665 D SurfaceFlinger: initiateModeChange 4619827612623940864 {mode={fps=120.00 Hz, modePtr={id=1, vsyncRate=120.00 Hz, peakRefreshRate=120.00 Hz}}, emitEvent=false, force=false}
+09-18 21:35:30.958   665   790 D SurfaceFlinger: setDesiredMode 4619827612623940864 {mode={fps=60.00 Hz, modePtr={id=0, vsyncRate=60.00 Hz, peakRefreshRate=60.00 Hz}}, emitEvent=false, force=false}
+09-18 21:35:30.959   665   665 D SurfaceFlinger: initiateModeChange 4619827612623940864 {mode={fps=60.00 Hz, modePtr={id=0, vsyncRate=60.00 Hz, peakRefreshRate=60.00 Hz}}, emitEvent=false, force=false}
+09-18 21:35:31.867   665   794 D SurfaceFlinger: setDesiredMode 4619827612623940864 {mode={fps=120.00 Hz, modePtr={id=1, vsyncRate=120.00 Hz, peakRefreshRate=120.00 Hz}}, emitEvent=false, force=false}
+09-18 21:35:31.869   665   665 D SurfaceFlinger: initiateModeChange 4619827612623940864 {mode={fps=120.00 Hz, modePtr={id=1, vsyncRate=120.00 Hz, peakRefreshRate=120.00 Hz}}, emitEvent=false, force=false}
+09-18 21:35:32.069   665   794 D SurfaceFlinger: setDesiredMode 4619827612623940864 {mode={fps=60.00 Hz, modePtr={id=0, vsyncRate=60.00 Hz, peakRefreshRate=60.00 Hz}}, emitEvent=false, force=false}
+09-18 21:35:32.070   665   665 D SurfaceFlinger: initiateModeChange 4619827612623940864 {mode={fps=60.00 Hz, modePtr={id=0, vsyncRate=60.00 Hz, peakRefreshRate=60.00 Hz}}, emitEvent=false, force=false}
+09-18 21:35:34.605 13196 13202 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:35:34.605 13196 13202 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:35:34.605 13196 13202 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:35:34.605 13196 13202 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:35:34.605 13196 13202 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:35:34.605 13196 13202 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:35:34.605 13196 13202 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:35:34.605 13196 13202 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:35:34.605 13196 13202 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:35:34.605 13196 13202 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:35:34.605 13196 13202 W System  : A resource failed to call CursorWindow.close. 
+09-18 21:35:34.605 13196 13202 W System  : A resource failed to call AbstractCursor.close. 
+09-18 21:35:35.335   665   790 D SurfaceFlinger: setDesiredMode 4619827612623940864 {mode={fps=120.00 Hz, modePtr={id=1, vsyncRate=120.00 Hz, peakRefreshRate=120.00 Hz}}, emitEvent=false, force=false}
+09-18 21:35:35.339   665   665 D SurfaceFlinger: initiateModeChange 4619827612623940864 {mode={fps=120.00 Hz, modePtr={id=1, vsyncRate=120.00 Hz, peakRefreshRate=120.00 Hz}}, emitEvent=false, force=false}
+09-18 21:35:36.335   665   790 D SurfaceFlinger: setDesiredMode 4619827612623940864 {mode={fps=60.00 Hz, modePtr={id=0, vsyncRate=60.00 Hz, peakRefreshRate=60.00 Hz}}, emitEvent=false, force=false}
+09-18 21:35:36.337   665   665 D SurfaceFlinger: initiateModeChange 4619827612623940864 {mode={fps=60.00 Hz, modePtr={id=0, vsyncRate=60.00 Hz, peakRefreshRate=60.00 Hz}}, emitEvent=false, force=false}
+09-18 21:35:38.159 14914 14914 W libbinder.BackendUnifiedServiceManager: Thread Pool max thread count is 0. Cannot cache binder as linkToDeath cannot be implemented. serviceName: SurfaceFlingerAIDL
+09-18 21:35:38.159 14914 14914 W libbinder.BpBinder: Linking to death on android.gui.ISurfaceComposer but there are no threads (yet?) listening to incoming transactions. See ProcessState::startThreadPool and ProcessState::setThreadPoolMaxThreadCount. Generally you should setup the binder threadpool before other initialization steps.
+09-18 21:35:38.733  1395  1395 I adbd    : adbd service requested 'shell,v2,TERM=linux,raw:dumpsys SurfaceFlinger --list'
+09-18 21:35:38.811  1395  1395 I adbd    : adbd service requested 'shell,v2,TERM=linux,raw:pidof com.cuphead'
+09-18 21:35:38.912  1395  1395 I adbd    : adbd service requested 'shell,v2,TERM=linux,raw:pidof Cuphead.exe'
+09-18 21:35:39.005  1395  1395 I adbd    : adbd service requested 'shell,v2,TERM=linux,raw:dumpsys meminfo com.cuphead'
+09-18 21:35:39.198 10432 10736 I com.cuphead: Explicit concurrent mark compact GC freed 404KB AllocSpace bytes, 1(20KB) LOS objects, 94% free, 14MB/256MB, paused 93us,5.228ms total 38.011ms
