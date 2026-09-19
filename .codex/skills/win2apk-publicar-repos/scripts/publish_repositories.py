@@ -236,8 +236,11 @@ def main() -> int:
         manifest_paths, manifest_excluded = [], []
     else:
         manifest_status = git_status(manifest_repo.path)
-        manifest_paths = [path for path in changed_paths(manifest_status) if path == "app"]
-        manifest_excluded = [path for path in changed_paths(manifest_status) if path != "app"]
+        manifest_status_paths = changed_paths(manifest_status)
+        manifest_pointer_paths = set(run(manifest_repo.path, "diff", "--name-only", "--", "app").splitlines())
+        manifest_pointer_paths.update(run(manifest_repo.path, "diff", "--cached", "--name-only", "--", "app").splitlines())
+        manifest_paths = ["app"] if "app" in manifest_pointer_paths else []
+        manifest_excluded = [path for path in manifest_status_paths if path != "app"]
         show_repo(manifest_repo, manifest_paths, manifest_excluded)
         if manifest_excluded:
             raise PublishError("Winlator manifest: hay cambios fuera del puntero app; revisar antes de publicar")
