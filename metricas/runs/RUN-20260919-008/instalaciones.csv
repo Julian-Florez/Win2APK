@@ -1,0 +1,2 @@
+run_id,device_id,step,started_at_utc,ended_at_utc,duration_seconds,result,exit_code,artifact_sha256,artifact_bytes,free_data_before_kib,free_data_after_kib,log_relpath,message
+RUN-20260919-008,lenovo-tb-j606f,uninstall,2026-09-19T20:10:42.038Z,2026-09-19T20:10:46.453Z,4.414,success,0,1bfbe6922c9d69e98f6efab22f71d4537625e4a4e800c31f486b63a433e92327,6425573411,67365328,74433144,metricas/runs/RUN-20260919-008/logs/lenovo-tb-j606f/uninstall.log,Success

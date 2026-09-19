@@ -1,0 +1,19 @@
+run_id,device_id,timestamp_utc,elapsed_ms,event_type,severity,message,evidence_relpath
+RUN-20260919-007,pixel-9a,2026-09-19T20:03:30.269Z,2684,launch_requested,info,"bash arg: -p
+  bash arg: com.cuphead
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=68ms (0ms mobile, 0ms wifi, 68ms not connected)
+args: [-p, com.cuphead, -c, android.intent.category.LAUNCHER, 1]
+ arg: ""-p""
+ arg: ""com.cuphead""
+ arg: ""-c""
+ arg: ""android.intent.category.LAUNCHER""
+ arg: ""1""
+data=""com.cuphead""
+data=""android.intent.category.LAUNCHER""",metricas/runs/RUN-20260919-007/logs/pixel-9a/launch.log
+RUN-20260919-007,pixel-9a,2026-09-19T20:03:30.458Z,2872,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20260919-007,pixel-9a,2026-09-19T20:04:29.361Z,61776,screenshot_captured,info,Captura canónica T+60s,metricas/runs/RUN-20260919-007/screenshots/pixel-9a/t060.png
+RUN-20260919-007,pixel-9a,2026-09-19T20:08:29.056Z,301471,monitor_finished,info,301 muestras registradas,metricas/runs/RUN-20260919-007/logs/pixel-9a/exit-info.txt

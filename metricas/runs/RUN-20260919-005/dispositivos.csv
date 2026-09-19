@@ -1,0 +1,1 @@
+run_id,device_id,observed_at_utc,manufacturer,model,product,android_device,android_version,api_level,abi_list,hardware,soc_model,cpu_cores,cpu_max_freq_khz,ram_total_kib,gpu_vendor,gpu_renderer,gpu_version,vulkan_version,screen_resolution,screen_density_dpi,serial_hash

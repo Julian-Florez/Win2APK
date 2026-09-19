@@ -40,6 +40,26 @@ Cada registro corresponde a un intento experimental independiente. Las matrices 
 
 | EXEC-036 | Instalación fría completa y primer inicio observado durante cinco minutos; orden Pixel, tablet, Redmi y Xiaomi | Métricas automatizadas | lenovo-tb-j606f, mi-a3, pixel-9a, redmi-note-8 | partial; Redmi sin primer frame en 300 s | [matriz.md](./36-metricas-titulo-instalacion-fria-5-min-20260919/matriz.md) | [datos](../metricas/runs/RUN-20260919-004/) |
 
+| EXEC-037 | Instalación fría de la compilación API 36 con PAGE_ALIGNMENT_16K | Métricas automatizadas | N/R | N/R; ejecución incompleta sin muestras | [matriz.md](./37-metricas-modern-api36-16k-pixel-cold-install-20260919/matriz.md) | [datos](../metricas/runs/RUN-20260919-005/) |
+
+| EXEC-038 | Instalación fría de la compilación API 36 con empaquetado PAGE_ALIGNMENT_16K y observación del primer inicio | Métricas automatizadas | pixel-9a | pending_classification | [matriz.md](./38-metricas-modern-api36-16k-pixel-cold-install-20260919/matriz.md) | [datos](../metricas/runs/RUN-20260919-006/) |
+
+| EXEC-039 | Instalación fría de v47 con target API 36 y pageSizeCompat habilitado; conservar bibliotecas opcionales; comprobar arranque y ausencia del diálogo 16 KB | Métricas automatizadas | pixel-9a | pending_classification | [matriz.md](./39-metricas-modern-api36-pagesizecompat-v47-pixel-cold-install-20260919/matriz.md) | [datos](../metricas/runs/RUN-20260919-007/) |
+
+| EXEC-040 | Instalación fría de v47 en Lenovo TB-J606F con compatibilidad de páginas habilitada | Métricas automatizadas | N/R | N/R; ejecución incompleta sin muestras | [matriz.md](./40-metricas-modern-api36-pagesizecompat-v47-lenovo-cold-install-20260919/matriz.md) | [datos](../metricas/runs/RUN-20260919-008/) |
+
+| EXEC-041 | Instalación fría de v48 con target API 28 para permitir la ejecución de box64 desde el rootfs; se conserva compileSdk 36 y pageSizeCompat | Métricas automatizadas | pixel-9a | Parcial: Cuphead.exe permaneció vivo; T+60 todavía estaba en preparación | [matriz.md](./41-metricas-legacy-exec-api28-pagesizecompat-v48-pixel-cold-install-20260919/matriz.md) | [datos](../metricas/runs/RUN-20260919-009/) |
+
+| EXEC-042 | Instalación fría de v48 con target API 28 compatible con ejecución desde rootfs; comprobar creación del entorno, arranque de Cuphead y estabilidad | Métricas automatizadas | lenovo-tb-j606f | Parcial: Cuphead.exe apareció tarde; T+60 quedó negra | [matriz.md](./42-metricas-legacy-exec-api28-pagesizecompat-v48-lenovo-cold-install-20260919/matriz.md) | [datos](../metricas/runs/RUN-20260919-010/) |
+
+| EXEC-043 | Instalación fría de v48 en Redmi Note 8; comprobar ejecución de Cuphead y estabilidad de la ruta Adreno | Métricas automatizadas | redmi-note-8 | Parcial: T+60 quedó en preparación y no hubo primer frame registrado en 300 s; ejecución posterior confirmada por el usuario | [matriz.md](./43-metricas-legacy-exec-api28-pagesizecompat-v48-redmi-cold-install-20260919/matriz.md) | [datos](../metricas/runs/RUN-20260919-011/) |
+
+| EXEC-044 | Instalación fría de v48 en Mi A3; comprobar ejecución de Cuphead y estabilidad de la ruta Adreno | Métricas automatizadas | mi-a3 | Parcial: Cuphead.exe apareció a 202.594 s; T+60 quedó en preparación | [matriz.md](./44-metricas-legacy-exec-api28-pagesizecompat-v48-mi-a3-cold-install-20260919/matriz.md) | [datos](../metricas/runs/RUN-20260919-012/) |
+
+| EXEC-045 | Verificación posterior de procesos Cuphead con v48 en cuatro dispositivos | Verificación ADB | pixel-9a, lenovo-tb-j606f, redmi-note-8, mi-a3 | Aprobado: `Cuphead.exe` vivo en los cuatro dispositivos | [matriz.md](./45-verificacion-posterior-procesos-cuphead-v48-20260919/matriz.md) | [salida ADB](./45-verificacion-posterior-procesos-cuphead-v48-20260919/evidencias/pidof-cuphead-20260919T161203-0500.txt) |
+
+| EXEC-046 | Actualización incremental de la APK con icono personalizado, sin sustituir datos | Distribución incremental y verificación ADB | Pixel 9a, Lenovo TB-J606F, Redmi Note 8 y Mi A3 | Aprobado experimentalmente: `adb install -r` en 4/4 y `files` sin cambios; la primera firma fue rechazada y se corrigió con la firma existente | [matriz.md](./46-actualizacion-incremental-icono-v48-cuatro-dispositivos-20260919/matriz.md) | [logs y estado](./46-actualizacion-incremental-icono-v48-cuatro-dispositivos-20260919/) |
+
 ## Plantilla
 
 Usar [plantilla-metricas.md](./plantilla-metricas.md) para crear la matriz del siguiente intento. No completar campos con datos que no estén respaldados por la ejecución.

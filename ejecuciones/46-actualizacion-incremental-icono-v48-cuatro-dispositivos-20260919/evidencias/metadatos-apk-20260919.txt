@@ -1,0 +1,9 @@
+APK: <repo>/winlator/app/app/build/outputs/apk/debug/app-debug.apk
+size_bytes=294743438
+sha256=ba3b03d3e1dd6d0b5901e0f394f06e8cf41d05887044daa2472bd9bfaec6660c
+package=com.cuphead
+versionCode=48
+minSdkVersion=26
+targetSdkVersion=28
+signing_certificate_sha256=6dd429199ee34b21a52d219d2eeff6b4fc4669dece1b46a91fbfce54bc32b8bd
+icon_resources=win2apk_launcher adaptive/round/legacy resources generated during build

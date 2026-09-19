@@ -24,6 +24,23 @@ Configuración y empaquetado
 
 El usuario final debería poder instalar y ejecutar el APK generado sin tener que configurar manualmente herramientas de compatibilidad.
 
+## Icono personalizado
+
+El empaquetador acepta una ruta local de imagen o SVG mediante la propiedad
+`win2apkIcon`. También puede configurarse `android.iconPath` en
+`config/win2apk.json`. El build genera automáticamente el icono adaptativo,
+la capa monocromática y los PNG de compatibilidad:
+
+```bash
+cd winlator/app
+bash gradlew :app:assembleDebug \
+  -Pwin2apkIcon="/ruta/al/icono.svg" \
+  --no-daemon --console=plain
+```
+
+La implementación y sus lineamientos están documentados en
+[`11-automatizacion-iconos-launcher`](documentacion/11-automatizacion-iconos-launcher.md).
+
 ## Alcance
 
 Win2APK se encuentra actualmente en fase de investigación y prototipado.

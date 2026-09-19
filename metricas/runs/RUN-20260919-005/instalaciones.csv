@@ -1,0 +1,1 @@
+run_id,device_id,step,started_at_utc,ended_at_utc,duration_seconds,result,exit_code,artifact_sha256,artifact_bytes,free_data_before_kib,free_data_after_kib,log_relpath,message

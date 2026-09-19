@@ -1,0 +1,40 @@
+EXEC-046 — 2026-09-19
+APK: <repo>/winlator/app/app/build/outputs/apk/debug/app-debug.apk
+SHA-256: ba3b03d3e1dd6d0b5901e0f394f06e8cf41d05887044daa2472bd9bfaec6660c
+Método: adb install -r; no uninstall; no pm clear
+
+Intento inicial con la APK firmada por $HOME/.config/.android/debug.keystore:
+
+Pixel 9a (pixel-9a)
+Performing Streamed Install
+adb: failed to install <repo>/winlator/app/app/build/outputs/apk/debug/app-debug.apk: Failure [INSTALL_FAILED_UPDATE_INCOMPATIBLE: Existing package com.cuphead signatures do not match newer version; ignoring!]
+INSTALL_RESULT device=Pixel 9a exit_code=1 elapsed_seconds=20
+
+Lenovo TB-J606F (lenovo-tb-j606f), mismo intento y APK:
+Performing Streamed Install
+adb: failed to install <repo>/winlator/app/app/build/outputs/apk/debug/app-debug.apk: Failure [INSTALL_FAILED_UPDATE_INCOMPATIBLE: Existing package com.cuphead signatures do not match newer version; ignoring!]
+INSTALL_RESULT device=Lenovo TB-J606F exit_code=1 elapsed_seconds=12
+
+Corrección: reconstrucción de la misma variante con el certificado existente
+$HOME/.android/debug.keystore, SHA-256 del certificado:
+6dd429199ee34b21a52d219d2eeff6b4fc4669dece1b46a91fbfce54bc32b8bd
+
+Pixel 9a (pixel-9a)
+Performing Streamed Install
+Success
+INSTALL_RESULT device=Pixel 9a exit_code=0 elapsed_seconds=26
+
+Lenovo TB-J606F (lenovo-tb-j606f)
+Performing Streamed Install
+Success
+INSTALL_RESULT device=Lenovo TB-J606F exit_code=0 elapsed_seconds=13
+
+Redmi Note 8 (redmi-note-8)
+Performing Streamed Install
+Success
+INSTALL_RESULT device=Redmi Note 8 exit_code=0 elapsed_seconds=12
+
+Xiaomi Mi A3 (mi-a3)
+Performing Streamed Install
+Success
+INSTALL_RESULT device=Xiaomi Mi A3 exit_code=0 elapsed_seconds=11

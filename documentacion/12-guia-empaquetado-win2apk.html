@@ -1,0 +1,1902 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Manual de Win2APK para empaquetar una carpeta de aplicación o juego de Windows e instalarla en Android con bundletool.">
+  <title>Manual de empaquetado Win2APK</title>
+  <!--
+    Design Read: manual operativo para usuarios técnicos, con lenguaje editorial
+    funcional. ENERGY 1 / RHYTHM 2 / MOTION 1.
+
+    Decisiones visuales:
+    - Tema claro fijo: favorece la lectura larga, la impresión y los bloques de código.
+    - Verde oscuro y ámbar: separan acciones y advertencias sin depender solo del color.
+    - Tipografía del sistema: funciona sin red y conserva buena lectura de rutas y acentos.
+    - Columna lateral en pantallas anchas: mantiene el procedimiento localizable.
+    - Navegación plegable en móvil: evita comprimir el índice de escritorio.
+    - Bordes rectos y etapas numeradas: recuerdan un flujo de archivos, no una página comercial.
+  -->
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f6f2e9;
+      --surface: #fffdf8;
+      --surface-strong: #eee7da;
+      --ink: #17211c;
+      --muted: #4c5a53;
+      --line: #a9b0a8;
+      --line-strong: #55655c;
+      --primary: #145b43;
+      --primary-strong: #0c3e2d;
+      --accent: #f0b85c;
+      --accent-strong: #8a4708;
+      --danger: #8c2f27;
+      --focus: #0b63ce;
+      --code-bg: #15231d;
+      --code-ink: #f3f5ef;
+      --radius-small: 0.25rem;
+      --radius-medium: 0.65rem;
+      --page: 78rem;
+      --measure: 72ch;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 1rem;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--primary-strong);
+      text-decoration-thickness: 0.12em;
+      text-underline-offset: 0.18em;
+    }
+
+    a:hover {
+      text-decoration-thickness: 0.18em;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    summary:focus-visible {
+      outline: 0.2rem solid var(--focus);
+      outline-offset: 0.2rem;
+    }
+
+    img,
+    svg {
+      max-width: 100%;
+    }
+
+    code,
+    pre,
+    kbd {
+      font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+    }
+
+    code {
+      overflow-wrap: anywhere;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: 0.5rem;
+      left: 0.5rem;
+      z-index: 20;
+      padding: 0.75rem 1rem;
+      background: var(--surface);
+      color: var(--ink);
+      border: 0.15rem solid var(--focus);
+      transform: translateY(-150%);
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .masthead {
+      border-bottom: 0.2rem solid var(--ink);
+      background: var(--surface);
+    }
+
+    .masthead__inner {
+      width: min(100% - 2rem, var(--page));
+      margin-inline: auto;
+      padding-block: clamp(2.25rem, 6vw, 5rem);
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(16rem, 0.6fr);
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: end;
+    }
+
+    .eyebrow {
+      margin: 0 0 0.6rem;
+      color: var(--primary-strong);
+      font-size: 0.9rem;
+      font-weight: 750;
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.15;
+      text-wrap: balance;
+    }
+
+    h1 {
+      max-width: 17ch;
+      margin: 0;
+      font-size: clamp(2.3rem, 7vw, 5.6rem);
+      letter-spacing: -0.045em;
+    }
+
+    .lede {
+      max-width: 62ch;
+      margin: 1.25rem 0 0;
+      color: var(--muted);
+      font-size: clamp(1.08rem, 2.2vw, 1.35rem);
+    }
+
+    .status-block {
+      border: 0.12rem solid var(--line-strong);
+      border-top: 0.5rem solid var(--accent-strong);
+      background: var(--paper);
+      padding: 1.25rem;
+    }
+
+    .status-block p {
+      margin: 0;
+    }
+
+    .status-block p + p {
+      margin-top: 0.75rem;
+    }
+
+    .flow {
+      width: min(100% - 2rem, var(--page));
+      margin: 0 auto;
+      padding: 1rem 0;
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      border-bottom: 0.1rem solid var(--line);
+    }
+
+    .flow span {
+      min-width: 0;
+      padding: 0.6rem 0.75rem;
+      border-left: 0.08rem solid var(--line);
+      font-size: 0.86rem;
+      font-weight: 700;
+      text-align: center;
+      overflow-wrap: anywhere;
+    }
+
+    .flow span:last-child {
+      border-right: 0.08rem solid var(--line);
+    }
+
+    .mobile-toc {
+      display: none;
+      width: min(100% - 2rem, var(--page));
+      margin: 1rem auto 0;
+      border: 0.1rem solid var(--line-strong);
+      background: var(--surface);
+    }
+
+    .mobile-toc summary {
+      min-height: 3rem;
+      padding: 0.75rem 1rem;
+      cursor: pointer;
+      font-weight: 750;
+    }
+
+    .mobile-toc ol {
+      margin: 0;
+      padding: 0 1rem 1rem 2.25rem;
+    }
+
+    .mobile-toc a {
+      display: block;
+      min-height: 2.75rem;
+      padding-block: 0.55rem;
+    }
+
+    .layout {
+      width: min(100% - 2rem, var(--page));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 15rem minmax(0, 1fr);
+      gap: clamp(2rem, 5vw, 5.5rem);
+      align-items: start;
+    }
+
+    .toc {
+      position: sticky;
+      top: 1rem;
+      padding-block: 2.5rem;
+    }
+
+    .toc p {
+      margin: 0 0 0.75rem;
+      font-weight: 800;
+    }
+
+    .toc ol {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: toc;
+    }
+
+    .toc li {
+      counter-increment: toc;
+      border-top: 0.08rem solid var(--line);
+    }
+
+    .toc li:last-child {
+      border-bottom: 0.08rem solid var(--line);
+    }
+
+    .toc a {
+      display: grid;
+      grid-template-columns: 2rem 1fr;
+      min-height: 3rem;
+      padding: 0.7rem 0;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .toc a::before {
+      content: counter(toc, decimal-leading-zero);
+      color: var(--primary);
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    main {
+      min-width: 0;
+      padding-block: 2.5rem 6rem;
+    }
+
+    .layout > *,
+    main > section,
+    .step-list > li > div,
+    .table-scroll,
+    details,
+    summary {
+      min-width: 0;
+    }
+
+    section {
+      scroll-margin-top: 1rem;
+    }
+
+    section + section {
+      margin-top: clamp(4rem, 8vw, 7.5rem);
+    }
+
+    h2 {
+      margin: 0 0 1.5rem;
+      font-size: clamp(1.85rem, 4vw, 3.2rem);
+      letter-spacing: -0.035em;
+    }
+
+    h3 {
+      margin: 2.4rem 0 0.8rem;
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    }
+
+    p,
+    li {
+      max-width: var(--measure);
+    }
+
+    .section-kicker {
+      margin: 0 0 0.5rem;
+      color: var(--primary-strong);
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      font-size: 0.86rem;
+      font-weight: 800;
+    }
+
+    .prose-lead {
+      margin: -0.6rem 0 2rem;
+      color: var(--muted);
+      font-size: 1.12rem;
+    }
+
+    .scope-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .scope-panel {
+      padding: 1.35rem;
+      background: var(--surface);
+      border: 0.1rem solid var(--line-strong);
+    }
+
+    .scope-panel h3 {
+      margin-top: 0;
+    }
+
+    .scope-panel ul {
+      margin-bottom: 0;
+      padding-left: 1.2rem;
+    }
+
+    .notice {
+      margin-block: 1.5rem;
+      padding: 1rem 1.2rem;
+      border: 0.12rem solid var(--line-strong);
+      background: var(--surface-strong);
+    }
+
+    .notice[data-kind="warning"] {
+      border-color: var(--accent-strong);
+      background: #fff1d7;
+    }
+
+    .notice[data-kind="danger"] {
+      border-color: var(--danger);
+      background: #fff0ed;
+    }
+
+    .notice strong {
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .builder {
+      border: 0.14rem solid var(--ink);
+      background: var(--surface);
+    }
+
+    .builder__intro {
+      padding: 1.25rem;
+      border-bottom: 0.1rem solid var(--line-strong);
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .builder__intro p {
+      margin: 0;
+    }
+
+    .builder__body {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(19rem, 0.9fr);
+    }
+
+    .builder__form,
+    .builder__output {
+      min-width: 0;
+      padding: clamp(1rem, 3vw, 1.75rem);
+    }
+
+    .builder__output {
+      border-left: 0.1rem solid var(--line-strong);
+      background: var(--surface-strong);
+    }
+
+    fieldset {
+      margin: 0 0 1.6rem;
+      padding: 0;
+      border: 0;
+    }
+
+    legend {
+      width: 100%;
+      margin-bottom: 0.85rem;
+      padding-bottom: 0.45rem;
+      border-bottom: 0.08rem solid var(--line);
+      font-size: 1.08rem;
+      font-weight: 800;
+    }
+
+    .field {
+      display: grid;
+      gap: 0.35rem;
+      margin-bottom: 1rem;
+    }
+
+    .field label,
+    .field-label {
+      font-weight: 750;
+    }
+
+    .field small,
+    .help {
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    input,
+    select,
+    button {
+      font: inherit;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    select {
+      width: 100%;
+      min-height: 3rem;
+      padding: 0.65rem 0.75rem;
+      border: 0.12rem solid var(--line-strong);
+      border-radius: var(--radius-small);
+      background: #ffffff;
+      color: var(--ink);
+    }
+
+    input[readonly] {
+      background: #e7e9e3;
+    }
+
+    input[aria-invalid="true"] {
+      border-color: var(--danger);
+      box-shadow: inset 0 0 0 0.08rem var(--danger);
+    }
+
+    input[type="file"] {
+      width: 100%;
+      min-height: 3rem;
+      padding: 0.55rem;
+      border: 0.12rem dashed var(--line-strong);
+      background: var(--paper);
+    }
+
+    input[type="radio"] {
+      width: 1.2rem;
+      height: 1.2rem;
+      accent-color: var(--primary);
+    }
+
+    .radio-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .radio-row label {
+      display: inline-flex;
+      min-height: 2.75rem;
+      gap: 0.5rem;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    button,
+    .button-link {
+      display: inline-flex;
+      min-height: 2.75rem;
+      padding: 0.68rem 0.95rem;
+      align-items: center;
+      justify-content: center;
+      border: 0.12rem solid var(--primary-strong);
+      border-radius: var(--radius-small);
+      background: var(--primary);
+      color: #ffffff;
+      font-weight: 750;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    button:hover,
+    .button-link:hover {
+      background: var(--primary-strong);
+    }
+
+    button.secondary {
+      border-color: var(--line-strong);
+      background: var(--surface);
+      color: var(--ink);
+    }
+
+    button.secondary:hover {
+      background: var(--surface-strong);
+    }
+
+    button:disabled {
+      cursor: not-allowed;
+      border-color: #626965;
+      background: #626965;
+      color: #ffffff;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }
+
+    .state {
+      margin: 0.5rem 0 1rem;
+      padding: 0.75rem;
+      border: 0.08rem solid var(--line);
+      background: var(--paper);
+      color: var(--muted);
+    }
+
+    .state[data-state="ready"] {
+      border-color: var(--primary);
+      color: var(--primary-strong);
+    }
+
+    .state[data-state="error"] {
+      border-color: var(--danger);
+      color: var(--danger);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.65rem;
+      margin: 0 0 1rem;
+    }
+
+    .stat {
+      padding: 0.75rem;
+      border: 0.08rem solid var(--line);
+      background: var(--surface);
+    }
+
+    .stat span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .stat strong {
+      display: block;
+      margin-top: 0.15rem;
+      overflow-wrap: anywhere;
+    }
+
+    .icon-preview {
+      display: grid;
+      grid-template-columns: 4.5rem 1fr;
+      gap: 0.8rem;
+      margin-bottom: 1rem;
+      align-items: center;
+    }
+
+    .icon-preview img {
+      width: 4.5rem;
+      aspect-ratio: 1;
+      object-fit: contain;
+      border: 0.1rem solid var(--line-strong);
+      background: #ffffff;
+    }
+
+    .icon-preview[hidden],
+    .stats[hidden] {
+      display: none;
+    }
+
+    pre {
+      max-width: 100%;
+      margin: 0.75rem 0 1rem;
+      padding: 1rem;
+      overflow: auto;
+      border-radius: var(--radius-small);
+      background: var(--code-bg);
+      color: var(--code-ink);
+      font-size: 0.88rem;
+      line-height: 1.55;
+      white-space: pre;
+    }
+
+    .code-wrap {
+      position: relative;
+    }
+
+    .copy-status {
+      min-height: 1.6rem;
+      margin: 0.35rem 0 0;
+      color: var(--primary-strong);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .step-list {
+      display: grid;
+      gap: 2.5rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: steps;
+    }
+
+    .step-list > li {
+      max-width: none;
+      display: grid;
+      grid-template-columns: 3.4rem minmax(0, 1fr);
+      gap: 1rem;
+      counter-increment: steps;
+    }
+
+    .step-list > li::before {
+      content: counter(steps, decimal-leading-zero);
+      width: 3.4rem;
+      height: 3.4rem;
+      display: grid;
+      place-items: center;
+      border: 0.14rem solid var(--primary-strong);
+      background: var(--accent);
+      color: var(--ink);
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      font-weight: 900;
+    }
+
+    .step-list h3 {
+      margin: 0 0 0.7rem;
+    }
+
+    .step-list p:first-of-type {
+      margin-top: 0;
+    }
+
+    .directory-tree {
+      border-left: 0.28rem solid var(--primary);
+    }
+
+    .table-scroll {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: auto;
+      border: 0.1rem solid var(--line-strong);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--surface);
+      font-size: 0.94rem;
+    }
+
+    th,
+    td {
+      padding: 0.85rem;
+      border-bottom: 0.08rem solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--surface-strong);
+      color: var(--ink);
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    details {
+      border: 0.1rem solid var(--line-strong);
+      background: var(--surface);
+    }
+
+    details + details {
+      margin-top: 0.75rem;
+    }
+
+    summary {
+      min-height: 3rem;
+      padding: 0.8rem 1rem;
+      cursor: pointer;
+      font-weight: 800;
+      overflow-wrap: anywhere;
+    }
+
+    th,
+    td {
+      overflow-wrap: anywhere;
+    }
+
+    details > div {
+      padding: 0 1rem 1rem;
+    }
+
+    .checklist {
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .checklist li {
+      position: relative;
+      padding: 0.6rem 0 0.6rem 2rem;
+      border-bottom: 0.08rem solid var(--line);
+    }
+
+    .checklist li::before {
+      content: "";
+      position: absolute;
+      top: 0.78rem;
+      left: 0;
+      width: 1rem;
+      height: 1rem;
+      border: 0.12rem solid var(--primary-strong);
+      background: var(--surface);
+    }
+
+    footer {
+      border-top: 0.2rem solid var(--ink);
+      background: var(--surface);
+    }
+
+    .footer-inner {
+      width: min(100% - 2rem, var(--page));
+      margin-inline: auto;
+      padding-block: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem 2rem;
+    }
+
+    .footer-inner p {
+      margin: 0;
+    }
+
+    @media (max-width: 58rem) {
+      .masthead__inner {
+        grid-template-columns: 1fr;
+        align-items: start;
+      }
+
+      .flow {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .flow span:nth-child(4) {
+        border-top: 0.08rem solid var(--line);
+      }
+
+      .flow span:nth-child(5),
+      .flow span:nth-child(6) {
+        border-top: 0.08rem solid var(--line);
+      }
+
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .toc {
+        display: none;
+      }
+
+      .mobile-toc {
+        display: block;
+      }
+
+      main {
+        padding-top: 1.75rem;
+      }
+
+      .builder__body {
+        grid-template-columns: 1fr;
+      }
+
+      .builder__output {
+        border-top: 0.1rem solid var(--line-strong);
+        border-left: 0;
+      }
+    }
+
+    @media (max-width: 40rem) {
+      .masthead__inner,
+      .layout,
+      .flow,
+      .mobile-toc,
+      .footer-inner {
+        width: min(100% - 1.25rem, var(--page));
+      }
+
+      .masthead__inner {
+        padding-block: 2rem;
+      }
+
+      h1 {
+        font-size: clamp(2.25rem, 13vw, 3.75rem);
+      }
+
+      .flow {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .flow span:nth-child(n + 3) {
+        border-top: 0.08rem solid var(--line);
+      }
+
+      .scope-grid,
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .builder__intro {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .button-row,
+      .button-row button,
+      .button-row .button-link {
+        width: 100%;
+      }
+
+      .step-list > li {
+        grid-template-columns: 1fr;
+      }
+
+      .step-list > li::before {
+        width: 2.8rem;
+        height: 2.8rem;
+      }
+
+      pre {
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+      }
+
+      .skip-link,
+      .toc,
+      .mobile-toc,
+      .builder,
+      button {
+        display: none !important;
+      }
+
+      .layout {
+        display: block;
+        width: 100%;
+      }
+
+      main {
+        padding: 0;
+      }
+
+      a {
+        color: #000000;
+      }
+
+      pre,
+      details,
+      .notice,
+      .scope-panel {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="masthead">
+    <div class="masthead__inner">
+      <div>
+        <p class="eyebrow">Win2APK / manual operativo</p>
+        <h1>Empaquetar una carpeta Windows para Android</h1>
+        <p class="lede">Selecciona una carpeta que ya contenga la aplicación o el juego, define su ejecutable, icono e identidad Android, genera el App Bundle y realiza la instalación con bundletool.</p>
+      </div>
+      <aside class="status-block" aria-label="Alcance del manual">
+        <p><strong>Alcance:</strong> aplicaciones y juegos distribuidos como una carpeta completa.</p>
+        <p><strong>Ejemplo:</strong> Cuphead sirve para mostrar valores reales. No limita el procedimiento a ese juego.</p>
+        <p><strong>Resultado:</strong> una aplicación Android que ejecuta el programa de Windows mediante un entorno de compatibilidad. No es una conversión a código Android nativo.</p>
+        <p><strong>Fecha:</strong> 2026-09-19. Describe el prototipo disponible en el repositorio.</p>
+      </aside>
+    </div>
+  </header>
+
+  <div class="flow" aria-label="Resumen del flujo">
+    <span>Carpeta</span>
+    <span>Identidad</span>
+    <span>Asset packs</span>
+    <span>AAB</span>
+    <span>APKS</span>
+    <span>Android</span>
+  </div>
+
+  <details class="mobile-toc">
+    <summary>Índice del manual</summary>
+    <ol>
+      <li><a href="#alcance">Qué entra al empaquetador</a></li>
+      <li><a href="#selector">Simular la selección</a></li>
+      <li><a href="#preparar">Preparar carpeta y packs</a></li>
+      <li><a href="#configurar">Configurar nombre, paquete e icono</a></li>
+      <li><a href="#compilar">Compilar el AAB</a></li>
+      <li><a href="#instalar">Instalar en Android</a></li>
+      <li><a href="#resultado">Entender el resultado</a></li>
+      <li><a href="#problemas">Resolver problemas frecuentes</a></li>
+      <li><a href="#cuphead">Ejemplo Cuphead</a></li>
+    </ol>
+  </details>
+
+  <div class="layout">
+    <nav class="toc" aria-label="Índice del manual">
+      <p>Contenido</p>
+      <ol>
+        <li><a href="#alcance">Entrada</a></li>
+        <li><a href="#selector">Selector</a></li>
+        <li><a href="#preparar">Preparación</a></li>
+        <li><a href="#configurar">Configuración</a></li>
+        <li><a href="#compilar">Compilación</a></li>
+        <li><a href="#instalar">Instalación</a></li>
+        <li><a href="#resultado">Resultado</a></li>
+        <li><a href="#problemas">Problemas</a></li>
+        <li><a href="#cuphead">Ejemplo</a></li>
+      </ol>
+    </nav>
+
+    <main id="contenido">
+      <section id="alcance">
+        <p class="section-kicker">01 / Entrada</p>
+        <h2>Empieza con la carpeta completa, no con el instalador</h2>
+        <p class="prose-lead">Win2APK necesita el directorio final de la aplicación. Allí deben estar el archivo <code>.exe</code>, sus bibliotecas, recursos y subcarpetas.</p>
+
+        <div class="scope-grid">
+          <article class="scope-panel">
+            <h3>La carpeta adecuada</h3>
+            <ul>
+              <li>Contiene el ejecutable que debe abrirse.</li>
+              <li>Conserva la estructura relativa de todos los archivos.</li>
+              <li>Incluye dependencias privadas que la aplicación espera junto al ejecutable.</li>
+              <li>Proviene de una copia que puedes usar y distribuir legalmente.</li>
+            </ul>
+          </article>
+          <article class="scope-panel">
+            <h3>Lo que no debes seleccionar</h3>
+            <ul>
+              <li>Un <code>setup.exe</code> que todavía debe instalar el programa.</li>
+              <li>Solo el ejecutable, si el programa utiliza archivos vecinos.</li>
+              <li>Una carpeta con DRM, anticheat o controladores de Windows que el entorno no soporte.</li>
+              <li>Datos cuyos permisos de distribución no tienes.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="notice" data-kind="warning">
+          <strong>Compatibilidad no significa universalidad.</strong>
+          El sistema empaqueta una carpeta y prepara Winlator para ejecutarla. Cada aplicación puede exigir otra versión de Wine, componentes de Windows, argumentos, controles o configuración gráfica. Empaquetar correctamente no garantiza que cualquier ejecutable funcione.
+        </div>
+
+        <h3>Herramientas necesarias</h3>
+        <ul>
+          <li>El repositorio Win2APK con el subrepositorio <code>winlator</code>.</li>
+          <li>JDK 17, Android SDK, ADB y Gradle Wrapper.</li>
+          <li><code>tools/bundletool-all-1.18.3.jar</code>, incluido en este repositorio.</li>
+          <li>Un dispositivo Android con depuración USB o depuración inalámbrica autorizada.</li>
+          <li>Espacio libre para construir el AAB, generar el conjunto APKS e instalar los datos.</li>
+        </ul>
+      </section>
+
+      <section id="selector">
+        <p class="section-kicker">02 / Selector didáctico</p>
+        <h2>Comprueba qué datos debes entregar al empaquetador</h2>
+        <p class="prose-lead">Este selector funciona dentro del navegador y no sube los archivos. Analiza nombres, tamaños y ejecutables para producir una plantilla de configuración. No ejecuta Gradle ni modifica el repositorio.</p>
+
+        <div class="builder" aria-labelledby="builder-title">
+          <div class="builder__intro">
+            <div>
+              <p id="builder-title"><strong>Simulador de entrada Win2APK</strong></p>
+              <p class="help">Los valores quedan en esta página.</p>
+            </div>
+            <div class="button-row">
+              <button type="button" class="secondary" id="load-example">Cargar ejemplo Cuphead</button>
+              <button type="button" class="secondary" id="reset-builder">Limpiar campos</button>
+            </div>
+          </div>
+
+          <div class="builder__body">
+            <form class="builder__form" id="config-form" novalidate>
+              <fieldset>
+                <legend>Carpeta de entrada</legend>
+                <div class="field">
+                  <label for="folder-input">Seleccionar carpeta</label>
+                  <input id="folder-input" type="file" webkitdirectory directory multiple>
+                  <small>El navegador no revela la ruta absoluta por seguridad. Escríbela en el siguiente campo para generar los comandos.</small>
+                </div>
+                <div class="field">
+                  <label for="source-path">Ruta absoluta en el equipo de compilación</label>
+                  <input id="source-path" type="text" placeholder="/ruta/a/MiAplicacion" autocomplete="off">
+                </div>
+                <div id="folder-state" class="state" role="status" aria-live="polite" data-state="empty">Aún no se ha seleccionado una carpeta.</div>
+                <div id="folder-stats" class="stats" hidden>
+                  <div class="stat"><span>Carpeta raíz</span><strong id="folder-name-stat">N/R</strong></div>
+                  <div class="stat"><span>Archivos</span><strong id="file-count-stat">N/R</strong></div>
+                  <div class="stat"><span>Tamaño total</span><strong id="byte-count-stat">N/R</strong></div>
+                  <div class="stat"><span>Ejecutables encontrados</span><strong id="exe-count-stat">N/R</strong></div>
+                </div>
+                <div class="field">
+                  <label for="exe-select">Ejecutable de inicio</label>
+                  <select id="exe-select" disabled>
+                    <option value="">Selecciona primero una carpeta</option>
+                  </select>
+                  <small>Si aparecen varios, elige el ejecutable real de la aplicación y no un desinstalador, launcher auxiliar o herramienta de diagnóstico.</small>
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <legend>Nombre e identidad Android</legend>
+                <div class="field">
+                  <label for="app-name">Nombre visible</label>
+                  <input id="app-name" type="text" placeholder="Mi aplicación" autocomplete="off" required>
+                  <small>Es el nombre que verá el usuario bajo el icono y en el shortcut.</small>
+                </div>
+                <div class="radio-row" aria-label="Modo del nombre de paquete">
+                  <label><input type="radio" name="package-mode" value="auto" checked> Derivar del nombre</label>
+                  <label><input type="radio" name="package-mode" value="manual"> Escribir manualmente</label>
+                </div>
+                <div class="field" id="package-base-field">
+                  <label for="package-base">Base del paquete</label>
+                  <input id="package-base" type="text" value="com" autocomplete="off">
+                  <small>Ejemplo: <code>com.tuestudio</code>. Win2APK añade el nombre normalizado al final.</small>
+                </div>
+                <div class="field">
+                  <label for="package-name">Nombre del paquete Android</label>
+                  <input id="package-name" type="text" value="com.app" readonly aria-describedby="package-help package-error" required>
+                  <small id="package-help">Debe mantenerse igual para que una compilación futura sea reconocida como actualización.</small>
+                  <small id="package-error" hidden>Usa segmentos en minúscula separados por puntos. Cada segmento debe empezar con una letra.</small>
+                </div>
+                <div class="field">
+                  <label for="version-code">Código de versión</label>
+                  <input id="version-code" type="number" min="1" step="1" value="1">
+                  <small>Aumenta este entero cada vez que publiques una actualización.</small>
+                </div>
+                <div class="field">
+                  <label for="version-name">Versión visible</label>
+                  <input id="version-name" type="text" value="1.0" autocomplete="off">
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <legend>Icono</legend>
+                <div class="field">
+                  <label for="icon-input">Seleccionar imagen o SVG</label>
+                  <input id="icon-input" type="file" accept="image/*,.svg">
+                  <small>La compilación genera las variantes adaptativa, redonda, monocromática y de compatibilidad.</small>
+                </div>
+                <div class="field">
+                  <label for="icon-path">Ruta local del icono</label>
+                  <input id="icon-path" type="text" placeholder="/ruta/al/icono.svg" autocomplete="off">
+                </div>
+                <div class="icon-preview" id="icon-preview" hidden>
+                  <img id="icon-image" alt="Vista previa del icono seleccionado">
+                  <p id="icon-description">N/R</p>
+                </div>
+              </fieldset>
+            </form>
+
+            <aside class="builder__output" aria-label="Configuración generada">
+              <h3>Plantilla resultante</h3>
+              <p class="help">La lista de asset packs es una plantilla. Debe coincidir con los módulos que prepares en Gradle.</p>
+              <div id="output-state" class="state" role="status" aria-live="polite" data-state="empty">Selecciona una carpeta o carga el ejemplo para generar la configuración.</div>
+              <div class="code-wrap">
+                <pre id="config-output" tabindex="0">Esperando datos...</pre>
+              </div>
+              <div class="button-row">
+                <button type="button" id="copy-config" disabled>Copiar configuración</button>
+                <button type="button" class="secondary" id="copy-build" disabled>Copiar comando de build</button>
+              </div>
+              <p class="copy-status" id="copy-status" aria-live="polite"></p>
+            </aside>
+          </div>
+        </div>
+
+        <div class="notice">
+          <strong>Estado actual del prototipo.</strong>
+          El repositorio todavía no contiene un selector gráfico genérico que cree los módulos de asset pack a partir de cualquier carpeta. Hoy la selección real consiste en indicar la carpeta fuente, preparar los packs y completar <a href="../config/win2apk.json"><code>config/win2apk.json</code></a>. El simulador de esta página enseña esos campos y evita confundirlos con una carga web.
+        </div>
+      </section>
+
+      <section id="preparar">
+        <p class="section-kicker">03 / Preparación</p>
+        <h2>Coloca la carpeta dentro de uno o más asset packs</h2>
+        <p class="prose-lead">Los datos grandes no deben añadirse al APK base. Win2APK los distribuye como módulos Play Asset Delivery y conserva sus rutas relativas.</p>
+
+        <ol class="step-list">
+          <li>
+            <div>
+              <h3>Verifica la raíz y el ejecutable</h3>
+              <p>La raíz del payload debe corresponder al contenido que terminará en <code>C:\NombreDeCarpeta</code>. Si el ejecutable está en una subcarpeta, registra la ruta relativa completa en <code>app.executable</code>.</p>
+              <pre><code>MiAplicacion/
+├── MiAplicacion.exe
+├── datos/
+├── plugins/
+└── configuracion.ini</code></pre>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>Cuenta archivos y bytes</h3>
+              <p>Estos valores permiten que Android valide que el movimiento terminó completo. Sustituye la ruta por la carpeta real.</p>
+              <pre><code>GAME_DIR="/ruta/a/MiAplicacion"
+
+find "$GAME_DIR" -type f | wc -l
+find "$GAME_DIR" -type f -printf '%s\n' \
+  | awk '{total += $1} END {print total}'</code></pre>
+              <p>Guarda el primer resultado en <code>directFilesExpectedCount</code> y el segundo en <code>directFilesExpectedBytes</code>.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>Crea los módulos de datos</h3>
+              <p>Una aplicación pequeña puede utilizar un pack. Una carpeta grande debe repartirse entre varios. Cada archivo conserva la misma ruta relativa y una ruta no puede aparecer en dos packs.</p>
+              <pre class="directory-tree"><code>winlator/app/
+├── miaplicacion_files_01/
+│   ├── build.gradle
+│   └── src/main/assets/
+│       ├── MiAplicacion.exe
+│       └── datos/parte-a.dat
+└── miaplicacion_files_02/
+    ├── build.gradle
+    └── src/main/assets/
+        └── datos/parte-b.dat</code></pre>
+              <p>Durante el desarrollo puedes usar enlaces simbólicos locales para evitar otra copia en el equipo de compilación. El AAB debe contener archivos normales y el árbol final en Android no debe contener enlaces simbólicos.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>Declara cada módulo</h3>
+              <p>El archivo <code>build.gradle</code> de cada pack cambia únicamente en <code>packName</code>. El modo <code>on-demand</code> permite que Win2APK mueva los archivos al prefijo y retire el origen cuando el backend del dispositivo ofrece <code>STORAGE_FILES</code>.</p>
+              <pre><code>plugins {
+    id 'com.android.asset-pack'
+}
+
+assetPack {
+    packName = 'miaplicacion_files_01'
+    dynamicDelivery {
+        deliveryType = 'on-demand'
+    }
+}</code></pre>
+              <p>Añade los módulos a <code>winlator/app/settings.gradle</code>:</p>
+              <pre><code>include ':app'
+include ':miaplicacion_files_01'
+include ':miaplicacion_files_02'</code></pre>
+            </div>
+          </li>
+        </ol>
+
+        <div class="notice" data-kind="warning">
+          <strong>Esta es la parte que aún requiere preparación manual.</strong>
+          Cambiar solo <code>sourceFolder</code> en el JSON no copia ni reparte la carpeta. Los nombres de <code>assetPackNames</code>, los módulos incluidos en <code>settings.gradle</code> y los directorios <code>src/main/assets</code> deben corresponder entre sí.
+        </div>
+      </section>
+
+      <section id="configurar">
+        <p class="section-kicker">04 / Configuración</p>
+        <h2>Define el nombre, el paquete, el icono y la ruta Windows</h2>
+        <p class="prose-lead">La fuente de configuración es <a href="../config/win2apk.json"><code>config/win2apk.json</code></a>. Gradle la copia al paquete durante la compilación.</p>
+
+        <h3>Campos que debes sustituir</h3>
+        <p>Parte del archivo actual y conserva las secciones de rootfs, <code>pathRewriteAssets</code>, inicio y runtime. El siguiente fragmento muestra los valores que cambian para cada aplicación, no un reemplazo completo del contrato.</p>
+        <pre><code>{
+  "app": {
+    "folderName": "Mi Aplicacion",
+    "sourceFolder": "/ruta/a/MiAplicacion",
+    "assetPackNames": [
+      "miaplicacion_files_01",
+      "miaplicacion_files_02"
+    ],
+    "directFiles": true,
+    "directFilesLinkMode": "move",
+    "directFilesExpectedCount": 123,
+    "directFilesExpectedBytes": 456789012,
+    "windowsDirectory": "MiAplicacion",
+    "windowsPath": "C:\\MiAplicacion",
+    "executable": "MiAplicacion.exe"
+  },
+  "android": {
+    "applicationIdBase": "com.tuestudio",
+    "applicationId": "com.tuestudio.miaplicacion",
+    "deriveApplicationIdFromFolder": true,
+    "labelFromFolder": true,
+    "label": "Mi Aplicacion",
+    "iconPath": "/ruta/al/icono.svg",
+    "iconBackgroundColor": "#1D5B45",
+    "versionCode": 1,
+    "versionName": "1.0"
+  },
+  "shortcut": {
+    "name": "Mi Aplicacion",
+    "desktopFile": "MiAplicacion.desktop",
+    "execArguments": "",
+    "forceFullscreen": false
+  },
+  "container": {
+    "graphicsDriver": "auto",
+    "dxwrapper": "auto",
+    "cpuList": "auto",
+    "cpuListWoW64": "auto"
+  }
+}</code></pre>
+
+        <div class="table-scroll" tabindex="0" aria-label="Relación entre campos y resultado">
+          <table>
+            <thead>
+              <tr>
+                <th>Lo que eliges</th>
+                <th>Campo</th>
+                <th>Efecto</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Nombre visible</td>
+                <td><code>app.folderName</code></td>
+                <td>Define la etiqueta cuando <code>labelFromFolder</code> está activo y sirve como base del paquete automático.</td>
+              </tr>
+              <tr>
+                <td>Carpeta fuente</td>
+                <td><code>app.sourceFolder</code></td>
+                <td>Registra la entrada del empaquetado. El prototipo actual todavía necesita que prepares los módulos de datos.</td>
+              </tr>
+              <tr>
+                <td>Ejecutable</td>
+                <td><code>app.executable</code></td>
+                <td>Indica qué archivo abre Wine al tocar el icono.</td>
+              </tr>
+              <tr>
+                <td>Ruta en Windows</td>
+                <td><code>windowsDirectory</code> y <code>windowsPath</code></td>
+                <td>Ubica la carpeta dentro de la unidad <code>C:</code> del contenedor.</td>
+              </tr>
+              <tr>
+                <td>Nombre de paquete</td>
+                <td><code>applicationIdBase</code>, <code>applicationId</code> y <code>deriveApplicationIdFromFolder</code></td>
+                <td>Identifica la aplicación ante Android y determina si una compilación actualiza o instala otra app.</td>
+              </tr>
+              <tr>
+                <td>Icono</td>
+                <td><code>android.iconPath</code></td>
+                <td>Genera los recursos de launcher para densidades y formas compatibles.</td>
+              </tr>
+              <tr>
+                <td>Versión</td>
+                <td><code>versionCode</code> y <code>versionName</code></td>
+                <td>Controla actualizaciones y muestra una versión legible.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Cómo se obtiene el paquete automático</h3>
+        <p>Con <code>deriveApplicationIdFromFolder: true</code>, Win2APK convierte el nombre a minúsculas, elimina caracteres que no sean letras o números y añade el resultado a <code>applicationIdBase</code>.</p>
+        <pre><code>folderName: "Mi Juego 2"
+applicationIdBase: "com.tuestudio"
+resultado: "com.tuestudio.mijuego2"</code></pre>
+        <p>Si el nombre normalizado empieza por un número, Win2APK añade <code>app</code> al principio. Para controlar el identificador directamente, usa <code>deriveApplicationIdFromFolder: false</code> y completa <code>android.applicationId</code>.</p>
+
+        <div class="notice" data-kind="danger">
+          <strong>No cambies el paquete ni la firma durante una actualización.</strong>
+          Android considera otro <code>applicationId</code> como otra aplicación. Si el paquete coincide pero el certificado cambia, devuelve <code>INSTALL_FAILED_UPDATE_INCOMPATIBLE</code>. Conserva el identificador y el keystore original, y aumenta <code>versionCode</code>.
+        </div>
+
+        <h3>Icono personalizado</h3>
+        <p>Win2APK acepta una imagen rasterizada o SVG. Puedes guardar la ruta en el JSON o reemplazarla solo para una compilación:</p>
+        <pre><code>bash gradlew :app:bundleDebug \
+  -Pwin2apkIcon="/ruta/al/icono.svg" \
+  --no-daemon --console=plain</code></pre>
+        <p>El generador crea foreground, background, capa monocromática, variantes redonda y normal, y PNG por densidad. Consulta la <a href="./11-automatizacion-iconos-launcher.md">documentación del icono</a> para los detalles.</p>
+      </section>
+
+      <section id="compilar">
+        <p class="section-kicker">05 / Compilación</p>
+        <h2>Genera el App Bundle con los datos declarados</h2>
+        <p class="prose-lead">Para una carpeta distribuida mediante asset packs, el artefacto principal es el AAB. El APK base por sí solo no contiene el payload completo.</p>
+
+        <ol class="step-list">
+          <li>
+            <div>
+              <h3>Entra al proyecto Android</h3>
+              <pre><code>cd /ruta/al/repositorio/Win2APK/winlator/app</code></pre>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>Compila la variante debug</h3>
+              <pre><code>bash gradlew :app:bundleDebug \
+  --no-daemon \
+  --console=plain</code></pre>
+              <p>Si quieres reemplazar el icono configurado para un único build, añade <code>-Pwin2apkIcon="/ruta/al/icono.svg"</code>.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>Comprueba el archivo resultante</h3>
+              <pre><code>app/build/outputs/bundle/debug/app-debug.aab</code></pre>
+              <p>El AAB es la entrada de bundletool o de una publicación compatible con App Bundles. No se instala directamente con <code>adb install</code>.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section id="instalar">
+        <p class="section-kicker">06 / Instalación Android</p>
+        <h2>Convierte el AAB en un conjunto APKS e instálalo</h2>
+        <p class="prose-lead">La prueba local utiliza bundletool con <code>--local-testing</code>. El dispositivo debe estar conectado antes de construir el conjunto optimizado.</p>
+
+        <h3>1. Identifica el dispositivo</h3>
+        <pre><code>adb devices -l</code></pre>
+        <p>Copia el serial que aparece en la primera columna. En los comandos siguientes se representa como <code>SERIAL</code>.</p>
+
+        <h3>2. Genera el conjunto APKS</h3>
+        <pre><code>cd /ruta/al/repositorio/Win2APK
+mkdir -p winlator/app/app/build/outputs/apks
+
+java -jar tools/bundletool-all-1.18.3.jar build-apks \
+  --bundle=winlator/app/app/build/outputs/bundle/debug/app-debug.aab \
+  --output=winlator/app/app/build/outputs/apks/miaplicacion-local-testing.apks \
+  --local-testing \
+  --connected-device \
+  --device-id=SERIAL \
+  --overwrite</code></pre>
+        <p>Este comando produce un conjunto ajustado al dispositivo conectado. Repítelo para cada equipo de prueba. Para distribución general, conserva el AAB como fuente de publicación y deja que el canal de App Bundle genere los APK adecuados.</p>
+
+        <h3>3. Instala base, configuraciones y asset packs</h3>
+        <pre><code>java -jar tools/bundletool-all-1.18.3.jar install-apks \
+  --apks=winlator/app/app/build/outputs/apks/miaplicacion-local-testing.apks \
+  --device-id=SERIAL</code></pre>
+
+        <h3>4. Abre la aplicación</h3>
+        <p>Toca el icono en Android. En el primer inicio, Win2APK prepara el rootfs, obtiene los asset packs, valida cantidad y tamaño, mueve la carpeta al prefijo de Wine, crea el shortcut y abre el ejecutable configurado. El perfil gráfico queda en automático si <code>graphicsDriver</code> y <code>dxwrapper</code> usan el valor <code>auto</code>.</p>
+
+        <div class="notice" data-kind="warning">
+          <strong>El primer inicio puede tardar.</strong>
+          La duración depende del tamaño de la carpeta, almacenamiento y dispositivo. No cierres la aplicación mientras muestra la pantalla de preparación. Una prueba debe distinguir entre tiempo de instalación y tiempo hasta el primer frame de la aplicación Windows.
+        </div>
+
+        <h3>Instalación inicial frente a actualización</h3>
+        <div class="table-scroll" tabindex="0" aria-label="Comparación de instalación y actualización">
+          <table>
+            <thead>
+              <tr>
+                <th>Caso</th>
+                <th>Método</th>
+                <th>Datos de la carpeta</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Primera instalación con payload</td>
+                <td><code>bundletool install-apks</code></td>
+                <td>Instala base, splits y asset packs.</td>
+              </tr>
+              <tr>
+                <td>Actualización completa</td>
+                <td>Nuevo APKS con mismo paquete y firma</td>
+                <td>Android conserva los datos privados si la actualización es compatible.</td>
+              </tr>
+              <tr>
+                <td>Cambio solo en la APK base durante desarrollo</td>
+                <td><code>adb install -r app-debug.apk</code></td>
+                <td>Puede conservar el payload ya instalado, pero no sirve como primera instalación de los packs.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>Para actualizaciones reproducibles, firma siempre con el mismo keystore. bundletool admite <code>--ks=/ruta/segura/keystore.jks</code> y <code>--ks-key-alias=alias</code>. Configura la misma identidad de firma en Gradle si también actualizarás la base con <code>adb install -r</code>. No guardes el archivo privado ni sus contraseñas en el repositorio.</p>
+      </section>
+
+      <section id="resultado">
+        <p class="section-kicker">07 / Resultado</p>
+        <h2>Qué archivos obtienes y para qué sirve cada uno</h2>
+        <div class="table-scroll" tabindex="0" aria-label="Artefactos del empaquetado">
+          <table>
+            <thead>
+              <tr>
+                <th>Artefacto</th>
+                <th>Ubicación habitual</th>
+                <th>Uso</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>app-debug.aab</code></td>
+                <td><code>app/build/outputs/bundle/debug/</code></td>
+                <td>Contiene la aplicación y referencia los asset packs. Es la entrada para bundletool o publicación AAB.</td>
+              </tr>
+              <tr>
+                <td><code>miaplicacion-local-testing.apks</code></td>
+                <td>Ruta elegida en <code>--output</code></td>
+                <td>Archivo ZIP administrado por bundletool con APK base, splits y packs para el dispositivo.</td>
+              </tr>
+              <tr>
+                <td><code>app-debug.apk</code></td>
+                <td><code>app/build/outputs/apk/debug/</code></td>
+                <td>APK base. Es útil para actualizar código durante pruebas, pero no representa una instalación completa con asset packs.</td>
+              </tr>
+              <tr>
+                <td>Aplicación instalada</td>
+                <td>Almacenamiento privado de Android</td>
+                <td>Incluye Winlator Core, el prefijo y la carpeta Windows movida desde los packs.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="notice">
+          <strong>Sobre la frase “generar un APK”.</strong>
+          Para carpetas grandes, el resultado instalable no es necesariamente un único archivo APK. El flujo probado genera un AAB y después un conjunto APKS. bundletool instala todas sus partes como una sola aplicación visible en Android.
+        </div>
+
+        <h3>Qué hace el usuario final</h3>
+        <p>Después de la instalación, el usuario toca un icono. La interfaz general de Winlator permanece oculta, el sistema prepara el entorno y abre el ejecutable configurado. Cuando el programa Windows termina, la actividad Android puede cerrarse según <code>startup.closeCoreWhenApplicationExits</code>.</p>
+      </section>
+
+      <section id="problemas">
+        <p class="section-kicker">08 / Diagnóstico</p>
+        <h2>Problemas frecuentes y su causa probable</h2>
+
+        <details>
+          <summary>La aplicación se instala, pero no aparece el juego o programa</summary>
+          <div>
+            <p>Probablemente instalaste solo el APK base. Repite la instalación con el archivo APKS para incluir los asset packs. Confirma también que <code>assetPackNames</code> coincida con los módulos Gradle.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Android muestra INSTALL_FAILED_UPDATE_INCOMPATIBLE</summary>
+          <div>
+            <p>La aplicación instalada y la nueva compilación tienen firmas distintas. Reconstruye con el mismo keystore. Desinstalar permitiría instalar la nueva firma, pero elimina los datos privados, por lo que no debe ser la primera opción si quieres conservar la carpeta.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Aparece Unable to create the configured container or shortcut</summary>
+          <div>
+            <p>Revisa <code>windowsDirectory</code>, <code>windowsPath</code>, <code>executable</code>, nombres de packs y conteos esperados. El ejecutable debe existir dentro del árbol movido y la ruta del shortcut debe apuntar al mismo directorio.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>bundletool falla con un pack demasiado grande</summary>
+          <div>
+            <p>Divide la carpeta entre varios packs y conserva rutas relativas únicas. Cuphead necesitó cinco módulos de archivos en la variante actual. Ese número es un ejemplo medido, no una regla para todas las aplicaciones.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>El icono anterior sigue visible</summary>
+          <div>
+            <p>Confirma que <code>iconPath</code> exista, aumenta <code>versionCode</code> y verifica que instalaste la nueva base con la misma firma. Algunos launchers conservan caché durante un tiempo.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>El ejecutable abre, pero los gráficos fallan</summary>
+          <div>
+            <p>Mantén <code>graphicsDriver: "auto"</code> y <code>dxwrapper: "auto"</code> para usar el perfil por dispositivo. Si la aplicación exige otra API gráfica, versión de DXVK o componentes de Windows, registra una prueba separada. Un resultado en un modelo no demuestra compatibilidad con todos.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Android advierte que la aplicación fue creada para una versión anterior</summary>
+          <div>
+            <p>La variante actual conserva <code>targetSdkVersion=28</code> porque el entorno ejecuta Box64 y Wine desde el almacenamiento privado de la aplicación. Subir el target sin rediseñar esa ruta produjo un bloqueo SELinux en las pruebas del proyecto. La advertencia es una limitación conocida del prototipo para Android moderno.</p>
+          </div>
+        </details>
+
+        <h3>Comandos básicos de diagnóstico</h3>
+        <pre><code>adb -s SERIAL shell dumpsys package NOMBRE_DEL_PAQUETE
+adb -s SERIAL shell pidof NOMBRE_DEL_PAQUETE
+adb -s SERIAL logcat | rg 'Win2APK|AndroidRuntime|FATAL EXCEPTION'</code></pre>
+      </section>
+
+      <section id="cuphead">
+        <p class="section-kicker">09 / Ejemplo real</p>
+        <h2>Cuphead como ejemplo de los mismos campos</h2>
+        <p class="prose-lead">Este caso demuestra el flujo, pero no cambia la naturaleza genérica del manual.</p>
+
+        <div class="table-scroll" tabindex="0" aria-label="Valores del ejemplo Cuphead">
+          <table>
+            <tbody>
+              <tr><th>Carpeta</th><td><code>Cuphead</code></td></tr>
+              <tr><th>Ejecutable</th><td><code>Cuphead.exe</code></td></tr>
+              <tr><th>Ruta Windows</th><td><code>C:\Cuphead</code></td></tr>
+              <tr><th>Paquete</th><td><code>com.cuphead</code></td></tr>
+              <tr><th>Icono</th><td><code>assets/icons/cuphead-promo-logo.png</code></td></tr>
+              <tr><th>Packs actuales</th><td><code>cuphead_files_01</code> a <code>cuphead_files_05</code></td></tr>
+              <tr><th>Validación del payload</th><td>815 archivos y 5847372363 bytes</td></tr>
+              <tr><th>Instalación verificada</th><td>Pixel 9a, Lenovo TB-J606F, Redmi Note 8 y Xiaomi Mi A3 en la ejecución documentada</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>El ejemplo completo está en <a href="../config/win2apk.json"><code>config/win2apk.json</code></a>. La instalación incremental y la conservación de datos se registraron en <a href="../ejecuciones/46-actualizacion-incremental-icono-v48-cuatro-dispositivos-20260919/matriz.md">EXEC-046</a>.</p>
+
+        <h3>Lista de control antes de construir otro paquete</h3>
+        <ul class="checklist">
+          <li>La carpeta contiene el ejecutable final y todos sus recursos.</li>
+          <li>Los módulos de asset pack contienen cada archivo una sola vez y conservan su ruta relativa.</li>
+          <li>Los nombres de los módulos coinciden con <code>assetPackNames</code> y <code>settings.gradle</code>.</li>
+          <li>El conteo y tamaño esperado corresponden a la carpeta seleccionada.</li>
+          <li><code>windowsDirectory</code>, <code>windowsPath</code> y <code>executable</code> describen la misma ubicación.</li>
+          <li>El nombre de paquete es válido y permanecerá estable en futuras versiones.</li>
+          <li>El icono existe y tienes permiso para usarlo.</li>
+          <li>El <code>versionCode</code> es mayor que el de la versión que vas a actualizar.</li>
+          <li>La compilación y bundletool utilizan el mismo keystore de las versiones anteriores.</li>
+          <li>La prueba se hará primero en un dispositivo y conservará logs antes de ampliar la conclusión.</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <p><strong>Win2APK</strong> · Guía del prototipo de tesis</p>
+      <p><a href="./index.md">Volver al índice de documentación</a></p>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const form = document.getElementById('config-form');
+      const folderInput = document.getElementById('folder-input');
+      const sourcePath = document.getElementById('source-path');
+      const folderState = document.getElementById('folder-state');
+      const folderStats = document.getElementById('folder-stats');
+      const folderNameStat = document.getElementById('folder-name-stat');
+      const fileCountStat = document.getElementById('file-count-stat');
+      const byteCountStat = document.getElementById('byte-count-stat');
+      const exeCountStat = document.getElementById('exe-count-stat');
+      const exeSelect = document.getElementById('exe-select');
+      const appName = document.getElementById('app-name');
+      const packageBase = document.getElementById('package-base');
+      const packageBaseField = document.getElementById('package-base-field');
+      const packageName = document.getElementById('package-name');
+      const packageError = document.getElementById('package-error');
+      const versionCode = document.getElementById('version-code');
+      const versionName = document.getElementById('version-name');
+      const iconInput = document.getElementById('icon-input');
+      const iconPath = document.getElementById('icon-path');
+      const iconPreview = document.getElementById('icon-preview');
+      const iconImage = document.getElementById('icon-image');
+      const iconDescription = document.getElementById('icon-description');
+      const outputState = document.getElementById('output-state');
+      const configOutput = document.getElementById('config-output');
+      const copyConfig = document.getElementById('copy-config');
+      const copyBuild = document.getElementById('copy-build');
+      const copyStatus = document.getElementById('copy-status');
+      const loadExample = document.getElementById('load-example');
+      const resetBuilder = document.getElementById('reset-builder');
+      const modeInputs = Array.from(document.querySelectorAll('input[name="package-mode"]'));
+
+      let analysis = null;
+      let iconObjectUrl = null;
+      let generatedConfig = '';
+      let generatedBuild = '';
+
+      const packagePattern = /^[a-z][a-z0-9_]*(\.[a-z][a-z0-9_]*)+$/;
+
+      function normalizePackagePart(value) {
+        let normalized = value.toLocaleLowerCase('en-US').replace(/[^a-z0-9]+/g, '');
+        if (!normalized) normalized = 'app';
+        if (/^[0-9]/.test(normalized)) normalized = `app${normalized}`;
+        return normalized;
+      }
+
+      function currentMode() {
+        return modeInputs.find((input) => input.checked)?.value || 'auto';
+      }
+
+      function normalizedBase(value) {
+        return value
+          .toLocaleLowerCase('en-US')
+          .split('.')
+          .map((part) => part.replace(/[^a-z0-9_]/g, ''))
+          .filter(Boolean)
+          .join('.') || 'com';
+      }
+
+      function refreshPackage() {
+        const automatic = currentMode() === 'auto';
+        packageBaseField.hidden = !automatic;
+        packageName.readOnly = automatic;
+        if (automatic) {
+          packageName.value = `${normalizedBase(packageBase.value)}.${normalizePackagePart(appName.value)}`;
+        }
+        const valid = packagePattern.test(packageName.value.trim());
+        packageName.setAttribute('aria-invalid', String(!valid));
+        packageError.hidden = valid;
+        return valid;
+      }
+
+      function humanBytes(bytes) {
+        if (!Number.isFinite(bytes)) return 'N/R';
+        const units = ['B', 'KiB', 'MiB', 'GiB', 'TiB'];
+        let value = bytes;
+        let index = 0;
+        while (value >= 1024 && index < units.length - 1) {
+          value /= 1024;
+          index += 1;
+        }
+        const digits = value >= 10 || index === 0 ? 0 : 1;
+        return `${value.toFixed(digits)} ${units[index]} (${bytes} bytes)`;
+      }
+
+      function setExecutables(executables, selected = '') {
+        exeSelect.replaceChildren();
+        if (!executables.length) {
+          const option = new Option('No se encontraron archivos .exe', '');
+          exeSelect.append(option);
+          exeSelect.disabled = true;
+          return;
+        }
+        executables.forEach((path) => exeSelect.append(new Option(path, path)));
+        exeSelect.disabled = false;
+        exeSelect.value = executables.includes(selected) ? selected : executables[0];
+      }
+
+      function setFolderState(state, message) {
+        folderState.dataset.state = state;
+        folderState.textContent = message;
+      }
+
+      function buildTemplate() {
+        const validPackage = refreshPackage();
+        const ready = analysis && analysis.files > 0 && exeSelect.value && appName.value.trim() && validPackage;
+        if (!ready) {
+          outputState.dataset.state = analysis?.error ? 'error' : 'empty';
+          outputState.textContent = analysis?.error
+            ? analysis.error
+            : 'Completa carpeta, nombre, paquete y ejecutable para generar la configuración.';
+          configOutput.textContent = 'Esperando datos...';
+          copyConfig.disabled = true;
+          copyBuild.disabled = true;
+          generatedConfig = '';
+          generatedBuild = '';
+          return;
+        }
+
+        const rootName = analysis.folderName || normalizePackagePart(appName.value);
+        const appSlug = normalizePackagePart(appName.value);
+        const configuredPath = sourcePath.value.trim() || `<ruta-absoluta>/${rootName}`;
+        const configuredIcon = iconPath.value.trim() || '<ruta-al-icono>';
+        const autoPackage = currentMode() === 'auto';
+        const config = {
+          app: {
+            folderName: appName.value.trim(),
+            sourceFolder: configuredPath,
+            assetPackNames: [`${appSlug}_files_01`],
+            directFiles: true,
+            directFilesLinkMode: 'move',
+            directFilesExpectedCount: analysis.files,
+            directFilesExpectedBytes: analysis.bytes,
+            windowsDirectory: rootName,
+            windowsPath: `C:\\${rootName}`,
+            executable: exeSelect.value
+          },
+          android: {
+            applicationIdBase: normalizedBase(packageBase.value),
+            applicationId: packageName.value.trim(),
+            deriveApplicationIdFromFolder: autoPackage,
+            labelFromFolder: true,
+            label: appName.value.trim(),
+            iconPath: configuredIcon,
+            versionCode: Number.parseInt(versionCode.value, 10) || 1,
+            versionName: versionName.value.trim() || '1.0'
+          },
+          shortcut: {
+            name: appName.value.trim(),
+            desktopFile: `${appSlug}.desktop`,
+            execArguments: '',
+            forceFullscreen: false
+          }
+        };
+
+        generatedConfig = JSON.stringify(config, null, 2);
+        const iconArgument = configuredIcon.startsWith('<')
+          ? ''
+          : ` \\\n  -Pwin2apkIcon="${configuredIcon}"`;
+        generatedBuild = `cd /ruta/al/repositorio/Win2APK/winlator/app\n\nbash gradlew :app:bundleDebug${iconArgument} \\\n  --no-daemon \\\n  --console=plain`;
+        configOutput.textContent = generatedConfig;
+        outputState.dataset.state = 'ready';
+        outputState.textContent = 'Plantilla generada. Ajusta la lista de packs al reparto real de archivos.';
+        copyConfig.disabled = false;
+        copyBuild.disabled = false;
+      }
+
+      async function copyText(text, successMessage) {
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(text);
+          } else {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.setAttribute('readonly', '');
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.append(textarea);
+            textarea.select();
+            const copied = document.execCommand('copy');
+            textarea.remove();
+            if (!copied) throw new Error('copy command failed');
+          }
+          copyStatus.textContent = successMessage;
+        } catch (error) {
+          copyStatus.textContent = 'No se pudo copiar. Selecciona el bloque de texto manualmente.';
+        }
+      }
+
+      folderInput.addEventListener('change', () => {
+        const files = Array.from(folderInput.files || []);
+        setFolderState('loading', 'Analizando archivos seleccionados...');
+        folderStats.hidden = true;
+        window.setTimeout(() => {
+          if (!files.length) {
+            analysis = null;
+            setExecutables([]);
+            setFolderState('empty', 'Aún no se ha seleccionado una carpeta.');
+            buildTemplate();
+            return;
+          }
+
+          const firstRelative = files[0].webkitRelativePath || files[0].name;
+          const rootName = firstRelative.split('/')[0] || 'Aplicacion';
+          const helperExecutable = /(^|\/)(unins|uninstall|setup|createdump|crashhandler|crashpad|dxwebsetup)[^/]*\.exe$/i;
+          const executables = files
+            .filter((file) => file.name.toLocaleLowerCase('en-US').endsWith('.exe'))
+            .map((file) => {
+              const relative = file.webkitRelativePath || file.name;
+              return relative.split('/').slice(1).join('/') || file.name;
+            })
+            .sort((left, right) => {
+              const helperDifference = Number(helperExecutable.test(left)) - Number(helperExecutable.test(right));
+              if (helperDifference !== 0) return helperDifference;
+              const depthDifference = left.split('/').length - right.split('/').length;
+              return depthDifference || left.localeCompare(right);
+            });
+          const bytes = files.reduce((total, file) => total + file.size, 0);
+
+          analysis = {
+            folderName: rootName,
+            files: files.length,
+            bytes,
+            executables
+          };
+          if (!appName.value.trim()) appName.value = rootName;
+          if (!sourcePath.value.trim()) sourcePath.placeholder = `/ruta/a/${rootName}`;
+          folderNameStat.textContent = rootName;
+          fileCountStat.textContent = String(files.length);
+          byteCountStat.textContent = humanBytes(bytes);
+          exeCountStat.textContent = String(executables.length);
+          folderStats.hidden = false;
+          setExecutables(executables);
+          if (executables.length) {
+            setFolderState('ready', 'Carpeta analizada. Revisa el ejecutable propuesto.');
+          } else {
+            analysis.error = 'La carpeta no contiene archivos .exe. Selecciona la raíz correcta.';
+            setFolderState('error', analysis.error);
+          }
+          buildTemplate();
+        }, 80);
+      });
+
+      iconInput.addEventListener('change', () => {
+        const file = iconInput.files?.[0];
+        if (iconObjectUrl) URL.revokeObjectURL(iconObjectUrl);
+        if (!file) {
+          iconPreview.hidden = true;
+          iconImage.removeAttribute('src');
+          iconDescription.textContent = 'N/R';
+          buildTemplate();
+          return;
+        }
+        iconObjectUrl = URL.createObjectURL(file);
+        iconImage.src = iconObjectUrl;
+        iconDescription.textContent = `${file.name}, ${humanBytes(file.size)}`;
+        iconPreview.hidden = false;
+        if (!iconPath.value.trim()) iconPath.placeholder = `/ruta/al/icono/${file.name}`;
+        buildTemplate();
+      });
+
+      form.addEventListener('input', buildTemplate);
+      form.addEventListener('change', buildTemplate);
+
+      modeInputs.forEach((input) => input.addEventListener('change', () => {
+        if (currentMode() === 'manual' && packageName.value === 'com.app') {
+          packageName.value = '';
+        }
+        refreshPackage();
+        buildTemplate();
+      }));
+
+      copyConfig.addEventListener('click', () => copyText(generatedConfig, 'Configuración copiada.'));
+      copyBuild.addEventListener('click', () => copyText(generatedBuild, 'Comando de compilación copiado.'));
+
+      loadExample.addEventListener('click', () => {
+        analysis = {
+          folderName: 'Cuphead',
+          files: 815,
+          bytes: 5847372363,
+          executables: ['Cuphead.exe']
+        };
+        sourcePath.value = '<ruta-local>/Cuphead';
+        appName.value = 'Cuphead';
+        packageBase.value = 'com';
+        modeInputs.find((input) => input.value === 'auto').checked = true;
+        versionCode.value = '48';
+        versionName.value = '11.1-cuphead-core';
+        iconPath.value = 'assets/icons/cuphead-promo-logo.png';
+        folderNameStat.textContent = 'Cuphead';
+        fileCountStat.textContent = '815';
+        byteCountStat.textContent = humanBytes(5847372363);
+        exeCountStat.textContent = '1';
+        folderStats.hidden = false;
+        setExecutables(['Cuphead.exe'], 'Cuphead.exe');
+        setFolderState('ready', 'Ejemplo documentado cargado. No se han leído archivos locales.');
+        iconPreview.hidden = true;
+        copyStatus.textContent = '';
+        buildTemplate();
+      });
+
+      resetBuilder.addEventListener('click', () => {
+        form.reset();
+        analysis = null;
+        sourcePath.value = '';
+        appName.value = '';
+        packageBase.value = 'com';
+        packageName.value = 'com.app';
+        versionCode.value = '1';
+        versionName.value = '1.0';
+        iconPath.value = '';
+        folderStats.hidden = true;
+        iconPreview.hidden = true;
+        if (iconObjectUrl) URL.revokeObjectURL(iconObjectUrl);
+        iconObjectUrl = null;
+        setExecutables([]);
+        setFolderState('empty', 'Aún no se ha seleccionado una carpeta.');
+        copyStatus.textContent = '';
+        buildTemplate();
+      });
+
+      buildTemplate();
+    })();
+  </script>
+</body>
+</html>

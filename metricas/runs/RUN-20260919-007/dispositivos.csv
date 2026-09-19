@@ -1,0 +1,2 @@
+run_id,device_id,observed_at_utc,manufacturer,model,product,android_device,android_version,api_level,abi_list,hardware,soc_model,cpu_cores,cpu_max_freq_khz,ram_total_kib,gpu_vendor,gpu_renderer,gpu_version,vulkan_version,screen_resolution,screen_density_dpi,serial_hash
+RUN-20260919-007,pixel-9a,2026-09-19T19:53:14.820Z,Google,Pixel 9a,tegu_beta,tegu,17,37,arm64-v8a,tegu,Tensor G4,8,3105000,7752852,,,,,1080x2424,420,7b49da4bd579

@@ -10,6 +10,7 @@
 *.bin
 *.tzst
 *.zip
+metricas/runs/*/logs/*/logcat.txt
 **/__pycache__/
 *.pyc
 /bibliografia/estado_del_arte/export_*.csv

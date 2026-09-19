@@ -14,6 +14,10 @@ Esta carpeta reúne las decisiones, avances y evidencias del desarrollo del proy
 7. [Integración de fuentes para el estado del arte](./06-integracion-fuentes-estado-arte.md)
 8. [Decisión experimental de DXVK 2.4.1 para Mali y Adreno](./07-decision-dxvk241-multidispositivo.md)
 9. [Decisión sobre la capa BCn Android para Pixel Tensor/Mali](./08-decision-capa-bcn-android-pixel.md)
+10. [Compatibilidad de API moderna y páginas de 16 KB](./09-decision-compatibilidad-api36-y-paginas-16kb.md)
+11. [Target API 28 para la ejecución del entorno de compatibilidad](./10-decision-target-api28-para-winlator-exec.md)
+12. [Automatización del icono de launcher](./11-automatizacion-iconos-launcher.md)
+13. [Manual HTML para empaquetar una carpeta e instalarla en Android](./12-guia-empaquetado-win2apk.html)
 
 ## Criterio de organización
 

@@ -1,0 +1,22 @@
+run_id,device_id,timestamp_utc,elapsed_ms,event_type,severity,message,evidence_relpath
+RUN-20260919-010,lenovo-tb-j606f,2026-09-19T20:41:46.093Z,1856,launch_requested,info,"bash arg: -p
+  bash arg: com.cuphead
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=64ms (0ms mobile, 0ms wifi, 64ms not connected)
+args: [-p, com.cuphead, -c, android.intent.category.LAUNCHER, 1]
+ arg: ""-p""
+ arg: ""com.cuphead""
+ arg: ""-c""
+ arg: ""android.intent.category.LAUNCHER""
+ arg: ""1""
+data=""com.cuphead""
+data=""android.intent.category.LAUNCHER""",metricas/runs/RUN-20260919-010/logs/lenovo-tb-j606f/launch.log
+RUN-20260919-010,lenovo-tb-j606f,2026-09-19T20:41:46.278Z,2040,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20260919-010,lenovo-tb-j606f,2026-09-19T20:42:44.906Z,60668,screenshot_captured,info,Captura canónica T+60s,metricas/runs/RUN-20260919-010/screenshots/lenovo-tb-j606f/t060.png
+RUN-20260919-010,lenovo-tb-j606f,2026-09-19T20:44:11.266Z,147028,app_process_disappeared,error,El proceso principal dejó de observarse,
+RUN-20260919-010,lenovo-tb-j606f,2026-09-19T20:46:10.607Z,266370,game_process_first_seen,info,Cuphead.exe observado: 1,
+RUN-20260919-010,lenovo-tb-j606f,2026-09-19T20:46:13.850Z,269612,first_game_frame_observed,info,Primer timestamp de presentación observado en la superficie del juego,
+RUN-20260919-010,lenovo-tb-j606f,2026-09-19T20:46:48.503Z,304266,monitor_finished,info,301 muestras registradas,metricas/runs/RUN-20260919-010/logs/lenovo-tb-j606f/exit-info.txt

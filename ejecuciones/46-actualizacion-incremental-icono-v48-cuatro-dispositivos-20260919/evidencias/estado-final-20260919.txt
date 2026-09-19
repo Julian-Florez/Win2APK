@@ -1,0 +1,42 @@
+EXEC-046 — estado posterior a la actualización incremental
+
+Método de persistencia: run-as com.cuphead sh -c "du -sk files"
+Interpretación: un tamaño igual antes/después no demuestra que cada byte interno sea idéntico, pero sí que la actualización no eliminó ni volvió a copiar el árbol medido.
+
+[Pixel 9a — pixel-9a]
+versionCode=48 minSdk=26 targetSdk=28
+lastUpdateTime=2026-09-19 16:48:39
+files_kib_before=6713230
+files_kib_after=6713230
+delta_kib=0
+cache_kib_after=25
+data_check=unchanged
+
+[Lenovo TB-J606F — lenovo-tb-j606f]
+versionCode=48 minSdk=26 targetSdk=28
+lastUpdateTime=2026-09-19 16:48:51
+files_kib_before=6734746
+files_kib_after=6734746
+delta_kib=0
+cache_kib_after=21
+data_check=unchanged
+
+[Redmi Note 8 — redmi-note-8]
+versionCode=48 minSdk=26 targetSdk=28
+lastUpdateTime=2026-09-19 16:49:03
+files_kib_before=6734746
+files_kib_after=6734746
+delta_kib=0
+cache_kib_after=21
+data_check=unchanged
+
+[Xiaomi Mi A3 — mi-a3]
+versionCode=48 minSdk=26 targetSdk=28
+lastUpdateTime=2026-09-19 16:49:15
+files_kib_before=6734778
+files_kib_after=6734778
+delta_kib=0
+cache_kib_after=21
+data_check=unchanged
+
+No se lanzó Cuphead después de actualizar; la verificación se limitó al paquete y la persistencia.
