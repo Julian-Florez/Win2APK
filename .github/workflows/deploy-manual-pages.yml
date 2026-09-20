@@ -38,23 +38,16 @@ jobs:
           mkdir -p _site/documentacion _site/config
 
           cp documentacion/12-guia-empaquetado-win2apk.html _site/documentacion/
+          cp documentacion/12-guia-empaquetado-win2apk.html _site/index.html
           cp documentacion/index.md _site/documentacion/
           cp config/win2apk.json config/example.testapp.json _site/config/
 
-          cat > _site/index.html <<'EOF'
-          <!doctype html>
-          <html lang="es">
-          <head>
-            <meta charset="utf-8">
-            <meta http-equiv="refresh" content="0; url=documentacion/12-guia-empaquetado-win2apk.html">
-            <link rel="canonical" href="./documentacion/12-guia-empaquetado-win2apk.html">
-            <title>Manual de Win2APK</title>
-          </head>
-          <body>
-            <p><a href="documentacion/12-guia-empaquetado-win2apk.html">Abrir el manual de Win2APK</a></p>
-          </body>
-          </html>
-          EOF
+          # El manual se sirve directamente en la raíz. Solo se ajustan sus
+          # enlaces relativos porque el archivo fuente vive en documentacion/.
+          sed -i \
+            -e 's#../config/#config/#g' \
+            -e 's#href="./index.md"#href="documentacion/index.md"#g' \
+            _site/index.html
 
           touch _site/.nojekyll
 
