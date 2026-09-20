@@ -1,5 +1,7 @@
 # Win2APK
 
+📖 **[Abrir el manual HTML en GitHub Pages](https://julian-florez.github.io/Win2APK/)**
+
 **Win2APK** es un proyecto de investigación y desarrollo orientado a facilitar la distribución de aplicaciones desarrolladas para Windows en dispositivos Android.
 
 El proyecto propone un **CLI de empaquetado** capaz de recibir una aplicación Windows previamente preparada —incluyendo su ejecutable, librerías, recursos y dependencias— y generar un AAB y un APK set que incorporen un entorno de compatibilidad configurado para su ejecución en Android.
