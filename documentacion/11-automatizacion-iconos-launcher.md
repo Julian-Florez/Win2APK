@@ -7,33 +7,31 @@
 
 ## Comportamiento del empaquetador
 
-El nombre de la carpeta sigue determinando la identidad de la aplicación cuando
-`deriveApplicationIdFromFolder` está habilitado. Con `folderName: "Cuphead"`,
-la normalización actual produce `com.cuphead`. El icono es una configuración
-independiente: no cambia el `applicationId`, el rootfs ni el ejecutable.
+El CLI recibe la ruta del icono en el campo obligatorio `android.icon`. El
+icono es una configuración independiente: no cambia el `applicationId`, el
+rootfs ni el ejecutable. Las rutas relativas se resuelven respecto al JSON.
 
-La ruta puede definirse de dos formas:
+```json
+{
+  "android": {
+    "applicationId": "org.ejemplo.app",
+    "versionCode": 1,
+    "versionName": "1.0.0",
+    "icon": "../assets/icono.svg",
+    "iconBackgroundColor": "#202124"
+  }
+}
+```
 
-1. En `config/win2apk.json`, mediante `android.iconPath` y opcionalmente
-   `android.iconBackgroundColor`.
-2. Como override por build, sin editar la configuración:
-
-   ```bash
-   cd winlator/app
-   bash gradlew :app:assembleDebug \
-     -Pwin2apkIcon="/ruta/al/icono.svg" \
-     --no-daemon --console=plain
-   ```
-
-Se aceptan imágenes rasterizadas y formatos vectoriales que pueda leer
-ImageMagick; los SVG se rasterizan con Inkscape cuando está disponible y se usa
-ImageMagick como fallback. Si la ruta no existe, el build falla con un mensaje
-explícito.
+El build se ejecuta con `win2apk build CONFIG`. Se aceptan PNG, JPEG, WebP y
+SVG; la implementación Rust del CLI decodifica o rasteriza el recurso dentro
+del staging. Si la ruta no existe o el formato no se puede leer, el build
+termina con un mensaje explícito. No se requiere Python, ImageMagick ni
+Inkscape en el computador que empaqueta.
 
 ## Recursos generados
 
-`tools/generate_android_icon.py` escribe recursos en
-`winlator/app/app/build/generated/launcher-icon-res`, no sobreescribe los
+`cli/src/icon.rs` escribe recursos en el staging del build, no sobreescribe los
 recursos fuente ni modifica la imagen original. Produce:
 
 - icono adaptativo de color con foreground y background;
@@ -61,15 +59,15 @@ debidamente autorizada.
 
 ## Verificación realizada
 
-- `:app:assembleDebug`: aprobado.
+- `win2apk build config/example.testapp.json`: aprobado.
+- El AAB de prueba contiene únicamente `win2apk_payload_001`, sin heredar los
+  asset packs de una compilación anterior de Cuphead.
 - El APK contiene `win2apk_launcher.xml`, sus PNG por densidad y las capas
   `foreground`/`monochrome`.
-- El manifest fusionado declara `@mipmap/win2apk_launcher` y
+- El manifest generado declara `@mipmap/win2apk_launcher` y
   `@mipmap/win2apk_launcher_round`.
-- `aapt2 dump badging` confirmó `package: name='com.cuphead'` y que la
-  compilación sigue usando `versionCode=48` y `targetSdkVersion=28`.
-- El task de preparación también fue probado con una imagen SVG suministrada
-  mediante `-Pwin2apkIcon`.
+- La compilación de Cuphead también fue probada con una imagen PNG y generó el
+  AAB/APKS completo.
 
 ## Pendientes
 

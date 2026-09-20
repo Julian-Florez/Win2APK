@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-09-20T01:19:33.027957117+00:00",
+  "applicationId": "org.win2apk.testapp",
+  "versionCode": 1,
+  "versionName": "0.1.0",
+  "configFile": "/home/julian/Tesis/Win2APK/config/example.testapp.json",
+  "sourceFolder": "/home/julian/Tesis/Win2APK/config/../TestApp/publish/win-x64-folder",
+  "entrypoint": "Win2APKTest.exe",
+  "fileCount": 463,
+  "totalBytes": 167479464,
+  "packCount": 1,
+  "playCompatible": true,
+  "playIncompatibilities": [],
+  "aab": {
+    "file": "win2apk-test-0.1.0.aab",
+    "bytes": 490787881,
+    "sha256": "e3ce8f6a9cc9db44944f39cdbda5175cdba7cfcd28ec26b54cd9eea21c83b093"
+  },
+  "apks": {
+    "file": "win2apk-test-0.1.0.apks",
+    "bytes": 744602045,
+    "sha256": "9fb5760b72fc6f830ce7cc74b22cd45ffbe032b62749761d3702e1f50b928d75"
+  }
+}

@@ -1,30 +1,17 @@
 {
-  "schemaVersion": 1,
-  "app": {
-    "folderName": "Cuphead",
-    "sourceFolder": "N/R (local legal installation configured outside the repository)",
-    "asset": "cuphead.tzst",
-    "assetPackNames": [
-      "cuphead_files_01",
-      "cuphead_files_02",
-      "cuphead_files_03",
-      "cuphead_files_04",
-      "cuphead_files_05"
-    ],
-    "assetParts": [],
-    "directFiles": true,
-    "directFilesLinkMode": "move",
-    "directFilesExpectedCount": 815,
-    "directFilesExpectedBytes": 5847372363,
-    "windowsDirectory": "Cuphead",
-    "windowsPath": "C:\\Cuphead",
-    "executable": "Cuphead.exe"
+  "$schema": "../schemas/win2apk-v2.schema.json",
+  "schemaVersion": 2,
+  "project": {
+    "name": "Cuphead",
+    "sourceFolder": "/home/julian/Games/cuphead/drive_c/Program Files/Cuphead",
+    "entrypoint": "Cuphead.exe",
+    "installDirectory": "Cuphead"
   },
   "android": {
-    "applicationIdBase": "com",
-    "applicationId": "com.winlator",
-    "deriveApplicationIdFromFolder": true,
-    "iconPath": "assets/icons/cuphead-promo-logo.png",
+    "applicationId": "com.cuphead",
+    "versionCode": 48,
+    "versionName": "11.1-direct-files-auto-gpu-recovery-v15-pixel-bcn-legacy-exec-16k-cuphead-core",
+    "icon": "../assets/icons/cuphead-promo-logo.png",
     "iconBackgroundColor": "#FFCC16",
     "rootfsPackageId": "com.winlator",
     "rootfsPathAlias": "/proc/self/fd/3",
@@ -37,11 +24,21 @@
       "graphics_driver/turnip-26.1.0.tzst",
       "graphics_driver/virgl-23.1.9.tzst",
       "graphics_driver/vortek-2.1.tzst"
-    ],
-    "labelFromFolder": true,
-    "label": "Cuphead",
-    "versionCode": 48,
-    "versionName": "11.1-direct-files-auto-gpu-recovery-v15-pixel-bcn-legacy-exec-16k-cuphead-core"
+    ]
+  },
+  "packaging": {
+    "delivery": "on-demand",
+    "storageMode": "move",
+    "targetPackBytes": 1350000000,
+    "oversizedFiles": "chunk"
+  },
+  "distribution": {
+    "aab": true,
+    "apks": true,
+    "localTesting": true
+  },
+  "signing": {
+    "profile": "auto"
   },
   "startup": {
     "coreMode": true,
@@ -76,12 +73,10 @@
   },
   "shortcut": {
     "name": "Cuphead",
-    "desktopFile": "Cuphead.desktop",
     "execArguments": "",
     "forceFullscreen": false
   },
   "container": {
-    "id": 1,
     "name": "Container-1",
     "screenSize": "1280x720",
     "envVars": "ZINK_DESCRIPTORS=lazy ZINK_DEBUG=compact MESA_SHADER_CACHE_DISABLE=false MESA_SHADER_CACHE_MAX_SIZE=512MB mesa_glthread=true WINEESYNC=1 TU_DEBUG=noconform",

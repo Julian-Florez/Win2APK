@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-09-20T01:02:44.581305264+00:00",
+  "applicationId": "com.cuphead",
+  "versionCode": 48,
+  "versionName": "11.1-direct-files-auto-gpu-recovery-v15-pixel-bcn-legacy-exec-16k-cuphead-core",
+  "configFile": "/home/julian/Tesis/Win2APK/config/win2apk.json",
+  "sourceFolder": "/home/julian/Games/cuphead/drive_c/Program Files/Cuphead",
+  "entrypoint": "Cuphead.exe",
+  "fileCount": 815,
+  "totalBytes": 5847372363,
+  "packCount": 5,
+  "playCompatible": true,
+  "playIncompatibilities": [],
+  "aab": {
+    "file": "cuphead-11.1-direct-files-auto-gpu-recovery-v15-pixel-bcn-legacy-exec-16k-cuphead-core.aab",
+    "bytes": 5494326036,
+    "sha256": "f43083bbc863cb57cc4e260fd393fcc9117d930d843ebddbf97a6ba9db6682c9"
+  },
+  "apks": {
+    "file": "cuphead-11.1-direct-files-auto-gpu-recovery-v15-pixel-bcn-legacy-exec-16k-cuphead-core.apks",
+    "bytes": 6424836814,
+    "sha256": "448a73e3a3cd670413a3e14de92a77ce9d14d2d34de3a50a984cbc949b108afa"
+  }
+}

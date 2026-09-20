@@ -18,6 +18,7 @@ Esta carpeta reúne las decisiones, avances y evidencias del desarrollo del proy
 11. [Target API 28 para la ejecución del entorno de compatibilidad](./10-decision-target-api28-para-winlator-exec.md)
 12. [Automatización del icono de launcher](./11-automatizacion-iconos-launcher.md)
 13. [Manual HTML para empaquetar una carpeta e instalarla en Android](./12-guia-empaquetado-win2apk.html)
+14. [CLI Linux y configuración declarativa v2](./13-decision-cli-linux-configuracion-v2.md)
 
 ## Criterio de organización
 

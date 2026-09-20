@@ -1,4 +1,6 @@
 /node_modules/
+/target/
+/dist/
 /node_modules
 /outputs/
 /review_output/

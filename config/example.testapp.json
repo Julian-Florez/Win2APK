@@ -1,0 +1,40 @@
+{
+  "$schema": "../schemas/win2apk-v2.schema.json",
+  "schemaVersion": 2,
+  "project": {
+    "name": "Win2APK Test",
+    "sourceFolder": "../TestApp/publish/win-x64-folder",
+    "entrypoint": "Win2APKTest.exe",
+    "installDirectory": "Win2APKTest"
+  },
+  "android": {
+    "applicationId": "org.win2apk.testapp",
+    "versionCode": 1,
+    "versionName": "0.1.0",
+    "icon": "../assets/icons/win2apk-generic.svg",
+    "iconBackgroundColor": "#172033"
+  },
+  "packaging": {
+    "delivery": "on-demand",
+    "storageMode": "move",
+    "targetPackBytes": 1350000000,
+    "oversizedFiles": "chunk"
+  },
+  "distribution": {
+    "aab": true,
+    "apks": true,
+    "localTesting": true
+  },
+  "signing": {
+    "profile": "auto"
+  },
+  "shortcut": {
+    "name": "Win2APK Test"
+  },
+  "container": {
+    "graphicsDriver": "auto",
+    "dxwrapper": "auto",
+    "audioDriver": "alsa",
+    "box64Preset": "INTERMEDIATE"
+  }
+}

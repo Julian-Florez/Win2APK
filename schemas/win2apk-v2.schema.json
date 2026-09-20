@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Julian-Florez/Win2APK/schemas/win2apk-v2.schema.json",
+  "title": "Win2APK build configuration",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "project", "android"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": 2 },
+    "project": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "sourceFolder", "entrypoint", "installDirectory"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "sourceFolder": { "type": "string", "minLength": 1 },
+        "entrypoint": { "type": "string", "minLength": 1 },
+        "installDirectory": { "type": "string", "minLength": 1, "pattern": "^[^/\\\\]+$" }
+      }
+    },
+    "android": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["applicationId", "versionCode", "versionName", "icon"],
+      "properties": {
+        "applicationId": { "type": "string", "pattern": "^[a-z][a-z0-9_]*(\\.[a-z][a-z0-9_]*)+$" },
+        "versionCode": { "type": "integer", "minimum": 1 },
+        "versionName": { "type": "string", "minLength": 1 },
+        "icon": { "type": "string", "minLength": 1 },
+        "iconBackgroundColor": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}([0-9A-Fa-f]{2})?$" },
+        "rootfsPackageId": { "type": "string" },
+        "rootfsPathAlias": { "type": "string" },
+        "pathRewriteAssets": { "type": "array", "items": { "type": "string" }, "uniqueItems": true }
+      }
+    },
+    "packaging": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "delivery": { "const": "on-demand" },
+        "storageMode": { "const": "move" },
+        "targetPackBytes": { "type": "integer", "minimum": 67108864, "maximum": 1400000000 },
+        "oversizedFiles": { "const": "chunk" }
+      }
+    },
+    "distribution": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "aab": { "type": "boolean" },
+        "apks": { "type": "boolean" },
+        "localTesting": { "type": "boolean" }
+      }
+    },
+    "signing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["profile"],
+      "properties": {
+        "profile": { "enum": ["auto", "custom"] },
+        "keystore": { "type": "string" },
+        "alias": { "type": "string" },
+        "storePasswordEnv": { "type": "string" },
+        "keyPasswordEnv": { "type": "string" }
+      }
+    },
+    "startup": { "type": "object" },
+    "runtime": { "type": "object" },
+    "shortcut": { "type": "object" },
+    "container": { "type": "object" }
+  }
+}

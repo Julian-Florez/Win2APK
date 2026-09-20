@@ -60,6 +60,8 @@ Cada registro corresponde a un intento experimental independiente. Las matrices 
 
 | EXEC-046 | Actualización incremental de la APK con icono personalizado, sin sustituir datos | Distribución incremental y verificación ADB | Pixel 9a, Lenovo TB-J606F, Redmi Note 8 y Mi A3 | Aprobado experimentalmente: `adb install -r` en 4/4 y `files` sin cambios; la primera firma fue rechazada y se corrigió con la firma existente | [matriz.md](./46-actualizacion-incremental-icono-v48-cuatro-dispositivos-20260919/matriz.md) | [logs y estado](./46-actualizacion-incremental-icono-v48-cuatro-dispositivos-20260919/) |
 
+| EXEC-047 | CLI declarativo con carpeta genérica y Cuphead | Build automatizado, firma externa y validación bundletool | N/A | Aprobado con correcciones: AAB/APKS genérico aislado y reempaquetado completo de Cuphead | [matriz.md](./47-cli-empaquetado-testapp-cuphead-20260919/matriz.md) | [evidencias](./47-cli-empaquetado-testapp-cuphead-20260919/evidencias/) |
+
 ## Plantilla
 
 Usar [plantilla-metricas.md](./plantilla-metricas.md) para crear la matriz del siguiente intento. No completar campos con datos que no estén respaldados por la ejecución.
