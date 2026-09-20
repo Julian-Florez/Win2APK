@@ -1,0 +1,34 @@
+Fecha: 2026-09-19
+Dispositivo: 51c803a01206 (Xiaomi Mi A3)
+
+Eventos relevantes del logcat posteriores a la instalación válida:
+20:55:12.638 ActivityTaskManager: Displayed com.cuphead/com.winlator.MainActivity for user 0: +569ms
+20:55:21.824 Win2APKAssetPack: requesting on-demand asset packs=[win2apk_payload_001, win2apk_payload_002, win2apk_payload_003, win2apk_payload_004, win2apk_payload_005]
+20:57:09.975 Win2APKAssetPack: los cinco paquetes reportaron status=4 y downloaded=total
+20:57:10.044-20:57:10.048 Win2APKDirectFiles: se localizaron las fuentes de los cinco paquetes
+20:57:34.363 Win2APKDirectFiles: move transaction committed files=815 bytes=5847372363
+20:57:34.365-20:57:34.452 Win2APKAssetPack: se eliminaron los cinco paquetes fuente
+20:57:35.303 Win2APKAssetPack: local-testing source cleanup ... removed=true existsAfter=false
+20:57:35.740 ActivityTaskManager: Displayed com.cuphead/com.winlator.XServerDisplayActivity for user 0: +292ms
+20:57:43.893 WinlatorProcess: Starting ... C:\\Cuphead "Cuphead.exe"
+
+Perfil gráfico detectado:
+Win2APKGraphicsProfile: device=Xiaomi/Mi A3 hardware=qcom renderer=Adreno (TM) 610 vendor=Qualcomm profile=Adreno / Turnip + Gladio / DXVK graphicsDriver=turnip,gladio dxwrapper=dxvk
+
+Procesos observados en el corte:
+com.cuphead
+start.exe
+wineserver
+Cuphead.exe
+
+Estado del paquete después de la instalación:
+package=com.cuphead
+versionCode=48
+targetSdk=28
+primaryCpuAbi=arm64-v8a
+firstInstallTime=2026-09-19 20:52:18
+lastUpdateTime=2026-09-19 20:52:18
+
+Mensajes no bloqueantes observados:
+- run-as: package not debuggable: com.cuphead, durante la limpieza opcional de splitcompat.
+- Denegaciones SELinux ioctl sobre directorios privados de Wine; Cuphead.exe siguió activo.

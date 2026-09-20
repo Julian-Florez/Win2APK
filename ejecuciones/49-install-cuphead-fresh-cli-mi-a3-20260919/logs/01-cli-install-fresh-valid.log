@@ -1,0 +1,17 @@
+Fecha: 2026-09-19
+Dispositivo: 51c803a01206 (Xiaomi Mi A3)
+Artefacto: /tmp/win2apk-cuphead-dist/cuphead-11.1-direct-files-auto-gpu-recovery-v15-pixel-bcn-legacy-exec-16k-cuphead-core.apks
+Comando:
+WIN2APK_BUNDLETOOL=/tmp/bundletool-all-1.18.3.jar ./target/release/win2apk install /tmp/win2apk-cuphead-dist/cuphead-11.1-direct-files-auto-gpu-recovery-v15-pixel-bcn-legacy-exec-16k-cuphead-core.apks --device 51c803a01206 --fresh
+
+Resultado observado:
+- El CLI informó: "Desinstalando com.cuphead por solicitud explícita --fresh..."
+- bundletool envió los splits base y los cinco asset packs.
+- El CLI terminó con código de salida 0.
+- El CLI informó: "Instalación enviada correctamente a Android."
+
+Advertencia no bloqueante reportada por bundletool:
+run-as: package not debuggable: com.cuphead
+Failed to remove working directory with local testing splits. Your app might still have been installed correctly but have previous version of dynamic feature modules. If you see legacy versions ... try uninstall and install again.
+
+Nota: la instalación sí fue precedida por desinstalación explícita y la ejecución posterior confirmó un UID nuevo y un primer arranque nuevo.

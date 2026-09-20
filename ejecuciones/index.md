@@ -61,6 +61,8 @@ Cada registro corresponde a un intento experimental independiente. Las matrices 
 | EXEC-046 | Actualización incremental de la APK con icono personalizado, sin sustituir datos | Distribución incremental y verificación ADB | Pixel 9a, Lenovo TB-J606F, Redmi Note 8 y Mi A3 | Aprobado experimentalmente: `adb install -r` en 4/4 y `files` sin cambios; la primera firma fue rechazada y se corrigió con la firma existente | [matriz.md](./46-actualizacion-incremental-icono-v48-cuatro-dispositivos-20260919/matriz.md) | [logs y estado](./46-actualizacion-incremental-icono-v48-cuatro-dispositivos-20260919/) |
 
 | EXEC-047 | CLI declarativo con carpeta genérica y Cuphead | Build automatizado, firma externa y validación bundletool | N/A | Aprobado con correcciones: AAB/APKS genérico aislado y reempaquetado completo de Cuphead | [matriz.md](./47-cli-empaquetado-testapp-cuphead-20260919/matriz.md) | [evidencias](./47-cli-empaquetado-testapp-cuphead-20260919/evidencias/) |
+| EXEC-048 | Intento de instalación `--fresh` de Cuphead en Mi A3 con wrapper incompleto | Repetición / instalación automatizada | Xiaomi Mi A3 | Fallido antes de instalar: faltó `/usr/bin/time` en el entorno del wrapper | [matriz.md](./48-install-cuphead-fresh-mi-a3-20260919/matriz.md) | [logs](./48-install-cuphead-fresh-mi-a3-20260919/logs/) |
+| EXEC-049 | Instalación `--fresh` de Cuphead mediante el CLI en Mi A3 | Instalación automatizada / repetición válida | Xiaomi Mi A3 | Aprobado experimentalmente: instalación, transferencia directa, limpieza de fuentes y `Cuphead.exe` activo | [matriz.md](./49-install-cuphead-fresh-cli-mi-a3-20260919/matriz.md) | [logs](./49-install-cuphead-fresh-cli-mi-a3-20260919/logs/) |
 
 ## Plantilla
 

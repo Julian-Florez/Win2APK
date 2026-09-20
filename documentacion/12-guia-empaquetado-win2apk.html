@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Manual de Win2APK para empaquetar una carpeta de aplicación o juego de Windows e instalarla en Android con bundletool.">
+  <meta name="description" content="Manual de Win2APK para empaquetar una carpeta preparada de aplicación o juego de Windows mediante el CLI y probarla en Android.">
   <title>Manual de empaquetado Win2APK</title>
   <!--
     Design Read: manual operativo para usuarios técnicos, con lenguaje editorial
@@ -920,38 +920,38 @@
       <div>
         <p class="eyebrow">Win2APK / manual operativo</p>
         <h1>Empaquetar una carpeta Windows para Android</h1>
-        <p class="lede">Selecciona una carpeta que ya contenga la aplicación o el juego, define su ejecutable, icono e identidad Android, genera el App Bundle y realiza la instalación con bundletool.</p>
+        <p class="lede">Declara una carpeta ya preparada en un JSON, define su ejecutable, icono e identidad Android, y deja que el CLI genere e instale el paquete de prueba.</p>
       </div>
       <aside class="status-block" aria-label="Alcance del manual">
         <p><strong>Alcance:</strong> aplicaciones y juegos distribuidos como una carpeta completa.</p>
         <p><strong>Ejemplo:</strong> Cuphead sirve para mostrar valores reales. No limita el procedimiento a ese juego.</p>
-        <p><strong>Resultado:</strong> una aplicación Android que ejecuta el programa de Windows mediante un entorno de compatibilidad. No es una conversión a código Android nativo.</p>
-        <p><strong>Fecha:</strong> 2026-09-19. Describe el prototipo disponible en el repositorio.</p>
+        <p><strong>Resultado:</strong> un AAB y, para pruebas locales, un APKS que ejecutan el programa de Windows mediante un entorno de compatibilidad. No es una conversión a código Android nativo.</p>
+        <p><strong>Fecha:</strong> 2026-09-19. Describe el CLI Linux del esquema JSON v2.</p>
       </aside>
     </div>
   </header>
 
   <div class="flow" aria-label="Resumen del flujo">
     <span>Carpeta</span>
-    <span>Identidad</span>
-    <span>Asset packs</span>
-    <span>AAB</span>
-    <span>APKS</span>
+    <span>JSON v2</span>
+    <span>Validar</span>
+    <span>Planificar</span>
+    <span>AAB / APKS</span>
     <span>Android</span>
   </div>
 
   <details class="mobile-toc">
     <summary>Índice del manual</summary>
     <ol>
-      <li><a href="#alcance">Qué entra al empaquetador</a></li>
-      <li><a href="#selector">Simular la selección</a></li>
-      <li><a href="#preparar">Preparar carpeta y packs</a></li>
-      <li><a href="#configurar">Configurar nombre, paquete e icono</a></li>
-      <li><a href="#compilar">Compilar el AAB</a></li>
+      <li><a href="#alcance">Alcance y requisitos</a></li>
+      <li><a href="#selector">Preparar el JSON v2</a></li>
+      <li><a href="#preparar">Validar y planificar</a></li>
+      <li><a href="#configurar">Campos de configuración</a></li>
+      <li><a href="#compilar">Construir con el CLI</a></li>
       <li><a href="#instalar">Instalar en Android</a></li>
-      <li><a href="#resultado">Entender el resultado</a></li>
-      <li><a href="#problemas">Resolver problemas frecuentes</a></li>
-      <li><a href="#cuphead">Ejemplo Cuphead</a></li>
+      <li><a href="#resultado">Artefactos generados</a></li>
+      <li><a href="#problemas">Limitaciones y diagnóstico</a></li>
+      <li><a href="#cuphead">Cuphead como ejemplo</a></li>
     </ol>
   </details>
 
@@ -959,23 +959,23 @@
     <nav class="toc" aria-label="Índice del manual">
       <p>Contenido</p>
       <ol>
-        <li><a href="#alcance">Entrada</a></li>
-        <li><a href="#selector">Selector</a></li>
-        <li><a href="#preparar">Preparación</a></li>
-        <li><a href="#configurar">Configuración</a></li>
-        <li><a href="#compilar">Compilación</a></li>
+        <li><a href="#alcance">Requisitos</a></li>
+        <li><a href="#selector">JSON v2</a></li>
+        <li><a href="#preparar">Validación</a></li>
+        <li><a href="#configurar">Campos</a></li>
+        <li><a href="#compilar">Build</a></li>
         <li><a href="#instalar">Instalación</a></li>
-        <li><a href="#resultado">Resultado</a></li>
-        <li><a href="#problemas">Problemas</a></li>
-        <li><a href="#cuphead">Ejemplo</a></li>
+        <li><a href="#resultado">Salida</a></li>
+        <li><a href="#problemas">Limitaciones</a></li>
+        <li><a href="#cuphead">Cuphead</a></li>
       </ol>
     </nav>
 
     <main id="contenido">
       <section id="alcance">
         <p class="section-kicker">01 / Entrada</p>
-        <h2>Empieza con la carpeta completa, no con el instalador</h2>
-        <p class="prose-lead">Win2APK necesita el directorio final de la aplicación. Allí deben estar el archivo <code>.exe</code>, sus bibliotecas, recursos y subcarpetas.</p>
+        <h2>Empieza con una carpeta Windows ya preparada</h2>
+        <p class="prose-lead">El CLI recibe el directorio final de la aplicación. No ejecuta instaladores ni intenta descubrir dependencias: allí deben estar el archivo <code>.exe</code>, sus bibliotecas, recursos y subcarpetas.</p>
 
         <div class="scope-grid">
           <article class="scope-panel">
@@ -1003,30 +1003,43 @@
           El sistema empaqueta una carpeta y prepara Winlator para ejecutarla. Cada aplicación puede exigir otra versión de Wine, componentes de Windows, argumentos, controles o configuración gráfica. Empaquetar correctamente no garantiza que cualquier ejecutable funcione.
         </div>
 
-        <h3>Herramientas necesarias</h3>
+        <h3>Requisitos del equipo Linux</h3>
         <ul>
-          <li>El repositorio Win2APK con el subrepositorio <code>winlator</code>.</li>
-          <li>JDK 17, Android SDK, ADB y Gradle Wrapper.</li>
-          <li><code>tools/bundletool-all-1.18.3.jar</code>, incluido en este repositorio.</li>
-          <li>Un dispositivo Android con depuración USB o depuración inalámbrica autorizada.</li>
-          <li>Espacio libre para construir el AAB, generar el conjunto APKS e instalar los datos.</li>
+          <li>Linux <code>x86_64</code>. Esta versión del host no admite Windows, macOS ni otras arquitecturas.</li>
+          <li>El repositorio Win2APK y su motor Android <code>winlator/app</code>.</li>
+          <li>Rust sólo para compilar el CLI desde el código fuente. El binario release instalado no requiere Rust.</li>
+          <li>Un dispositivo Android con ADB autorizado si se probará la instalación.</li>
+          <li>Espacio libre para el staging, el AAB, el APKS y la instalación en el dispositivo.</li>
         </ul>
+
+        <h3>Instalar el binario release</h3>
+        <p>Desde la raíz del repositorio, compila una vez y coloca el ejecutable en una ruta del <code>PATH</code> del usuario:</p>
+        <pre><code>cargo build --release --package win2apk
+install -Dm755 target/release/win2apk "$HOME/.local/bin/win2apk"
+
+win2apk --version</code></pre>
+        <p>Si <code>$HOME/.local/bin</code> no está en el <code>PATH</code>, añádelo al perfil de shell o invoca el binario mediante su ruta absoluta.</p>
+
+        <h3>Preparar el toolchain y diagnosticarlo</h3>
+        <pre><code>win2apk setup
+win2apk doctor --engine /ruta/al/Win2APK/winlator/app</code></pre>
+        <p><code>setup</code> descarga y verifica el JDK 17, Android SDK 36, NDK 30, CMake, platform-tools y bundletool. La aceptación de licencias de Android es interactiva. <code>doctor</code> comprueba el host, Java, SDK, ADB, bundletool y el motor antes de construir.</p>
       </section>
 
       <section id="selector">
-        <p class="section-kicker">02 / Selector didáctico</p>
-        <h2>Comprueba qué datos debes entregar al empaquetador</h2>
-        <p class="prose-lead">Este selector funciona dentro del navegador y no sube los archivos. Analiza nombres, tamaños y ejecutables para producir una plantilla de configuración. No ejecuta Gradle ni modifica el repositorio.</p>
+        <p class="section-kicker">02 / JSON v2</p>
+        <h2>Declara la carpeta y el resultado esperado</h2>
+        <p class="prose-lead">La selección real se hace en el archivo JSON que recibe el CLI. La carpeta y el icono son rutas locales del equipo Linux; el manual no sube archivos ni necesita una interfaz web.</p>
 
         <div class="builder" aria-labelledby="builder-title">
           <div class="builder__intro">
             <div>
-              <p id="builder-title"><strong>Simulador de entrada Win2APK</strong></p>
-              <p class="help">Los valores quedan en esta página.</p>
+              <p id="builder-title"><strong>Referencia rápida para el JSON</strong></p>
+              <p class="help">Usa el ejemplo Cuphead como plantilla y reemplaza sus rutas.</p>
             </div>
             <div class="button-row">
-              <button type="button" class="secondary" id="load-example">Cargar ejemplo Cuphead</button>
-              <button type="button" class="secondary" id="reset-builder">Limpiar campos</button>
+              <a class="button-link" href="../config/example.testapp.json">Ver ejemplo genérico</a>
+              <a class="button-link" href="../config/win2apk.json">Ver ejemplo Cuphead</a>
             </div>
           </div>
 
@@ -1040,7 +1053,7 @@
                   <small>El navegador no revela la ruta absoluta por seguridad. Escríbela en el siguiente campo para generar los comandos.</small>
                 </div>
                 <div class="field">
-                  <label for="source-path">Ruta absoluta en el equipo de compilación</label>
+                  <label for="source-path"><code>project.sourceFolder</code></label>
                   <input id="source-path" type="text" placeholder="/ruta/a/MiAplicacion" autocomplete="off">
                 </div>
                 <div id="folder-state" class="state" role="status" aria-live="polite" data-state="empty">Aún no se ha seleccionado una carpeta.</div>
@@ -1051,7 +1064,7 @@
                   <div class="stat"><span>Ejecutables encontrados</span><strong id="exe-count-stat">N/R</strong></div>
                 </div>
                 <div class="field">
-                  <label for="exe-select">Ejecutable de inicio</label>
+                  <label for="exe-select"><code>project.entrypoint</code></label>
                   <select id="exe-select" disabled>
                     <option value="">Selecciona primero una carpeta</option>
                   </select>
@@ -1062,23 +1075,15 @@
               <fieldset>
                 <legend>Nombre e identidad Android</legend>
                 <div class="field">
-                  <label for="app-name">Nombre visible</label>
+                  <label for="app-name"><code>project.name</code></label>
                   <input id="app-name" type="text" placeholder="Mi aplicación" autocomplete="off" required>
                   <small>Es el nombre que verá el usuario bajo el icono y en el shortcut.</small>
                 </div>
-                <div class="radio-row" aria-label="Modo del nombre de paquete">
-                  <label><input type="radio" name="package-mode" value="auto" checked> Derivar del nombre</label>
-                  <label><input type="radio" name="package-mode" value="manual"> Escribir manualmente</label>
-                </div>
-                <div class="field" id="package-base-field">
-                  <label for="package-base">Base del paquete</label>
-                  <input id="package-base" type="text" value="com" autocomplete="off">
-                  <small>Ejemplo: <code>com.tuestudio</code>. Win2APK añade el nombre normalizado al final.</small>
-                </div>
+                <div class="notice" data-kind="warning"><strong>Identidad explícita.</strong> El <code>applicationId</code> se escribe en el JSON y debe conservarse entre actualizaciones.</div>
                 <div class="field">
-                  <label for="package-name">Nombre del paquete Android</label>
-                  <input id="package-name" type="text" value="com.app" readonly aria-describedby="package-help package-error" required>
-                  <small id="package-help">Debe mantenerse igual para que una compilación futura sea reconocida como actualización.</small>
+                  <label for="package-name"><code>android.applicationId</code></label>
+                  <input id="package-name" type="text" value="com.app" aria-describedby="package-help package-error" required>
+                  <small id="package-help">Es obligatorio, debe ser válido y debe mantenerse igual para que una compilación futura sea reconocida como actualización.</small>
                   <small id="package-error" hidden>Usa segmentos en minúscula separados por puntos. Cada segmento debe empezar con una letra.</small>
                 </div>
                 <div class="field">
@@ -1100,7 +1105,7 @@
                   <small>La compilación genera las variantes adaptativa, redonda, monocromática y de compatibilidad.</small>
                 </div>
                 <div class="field">
-                  <label for="icon-path">Ruta local del icono</label>
+                  <label for="icon-path"><code>android.icon</code></label>
                   <input id="icon-path" type="text" placeholder="/ruta/al/icono.svg" autocomplete="off">
                 </div>
                 <div class="icon-preview" id="icon-preview" hidden>
@@ -1112,7 +1117,7 @@
 
             <aside class="builder__output" aria-label="Configuración generada">
               <h3>Plantilla resultante</h3>
-              <p class="help">La lista de asset packs es una plantilla. Debe coincidir con los módulos que prepares en Gradle.</p>
+              <p class="help">El CLI calcula los asset packs automáticamente; no debes crearlos ni declararlos manualmente.</p>
               <div id="output-state" class="state" role="status" aria-live="polite" data-state="empty">Selecciona una carpeta o carga el ejemplo para generar la configuración.</div>
               <div class="code-wrap">
                 <pre id="config-output" tabindex="0">Esperando datos...</pre>
@@ -1127,390 +1132,262 @@
         </div>
 
         <div class="notice">
-          <strong>Estado actual del prototipo.</strong>
-          El repositorio todavía no contiene un selector gráfico genérico que cree los módulos de asset pack a partir de cualquier carpeta. Hoy la selección real consiste en indicar la carpeta fuente, preparar los packs y completar <a href="../config/win2apk.json"><code>config/win2apk.json</code></a>. El simulador de esta página enseña esos campos y evita confundirlos con una carga web.
+          <strong>Qué hace y qué no hace esta referencia.</strong>
+          El navegador sólo sirve para consultar la estructura. El CLI es quien valida la ruta, calcula los packs, segmenta archivos grandes y genera el proyecto temporal. No edites módulos Gradle ni copies manualmente la carpeta al motor.
         </div>
       </section>
 
       <section id="preparar">
-        <p class="section-kicker">03 / Preparación</p>
-        <h2>Coloca la carpeta dentro de uno o más asset packs</h2>
-        <p class="prose-lead">Los datos grandes no deben añadirse al APK base. Win2APK los distribuye como módulos Play Asset Delivery y conserva sus rutas relativas.</p>
+        <p class="section-kicker">03 / Validación y plan</p>
+        <h2>Deja que el CLI distribuya la carpeta</h2>
+        <p class="prose-lead">La carpeta original no se modifica. Win2APK la recorre, calcula tamaños y SHA-256, genera los asset packs on-demand y divide automáticamente los archivos que superen el tamaño objetivo.</p>
 
         <ol class="step-list">
           <li>
             <div>
-              <h3>Verifica la raíz y el ejecutable</h3>
-              <p>La raíz del payload debe corresponder al contenido que terminará en <code>C:\NombreDeCarpeta</code>. Si el ejecutable está en una subcarpeta, registra la ruta relativa completa en <code>app.executable</code>.</p>
-              <pre><code>MiAplicacion/
-├── MiAplicacion.exe
-├── datos/
-├── plugins/
-└── configuracion.ini</code></pre>
+              <h3>Valida antes de construir</h3>
+              <pre><code>win2apk validate /ruta/al/proyecto.json</code></pre>
+              <p>Comprueba el esquema v2, Linux <code>x86_64</code>, las rutas, el icono, el <code>applicationId</code> y la existencia del <code>entrypoint</code> dentro de <code>sourceFolder</code>.</p>
             </div>
           </li>
           <li>
             <div>
-              <h3>Cuenta archivos y bytes</h3>
-              <p>Estos valores permiten que Android valide que el movimiento terminó completo. Sustituye la ruta por la carpeta real.</p>
-              <pre><code>GAME_DIR="/ruta/a/MiAplicacion"
-
-find "$GAME_DIR" -type f | wc -l
-find "$GAME_DIR" -type f -printf '%s\n' \
-  | awk '{total += $1} END {print total}'</code></pre>
-              <p>Guarda el primer resultado en <code>directFilesExpectedCount</code> y el segundo en <code>directFilesExpectedBytes</code>.</p>
+              <h3>Revisa la distribución calculada</h3>
+              <pre><code>win2apk plan /ruta/al/proyecto.json
+win2apk plan /ruta/al/proyecto.json \
+  --output /ruta/al/plan.json</code></pre>
+              <p>El plan informa archivos, bytes, packs, segmentos y compatibilidad con los límites de Google Play. Este paso es de solo lectura.</p>
             </div>
           </li>
           <li>
             <div>
-              <h3>Crea los módulos de datos</h3>
-              <p>Una aplicación pequeña puede utilizar un pack. Una carpeta grande debe repartirse entre varios. Cada archivo conserva la misma ruta relativa y una ruta no puede aparecer en dos packs.</p>
-              <pre class="directory-tree"><code>winlator/app/
-├── miaplicacion_files_01/
-│   ├── build.gradle
-│   └── src/main/assets/
-│       ├── MiAplicacion.exe
-│       └── datos/parte-a.dat
-└── miaplicacion_files_02/
-    ├── build.gradle
-    └── src/main/assets/
-        └── datos/parte-b.dat</code></pre>
-              <p>Durante el desarrollo puedes usar enlaces simbólicos locales para evitar otra copia en el equipo de compilación. El AAB debe contener archivos normales y el árbol final en Android no debe contener enlaces simbólicos.</p>
-            </div>
-          </li>
-          <li>
-            <div>
-              <h3>Declara cada módulo</h3>
-              <p>El archivo <code>build.gradle</code> de cada pack cambia únicamente en <code>packName</code>. El modo <code>on-demand</code> permite que Win2APK mueva los archivos al prefijo y retire el origen cuando el backend del dispositivo ofrece <code>STORAGE_FILES</code>.</p>
-              <pre><code>plugins {
-    id 'com.android.asset-pack'
-}
-
-assetPack {
-    packName = 'miaplicacion_files_01'
-    dynamicDelivery {
-        deliveryType = 'on-demand'
-    }
-}</code></pre>
-              <p>Añade los módulos a <code>winlator/app/settings.gradle</code>:</p>
-              <pre><code>include ':app'
-include ':miaplicacion_files_01'
-include ':miaplicacion_files_02'</code></pre>
+              <h3>Distribución automática</h3>
+              <p>El CLI crea el staging, los módulos PAD, el manifiesto de payload y la configuración de runtime. No tienes que crear módulos de packs ni copiar archivos al motor Android.</p>
+              <pre class="directory-tree"><code>staging generado por Win2APK/
+├── pack-01 ... pack-N/
+├── icon-res/
+├── payload-manifest.json
+└── win2apk.json</code></pre>
             </div>
           </li>
         </ol>
 
         <div class="notice" data-kind="warning">
-          <strong>Esta es la parte que aún requiere preparación manual.</strong>
-          Cambiar solo <code>sourceFolder</code> en el JSON no copia ni reparte la carpeta. Los nombres de <code>assetPackNames</code>, los módulos incluidos en <code>settings.gradle</code> y los directorios <code>src/main/assets</code> deben corresponder entre sí.
+          <strong>La carpeta debe estar preparada.</strong>
+          La automatización distribuye los archivos, pero no instala un <code>setup.exe</code>, no resuelve DRM o anticheat y no convierte dependencias de Windows en bibliotecas Android.
         </div>
       </section>
 
       <section id="configurar">
         <p class="section-kicker">04 / Configuración</p>
-        <h2>Define el nombre, el paquete, el icono y la ruta Windows</h2>
-        <p class="prose-lead">La fuente de configuración es <a href="../config/win2apk.json"><code>config/win2apk.json</code></a>. Gradle la copia al paquete durante la compilación.</p>
+        <h2>Define el nombre, la identidad, el icono y el runtime</h2>
+        <p class="prose-lead">El archivo JSON v2 es la única entrada del empaquetado. Las rutas relativas se resuelven desde el directorio que contiene el JSON.</p>
 
-        <h3>Campos que debes sustituir</h3>
-        <p>Parte del archivo actual y conserva las secciones de rootfs, <code>pathRewriteAssets</code>, inicio y runtime. El siguiente fragmento muestra los valores que cambian para cada aplicación, no un reemplazo completo del contrato.</p>
+        <h3>Estructura mínima</h3>
+        <p>Este ejemplo es genérico. Cuphead usa la misma estructura, pero con sus propios valores de carpeta, ejecutable, icono y configuración de runtime:</p>
         <pre><code>{
-  "app": {
-    "folderName": "Mi Aplicacion",
+  "$schema": "../schemas/win2apk-v2.schema.json",
+  "schemaVersion": 2,
+  "project": {
+    "name": "Mi Aplicacion",
     "sourceFolder": "/ruta/a/MiAplicacion",
-    "assetPackNames": [
-      "miaplicacion_files_01",
-      "miaplicacion_files_02"
-    ],
-    "directFiles": true,
-    "directFilesLinkMode": "move",
-    "directFilesExpectedCount": 123,
-    "directFilesExpectedBytes": 456789012,
-    "windowsDirectory": "MiAplicacion",
-    "windowsPath": "C:\\MiAplicacion",
-    "executable": "MiAplicacion.exe"
+    "entrypoint": "MiAplicacion.exe",
+    "installDirectory": "MiAplicacion"
   },
   "android": {
-    "applicationIdBase": "com.tuestudio",
-    "applicationId": "com.tuestudio.miaplicacion",
-    "deriveApplicationIdFromFolder": true,
-    "labelFromFolder": true,
-    "label": "Mi Aplicacion",
-    "iconPath": "/ruta/al/icono.svg",
-    "iconBackgroundColor": "#1D5B45",
+    "applicationId": "com.ejemplo.miaplicacion",
     "versionCode": 1,
-    "versionName": "1.0"
+    "versionName": "1.0",
+    "icon": "../assets/icons/mi-icono.svg",
+    "iconBackgroundColor": "#1D5B45"
   },
-  "shortcut": {
-    "name": "Mi Aplicacion",
-    "desktopFile": "MiAplicacion.desktop",
-    "execArguments": "",
-    "forceFullscreen": false
+  "packaging": {
+    "delivery": "on-demand",
+    "storageMode": "move",
+    "targetPackBytes": 1350000000,
+    "oversizedFiles": "chunk"
   },
-  "container": {
-    "graphicsDriver": "auto",
-    "dxwrapper": "auto",
-    "cpuList": "auto",
-    "cpuListWoW64": "auto"
-  }
+  "distribution": {
+    "aab": true,
+    "apks": true,
+    "localTesting": true
+  },
+  "signing": { "profile": "auto" },
+  "startup": {
+    "coreMode": true,
+    "autoLaunch": true,
+    "showGeneralInterface": false,
+    "minimalLoading": true,
+    "closeCoreWhenApplicationExits": true
+  },
+  "runtime": {},
+  "container": {}
 }</code></pre>
 
         <div class="table-scroll" tabindex="0" aria-label="Relación entre campos y resultado">
           <table>
-            <thead>
-              <tr>
-                <th>Lo que eliges</th>
-                <th>Campo</th>
-                <th>Efecto</th>
-              </tr>
-            </thead>
+            <thead><tr><th>Decisión</th><th>Campo</th><th>Resultado</th></tr></thead>
             <tbody>
-              <tr>
-                <td>Nombre visible</td>
-                <td><code>app.folderName</code></td>
-                <td>Define la etiqueta cuando <code>labelFromFolder</code> está activo y sirve como base del paquete automático.</td>
-              </tr>
-              <tr>
-                <td>Carpeta fuente</td>
-                <td><code>app.sourceFolder</code></td>
-                <td>Registra la entrada del empaquetado. El prototipo actual todavía necesita que prepares los módulos de datos.</td>
-              </tr>
-              <tr>
-                <td>Ejecutable</td>
-                <td><code>app.executable</code></td>
-                <td>Indica qué archivo abre Wine al tocar el icono.</td>
-              </tr>
-              <tr>
-                <td>Ruta en Windows</td>
-                <td><code>windowsDirectory</code> y <code>windowsPath</code></td>
-                <td>Ubica la carpeta dentro de la unidad <code>C:</code> del contenedor.</td>
-              </tr>
-              <tr>
-                <td>Nombre de paquete</td>
-                <td><code>applicationIdBase</code>, <code>applicationId</code> y <code>deriveApplicationIdFromFolder</code></td>
-                <td>Identifica la aplicación ante Android y determina si una compilación actualiza o instala otra app.</td>
-              </tr>
-              <tr>
-                <td>Icono</td>
-                <td><code>android.iconPath</code></td>
-                <td>Genera los recursos de launcher para densidades y formas compatibles.</td>
-              </tr>
-              <tr>
-                <td>Versión</td>
-                <td><code>versionCode</code> y <code>versionName</code></td>
-                <td>Controla actualizaciones y muestra una versión legible.</td>
-              </tr>
+              <tr><td>Carpeta de Windows</td><td><code>project.sourceFolder</code></td><td>Ruta absoluta o relativa al JSON. Debe existir y contener el árbol final, no sólo un instalador.</td></tr>
+              <tr><td>Ejecutable</td><td><code>project.entrypoint</code></td><td>Ruta relativa dentro de <code>sourceFolder</code>; se abre al iniciar la aplicación.</td></tr>
+              <tr><td>Directorio Windows</td><td><code>project.installDirectory</code></td><td>Nombre de la carpeta dentro de <code>C:\</code>. No puede contener barras.</td></tr>
+              <tr><td>Identidad Android</td><td><code>android.applicationId</code></td><td>Paquete estable y explícito. Debe conservarse junto con la firma para actualizar.</td></tr>
+              <tr><td>Versiones</td><td><code>android.versionCode</code> / <code>versionName</code></td><td>El código entero aumenta en cada actualización; el nombre es la versión legible.</td></tr>
+              <tr><td>Icono</td><td><code>android.icon</code></td><td>Ruta local PNG, JPEG, WebP o SVG. El CLI genera recursos adaptativos y de compatibilidad.</td></tr>
+              <tr><td>Distribución</td><td><code>packaging</code> / <code>distribution</code></td><td>Define packs on-demand, movimiento del payload, segmentación y artefactos AAB/APKS.</td></tr>
+              <tr><td>Firma</td><td><code>signing</code></td><td><code>auto</code> conserva una clave por paquete; <code>custom</code> usa un keystore externo y variables de entorno.</td></tr>
+              <tr><td>Ejecución</td><td><code>startup</code>, <code>runtime</code>, <code>container</code></td><td>Configura el arranque, comportamiento de Winlator y perfil del contenedor.</td></tr>
             </tbody>
           </table>
         </div>
 
-        <h3>Cómo se obtiene el paquete automático</h3>
-        <p>Con <code>deriveApplicationIdFromFolder: true</code>, Win2APK convierte el nombre a minúsculas, elimina caracteres que no sean letras o números y añade el resultado a <code>applicationIdBase</code>.</p>
-        <pre><code>folderName: "Mi Juego 2"
-applicationIdBase: "com.tuestudio"
-resultado: "com.tuestudio.mijuego2"</code></pre>
-        <p>Si el nombre normalizado empieza por un número, Win2APK añade <code>app</code> al principio. Para controlar el identificador directamente, usa <code>deriveApplicationIdFromFolder: false</code> y completa <code>android.applicationId</code>.</p>
+        <h3>Icono local</h3>
+        <p>Selecciona una imagen existente y coloca su ruta en <code>android.icon</code>. No se descarga desde Internet ni se guarda una copia en el repositorio automáticamente:</p>
+        <pre><code>"icon": "../assets/icons/mi-icono.svg"
+
+# o, si el icono está fuera del repositorio:
+"icon": "/home/usuario/imagenes/mi-icono.png"</code></pre>
+        <p>La ruta debe ser legible por el equipo de compilación. El CLI genera las variantes del launcher internamente.</p>
 
         <div class="notice" data-kind="danger">
           <strong>No cambies el paquete ni la firma durante una actualización.</strong>
-          Android considera otro <code>applicationId</code> como otra aplicación. Si el paquete coincide pero el certificado cambia, devuelve <code>INSTALL_FAILED_UPDATE_INCOMPATIBLE</code>. Conserva el identificador y el keystore original, y aumenta <code>versionCode</code>.
+          Android considera otro <code>applicationId</code> como otra aplicación. Conserva el keystore original y aumenta <code>versionCode</code>. Nunca guardes contraseñas o claves privadas en el JSON ni en Git.
         </div>
-
-        <h3>Icono personalizado</h3>
-        <p>Win2APK acepta una imagen rasterizada o SVG. Puedes guardar la ruta en el JSON o reemplazarla solo para una compilación:</p>
-        <pre><code>bash gradlew :app:bundleDebug \
-  -Pwin2apkIcon="/ruta/al/icono.svg" \
-  --no-daemon --console=plain</code></pre>
-        <p>El generador crea foreground, background, capa monocromática, variantes redonda y normal, y PNG por densidad. Consulta la <a href="./11-automatizacion-iconos-launcher.md">documentación del icono</a> para los detalles.</p>
       </section>
 
       <section id="compilar">
-        <p class="section-kicker">05 / Compilación</p>
-        <h2>Genera el App Bundle con los datos declarados</h2>
-        <p class="prose-lead">Para una carpeta distribuida mediante asset packs, el artefacto principal es el AAB. El APK base por sí solo no contiene el payload completo.</p>
+        <p class="section-kicker">05 / Build</p>
+        <h2>Construye AAB, APKS y reportes con una orden</h2>
+        <p class="prose-lead">El CLI orquesta el motor Android internamente. No debes entrar a <code>winlator/app</code> ni ejecutar Gradle manualmente.</p>
 
-        <ol class="step-list">
-          <li>
-            <div>
-              <h3>Entra al proyecto Android</h3>
-              <pre><code>cd /ruta/al/repositorio/Win2APK/winlator/app</code></pre>
-            </div>
-          </li>
-          <li>
-            <div>
-              <h3>Compila la variante debug</h3>
-              <pre><code>bash gradlew :app:bundleDebug \
-  --no-daemon \
-  --console=plain</code></pre>
-              <p>Si quieres reemplazar el icono configurado para un único build, añade <code>-Pwin2apkIcon="/ruta/al/icono.svg"</code>.</p>
-            </div>
-          </li>
-          <li>
-            <div>
-              <h3>Comprueba el archivo resultante</h3>
-              <pre><code>app/build/outputs/bundle/debug/app-debug.aab</code></pre>
-              <p>El AAB es la entrada de bundletool o de una publicación compatible con App Bundles. No se instala directamente con <code>adb install</code>.</p>
-            </div>
-          </li>
+        <pre><code>win2apk build /ruta/al/proyecto.json \
+  --engine /ruta/al/Win2APK/winlator/app</code></pre>
+        <p>Si no se indica <code>--output</code>, la salida queda en <code>dist/</code> junto al JSON. Puedes elegir otra carpeta y conservar staging para depuración:</p>
+        <pre><code>win2apk build /ruta/al/proyecto.json \
+  --output /ruta/a/salidas \
+  --keep-staging</code></pre>
+
+        <h3>Qué automatiza <code>build</code></h3>
+        <ol>
+          <li>Valida la configuración y recorre <code>sourceFolder</code> sin modificarla.</li>
+          <li>Calcula SHA-256, tamaño y ruta de cada archivo.</li>
+          <li>Reparte los archivos en asset packs y segmenta los que superan <code>targetPackBytes</code>.</li>
+          <li>Genera el icono, la configuración resuelta y el manifiesto que Android usará para mover el payload.</li>
+          <li>Construye el AAB release, lo firma y genera el APKS mediante bundletool cuando están habilitados.</li>
         </ol>
+
+        <p>La firma automática se guarda fuera del repositorio en <code>${XDG_CONFIG_HOME:-$HOME/.config}/win2apk/keys/&lt;applicationId&gt;/</code>. Para respaldarla antes de cambiar de equipo:</p>
+        <pre><code>win2apk keys backup com.ejemplo.miaplicacion /ruta/segura/respaldo</code></pre>
       </section>
 
       <section id="instalar">
         <p class="section-kicker">06 / Instalación Android</p>
-        <h2>Convierte el AAB en un conjunto APKS e instálalo</h2>
-        <p class="prose-lead">La prueba local utiliza bundletool con <code>--local-testing</code>. El dispositivo debe estar conectado antes de construir el conjunto optimizado.</p>
+        <h2>Instala el APKS con el CLI</h2>
+        <p class="prose-lead">El AAB es el artefacto de distribución. Para probarlo localmente, <code>build</code> genera un APKS con <code>localTesting</code> y el CLI lo entrega a bundletool.</p>
 
-        <h3>1. Identifica el dispositivo</h3>
+        <h3>Comprobar ADB</h3>
         <pre><code>adb devices -l</code></pre>
-        <p>Copia el serial que aparece en la primera columna. En los comandos siguientes se representa como <code>SERIAL</code>.</p>
+        <p>Autoriza el dispositivo y usa su serial si hay más de uno conectado.</p>
 
-        <h3>2. Genera el conjunto APKS</h3>
-        <pre><code>cd /ruta/al/repositorio/Win2APK
-mkdir -p winlator/app/app/build/outputs/apks
+        <h3>Instalación nueva</h3>
+        <pre><code>win2apk install /ruta/al/dist/mi-aplicacion-1.0.apks \
+  --device SERIAL \
+  --fresh</code></pre>
+        <p><code>--fresh</code> desinstala explícitamente el paquete anterior y luego instala base, splits y asset packs. Elimina sus datos privados; úsalo sólo cuando se desea una prueba desde cero.</p>
 
-java -jar tools/bundletool-all-1.18.3.jar build-apks \
-  --bundle=winlator/app/app/build/outputs/bundle/debug/app-debug.aab \
-  --output=winlator/app/app/build/outputs/apks/miaplicacion-local-testing.apks \
-  --local-testing \
-  --connected-device \
-  --device-id=SERIAL \
-  --overwrite</code></pre>
-        <p>Este comando produce un conjunto ajustado al dispositivo conectado. Repítelo para cada equipo de prueba. Para distribución general, conserva el AAB como fuente de publicación y deja que el canal de App Bundle genere los APK adecuados.</p>
-
-        <h3>3. Instala base, configuraciones y asset packs</h3>
-        <pre><code>java -jar tools/bundletool-all-1.18.3.jar install-apks \
-  --apks=winlator/app/app/build/outputs/apks/miaplicacion-local-testing.apks \
-  --device-id=SERIAL</code></pre>
-
-        <h3>4. Abre la aplicación</h3>
-        <p>Toca el icono en Android. En el primer inicio, Win2APK prepara el rootfs, obtiene los asset packs, valida cantidad y tamaño, mueve la carpeta al prefijo de Wine, crea el shortcut y abre el ejecutable configurado. El perfil gráfico queda en automático si <code>graphicsDriver</code> y <code>dxwrapper</code> usan el valor <code>auto</code>.</p>
+        <h3>Actualización conservando datos</h3>
+        <pre><code>win2apk install /ruta/al/dist/mi-aplicacion-1.1.apks \
+  --device SERIAL \
+  --code-update</code></pre>
+        <p><code>--code-update</code> actualiza únicamente los APK del módulo base mediante ADB y conserva el payload y el contenedor instalados. Sin ninguna de las dos opciones, el CLI se niega a reemplazar una aplicación ya instalada.</p>
 
         <div class="notice" data-kind="warning">
-          <strong>El primer inicio puede tardar.</strong>
-          La duración depende del tamaño de la carpeta, almacenamiento y dispositivo. No cierres la aplicación mientras muestra la pantalla de preparación. Una prueba debe distinguir entre tiempo de instalación y tiempo hasta el primer frame de la aplicación Windows.
+          <strong>Instalación no es lo mismo que primer arranque.</strong>
+          Después de instalar, Winlator valida el payload, reconstruye archivos segmentados, mueve los archivos al prefijo y crea el shortcut. El tiempo hasta el primer frame depende del tamaño de la carpeta, almacenamiento y dispositivo.
         </div>
 
-        <h3>Instalación inicial frente a actualización</h3>
         <div class="table-scroll" tabindex="0" aria-label="Comparación de instalación y actualización">
           <table>
-            <thead>
-              <tr>
-                <th>Caso</th>
-                <th>Método</th>
-                <th>Datos de la carpeta</th>
-              </tr>
-            </thead>
+            <thead><tr><th>Modo</th><th>Comportamiento</th><th>Datos</th></tr></thead>
             <tbody>
-              <tr>
-                <td>Primera instalación con payload</td>
-                <td><code>bundletool install-apks</code></td>
-                <td>Instala base, splits y asset packs.</td>
-              </tr>
-              <tr>
-                <td>Actualización completa</td>
-                <td>Nuevo APKS con mismo paquete y firma</td>
-                <td>Android conserva los datos privados si la actualización es compatible.</td>
-              </tr>
-              <tr>
-                <td>Cambio solo en la APK base durante desarrollo</td>
-                <td><code>adb install -r app-debug.apk</code></td>
-                <td>Puede conservar el payload ya instalado, pero no sirve como primera instalación de los packs.</td>
-              </tr>
+              <tr><td>Sin opción</td><td>Rechaza reemplazar una instalación existente.</td><td>Protegidos.</td></tr>
+              <tr><td><code>--fresh</code></td><td>Desinstala y ejecuta una instalación completa.</td><td>Se eliminan.</td></tr>
+              <tr><td><code>--code-update</code></td><td>Actualiza sólo el módulo base.</td><td>Se conservan.</td></tr>
             </tbody>
           </table>
         </div>
-
-        <p>Para actualizaciones reproducibles, firma siempre con el mismo keystore. bundletool admite <code>--ks=/ruta/segura/keystore.jks</code> y <code>--ks-key-alias=alias</code>. Configura la misma identidad de firma en Gradle si también actualizarás la base con <code>adb install -r</code>. No guardes el archivo privado ni sus contraseñas en el repositorio.</p>
       </section>
 
       <section id="resultado">
-        <p class="section-kicker">07 / Resultado</p>
-        <h2>Qué archivos obtienes y para qué sirve cada uno</h2>
+        <p class="section-kicker">07 / Salida</p>
+        <h2>Qué produce el CLI</h2>
+        <p class="prose-lead">La carpeta de salida es <code>dist/</code> junto al JSON, salvo que se indique <code>--output</code>. El nombre de los artefactos combina el nombre del proyecto y <code>versionName</code>.</p>
         <div class="table-scroll" tabindex="0" aria-label="Artefactos del empaquetado">
           <table>
-            <thead>
-              <tr>
-                <th>Artefacto</th>
-                <th>Ubicación habitual</th>
-                <th>Uso</th>
-              </tr>
-            </thead>
+            <thead><tr><th>Artefacto</th><th>Contenido</th><th>Uso</th></tr></thead>
             <tbody>
-              <tr>
-                <td><code>app-debug.aab</code></td>
-                <td><code>app/build/outputs/bundle/debug/</code></td>
-                <td>Contiene la aplicación y referencia los asset packs. Es la entrada para bundletool o publicación AAB.</td>
-              </tr>
-              <tr>
-                <td><code>miaplicacion-local-testing.apks</code></td>
-                <td>Ruta elegida en <code>--output</code></td>
-                <td>Archivo ZIP administrado por bundletool con APK base, splits y packs para el dispositivo.</td>
-              </tr>
-              <tr>
-                <td><code>app-debug.apk</code></td>
-                <td><code>app/build/outputs/apk/debug/</code></td>
-                <td>APK base. Es útil para actualizar código durante pruebas, pero no representa una instalación completa con asset packs.</td>
-              </tr>
-              <tr>
-                <td>Aplicación instalada</td>
-                <td>Almacenamiento privado de Android</td>
-                <td>Incluye Winlator Core, el prefijo y la carpeta Windows movida desde los packs.</td>
-              </tr>
+              <tr><td><code>&lt;nombre&gt;-&lt;version&gt;.aab</code></td><td>App Bundle firmado, con base, configuración y asset packs.</td><td>Distribución o publicación compatible con App Bundles.</td></tr>
+              <tr><td><code>&lt;nombre&gt;-&lt;version&gt;.apks</code></td><td>Conjunto ZIP generado por bundletool para pruebas locales.</td><td>Instalación mediante <code>win2apk install</code> o bundletool.</td></tr>
+              <tr><td><code>payload-manifest.json</code></td><td>Rutas, tamaños, SHA-256, packs y segmentos.</td><td>Validación y reconstrucción del payload en Android.</td></tr>
+              <tr><td><code>resolved-config.json</code></td><td>Configuración runtime sin rutas de entrada del host.</td><td>Configurar Winlator en el dispositivo.</td></tr>
+              <tr><td><code>build-report.json</code></td><td>Identidad, tamaños, hashes y compatibilidad Play.</td><td>Procedencia del build; el CLI lo requiere para instalar.</td></tr>
+              <tr><td><code>checksums.sha256</code></td><td>Hash de los artefactos AAB/APKS.</td><td>Verificar integridad de la salida.</td></tr>
             </tbody>
           </table>
         </div>
 
         <div class="notice">
-          <strong>Sobre la frase “generar un APK”.</strong>
-          Para carpetas grandes, el resultado instalable no es necesariamente un único archivo APK. El flujo probado genera un AAB y después un conjunto APKS. bundletool instala todas sus partes como una sola aplicación visible en Android.
+          <strong>Un APK no siempre es un archivo único.</strong>
+          Para carpetas grandes, el resultado local es un APKS compuesto por base, splits y asset packs. Android lo muestra como una sola aplicación, pero no debe instalarse sólo el APK base.
         </div>
 
-        <h3>Qué hace el usuario final</h3>
-        <p>Después de la instalación, el usuario toca un icono. La interfaz general de Winlator permanece oculta, el sistema prepara el entorno y abre el ejecutable configurado. Cuando el programa Windows termina, la actividad Android puede cerrarse según <code>startup.closeCoreWhenApplicationExits</code>.</p>
+        <h3>Después de instalar</h3>
+        <p>El usuario toca el icono. La aplicación prepara el entorno de compatibilidad, valida el manifiesto, mueve el payload al prefijo de Wine y abre el <code>entrypoint</code> en <code>project.installDirectory</code>. El comportamiento de la interfaz y del contenedor se toma de <code>startup</code>, <code>runtime</code> y <code>container</code>.</p>
       </section>
 
       <section id="problemas">
-        <p class="section-kicker">08 / Diagnóstico</p>
-        <h2>Problemas frecuentes y su causa probable</h2>
+        <p class="section-kicker">08 / Limitaciones y diagnóstico</p>
+        <h2>Qué puede fallar y qué no automatiza</h2>
 
         <details>
           <summary>La aplicación se instala, pero no aparece el juego o programa</summary>
           <div>
-            <p>Probablemente instalaste solo el APK base. Repite la instalación con el archivo APKS para incluir los asset packs. Confirma también que <code>assetPackNames</code> coincida con los módulos Gradle.</p>
+            <p>Probablemente instalaste sólo el APK base o el APKS no contiene los packs. Usa el APKS producido por el mismo <code>build</code>, conserva junto a él <code>build-report.json</code> y vuelve a ejecutar <code>win2apk install</code>.</p>
           </div>
         </details>
 
         <details>
           <summary>Android muestra INSTALL_FAILED_UPDATE_INCOMPATIBLE</summary>
           <div>
-            <p>La aplicación instalada y la nueva compilación tienen firmas distintas. Reconstruye con el mismo keystore. Desinstalar permitiría instalar la nueva firma, pero elimina los datos privados, por lo que no debe ser la primera opción si quieres conservar la carpeta.</p>
+            <p>La aplicación instalada y la nueva compilación tienen firmas distintas. Mantén el mismo <code>applicationId</code> y la clave persistente. Desinstalar permitiría instalar la nueva firma, pero elimina los datos privados; <code>--fresh</code> sólo debe usarse cuando eso sea intencional.</p>
           </div>
         </details>
 
         <details>
           <summary>Aparece Unable to create the configured container or shortcut</summary>
           <div>
-            <p>Revisa <code>windowsDirectory</code>, <code>windowsPath</code>, <code>executable</code>, nombres de packs y conteos esperados. El ejecutable debe existir dentro del árbol movido y la ruta del shortcut debe apuntar al mismo directorio.</p>
+            <p>Revisa <code>project.installDirectory</code>, <code>project.entrypoint</code>, el icono y el contenido de <code>sourceFolder</code>. Ejecuta <code>validate</code> y confirma que el ejecutable esté dentro del árbol preparado. El mensaje también puede indicar una incompatibilidad del contenedor o del runtime de Windows.</p>
           </div>
         </details>
 
         <details>
           <summary>bundletool falla con un pack demasiado grande</summary>
           <div>
-            <p>Divide la carpeta entre varios packs y conserva rutas relativas únicas. Cuphead necesitó cinco módulos de archivos en la variante actual. Ese número es un ejemplo medido, no una regla para todas las aplicaciones.</p>
+            <p>El CLI divide automáticamente los archivos entre packs y segmenta los que superan <code>targetPackBytes</code>. Si el build excede los límites de Google Play, continuará para instalación local y lo marcará en <code>build-report.json</code>.</p>
           </div>
         </details>
 
         <details>
           <summary>El icono anterior sigue visible</summary>
           <div>
-            <p>Confirma que <code>iconPath</code> exista, aumenta <code>versionCode</code> y verifica que instalaste la nueva base con la misma firma. Algunos launchers conservan caché durante un tiempo.</p>
+            <p>Confirma que <code>android.icon</code> exista y sea legible por Linux, aumenta <code>versionCode</code> y verifica que instalaste la nueva base con la misma firma. Algunos launchers conservan caché durante un tiempo.</p>
           </div>
         </details>
 
         <details>
           <summary>El ejecutable abre, pero los gráficos fallan</summary>
           <div>
-            <p>Mantén <code>graphicsDriver: "auto"</code> y <code>dxwrapper: "auto"</code> para usar el perfil por dispositivo. Si la aplicación exige otra API gráfica, versión de DXVK o componentes de Windows, registra una prueba separada. Un resultado en un modelo no demuestra compatibilidad con todos.</p>
+            <p>Mantén <code>graphicsDriver: "auto"</code> y <code>dxwrapper: "auto"</code> en <code>container</code> para usar el perfil por dispositivo. Si la aplicación exige otra API gráfica, versión de DXVK o componentes de Windows, ajusta el JSON y registra una prueba separada. Un resultado en un modelo no demuestra compatibilidad con todos.</p>
           </div>
         </details>
 
@@ -1521,8 +1398,23 @@ java -jar tools/bundletool-all-1.18.3.jar build-apks \
           </div>
         </details>
 
+        <details>
+          <summary>El dispositivo no es compatible con el artefacto</summary>
+          <div>
+            <p>La variante actual contiene únicamente <code>arm64-v8a</code> y requiere Android API 26 o posterior. El host de empaquetado debe ser Linux <code>x86_64</code>. El CLI no genera una aplicación Android nativa: ejecuta la carpeta Windows mediante Winlator, Wine y Box64.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>El build de una carpeta muy grande tarda o consume mucho espacio</summary>
+          <div>
+            <p>El staging, el AAB y el APKS pueden coexistir temporalmente. Cuphead produjo un paquete grande y necesitó cinco asset packs. Verifica el espacio libre antes de construir y ejecuta <code>win2apk clean</code> sólo para eliminar staging regenerable, nunca la carpeta fuente ni la clave.</p>
+          </div>
+        </details>
+
         <h3>Comandos básicos de diagnóstico</h3>
-        <pre><code>adb -s SERIAL shell dumpsys package NOMBRE_DEL_PAQUETE
+        <pre><code>win2apk doctor --engine /ruta/al/Win2APK/winlator/app
+adb -s SERIAL shell dumpsys package NOMBRE_DEL_PAQUETE
 adb -s SERIAL shell pidof NOMBRE_DEL_PAQUETE
 adb -s SERIAL logcat | rg 'Win2APK|AndroidRuntime|FATAL EXCEPTION'</code></pre>
       </section>
@@ -1540,26 +1432,33 @@ adb -s SERIAL logcat | rg 'Win2APK|AndroidRuntime|FATAL EXCEPTION'</code></pre>
               <tr><th>Ruta Windows</th><td><code>C:\Cuphead</code></td></tr>
               <tr><th>Paquete</th><td><code>com.cuphead</code></td></tr>
               <tr><th>Icono</th><td><code>assets/icons/cuphead-promo-logo.png</code></td></tr>
-              <tr><th>Packs actuales</th><td><code>cuphead_files_01</code> a <code>cuphead_files_05</code></td></tr>
+              <tr><th>Packs calculados</th><td>Cinco asset packs generados automáticamente por el plan actual</td></tr>
               <tr><th>Validación del payload</th><td>815 archivos y 5847372363 bytes</td></tr>
               <tr><th>Instalación verificada</th><td>Pixel 9a, Lenovo TB-J606F, Redmi Note 8 y Xiaomi Mi A3 en la ejecución documentada</td></tr>
             </tbody>
           </table>
         </div>
 
-        <p>El ejemplo completo está en <a href="../config/win2apk.json"><code>config/win2apk.json</code></a>. La instalación incremental y la conservación de datos se registraron en <a href="../ejecuciones/46-actualizacion-incremental-icono-v48-cuatro-dispositivos-20260919/matriz.md">EXEC-046</a>.</p>
+        <p>El JSON completo está en <a href="../config/win2apk.json"><code>config/win2apk.json</code></a>. Para repetir el flujo, sustituye <code>sourceFolder</code> e <code>icon</code> por rutas de tu equipo y ejecuta:</p>
+        <pre><code>win2apk setup
+win2apk doctor --engine /ruta/al/Win2APK/winlator/app
+win2apk validate config/win2apk.json
+win2apk plan config/win2apk.json
+win2apk build config/win2apk.json
+win2apk install config/dist/cuphead-11.1-cuphead-core.apks \
+  --device SERIAL \
+  --fresh</code></pre>
 
         <h3>Lista de control antes de construir otro paquete</h3>
         <ul class="checklist">
           <li>La carpeta contiene el ejecutable final y todos sus recursos.</li>
-          <li>Los módulos de asset pack contienen cada archivo una sola vez y conservan su ruta relativa.</li>
-          <li>Los nombres de los módulos coinciden con <code>assetPackNames</code> y <code>settings.gradle</code>.</li>
-          <li>El conteo y tamaño esperado corresponden a la carpeta seleccionada.</li>
-          <li><code>windowsDirectory</code>, <code>windowsPath</code> y <code>executable</code> describen la misma ubicación.</li>
-          <li>El nombre de paquete es válido y permanecerá estable en futuras versiones.</li>
+          <li><code>project.sourceFolder</code>, <code>project.entrypoint</code> y <code>project.installDirectory</code> describen la misma aplicación.</li>
+          <li><code>android.applicationId</code> es válido y permanecerá estable.</li>
           <li>El icono existe y tienes permiso para usarlo.</li>
+          <li><code>packaging</code> usa <code>on-demand</code>, <code>move</code> y <code>chunk</code>.</li>
+          <li><code>win2apk validate</code> y <code>win2apk plan</code> terminan correctamente.</li>
           <li>El <code>versionCode</code> es mayor que el de la versión que vas a actualizar.</li>
-          <li>La compilación y bundletool utilizan el mismo keystore de las versiones anteriores.</li>
+          <li>La compilación reutiliza la misma clave persistente de las versiones anteriores.</li>
           <li>La prueba se hará primero en un dispositivo y conservará logs antes de ampliar la conclusión.</li>
         </ul>
       </section>
@@ -1586,14 +1485,12 @@ adb -s SERIAL logcat | rg 'Win2APK|AndroidRuntime|FATAL EXCEPTION'</code></pre>
       const exeCountStat = document.getElementById('exe-count-stat');
       const exeSelect = document.getElementById('exe-select');
       const appName = document.getElementById('app-name');
-      const packageBase = document.getElementById('package-base');
-      const packageBaseField = document.getElementById('package-base-field');
       const packageName = document.getElementById('package-name');
       const packageError = document.getElementById('package-error');
       const versionCode = document.getElementById('version-code');
       const versionName = document.getElementById('version-name');
       const iconInput = document.getElementById('icon-input');
-      const iconPath = document.getElementById('icon-path');
+      const iconFile = document.getElementById('icon-path');
       const iconPreview = document.getElementById('icon-preview');
       const iconImage = document.getElementById('icon-image');
       const iconDescription = document.getElementById('icon-description');
@@ -1602,9 +1499,6 @@ adb -s SERIAL logcat | rg 'Win2APK|AndroidRuntime|FATAL EXCEPTION'</code></pre>
       const copyConfig = document.getElementById('copy-config');
       const copyBuild = document.getElementById('copy-build');
       const copyStatus = document.getElementById('copy-status');
-      const loadExample = document.getElementById('load-example');
-      const resetBuilder = document.getElementById('reset-builder');
-      const modeInputs = Array.from(document.querySelectorAll('input[name="package-mode"]'));
 
       let analysis = null;
       let iconObjectUrl = null;
@@ -1620,26 +1514,8 @@ adb -s SERIAL logcat | rg 'Win2APK|AndroidRuntime|FATAL EXCEPTION'</code></pre>
         return normalized;
       }
 
-      function currentMode() {
-        return modeInputs.find((input) => input.checked)?.value || 'auto';
-      }
-
-      function normalizedBase(value) {
-        return value
-          .toLocaleLowerCase('en-US')
-          .split('.')
-          .map((part) => part.replace(/[^a-z0-9_]/g, ''))
-          .filter(Boolean)
-          .join('.') || 'com';
-      }
-
       function refreshPackage() {
-        const automatic = currentMode() === 'auto';
-        packageBaseField.hidden = !automatic;
-        packageName.readOnly = automatic;
-        if (automatic) {
-          packageName.value = `${normalizedBase(packageBase.value)}.${normalizePackagePart(appName.value)}`;
-        }
+        packageName.readOnly = false;
         const valid = packagePattern.test(packageName.value.trim());
         packageName.setAttribute('aria-invalid', String(!valid));
         packageError.hidden = valid;
@@ -1694,49 +1570,47 @@ adb -s SERIAL logcat | rg 'Win2APK|AndroidRuntime|FATAL EXCEPTION'</code></pre>
         }
 
         const rootName = analysis.folderName || normalizePackagePart(appName.value);
-        const appSlug = normalizePackagePart(appName.value);
         const configuredPath = sourcePath.value.trim() || `<ruta-absoluta>/${rootName}`;
-        const configuredIcon = iconPath.value.trim() || '<ruta-al-icono>';
-        const autoPackage = currentMode() === 'auto';
+        const configuredIcon = iconFile.value.trim() || '<ruta-al-icono>';
         const config = {
-          app: {
-            folderName: appName.value.trim(),
+          schemaVersion: 2,
+          project: {
+            name: appName.value.trim(),
             sourceFolder: configuredPath,
-            assetPackNames: [`${appSlug}_files_01`],
-            directFiles: true,
-            directFilesLinkMode: 'move',
-            directFilesExpectedCount: analysis.files,
-            directFilesExpectedBytes: analysis.bytes,
-            windowsDirectory: rootName,
-            windowsPath: `C:\\${rootName}`,
-            executable: exeSelect.value
+            entrypoint: exeSelect.value,
+            installDirectory: rootName
           },
           android: {
-            applicationIdBase: normalizedBase(packageBase.value),
             applicationId: packageName.value.trim(),
-            deriveApplicationIdFromFolder: autoPackage,
-            labelFromFolder: true,
-            label: appName.value.trim(),
-            iconPath: configuredIcon,
             versionCode: Number.parseInt(versionCode.value, 10) || 1,
-            versionName: versionName.value.trim() || '1.0'
+            versionName: versionName.value.trim() || '1.0',
+            icon: configuredIcon,
+            iconBackgroundColor: '#1D5B45'
           },
-          shortcut: {
-            name: appName.value.trim(),
-            desktopFile: `${appSlug}.desktop`,
-            execArguments: '',
-            forceFullscreen: false
-          }
+          packaging: {
+            delivery: 'on-demand',
+            storageMode: 'move',
+            targetPackBytes: 1350000000,
+            oversizedFiles: 'chunk'
+          },
+          distribution: { aab: true, apks: true, localTesting: true },
+          signing: { profile: 'auto' },
+          startup: {
+            coreMode: true,
+            autoLaunch: true,
+            showGeneralInterface: false,
+            minimalLoading: true,
+            closeCoreWhenApplicationExits: true
+          },
+          runtime: {},
+          container: {}
         };
 
         generatedConfig = JSON.stringify(config, null, 2);
-        const iconArgument = configuredIcon.startsWith('<')
-          ? ''
-          : ` \\\n  -Pwin2apkIcon="${configuredIcon}"`;
-        generatedBuild = `cd /ruta/al/repositorio/Win2APK/winlator/app\n\nbash gradlew :app:bundleDebug${iconArgument} \\\n  --no-daemon \\\n  --console=plain`;
+        generatedBuild = 'win2apk build CONFIG --engine /ruta/al/Win2APK/winlator/app';
         configOutput.textContent = generatedConfig;
         outputState.dataset.state = 'ready';
-        outputState.textContent = 'Plantilla generada. Ajusta la lista de packs al reparto real de archivos.';
+        outputState.textContent = 'JSON v2 generado. El CLI calculará los packs y segmentos durante build.';
         copyConfig.disabled = false;
         copyBuild.disabled = false;
       }
@@ -1831,69 +1705,15 @@ adb -s SERIAL logcat | rg 'Win2APK|AndroidRuntime|FATAL EXCEPTION'</code></pre>
         iconImage.src = iconObjectUrl;
         iconDescription.textContent = `${file.name}, ${humanBytes(file.size)}`;
         iconPreview.hidden = false;
-        if (!iconPath.value.trim()) iconPath.placeholder = `/ruta/al/icono/${file.name}`;
+        if (!iconFile.value.trim()) iconFile.placeholder = `/ruta/al/icono/${file.name}`;
         buildTemplate();
       });
 
       form.addEventListener('input', buildTemplate);
       form.addEventListener('change', buildTemplate);
 
-      modeInputs.forEach((input) => input.addEventListener('change', () => {
-        if (currentMode() === 'manual' && packageName.value === 'com.app') {
-          packageName.value = '';
-        }
-        refreshPackage();
-        buildTemplate();
-      }));
-
       copyConfig.addEventListener('click', () => copyText(generatedConfig, 'Configuración copiada.'));
       copyBuild.addEventListener('click', () => copyText(generatedBuild, 'Comando de compilación copiado.'));
-
-      loadExample.addEventListener('click', () => {
-        analysis = {
-          folderName: 'Cuphead',
-          files: 815,
-          bytes: 5847372363,
-          executables: ['Cuphead.exe']
-        };
-        sourcePath.value = '<ruta-local>/Cuphead';
-        appName.value = 'Cuphead';
-        packageBase.value = 'com';
-        modeInputs.find((input) => input.value === 'auto').checked = true;
-        versionCode.value = '48';
-        versionName.value = '11.1-cuphead-core';
-        iconPath.value = 'assets/icons/cuphead-promo-logo.png';
-        folderNameStat.textContent = 'Cuphead';
-        fileCountStat.textContent = '815';
-        byteCountStat.textContent = humanBytes(5847372363);
-        exeCountStat.textContent = '1';
-        folderStats.hidden = false;
-        setExecutables(['Cuphead.exe'], 'Cuphead.exe');
-        setFolderState('ready', 'Ejemplo documentado cargado. No se han leído archivos locales.');
-        iconPreview.hidden = true;
-        copyStatus.textContent = '';
-        buildTemplate();
-      });
-
-      resetBuilder.addEventListener('click', () => {
-        form.reset();
-        analysis = null;
-        sourcePath.value = '';
-        appName.value = '';
-        packageBase.value = 'com';
-        packageName.value = 'com.app';
-        versionCode.value = '1';
-        versionName.value = '1.0';
-        iconPath.value = '';
-        folderStats.hidden = true;
-        iconPreview.hidden = true;
-        if (iconObjectUrl) URL.revokeObjectURL(iconObjectUrl);
-        iconObjectUrl = null;
-        setExecutables([]);
-        setFolderState('empty', 'Aún no se ha seleccionado una carpeta.');
-        copyStatus.textContent = '';
-        buildTemplate();
-      });
 
       buildTemplate();
     })();

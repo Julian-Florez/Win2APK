@@ -1,0 +1,135 @@
+2026-09-19T20:47:45-05:00
+COMMAND: adb -s 51c803a01206 shell pm path com.cuphead
+package:/data/app/~~0CvuUgQwdxBpPbIcPYZAAw==/com.cuphead-m0Fr3YbcqaoRNKrWtAcJpw==/base.apk
+package:/data/app/~~0CvuUgQwdxBpPbIcPYZAAw==/com.cuphead-m0Fr3YbcqaoRNKrWtAcJpw==/split_config.arm64_v8a.apk
+package:/data/app/~~0CvuUgQwdxBpPbIcPYZAAw==/com.cuphead-m0Fr3YbcqaoRNKrWtAcJpw==/split_config.es.apk
+package:/data/app/~~0CvuUgQwdxBpPbIcPYZAAw==/com.cuphead-m0Fr3YbcqaoRNKrWtAcJpw==/split_config.xhdpi.apk
+COMMAND: adb -s 51c803a01206 shell dumpsys package com.cuphead
+Activity Resolver Table:
+  Non-Data Actions:
+      android.intent.action.MAIN:
+        45a83c3 com.cuphead/com.winlator.MainActivity filter a81b440
+          Action: "android.intent.action.MAIN"
+          Category: "android.intent.category.LAUNCHER"
+
+Receiver Resolver Table:
+  Non-Data Actions:
+      android.intent.action.BATTERY_OKAY:
+        5848a35 com.cuphead/androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy filter 5892eca
+          Action: "android.intent.action.BATTERY_OKAY"
+          Action: "android.intent.action.BATTERY_LOW"
+      android.intent.action.ACTION_POWER_DISCONNECTED:
+        857991f com.cuphead/androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy filter aedd46c
+          Action: "android.intent.action.ACTION_POWER_DISCONNECTED"
+          Action: "android.intent.action.ACTION_POWER_CONNECTED"
+      android.intent.action.DEVICE_STORAGE_LOW:
+        1e6a83b com.cuphead/androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy filter f19cb58
+          Action: "android.intent.action.DEVICE_STORAGE_LOW"
+          Action: "android.intent.action.DEVICE_STORAGE_OK"
+      android.net.conn.CONNECTIVITY_CHANGE:
+        80094b1 com.cuphead/androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy filter 7736d96
+          Action: "android.net.conn.CONNECTIVITY_CHANGE"
+      android.intent.action.DEVICE_STORAGE_OK:
+        1e6a83b com.cuphead/androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy filter f19cb58
+          Action: "android.intent.action.DEVICE_STORAGE_LOW"
+          Action: "android.intent.action.DEVICE_STORAGE_OK"
+      com.google.android.play.core.assetpacks.receiver.ACTION_SESSION_UPDATE:
+        7a56f79 com.cuphead/com.google.android.play.core.assetpacks.SessionStateBroadcastReceiver filter 9fd84be
+          Action: "com.google.android.play.core.assetpacks.receiver.ACTION_SESSION_UPDATE"
+      android.intent.action.BATTERY_LOW:
+        5848a35 com.cuphead/androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy filter 5892eca
+          Action: "android.intent.action.BATTERY_OKAY"
+          Action: "android.intent.action.BATTERY_LOW"
+      android.intent.action.TIMEZONE_CHANGED:
+        f8d8d17 com.cuphead/androidx.work.impl.background.systemalarm.RescheduleReceiver filter 70c4504
+          Action: "android.intent.action.TIMEZONE_CHANGED"
+          Action: "android.intent.action.TIME_SET"
+          Action: "android.intent.action.BOOT_COMPLETED"
+      android.intent.action.TIME_SET:
+        f8d8d17 com.cuphead/androidx.work.impl.background.systemalarm.RescheduleReceiver filter 70c4504
+          Action: "android.intent.action.TIMEZONE_CHANGED"
+          Action: "android.intent.action.TIME_SET"
+          Action: "android.intent.action.BOOT_COMPLETED"
+      android.intent.action.BOOT_COMPLETED:
+        f8d8d17 com.cuphead/androidx.work.impl.background.systemalarm.RescheduleReceiver filter 70c4504
+          Action: "android.intent.action.TIMEZONE_CHANGED"
+          Action: "android.intent.action.TIME_SET"
+          Action: "android.intent.action.BOOT_COMPLETED"
+      android.intent.action.ACTION_POWER_CONNECTED:
+        857991f com.cuphead/androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy filter aedd46c
+          Action: "android.intent.action.ACTION_POWER_DISCONNECTED"
+          Action: "android.intent.action.ACTION_POWER_CONNECTED"
+      androidx.work.diagnostics.REQUEST_DIAGNOSTICS:
+        853e3b3 com.cuphead/androidx.work.impl.diagnostics.DiagnosticsReceiver filter a8aad70
+          Action: "androidx.work.diagnostics.REQUEST_DIAGNOSTICS"
+      androidx.work.impl.background.systemalarm.UpdateProxies:
+        258caed com.cuphead/androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver filter df0cd22
+          Action: "androidx.work.impl.background.systemalarm.UpdateProxies"
+
+Domain verification status:
+
+Permissions:
+  Permission [com.cuphead.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION] (1436bed):
+    sourcePackage=com.cuphead
+    uid=10361 gids=[] type=0 prot=signature
+    perm=PermissionInfo{34a9fd0 com.cuphead.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION}
+    flags=0x0
+
+Registered ContentProviders:
+  com.cuphead/androidx.core.content.FileProvider:
+    Provider{e579bc9 com.cuphead/androidx.core.content.FileProvider}
+  com.cuphead/androidx.startup.InitializationProvider:
+    Provider{33ac2ce com.cuphead/androidx.startup.InitializationProvider}
+
+ContentProvider Authorities:
+  [com.cuphead.androidx-startup]:
+    Provider{33ac2ce com.cuphead/androidx.startup.InitializationProvider}
+      applicationInfo=ApplicationInfo{ae55a22 com.cuphead}
+  [com.cuphead.FileProvider]:
+    Provider{e579bc9 com.cuphead/androidx.core.content.FileProvider}
+      applicationInfo=ApplicationInfo{d69ecb3 com.cuphead}
+
+Key Set Manager:
+  [com.cuphead]
+      Signing KeySets: 71
+
+Packages:
+  Package [com.cuphead] (ccf5b9f):
+    appId=10361
+    pkg=Package{5352b85 com.cuphead}
+    codePath=/data/app/~~0CvuUgQwdxBpPbIcPYZAAw==/com.cuphead-m0Fr3YbcqaoRNKrWtAcJpw==
+    resourcePath=/data/app/~~0CvuUgQwdxBpPbIcPYZAAw==/com.cuphead-m0Fr3YbcqaoRNKrWtAcJpw==
+    legacyNativeLibraryDir=/data/app/~~0CvuUgQwdxBpPbIcPYZAAw==/com.cuphead-m0Fr3YbcqaoRNKrWtAcJpw==/lib
+    extractNativeLibs=true
+    primaryCpuAbi=arm64-v8a
+    secondaryCpuAbi=null
+    cpuAbiOverride=null
+    versionCode=48 minSdk=26 targetSdk=28
+    minExtensionVersions=[]
+    versionName=11.1-direct-files-auto-gpu-recovery-v15-pixel-bcn-legacy-exec-16k-cuphead-core
+    hiddenApiEnforcementPolicy=2
+    usesNonSdkApi=false
+    splits=[base, config.arm64_v8a, config.es, config.xhdpi]
+    apkSigningVersion=3
+    flags=[ HAS_CODE ALLOW_CLEAR_USER_DATA ALLOW_BACKUP KILL_AFTER_RESTORE ]
+    privateFlags=[ PRIVATE_FLAG_ACTIVITIES_RESIZE_MODE_RESIZEABLE_VIA_SDK_VERSION ALLOW_AUDIO_PLAYBACK_CAPTURE PRIVATE_FLAG_REQUEST_LEGACY_EXTERNAL_STORAGE PARTIALLY_DIRECT_BOOT_AWARE PRIVATE_FLAG_ALLOW_NATIVE_HEAP_POINTER_TAGGING ]
+    forceQueryable=false
+    pageSizeCompat=0
+    scannedAsStoppedSystemApp=false
+    supportsScreens=[small, medium, large, xlarge, resizeable, anyDensity]
+    usesLibraries:
+      android.test.base
+    usesOptionalLibraries:
+      androidx.window.extensions
+      androidx.window.sidecar
+    usesLibraryFiles:
+      /system/framework/android.test.base.jar
+      /system_ext/framework/androidx.window.extensions.jar
+COMMAND: adb -s 51c803a01206 shell du -sk
+du: /data/user/0/com.cuphead: Permission denied
+6006003	/storage/emulated/0/Android/data/com.cuphead
+du: /storage/emulated/0/Android/obb/com.cuphead: No such file or directory
+COMMAND: adb -s 51c803a01206 shell df -k
+Filesystem       1K-blocks     Used Available Use% Mounted on
+/dev/block/dm-43  49618652 23662808  25857940  48% /data/user/0
+/dev/fuse         49618652 23662808  25857940  48% /storage/emulated

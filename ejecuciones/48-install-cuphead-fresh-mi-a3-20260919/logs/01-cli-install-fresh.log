@@ -1,0 +1,5 @@
+START=2026-09-19T20:48:02-05:00
+COMMAND: target/release/win2apk install /tmp/win2apk-cuphead-dist/cuphead-11.1-direct-files-auto-gpu-recovery-v15-pixel-bcn-legacy-exec-16k-cuphead-core.apks --device 51c803a01206 --fresh
+/nix/store/bwry105g7v5jspr41bx9x3fcfqsmfkq2-bash-interactive-5.3p15/bin/bash: line 1: /usr/bin/time: No such file or directory
+END=2026-09-19T20:48:02-05:00
+CLI_STATUS=127
