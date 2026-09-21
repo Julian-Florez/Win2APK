@@ -1,0 +1,57 @@
+run_id,device_id,timestamp_utc,elapsed_ms,event_type,severity,message,evidence_relpath
+RUN-20260921-004,redmi-note-8,2026-09-21T01:48:38.721Z,1991,launch_requested,info,"bash arg: -p
+  bash arg: com.win2apk.bombrushcyberfunk
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=95ms (0ms mobile, 0ms wifi, 95ms not connected)
+args: [-p, com.win2apk.bombrushcyberfunk, -c, android.intent.category.LAUNCHER, 1]
+ arg: ""-p""
+ arg: ""com.win2apk.bombrushcyberfunk""
+ arg: ""-c""
+ arg: ""android.intent.category.LAUNCHER""
+ arg: ""1""
+data=""com.win2apk.bombrushcyberfunk""
+data=""android.intent.category.LAUNCHER""",metricas/runs/RUN-20260921-004/logs/redmi-note-8/launch.log
+RUN-20260921-004,redmi-note-8,2026-09-21T01:48:38.951Z,2221,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20260921-004,redmi-note-8,2026-09-21T01:49:38.434Z,61704,screenshot_captured,info,Captura canónica T+60s,metricas/runs/RUN-20260921-004/screenshots/redmi-note-8/t060.png
+RUN-20260921-004,redmi-note-8,2026-09-21T01:50:09.554Z,92824,monitor_finished,info,91 muestras registradas,metricas/runs/RUN-20260921-004/logs/redmi-note-8/exit-info.txt
+RUN-20260921-004,mi-a3,2026-09-21T01:51:24.353Z,1250,launch_requested,info,"bash arg: -p
+  bash arg: com.win2apk.bombrushcyberfunk
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=44ms (0ms mobile, 0ms wifi, 44ms not connected)
+args: [-p, com.win2apk.bombrushcyberfunk, -c, android.intent.category.LAUNCHER, 1]
+ arg: ""-p""
+ arg: ""com.win2apk.bombrushcyberfunk""
+ arg: ""-c""
+ arg: ""android.intent.category.LAUNCHER""
+ arg: ""1""
+data=""com.win2apk.bombrushcyberfunk""
+data=""android.intent.category.LAUNCHER""",metricas/runs/RUN-20260921-004/logs/mi-a3/launch.log
+RUN-20260921-004,mi-a3,2026-09-21T01:51:24.533Z,1429,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20260921-004,mi-a3,2026-09-21T01:52:23.881Z,60778,screenshot_captured,info,Captura canónica T+60s,metricas/runs/RUN-20260921-004/screenshots/mi-a3/t060.png
+RUN-20260921-004,mi-a3,2026-09-21T01:52:55.487Z,92384,monitor_finished,info,91 muestras registradas,metricas/runs/RUN-20260921-004/logs/mi-a3/exit-info.txt
+RUN-20260921-004,lenovo-tb-j606f,2026-09-21T01:54:17.305Z,1478,launch_requested,info,"bash arg: -p
+  bash arg: com.win2apk.bombrushcyberfunk
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=82ms (0ms mobile, 0ms wifi, 82ms not connected)
+args: [-p, com.win2apk.bombrushcyberfunk, -c, android.intent.category.LAUNCHER, 1]
+ arg: ""-p""
+ arg: ""com.win2apk.bombrushcyberfunk""
+ arg: ""-c""
+ arg: ""android.intent.category.LAUNCHER""
+ arg: ""1""
+data=""com.win2apk.bombrushcyberfunk""
+data=""android.intent.category.LAUNCHER""",metricas/runs/RUN-20260921-004/logs/lenovo-tb-j606f/launch.log
+RUN-20260921-004,lenovo-tb-j606f,2026-09-21T01:54:17.656Z,1830,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20260921-004,lenovo-tb-j606f,2026-09-21T01:55:16.931Z,61105,screenshot_captured,info,Captura canónica T+60s,metricas/runs/RUN-20260921-004/screenshots/lenovo-tb-j606f/t060.png
+RUN-20260921-004,lenovo-tb-j606f,2026-09-21T01:55:25.009Z,69182,game_process_first_seen,info,Bomb Rush Cyberfunk.exe observado: 1,
+RUN-20260921-004,lenovo-tb-j606f,2026-09-21T01:55:29.105Z,73279,first_game_frame_observed,info,Primer timestamp de presentación observado en la superficie del juego,
+RUN-20260921-004,lenovo-tb-j606f,2026-09-21T01:55:46.448Z,90621,monitor_finished,info,90 muestras registradas,metricas/runs/RUN-20260921-004/logs/lenovo-tb-j606f/exit-info.txt

@@ -1,0 +1,37 @@
+run_id,device_id,timestamp_utc,elapsed_ms,event_type,severity,message,evidence_relpath
+RUN-20260920-005,redmi-note-8,2026-09-20T20:53:13.639Z,1529,launch_requested,info,"bash arg: -p
+  bash arg: com.win2apk.ui.preview
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=65ms (0ms mobile, 0ms wifi, 65ms not connected)
+args: [-p, com.win2apk.ui.preview, -c, android.intent.category.LAUNCHER, 1]
+ arg: ""-p""
+ arg: ""com.win2apk.ui.preview""
+ arg: ""-c""
+ arg: ""android.intent.category.LAUNCHER""
+ arg: ""1""
+data=""com.win2apk.ui.preview""
+data=""android.intent.category.LAUNCHER""",metricas/runs/RUN-20260920-005/logs/redmi-note-8/launch.log
+RUN-20260920-005,redmi-note-8,2026-09-20T20:53:13.785Z,1675,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20260920-005,redmi-note-8,2026-09-20T20:54:12.844Z,60733,screenshot_captured,info,Captura canónica T+60s,metricas/runs/RUN-20260920-005/screenshots/redmi-note-8/t060.png
+RUN-20260920-005,redmi-note-8,2026-09-20T20:54:18.277Z,66167,monitor_finished,info,33 muestras registradas,metricas/runs/RUN-20260920-005/logs/redmi-note-8/exit-info.txt
+RUN-20260920-005,lenovo-tb-j606f,2026-09-20T20:54:44.378Z,1198,launch_requested,info,"bash arg: -p
+  bash arg: com.win2apk.ui.preview
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=54ms (0ms mobile, 0ms wifi, 54ms not connected)
+args: [-p, com.win2apk.ui.preview, -c, android.intent.category.LAUNCHER, 1]
+ arg: ""-p""
+ arg: ""com.win2apk.ui.preview""
+ arg: ""-c""
+ arg: ""android.intent.category.LAUNCHER""
+ arg: ""1""
+data=""com.win2apk.ui.preview""
+data=""android.intent.category.LAUNCHER""",metricas/runs/RUN-20260920-005/logs/lenovo-tb-j606f/launch.log
+RUN-20260920-005,lenovo-tb-j606f,2026-09-20T20:54:44.599Z,1419,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20260920-005,lenovo-tb-j606f,2026-09-20T20:55:43.883Z,60703,screenshot_captured,info,Captura canónica T+60s,metricas/runs/RUN-20260920-005/screenshots/lenovo-tb-j606f/t060.png
+RUN-20260920-005,lenovo-tb-j606f,2026-09-20T20:55:49.283Z,66104,monitor_finished,info,33 muestras registradas,metricas/runs/RUN-20260920-005/logs/lenovo-tb-j606f/exit-info.txt

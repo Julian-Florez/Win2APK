@@ -1,9 +1,9 @@
 # Especificación de Winlator Core
 
 - **Identificador:** `WIN2APK-CORE-001`
-- **Versión:** 0.1 de planificación
-- **Fecha:** 2026-08-18
-- **Estado:** implementación funcional verificada en Lenovo TB-J606F para `TestApp`
+- **Versión:** 0.2 de planificación
+- **Fecha:** 2026-09-20
+- **Estado:** implementación funcional; modo condicional de controles táctiles pendiente de prueba en dispositivo
 - **Decisión relacionada:** [Plan de Winlator Core](../documentacion/02-plan-winlator-core.md)
 
 ## Requisitos funcionales
@@ -21,6 +21,7 @@
 | CORE-RF-09 | Las unidades `D:` y `E:` deberán conservarse según la configuración inicial. |
 | CORE-RF-10 | Cuando la aplicación Windows termine, el núcleo deberá cerrar su actividad y devolver al usuario al launcher de Android. |
 | CORE-RF-11 | Si una etapa falla, el núcleo deberá mostrar un mensaje técnico identificable. |
+| CORE-RF-12 | Si `shortcut.inputControls.mode` es `when_no_physical_controller`, el perfil indicado por `shortcut.inputControls.profile` deberá mostrarse solo mientras no haya un gamepad o joystick físico conectado; al conectar o desconectar el dispositivo, la visibilidad deberá actualizarse sin reiniciar el juego. |
 
 ## Requisitos no funcionales
 
@@ -32,6 +33,7 @@
 | CORE-RNF-04 | Cambiar el `applicationId` deberá documentarse como una aplicación Android distinta, no como una actualización compatible. |
 | CORE-RNF-05 | La configuración no deberá quedar expuesta mediante la interfaz final del núcleo. |
 | CORE-RNF-06 | La primera implementación deberá poder depurarse mediante `adb install` antes de distribuirse como APK normal. |
+| CORE-RNF-07 | El tipo de control táctil y su política de activación deberán declararse en el JSON del shortcut, sin depender de un identificador numérico visible para el usuario. |
 
 ## Contrato JSON implementado
 
@@ -43,7 +45,12 @@ El contrato implementado cubre las secciones de aplicación, Android/build, arra
   "android": {},
   "startup": {},
   "runtime": {},
-  "shortcut": {},
+  "shortcut": {
+    "inputControls": {
+      "mode": "when_no_physical_controller",
+      "profile": "Virtual Gamepad"
+    }
+  },
   "container": {}
 }
 ```

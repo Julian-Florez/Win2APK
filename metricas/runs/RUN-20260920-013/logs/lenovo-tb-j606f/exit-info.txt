@@ -1,0 +1,12 @@
+ACTIVITY MANAGER PROCESS EXIT INFO (dumpsys activity exit-info)
+Last Timestamp of Persistence Into Persistent Storage: 2026-09-20 17:39:58.764
+  package: com.winlator
+    Historical Process Exit for uid=10428
+        ApplicationExitInfo #0:
+          timestamp=2026-09-20 17:52:21.455 pid=27202 realUid=10428 packageUid=10428 definingUid=10428 user=0
+          process=com.winlator reason=16 (PACKAGE UPDATED) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=0,00 rss=139MB description=stop com.winlator due to installPackageLI state=empty trace=null
+        ApplicationExitInfo #1:
+          timestamp=2026-09-20 17:48:06.031 pid=26003 realUid=10428 packageUid=10428 definingUid=10428 user=0
+          process=com.winlator reason=16 (PACKAGE UPDATED) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=0,00 rss=155MB description=stop com.winlator due to installPackageLI state=empty trace=null

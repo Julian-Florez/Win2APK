@@ -169,6 +169,26 @@ pub struct Shortcut {
     pub exec_arguments: String,
     #[serde(default)]
     pub force_fullscreen: bool,
+    #[serde(default)]
+    pub input_controls: InputControls,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase", deny_unknown_fields)]
+pub struct InputControls {
+    #[serde(default = "default_input_controls_mode")]
+    pub mode: String,
+    #[serde(default)]
+    pub profile: String,
+}
+
+impl Default for InputControls {
+    fn default() -> Self {
+        Self {
+            mode: default_input_controls_mode(),
+            profile: String::new(),
+        }
+    }
 }
 
 #[derive(Debug, Clone)]
@@ -267,6 +287,17 @@ impl Config {
         ensure!(
             self.distribution.aab || self.distribution.apks,
             "se debe solicitar AAB, APKS o ambos"
+        );
+        ensure!(
+            matches!(
+                self.shortcut.input_controls.mode.as_str(),
+                "always" | "when_no_physical_controller" | "never"
+            ),
+            "shortcut.inputControls.mode no admitido"
+        );
+        ensure!(
+            !self.shortcut.input_controls.profile.contains(['\n', '\r']),
+            "shortcut.inputControls.profile no puede contener saltos de línea"
         );
         match self.signing.profile.as_str() {
             "auto" => ensure!(
@@ -388,6 +419,9 @@ fn default_rootfs_alias() -> String {
 }
 fn default_loading_text() -> String {
     "Preparing application...".to_owned()
+}
+fn default_input_controls_mode() -> String {
+    "always".to_owned()
 }
 fn default_error_mode() -> String {
     "technical_dialog".to_owned()

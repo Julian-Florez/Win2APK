@@ -1,0 +1,3 @@
+run_id,device_id,captured_at_utc,elapsed_ms,scheduled_second,image_relpath,primary_class,secondary_class,description,visible_text,confidence,classification_method,classifier_model,classified_at_utc,human_review_status
+RUN-20260920-012,redmi-note-8,2026-09-20T22:58:40.210Z,1000,1,metricas/runs/RUN-20260920-012/screenshots/redmi-note-8/t001.png,pending,,,,pending,pending,,,unreviewed
+RUN-20260920-012,lenovo-tb-j606f,2026-09-20T22:58:40.341Z,1000,1,metricas/runs/RUN-20260920-012/screenshots/lenovo-tb-j606f/t001.png,pending,,,,pending,pending,,,unreviewed

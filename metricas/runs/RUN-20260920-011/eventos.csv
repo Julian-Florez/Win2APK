@@ -1,0 +1,17 @@
+run_id,device_id,timestamp_utc,elapsed_ms,event_type,severity,message,evidence_relpath
+RUN-20260920-011,redmi-note-8,2026-09-20T22:26:03.457Z,178,monitor_started,info,Monitoreo sin lanzamiento; inicio UTC 2026-09-20T22:26:03.279Z,
+RUN-20260920-011,lenovo-tb-j606f,2026-09-20T22:26:03.540Z,232,monitor_started,info,Monitoreo sin lanzamiento; inicio UTC 2026-09-20T22:26:03.308Z,
+RUN-20260920-011,redmi-note-8,2026-09-20T22:26:03.644Z,365,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20260920-011,lenovo-tb-j606f,2026-09-20T22:26:03.750Z,441,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20260920-011,redmi-note-8,2026-09-20T22:26:04.922Z,1643,screenshot_captured,info,Captura canónica T+1s,metricas/runs/RUN-20260920-011/screenshots/redmi-note-8/t001.png
+RUN-20260920-011,lenovo-tb-j606f,2026-09-20T22:26:04.938Z,1629,screenshot_captured,info,Captura canónica T+1s,metricas/runs/RUN-20260920-011/screenshots/lenovo-tb-j606f/t001.png
+RUN-20260920-011,redmi-note-8,2026-09-20T22:26:16.186Z,12906,monitor_finished,info,11 muestras registradas,metricas/runs/RUN-20260920-011/logs/redmi-note-8/exit-info.txt
+RUN-20260920-011,lenovo-tb-j606f,2026-09-20T22:26:17.661Z,14352,monitor_finished,info,11 muestras registradas,metricas/runs/RUN-20260920-011/logs/lenovo-tb-j606f/exit-info.txt
+RUN-20260920-011,redmi-note-8,2026-09-20T22:27:22.538Z,161,monitor_started,info,Monitoreo sin lanzamiento; inicio UTC 2026-09-20T22:27:22.377Z,
+RUN-20260920-011,redmi-note-8,2026-09-20T22:27:22.724Z,347,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20260920-011,redmi-note-8,2026-09-20T22:27:23.984Z,1607,screenshot_captured,info,Captura canónica T+1s,metricas/runs/RUN-20260920-011/screenshots/redmi-note-8/t001.png
+RUN-20260920-011,redmi-note-8,2026-09-20T22:27:35.216Z,12839,monitor_finished,info,11 muestras registradas,metricas/runs/RUN-20260920-011/logs/redmi-note-8/exit-info.txt
+RUN-20260920-011,lenovo-tb-j606f,2026-09-20T22:27:40.860Z,179,monitor_started,info,Monitoreo sin lanzamiento; inicio UTC 2026-09-20T22:27:40.681Z,
+RUN-20260920-011,lenovo-tb-j606f,2026-09-20T22:27:41.054Z,373,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20260920-011,lenovo-tb-j606f,2026-09-20T22:27:42.334Z,1653,screenshot_captured,info,Captura canónica T+1s,metricas/runs/RUN-20260920-011/screenshots/lenovo-tb-j606f/t001.png
+RUN-20260920-011,lenovo-tb-j606f,2026-09-20T22:27:51.404Z,10723,monitor_finished,info,10 muestras registradas,metricas/runs/RUN-20260920-011/logs/lenovo-tb-j606f/exit-info.txt

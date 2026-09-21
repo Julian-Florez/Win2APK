@@ -1,0 +1,37 @@
+run_id,device_id,timestamp_utc,elapsed_ms,event_type,severity,message,evidence_relpath
+RUN-20260921-005,redmi-note-8,2026-09-21T02:17:14.523Z,1551,launch_requested,info,"bash arg: -p
+  bash arg: com.win2apk.bombrushcyberfunk
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=78ms (0ms mobile, 0ms wifi, 78ms not connected)
+args: [-p, com.win2apk.bombrushcyberfunk, -c, android.intent.category.LAUNCHER, 1]
+ arg: ""-p""
+ arg: ""com.win2apk.bombrushcyberfunk""
+ arg: ""-c""
+ arg: ""android.intent.category.LAUNCHER""
+ arg: ""1""
+data=""com.win2apk.bombrushcyberfunk""
+data=""android.intent.category.LAUNCHER""",metricas/runs/RUN-20260921-005/logs/redmi-note-8/launch.log
+RUN-20260921-005,redmi-note-8,2026-09-21T02:17:14.715Z,1744,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20260921-005,redmi-note-8,2026-09-21T02:18:14.552Z,61580,screenshot_captured,info,Captura canónica T+60s,metricas/runs/RUN-20260921-005/screenshots/redmi-note-8/t060.png
+RUN-20260921-005,redmi-note-8,2026-09-21T02:18:45.588Z,92616,monitor_finished,info,91 muestras registradas,metricas/runs/RUN-20260921-005/logs/redmi-note-8/exit-info.txt
+RUN-20260921-005,mi-a3,2026-09-21T02:19:58.950Z,1426,launch_requested,info,"bash arg: -p
+  bash arg: com.win2apk.bombrushcyberfunk
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=49ms (0ms mobile, 0ms wifi, 49ms not connected)
+args: [-p, com.win2apk.bombrushcyberfunk, -c, android.intent.category.LAUNCHER, 1]
+ arg: ""-p""
+ arg: ""com.win2apk.bombrushcyberfunk""
+ arg: ""-c""
+ arg: ""android.intent.category.LAUNCHER""
+ arg: ""1""
+data=""com.win2apk.bombrushcyberfunk""
+data=""android.intent.category.LAUNCHER""",metricas/runs/RUN-20260921-005/logs/mi-a3/launch.log
+RUN-20260921-005,mi-a3,2026-09-21T02:19:59.109Z,1584,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20260921-005,mi-a3,2026-09-21T02:20:58.349Z,60824,screenshot_captured,info,Captura canónica T+60s,metricas/runs/RUN-20260921-005/screenshots/mi-a3/t060.png
+RUN-20260921-005,mi-a3,2026-09-21T02:21:29.910Z,92386,monitor_finished,info,91 muestras registradas,metricas/runs/RUN-20260921-005/logs/mi-a3/exit-info.txt

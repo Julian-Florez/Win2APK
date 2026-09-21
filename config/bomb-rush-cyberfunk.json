@@ -1,0 +1,44 @@
+{
+  "$schema": "../schemas/win2apk-v2.schema.json",
+  "schemaVersion": 2,
+  "project": {
+    "name": "Bomb Rush Cyberfunk",
+    "sourceFolder": "/home/julian/Games/bomb-rush-cyberfunk/drive_c/GOG Games/Bomb Rush Cyberfunk",
+    "entrypoint": "Bomb Rush Cyberfunk.exe",
+    "installDirectory": "Bomb Rush Cyberfunk"
+  },
+  "android": {
+    "applicationId": "com.win2apk.bombrushcyberfunk",
+    "versionCode": 1,
+    "versionName": "gog-56774571391351451",
+    "icon": "/home/julian/Downloads/256x256.png",
+    "iconBackgroundColor": "#172033"
+  },
+  "packaging": {
+    "delivery": "on-demand",
+    "storageMode": "move",
+    "targetPackBytes": 1350000000,
+    "oversizedFiles": "chunk"
+  },
+  "distribution": {
+    "aab": true,
+    "apks": true,
+    "localTesting": true
+  },
+  "signing": {
+    "profile": "auto"
+  },
+  "shortcut": {
+    "name": "Bomb Rush Cyberfunk",
+    "inputControls": {
+      "mode": "when_no_physical_controller",
+      "profile": "Virtual Gamepad"
+    }
+  },
+  "container": {
+    "graphicsDriver": "auto",
+    "dxwrapper": "auto",
+    "audioDriver": "alsa",
+    "box64Preset": "INTERMEDIATE"
+  }
+}

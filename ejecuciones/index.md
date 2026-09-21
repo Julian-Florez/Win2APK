@@ -64,6 +64,50 @@ Cada registro corresponde a un intento experimental independiente. Las matrices 
 | EXEC-048 | Intento de instalación `--fresh` de Cuphead en Mi A3 con wrapper incompleto | Repetición / instalación automatizada | Xiaomi Mi A3 | Fallido antes de instalar: faltó `/usr/bin/time` en el entorno del wrapper | [matriz.md](./48-install-cuphead-fresh-mi-a3-20260919/matriz.md) | [logs](./48-install-cuphead-fresh-mi-a3-20260919/logs/) |
 | EXEC-049 | Instalación `--fresh` de Cuphead mediante el CLI en Mi A3 | Instalación automatizada / repetición válida | Xiaomi Mi A3 | Aprobado experimentalmente: instalación, transferencia directa, limpieza de fuentes y `Cuphead.exe` activo | [matriz.md](./49-install-cuphead-fresh-cli-mi-a3-20260919/matriz.md) | [logs](./49-install-cuphead-fresh-cli-mi-a3-20260919/logs/) |
 
+| EXEC-050 | Identificación visual del paquete Winlator preinstalado en Redmi Note 8 horizontal | Métricas automatizadas, sin reinstalación | redmi-note-8 | Paquete Core observado; interfaz general no medida; `failed_install` es un defecto del agregador | [matriz.md](./50-metricas-ui-base-nocore-redmi-horizontal-20260920/matriz.md) | [datos](../metricas/runs/RUN-20260920-001/) |
+
+| EXEC-051 | Instalación fría de la variante general Material 3; Redmi horizontal y Lenovo vertical | Métricas automatizadas | lenovo-tb-j606f, redmi-note-8 | Instalación 2/2; T+60 quedó en diálogo de permiso del sistema | [matriz.md](./51-metricas-ui-material3-preview-phone-landscape-tablet-portrait-20260920/matriz.md) | [datos](../metricas/runs/RUN-20260920-002/) |
+
+| EXEC-052 | Interfaz general Material 3 después del permiso inicial; sin reinstalar | Métricas automatizadas, sin reinstalación | lenovo-tb-j606f, redmi-note-8 | Aprobado para observación inicial: menú Containers en ambos; navegación permanente en tablet | [matriz.md](./52-metricas-ui-material3-preview-after-permission-phone-landscape-tablet-portrait-20260920/matriz.md) | [datos](../metricas/runs/RUN-20260920-003/) |
+
+| EXEC-053 | Interfaz general Material 3 en las orientaciones complementarias; sin reinstalar | Métricas automatizadas | lenovo-tb-j606f, redmi-note-8 | failed_install | [matriz.md](./53-metricas-ui-material3-preview-phone-portrait-tablet-landscape-20260920/matriz.md) | [datos](../metricas/runs/RUN-20260920-004/) |
+
+| EXEC-054 | Instalación fría de la corrección de navegación Material 3; comprobar acceso a configuración de Container-1 | Métricas automatizadas | lenovo-tb-j606f, redmi-note-8 | pending_classification | [matriz.md](./54-metricas-ui-material3-container-navigation-fix-phone-landscape-tablet-portrait-20260920/matriz.md) | [datos](../metricas/runs/RUN-20260920-005/) |
+
+| EXEC-055 | Cold install of Material 3 UI after permanent navigation spacing fix; observe Containers before opening Container-1 settings | Métricas automatizadas | lenovo-tb-j606f, redmi-note-8 | failed_install | [matriz.md](./55-metricas-container-settings-navigation-fix-20260920/matriz.md) | [datos](../metricas/runs/RUN-20260920-006/) |
+
+| EXEC-056 | Cold install of the final Material 3 UI after reserving permanent tablet navigation space; observe Containers before opening Container-1 settings | Métricas automatizadas | lenovo-tb-j606f, redmi-note-8 | failed_install | [matriz.md](./56-metricas-container-settings-navigation-fix-final-20260920/matriz.md) | [datos](../metricas/runs/RUN-20260920-007/) |
+
+| EXEC-057 | Cold install of the final Material 3 UI after reserving permanent tablet navigation space; observe Containers before opening Container-1 settings | Métricas automatizadas | lenovo-tb-j606f, redmi-note-8 | Android permission dialog at T+60; installation and samples valid | [matriz.md](./57-metricas-container-settings-navigation-fix-final-20260920/matriz.md) | [datos](../metricas/runs/RUN-20260920-008/) |
+
+| EXEC-058 | Cold install of side-by-side tablet navigation layout; observe Containers before opening Container-1 settings | Métricas automatizadas | lenovo-tb-j606f, redmi-note-8 | Android permission dialog at T+60; installation and samples valid | [matriz.md](./58-metricas-container-settings-permanent-navigation-layout-20260920/matriz.md) | [datos](../metricas/runs/RUN-20260920-009/) |
+
+| EXEC-059 | Carga de Container-1 y apertura del panel lateral mediante Atrás con el paquete base | Instalación fría y observación manual ADB | lenovo-tb-j606f, redmi-note-8 | Aprobado experimentalmente: carga y panel lateral visibles en tablet vertical y teléfono horizontal | [matriz.md](./59-metricas-runtime-panel-base-package-20260920/matriz.md) | [datos](../metricas/runs/RUN-20260920-010/) |
+
+| EXEC-060 | Drawer runtime Material 3 flotante, compacto y sin cabecera de Winlator | Instalación fría y verificación manual ADB | lenovo-tb-j606f, redmi-note-8 | Aprobado visualmente: panel visible en Lenovo vertical y Redmi horizontal; lista completa en tablet y lista desplazable en teléfono | [matriz.md](./60-metricas-runtime-panel-floating-compact-20260920/matriz.md) | [datos](../metricas/runs/RUN-20260920-011/) |
+
+| EXEC-062 | Verificación visual final del panel runtime Material You en orientación horizontal y vertical | Actualización incremental y medición visual | lenovo-tb-j606f, redmi-note-8 | Aprobado visualmente: cuatro esquinas redondeadas y fondo Material You visibles en ambas orientaciones | [matriz.md](./62-metricas-menu-material-you-rounded-v8-20260920/matriz.md) | [datos](../metricas/runs/RUN-20260920-013/) |
+
+| EXEC-063 | Verificación del panel runtime disponible en coreMode con Bomb Rush Cyberfunk | Métricas automatizadas | lenovo-tb-j606f | partial_state_mismatch | [matriz.md](./63-metricas-bomb-rush-core-runtime-menu-20260920/matriz.md) | [datos](../metricas/runs/RUN-20260920-014/) |
+
+| EXEC-064 | Verificación del panel runtime en coreMode sin la opción Exit con Bomb Rush Cyberfunk | Métricas automatizadas | lenovo-tb-j606f | approved_experimental | [matriz.md](./64-metricas-bomb-rush-core-runtime-menu-no-exit-20260920/matriz.md) | [datos](../metricas/runs/RUN-20260920-015/) |
+
+| EXEC-065 | Verificación de una única pantalla Material 3 de carga para arranque core y preloader runtime | Métricas automatizadas | lenovo-tb-j606f | approved_experimental | [matriz.md](./65-metricas-unified-loading-core-20260920/matriz.md) | [datos](../metricas/runs/RUN-20260920-016/) |
+
+| EXEC-066 | Reproducción del posible crash de Unity de Bomb Rush Cyberfunk en Lenovo TB-J606F | Métricas automatizadas | lenovo-tb-j606f | failed_install | [matriz.md](./66-metricas-bomb-rush-unity-crash-repro-20260921/matriz.md) | [datos](../metricas/runs/RUN-20260921-001/) |
+
+| EXEC-067 | Instalación y verificación de la nueva pantalla de carga negra de Bomb Rush Cyberfunk en Lenovo TB-J606F | Métricas automatizadas | lenovo-tb-j606f | approved_experimental | [matriz.md](./67-metricas-unified-loading-black-tablet-20260921/matriz.md) | [datos](../metricas/runs/RUN-20260921-002/) |
+
+| EXEC-068 | Instalación y arranque de Bomb Rush Cyberfunk con controles táctiles condicionales | Métricas automatizadas | lenovo-tb-j606f, mi-a3, redmi-note-8 | installed_verified_partial_startup | [matriz.md](./68-metricas-gamepad-conditional-install-20260921/matriz.md) | [datos](../metricas/runs/RUN-20260921-003/) |
+
+| EXEC-069 | Instalación y arranque de Bomb Rush Cyberfunk con gamepad Material You 3 sin cambiar posiciones | Métricas automatizadas | lenovo-tb-j606f, mi-a3, redmi-note-8 | pending_classification | [matriz.md](./69-metricas-gamepad-material3-install-20260921/matriz.md) | [datos](../metricas/runs/RUN-20260921-004/) |
+
+| EXEC-071 | Validación visual del gamepad Material 3 v3 en Redmi Note 8 | Métricas automatizadas | redmi-note-8 | pending_classification | [matriz.md](./71-metricas-gamepad-material3-shapes-v3-redmi-20260921/matriz.md) | [datos](../metricas/runs/RUN-20260921-006/) |
+
+| EXEC-072 | Validación del feedback visual de la cruceta Material 3 v4 en Redmi Note 8 | Métricas automatizadas | redmi-note-8 | pending_classification | [matriz.md](./72-metricas-gamepad-material3-dpad-feedback-v4-redmi-20260921/matriz.md) | [datos](../metricas/runs/RUN-20260921-007/) |
+
+| EXEC-073 | Validación del retorno visual del D-pad al soltar en Redmi Note 8 | Métricas automatizadas | redmi-note-8 | parcial; interacción visual suplementaria confirmada | [matriz.md](./73-metricas-gamepad-material3-dpad-release-v5-redmi-20260921/matriz.md) | [datos](../metricas/runs/RUN-20260921-008/) |
+
 ## Plantilla
 
 Usar [plantilla-metricas.md](./plantilla-metricas.md) para crear la matriz del siguiente intento. No completar campos con datos que no estén respaldados por la ejecución.

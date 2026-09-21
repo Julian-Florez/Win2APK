@@ -278,7 +278,8 @@ fn runtime_config(loaded: &LoadedConfig, plan: &PayloadPlan) -> Value {
             "name": shortcut_name,
             "desktopFile": "Win2APK.desktop",
             "execArguments": loaded.config.shortcut.exec_arguments,
-            "forceFullscreen": loaded.config.shortcut.force_fullscreen
+            "forceFullscreen": loaded.config.shortcut.force_fullscreen,
+            "inputControls": loaded.config.shortcut.input_controls
         },
         "container": loaded.config.container
     })

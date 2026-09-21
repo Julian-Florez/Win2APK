@@ -1,0 +1,15 @@
+  bash arg: -p
+  bash arg: com.win2apk.bombrushcyberfunk
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=43ms (0ms mobile, 0ms wifi, 43ms not connected)
+args: [-p, com.win2apk.bombrushcyberfunk, -c, android.intent.category.LAUNCHER, 1]
+ arg: "-p"
+ arg: "com.win2apk.bombrushcyberfunk"
+ arg: "-c"
+ arg: "android.intent.category.LAUNCHER"
+ arg: "1"
+data="com.win2apk.bombrushcyberfunk"
+data="android.intent.category.LAUNCHER"

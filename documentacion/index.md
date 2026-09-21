@@ -19,6 +19,7 @@ Esta carpeta reúne las decisiones, avances y evidencias del desarrollo del proy
 12. [Automatización del icono de launcher](./11-automatizacion-iconos-launcher.md)
 13. [Manual HTML para empaquetar una carpeta e instalarla en Android](./12-guia-empaquetado-win2apk.html)
 14. [CLI Linux y configuración declarativa v2](./13-decision-cli-linux-configuracion-v2.md)
+15. [Interfaz Android Material 3 adaptativa](./14-decision-interfaz-material3-adaptativa.md)
 
 ## Criterio de organización
 

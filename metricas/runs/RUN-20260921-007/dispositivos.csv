@@ -1,0 +1,2 @@
+run_id,device_id,observed_at_utc,manufacturer,model,product,android_device,android_version,api_level,abi_list,hardware,soc_model,cpu_cores,cpu_max_freq_khz,ram_total_kib,gpu_vendor,gpu_renderer,gpu_version,vulkan_version,screen_resolution,screen_density_dpi,serial_hash
+RUN-20260921-007,redmi-note-8,2026-09-21T02:38:04.702Z,Xiaomi,Redmi Note 8,ginkgo,ginkgo,16,36,"arm64-v8a,armeabi-v7a,armeabi",qcom,SM6125,8,2016000,3728280,Qualcomm,Adreno (TM) 610,"OpenGL ES 3.2 V@0744.19 (GIT@e0e02d5532, I87746daaa7, 1704430248) (Date:01/05/24)",,1080x2340,440,95ed736f4d86

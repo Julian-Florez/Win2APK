@@ -1,0 +1,109 @@
+run_id,device_id,timestamp_utc,elapsed_ms,event_type,severity,message,evidence_relpath
+RUN-20260921-003,redmi-note-8,2026-09-21T00:47:35.927Z,,install_failed,error,Failed to remove working directory with local testing splits. Your app might still have been installed correctly but have previous version of dynamic feature modules. If you see legacy versions of dynamic feature modules installed try to uninstall and install the app again.,metricas/runs/RUN-20260921-003/logs/redmi-note-8/install-apks.log
+RUN-20260921-003,redmi-note-8,2026-09-21T00:47:35.945Z,,device_skipped_after_install_failure,error,cold_install.py terminó con código 1,
+RUN-20260921-003,mi-a3,2026-09-21T00:48:49.749Z,,install_failed,error,Failed to remove working directory with local testing splits. Your app might still have been installed correctly but have previous version of dynamic feature modules. If you see legacy versions of dynamic feature modules installed try to uninstall and install the app again.,metricas/runs/RUN-20260921-003/logs/mi-a3/install-apks.log
+RUN-20260921-003,mi-a3,2026-09-21T00:48:49.764Z,,device_skipped_after_install_failure,error,cold_install.py terminó con código 1,
+RUN-20260921-003,lenovo-tb-j606f,2026-09-21T00:50:09.402Z,,install_failed,error,Failed to remove working directory with local testing splits. Your app might still have been installed correctly but have previous version of dynamic feature modules. If you see legacy versions of dynamic feature modules installed try to uninstall and install the app again.,metricas/runs/RUN-20260921-003/logs/lenovo-tb-j606f/install-apks.log
+RUN-20260921-003,lenovo-tb-j606f,2026-09-21T00:50:09.417Z,,device_skipped_after_install_failure,error,cold_install.py terminó con código 1,
+RUN-20260921-003,mi-a3,2026-09-21T00:50:50.553Z,1265,launch_requested,info,"bash arg: -p
+  bash arg: com.win2apk.bombrushcyberfunk
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=54ms (0ms mobile, 0ms wifi, 54ms not connected)
+args: [-p, com.win2apk.bombrushcyberfunk, -c, android.intent.category.LAUNCHER, 1]
+ arg: ""-p""
+ arg: ""com.win2apk.bombrushcyberfunk""
+ arg: ""-c""
+ arg: ""android.intent.category.LAUNCHER""
+ arg: ""1""
+data=""com.win2apk.bombrushcyberfunk""
+data=""android.intent.category.LAUNCHER""",metricas/runs/RUN-20260921-003/logs/mi-a3/launch.log
+RUN-20260921-003,redmi-note-8,2026-09-21T00:50:50.558Z,1283,launch_requested,info,"bash arg: -p
+  bash arg: com.win2apk.bombrushcyberfunk
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=62ms (0ms mobile, 0ms wifi, 62ms not connected)
+args: [-p, com.win2apk.bombrushcyberfunk, -c, android.intent.category.LAUNCHER, 1]
+ arg: ""-p""
+ arg: ""com.win2apk.bombrushcyberfunk""
+ arg: ""-c""
+ arg: ""android.intent.category.LAUNCHER""
+ arg: ""1""
+data=""com.win2apk.bombrushcyberfunk""
+data=""android.intent.category.LAUNCHER""",metricas/runs/RUN-20260921-003/logs/redmi-note-8/launch.log
+RUN-20260921-003,redmi-note-8,2026-09-21T00:50:50.695Z,1420,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20260921-003,mi-a3,2026-09-21T00:50:50.711Z,1423,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20260921-003,lenovo-tb-j606f,2026-09-21T00:50:50.882Z,1559,launch_requested,info,"bash arg: -p
+  bash arg: com.win2apk.bombrushcyberfunk
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=65ms (0ms mobile, 0ms wifi, 65ms not connected)
+args: [-p, com.win2apk.bombrushcyberfunk, -c, android.intent.category.LAUNCHER, 1]
+ arg: ""-p""
+ arg: ""com.win2apk.bombrushcyberfunk""
+ arg: ""-c""
+ arg: ""android.intent.category.LAUNCHER""
+ arg: ""1""
+data=""com.win2apk.bombrushcyberfunk""
+data=""android.intent.category.LAUNCHER""",metricas/runs/RUN-20260921-003/logs/lenovo-tb-j606f/launch.log
+RUN-20260921-003,lenovo-tb-j606f,2026-09-21T00:50:51.083Z,1760,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20260921-003,mi-a3,2026-09-21T00:51:50.101Z,60812,screenshot_captured,info,Captura canónica T+60s,metricas/runs/RUN-20260921-003/screenshots/mi-a3/t060.png
+RUN-20260921-003,lenovo-tb-j606f,2026-09-21T00:51:51.614Z,62291,screenshot_captured,info,Captura canónica T+60s,metricas/runs/RUN-20260921-003/screenshots/lenovo-tb-j606f/t060.png
+RUN-20260921-003,redmi-note-8,2026-09-21T00:51:51.845Z,62570,screenshot_captured,info,Captura canónica T+60s,metricas/runs/RUN-20260921-003/screenshots/redmi-note-8/t060.png
+RUN-20260921-003,lenovo-tb-j606f,2026-09-21T00:51:55.306Z,65983,monitor_finished,info,64 muestras registradas,metricas/runs/RUN-20260921-003/logs/lenovo-tb-j606f/exit-info.txt
+RUN-20260921-003,mi-a3,2026-09-21T00:51:55.359Z,66071,monitor_finished,info,66 muestras registradas,metricas/runs/RUN-20260921-003/logs/mi-a3/exit-info.txt
+RUN-20260921-003,redmi-note-8,2026-09-21T00:51:55.390Z,66116,monitor_finished,info,66 muestras registradas,metricas/runs/RUN-20260921-003/logs/redmi-note-8/exit-info.txt
+RUN-20260921-003,lenovo-tb-j606f,2026-09-21T00:53:27.118Z,1089,launch_requested,info,"bash arg: -p
+  bash arg: com.win2apk.bombrushcyberfunk
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=20ms (0ms mobile, 0ms wifi, 20ms not connected)
+args: [-p, com.win2apk.bombrushcyberfunk, -c, android.intent.category.LAUNCHER, 1]
+ arg: ""-p""
+ arg: ""com.win2apk.bombrushcyberfunk""
+ arg: ""-c""
+ arg: ""android.intent.category.LAUNCHER""
+ arg: ""1""
+data=""com.win2apk.bombrushcyberfunk""
+data=""android.intent.category.LAUNCHER""",metricas/runs/RUN-20260921-003/logs/lenovo-tb-j606f/launch.log
+RUN-20260921-003,lenovo-tb-j606f,2026-09-21T00:53:27.298Z,1270,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20260921-003,mi-a3,2026-09-21T00:53:27.575Z,1513,launch_requested,info,"bash arg: -p
+  bash arg: com.win2apk.bombrushcyberfunk
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=34ms (0ms mobile, 0ms wifi, 34ms not connected)
+args: [-p, com.win2apk.bombrushcyberfunk, -c, android.intent.category.LAUNCHER, 1]
+ arg: ""-p""
+ arg: ""com.win2apk.bombrushcyberfunk""
+ arg: ""-c""
+ arg: ""android.intent.category.LAUNCHER""
+ arg: ""1""
+data=""com.win2apk.bombrushcyberfunk""
+data=""android.intent.category.LAUNCHER""",metricas/runs/RUN-20260921-003/logs/mi-a3/launch.log
+RUN-20260921-003,mi-a3,2026-09-21T00:53:27.725Z,1663,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20260921-003,redmi-note-8,2026-09-21T00:53:28.506Z,2498,launch_requested,info,"bash arg: -p
+  bash arg: com.win2apk.bombrushcyberfunk
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=56ms (0ms mobile, 0ms wifi, 56ms not connected)
+args: [-p, com.win2apk.bombrushcyberfunk, -c, android.intent.category.LAUNCHER, 1]
+ arg: ""-p""
+ arg: ""com.win2apk.bombrushcyberfunk""
+ arg: ""-c""
+ arg: ""android.intent.category.LAUNCHER""
+ arg: ""1""
+data=""com.win2apk.bombrushcyberfunk""
+data=""android.intent.category.LAUNCHER""",metricas/runs/RUN-20260921-003/logs/redmi-note-8/launch.log
+RUN-20260921-003,redmi-note-8,2026-09-21T00:53:28.732Z,2725,app_process_first_seen,info,Proceso principal observado: 1,

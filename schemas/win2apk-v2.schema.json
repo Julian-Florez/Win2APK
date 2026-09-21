@@ -67,7 +67,25 @@
     },
     "startup": { "type": "object" },
     "runtime": { "type": "object" },
-    "shortcut": { "type": "object" },
+    "shortcut": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string" },
+        "execArguments": { "type": "string" },
+        "forceFullscreen": { "type": "boolean" },
+        "inputControls": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "mode": {
+              "enum": ["always", "when_no_physical_controller", "never"]
+            },
+            "profile": { "type": "string" }
+          }
+        }
+      }
+    },
     "container": { "type": "object" }
   }
 }

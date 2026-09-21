@@ -1,0 +1,5 @@
+run_id,device_id,timestamp_utc,elapsed_ms,event_type,severity,message,evidence_relpath
+RUN-20260920-006,redmi-note-8,2026-09-20T21:09:46.038Z,,install_failed,error,ADB >> OK,metricas/runs/RUN-20260920-006/logs/redmi-note-8/install-apks.log
+RUN-20260920-006,redmi-note-8,2026-09-20T21:09:46.053Z,,device_skipped_after_install_failure,error,cold_install.py terminó con código 1,
+RUN-20260920-006,lenovo-tb-j606f,2026-09-20T21:10:15.865Z,,install_failed,error,ADB >> OK,metricas/runs/RUN-20260920-006/logs/lenovo-tb-j606f/install-apks.log
+RUN-20260920-006,lenovo-tb-j606f,2026-09-20T21:10:15.883Z,,device_skipped_after_install_failure,error,cold_install.py terminó con código 1,

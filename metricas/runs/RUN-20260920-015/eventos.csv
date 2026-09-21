@@ -1,0 +1,5 @@
+run_id,device_id,timestamp_utc,elapsed_ms,event_type,severity,message,evidence_relpath
+RUN-20260920-015,lenovo-tb-j606f,2026-09-20T23:34:25.216Z,227,monitor_started,info,Monitoreo sin lanzamiento; inicio UTC 2026-09-20T23:34:24.989Z,
+RUN-20260920-015,lenovo-tb-j606f,2026-09-20T23:34:25.434Z,444,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20260920-015,lenovo-tb-j606f,2026-09-20T23:34:31.018Z,6029,screenshot_captured,info,Captura canónica T+5s,metricas/runs/RUN-20260920-015/screenshots/lenovo-tb-j606f/t005.png
+RUN-20260920-015,lenovo-tb-j606f,2026-09-20T23:34:40.875Z,15886,monitor_finished,info,12 muestras registradas,metricas/runs/RUN-20260920-015/logs/lenovo-tb-j606f/exit-info.txt

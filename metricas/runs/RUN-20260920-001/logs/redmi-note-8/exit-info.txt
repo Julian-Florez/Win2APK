@@ -1,0 +1,36 @@
+ACTIVITY MANAGER PROCESS EXIT INFO (dumpsys activity exit-info)
+Last Timestamp of Persistence Into Persistent Storage: 2026-09-20 10:12:44.306
+  package: com.winlator
+    Historical Process Exit for uid=10386
+        ApplicationExitInfo #0:
+          timestamp=2026-08-22 23:03:58.642 pid=12451 realUid=10386 packageUid=10386 definingUid=10386 user=0
+          process=com.winlator reason=9 (EXCESSIVE RESOURCE USAGE) subreason=7 (EXCESSIVE CPU USAGE) status=0
+          importance=400 pss=0.00 rss=140MB description=excessive cpu 7670 during 300083 dur=2319296 limit=2 state=empty trace=null
+        ApplicationExitInfo #1:
+          timestamp=2026-08-18 13:51:28.568 pid=11978 realUid=10386 packageUid=10386 definingUid=10386 user=0
+          process=com.winlator reason=16 (PACKAGE UPDATED) subreason=0 (UNKNOWN) status=0
+          importance=400 pss=0.00 rss=176MB description=stop com.winlator due to installPackageLI state=empty trace=null
+        ApplicationExitInfo #2:
+          timestamp=2026-08-18 13:50:51.321 pid=6200 realUid=10386 packageUid=10386 definingUid=10386 user=0
+          process=com.winlator reason=1 (EXIT_SELF) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=0.00 rss=165MB description=null state=empty trace=null
+        ApplicationExitInfo #3:
+          timestamp=2026-08-18 11:44:54.705 pid=4045 realUid=10386 packageUid=10386 definingUid=10386 user=0
+          process=com.winlator reason=16 (PACKAGE UPDATED) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=0.00 rss=181MB description=stop com.winlator due to installPackageLI state=empty trace=null
+        ApplicationExitInfo #4:
+          timestamp=2026-08-18 11:13:46.684 pid=3972 realUid=10386 packageUid=10386 definingUid=10386 user=0
+          process=com.winlator reason=4 (APP CRASH(EXCEPTION)) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=0.00 rss=0.00 description=crash state=empty trace=null
+        ApplicationExitInfo #5:
+          timestamp=2026-08-18 11:13:42.738 pid=3762 realUid=10386 packageUid=10386 definingUid=10386 user=0
+          process=com.winlator reason=4 (APP CRASH(EXCEPTION)) subreason=0 (UNKNOWN) status=0
+          importance=400 pss=0.00 rss=0.00 description=crash state=empty trace=null
+        ApplicationExitInfo #6:
+          timestamp=2026-08-18 11:13:40.982 pid=3762 realUid=10386 packageUid=10386 definingUid=10386 user=0
+          process=com.winlator reason=4 (APP CRASH(EXCEPTION)) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=0.00 rss=0.00 description=crash state=empty trace=null
+        ApplicationExitInfo #7:
+          timestamp=2026-08-18 11:13:35.365 pid=3423 realUid=10386 packageUid=10386 definingUid=10386 user=0
+          process=com.winlator reason=4 (APP CRASH(EXCEPTION)) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=0.00 rss=192MB description=crash state=empty trace=null

@@ -1,0 +1,9 @@
+run_id,device_id,timestamp_utc,elapsed_ms,event_type,severity,message,evidence_relpath
+RUN-20260920-004,redmi-note-8,2026-09-20T20:45:21.376Z,188,monitor_started,info,Monitoreo sin lanzamiento; inicio UTC 2026-09-20T20:45:21.187Z,
+RUN-20260920-004,redmi-note-8,2026-09-20T20:45:21.529Z,342,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20260920-004,redmi-note-8,2026-09-20T20:46:21.917Z,60730,screenshot_captured,info,Captura canónica T+60s,metricas/runs/RUN-20260920-004/screenshots/redmi-note-8/t060.png
+RUN-20260920-004,redmi-note-8,2026-09-20T20:46:27.283Z,66095,monitor_finished,info,33 muestras registradas,metricas/runs/RUN-20260920-004/logs/redmi-note-8/exit-info.txt
+RUN-20260920-004,lenovo-tb-j606f,2026-09-20T20:46:36.244Z,181,monitor_started,info,Monitoreo sin lanzamiento; inicio UTC 2026-09-20T20:46:36.062Z,
+RUN-20260920-004,lenovo-tb-j606f,2026-09-20T20:46:36.433Z,370,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20260920-004,lenovo-tb-j606f,2026-09-20T20:47:36.693Z,60631,screenshot_captured,info,Captura canónica T+60s,metricas/runs/RUN-20260920-004/screenshots/lenovo-tb-j606f/t060.png
+RUN-20260920-004,lenovo-tb-j606f,2026-09-20T20:47:42.163Z,66100,monitor_finished,info,33 muestras registradas,metricas/runs/RUN-20260920-004/logs/lenovo-tb-j606f/exit-info.txt

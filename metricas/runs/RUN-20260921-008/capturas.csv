@@ -1,0 +1,2 @@
+run_id,device_id,captured_at_utc,elapsed_ms,scheduled_second,image_relpath,primary_class,secondary_class,description,visible_text,confidence,classification_method,classifier_model,classified_at_utc,human_review_status
+RUN-20260921-008,redmi-note-8,2026-09-21T02:48:00.668Z,60000,60,metricas/runs/RUN-20260921-008/screenshots/redmi-note-8/t060.png,loading,,La captura T+60 es la pantalla de carga negra; la comprobación del ciclo visual del D-pad se documenta con capturas interactivas suplementarias.,Cargando,high,ai_vision,N/R,2026-09-21T02:48:43.479Z,unreviewed
