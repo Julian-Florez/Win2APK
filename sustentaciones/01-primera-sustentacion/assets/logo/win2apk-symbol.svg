@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title desc">
+  <title id="title">Símbolo de Win2APK</title>
+  <desc id="desc">Dos marcos desplazados conectados por una pieza central, símbolo del puente reproducible entre plataformas.</desc>
+  <path fill="#172033" d="M8 16a8 8 0 0 1 8-8h34v14H22v52h28v14H16a8 8 0 0 1-8-8V16Z"/>
+  <path fill="#50C878" d="M46 28h34a8 8 0 0 1 8 8v44a8 8 0 0 1-8 8H46V74h28V42H46V28Z"/>
+  <path fill="#172033" d="M34 39h28v18H34z"/>
+  <path fill="#50C878" d="m56 45 14 12-14 12V45Z"/>
+</svg>

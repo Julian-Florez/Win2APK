@@ -1,0 +1,28 @@
+{
+  "generatedAt": "2026-09-22T21:50:26.644Z",
+  "baseUrl": "http://127.0.0.1:8767/",
+  "slideCount": 21,
+  "checkedViewports": [
+    "1920x1080",
+    "1366x768",
+    "1280x720"
+  ],
+  "interactions": {
+    "nextButton": true,
+    "previousButton": true,
+    "backupShortcut": true,
+    "overviewEntered": true,
+    "overviewExited": true,
+    "progressiveReveal": true,
+    "fullscreenAvailable": true,
+    "fullscreenButton": true
+  },
+  "videoState": {
+    "paused": false,
+    "readyState": 4,
+    "currentTime": 1.168246
+  },
+  "browserErrors": [],
+  "layoutErrors": [],
+  "ok": true
+}

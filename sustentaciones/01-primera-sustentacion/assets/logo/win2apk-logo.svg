@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 96" role="img" aria-labelledby="title desc">
+  <title id="title">Win2APK</title>
+  <desc id="desc">Identidad de Win2APK con el símbolo de puente entre plataformas y el nombre del proyecto.</desc>
+  <g>
+    <path fill="#172033" d="M8 16a8 8 0 0 1 8-8h34v14H22v52h28v14H16a8 8 0 0 1-8-8V16Z"/>
+    <path fill="#50C878" d="M46 28h34a8 8 0 0 1 8 8v44a8 8 0 0 1-8 8H46V74h28V42H46V28Z"/>
+    <path fill="#172033" d="M34 39h28v18H34z"/>
+    <path fill="#50C878" d="m56 45 14 12-14 12V45Z"/>
+  </g>
+  <text x="116" y="64" fill="#172033" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="750" letter-spacing="-1.5">Win2APK</text>
+</svg>

@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#172033">
+  <meta name="description" content="Primera sustentación oficial del proyecto Win2APK, Universidad EAN, 29 de septiembre de 2026.">
+  <title>Win2APK | Primera sustentación</title>
+  <link rel="icon" href="assets/logo/win2apk-symbol.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="viewport">
+    <main id="stage" aria-live="polite">
+      <section class="slide hero active" id="inicio" data-title="Win2APK" aria-label="Portada">
+        <div class="hero-main">
+          <div>
+            <p class="hero-kicker">Primera sustentación oficial</p>
+            <h1>Una ruta reproducible de Windows a Android ARM64</h1>
+            <p class="lede">Empaquetado, distribución y ejecución mediante un entorno de compatibilidad.</p>
+          </div>
+          <div class="hero-mark" aria-hidden="true">
+            <img src="assets/logo/win2apk-symbol.svg" alt="">
+          </div>
+        </div>
+        <footer class="hero-meta">
+          <span>Universidad EAN · Equipo Win2APK</span>
+          <span>29.09.2026</span>
+        </footer>
+      </section>
+
+      <section class="slide" id="barrera" data-title="La barrera" aria-label="La barrera que investiga Win2APK">
+        <header class="slide-head">
+          <div>
+            <p class="eyebrow">La barrera</p>
+            <h2>Ejecutar no basta si el usuario debe reconstruir el entorno</h2>
+          </div>
+          <img class="logo-small" src="assets/logo/win2apk-logo.svg" alt="Win2APK">
+        </header>
+        <div class="barrier-grid">
+          <div class="barrier-copy">
+            <p class="question">¿Cómo pasar de una carpeta Windows a una experiencia Android <strong>instalable y repetible</strong>?</p>
+            <ul class="barrier-list">
+              <li><b>01</b><span>Arquitectura x86-64 frente a ARM64</span></li>
+              <li><b>02</b><span>Dependencias, gráficos y configuración por aplicación</span></li>
+              <li><b>03</b><span>Distribución de payloads que pueden ocupar gigabytes</span></li>
+            </ul>
+          </div>
+          <figure class="evidence-window">
+            <img src="assets/images/win2apktest-ejecucion-manual.png" alt="Win2APKTest ejecutándose manualmente dentro de Winlator en Lenovo TB-J606F">
+            <figcaption class="evidence-caption">Línea base, EXEC-001: la aplicación funciona, pero el flujo todavía exige operar el entorno manualmente.</figcaption>
+          </figure>
+        </div>
+        <footer class="slide-foot"><span>Problema observado · No es una conversión a código Android nativo</span><span class="slide-no">02 / 12</span></footer>
+      </section>
+
+      <section class="slide" id="propuesta" data-title="La propuesta" aria-label="Propuesta y objetivo de Win2APK">
+        <header class="slide-head">
+          <div>
+            <p class="eyebrow">La propuesta</p>
+            <h2>Win2APK convierte decisiones técnicas en una canalización verificable</h2>
+          </div>
+          <span class="label decision">Decisión de diseño</span>
+        </header>
+        <div class="transform">
+          <div class="transform-side">
+            <p class="eyebrow">Entrada</p>
+            <h3>Aplicación Windows preparada</h3>
+            <p>Ejecutable, DLL, recursos, configuración y condiciones conocidas.</p>
+          </div>
+          <div class="bridge" aria-hidden="true">
+            <svg viewBox="0 0 100 100"><path fill="none" stroke="currentColor" stroke-width="8" d="M10 50h65"/><path fill="currentColor" d="m66 27 25 23-25 23z"/></svg>
+          </div>
+          <div class="transform-side output">
+            <p class="eyebrow">Salida</p>
+            <h3>AAB + APK set + reporte</h3>
+            <p>Artefactos firmados, configuración embebida, inventario y hashes.</p>
+          </div>
+          <p class="objective-line"><strong>Objetivo actual:</strong> automatizar el empaquetado y la preparación del entorno para distribuir y ejecutar aplicaciones Windows compatibles en Android ARM64 con menos configuración manual.</p>
+        </div>
+        <footer class="slide-foot"><span>Pregunta e hipótesis formales: pendientes de consolidación documental</span><span class="slide-no">03 / 12</span></footer>
+      </section>
+
+      <section class="slide" id="diferencia" data-title="Win2APK y Winlator" aria-label="Diferencia entre Win2APK y Winlator">
+        <header class="slide-head">
+          <div>
+            <p class="eyebrow">Aporte propio</p>
+            <h2>Winlator aporta el entorno; Win2APK industrializa el recorrido</h2>
+          </div>
+          <span class="label result">Dependencia explícita</span>
+        </header>
+        <div class="split-roles">
+          <article class="role">
+            <p class="role-title"><strong>Winlator / componentes base</strong></p>
+            <p class="role-sub">Capacidad de compatibilidad y ejecución</p>
+            <ul>
+              <li>Root filesystem Linux y contenedores</li>
+              <li>Wine, Box64 y ruta gráfica</li>
+              <li>Controles y servicios de ejecución</li>
+            </ul>
+          </article>
+          <article class="role ours">
+            <p class="role-title"><strong>Trabajo de Win2APK</strong></p>
+            <p class="role-sub">Automatización, encapsulamiento y evidencia</p>
+            <ul>
+              <li>CLI en Rust: validar, planear, construir e instalar</li>
+              <li>Identidad, configuración y arranque directo por aplicación</li>
+              <li>Partición del payload, firma, limpieza y trazabilidad</li>
+              <li>Perfiles gráficos, interfaz adaptativa y medición ADB</li>
+            </ul>
+          </article>
+        </div>
+        <footer class="slide-foot"><span>Win2APK deriva e integra; no reemplaza la capa de compatibilidad</span><span class="slide-no">04 / 12</span></footer>
+      </section>
+
+      <section class="slide" id="arquitectura" data-title="Arquitectura" aria-label="Arquitectura de Win2APK">
+        <header class="slide-head">
+          <div>
+            <p class="eyebrow">Arquitectura real</p>
+            <h2>Dos momentos: construir el paquete y preparar la ejecución</h2>
+          </div>
+          <span class="label">Avance para revelar</span>
+        </header>
+        <div class="architecture">
+          <article class="phase fragment">
+            <p class="phase-kicker">En Linux x86-64 · Build time</p>
+            <h3>Win2APK CLI</h3>
+            <div class="flow">
+              <div class="node"><span class="node-no">01</span><span><b>Validar e inventariar</b><small>JSON v2, archivos, tamaño y SHA-256</small></span></div>
+              <div class="node"><span class="node-no">02</span><span><b>Planear y segmentar</b><small>Módulo base y asset packs</small></span></div>
+              <div class="node"><span class="node-no">03</span><span><b>Configurar y firmar</b><small>Identidad, runtime, icono y claves</small></span></div>
+              <div class="node"><span class="node-no">04</span><span><b>Producir artefactos</b><small>AAB, APKS, reporte y manifiesto</small></span></div>
+            </div>
+          </article>
+          <article class="phase runtime fragment">
+            <p class="phase-kicker">En Android ARM64 · Run time</p>
+            <h3>Winlator Core configurado</h3>
+            <div class="flow">
+              <div class="node"><span class="node-no">05</span><span><b>Entregar el payload</b><small>Play Asset Delivery o pruebas locales</small></span></div>
+              <div class="node"><span class="node-no">06</span><span><b>Preparar contenedor</b><small>Rootfs, ruta Windows y acceso directo</small></span></div>
+              <div class="node"><span class="node-no">07</span><span><b>Traducir y compatibilizar</b><small>Box64: x86-64 → ARM64 · Wine: Win32 → POSIX</small></span></div>
+              <div class="node"><span class="node-no">08</span><span><b>Renderizar</b><small>DXVK / WineD3D → Vulkan / OpenGL → GPU</small></span></div>
+            </div>
+          </article>
+        </div>
+        <footer class="slide-foot"><span>Fuentes: código del proyecto, WineHQ, Box64 y Android Developers</span><span class="slide-no">05 / 12</span></footer>
+      </section>
+
+      <section class="slide" id="prototipo" data-title="Prototipo actual" aria-label="Prototipo actual de Win2APK">
+        <header class="slide-head">
+          <div>
+            <p class="eyebrow">Prototipo actual</p>
+            <h2>El paquete abre la aplicación objetivo y conserva controles del runtime</h2>
+          </div>
+          <span class="label result">Resultado observado</span>
+        </header>
+        <div class="prototype-grid">
+          <figure class="prototype-shot">
+            <img src="assets/images/bomb-rush-redmi-t060.png" alt="Bomb Rush Cyberfunk en Redmi Note 8 con gamepad táctil Material 3">
+            <figcaption class="evidence-caption">EXEC-075 · Redmi Note 8 · T+60 · 22.09.2026</figcaption>
+          </figure>
+          <div class="prototype-proof">
+            <article class="proof-block">
+              <p class="proof-value">2.275 s</p>
+              <p class="proof-copy">Proceso del juego visible después del lanzamiento del paquete preinstalado.</p>
+            </article>
+            <article class="proof-block">
+              <p class="proof-value">120 s</p>
+              <p class="proof-copy">Aplicación y juego observables durante toda la ventana; pantalla de título y gamepad visibles.</p>
+            </article>
+          </div>
+        </div>
+        <footer class="slide-foot"><span>Alcance: esta instalación y este dispositivo; la instalación fría no se evaluó</span><span class="slide-no">06 / 12</span></footer>
+      </section>
+
+      <section class="slide" id="demo" data-title="Demostración" aria-label="Demostración del prototipo">
+        <header class="slide-head">
+          <div>
+            <p class="eyebrow">Demostración</p>
+            <h2>De un icono Android a una aplicación Windows con controles táctiles</h2>
+          </div>
+          <span class="label result">Video local · 18 s</span>
+        </header>
+        <div class="demo-layout">
+          <div class="video-shell">
+            <video preload="metadata" poster="assets/video/demo-redmi-bomb-rush-poster.png" playsinline>
+              <source src="assets/video/demo-redmi-bomb-rush-18s.mp4" type="video/mp4">
+              El navegador no puede reproducir el video MP4 local.
+            </video>
+            <button class="video-action" type="button" aria-label="Reproducir o pausar la demo">Reproducir demo · V</button>
+          </div>
+          <aside class="demo-steps">
+            <span class="label decision">Ruta de contingencia</span>
+            <ol>
+              <li>Abrir el paquete en Redmi Note 8.</li>
+              <li>Confirmar título y gamepad.</li>
+              <li>Si falla: tecla V y continuar con este video.</li>
+            </ol>
+          </aside>
+        </div>
+        <footer class="slide-foot"><span>Fuente: RUN-20260922-002 · grabación ADB sin red</span><span class="slide-no">07 / 12</span></footer>
+      </section>
+
+      <section class="slide" id="metodo" data-title="Validación" aria-label="Método de validación de Win2APK">
+        <header class="slide-head">
+          <div>
+            <p class="eyebrow">Validación técnica</p>
+            <h2>Cada afirmación se ata a una ejecución, un dispositivo y una evidencia</h2>
+          </div>
+          <span class="label result">75 ejecuciones documentadas</span>
+        </header>
+        <div>
+          <div class="method-strip" aria-label="Proceso de validación">
+            <div class="method-step"><small>01</small>Definir escenario y estado esperado</div>
+            <div class="method-step"><small>02</small>Fijar artefacto, hash y condiciones</div>
+            <div class="method-step"><small>03</small>Ejecutar y medir con ADB</div>
+            <div class="method-step"><small>04</small>Clasificar captura T+60 y logs</div>
+            <div class="method-step"><small>05</small>Separar observación, interpretación y decisión</div>
+          </div>
+          <div class="validation-grid">
+            <table class="device-table" aria-label="Muestra de dispositivos usados">
+              <thead><tr><th>Dispositivo</th><th>GPU / familia</th><th>Evidencia disponible</th></tr></thead>
+              <tbody>
+                <tr><td>Pixel 9a</td><td>Tensor / Mali</td><td>Perfiles gráficos y memoria</td></tr>
+                <tr><td>Redmi Note 8</td><td>Snapdragon / Adreno</td><td>Arranque, UI y gamepad</td></tr>
+                <tr><td>Xiaomi Mi A3</td><td>Snapdragon / Adreno</td><td>PAD y payload grande</td></tr>
+                <tr><td>Lenovo TB-J606F</td><td>Snapdragon / Adreno</td><td>Tablet, Core y fallos</td></tr>
+              </tbody>
+            </table>
+            <aside class="metric-focus">
+              <strong>815</strong>
+              <span>archivos y 5.847 GB entregados en la validación del payload de Cuphead en EXEC-049.</span>
+            </aside>
+          </div>
+        </div>
+        <footer class="slide-foot"><span>El número 75 incluye pruebas de distinto alcance; no equivale a 75 validaciones completas</span><span class="slide-no">08 / 12</span></footer>
+      </section>
+
+      <section class="slide" id="iteracion" data-title="Error y aprendizaje" aria-label="Caso de error CoreCLR y aprendizaje">
+        <header class="slide-head">
+          <div>
+            <p class="eyebrow">Error como evidencia</p>
+            <h2>CoreCLR falló primero; el diagnóstico cambió el empaquetado</h2>
+          </div>
+          <span class="label decision">Iteración documentada</span>
+        </header>
+        <div>
+          <div class="iteration">
+            <article class="iteration-step"><p class="step-title">Intentamos</p><p>Ejecutar la publicación .NET inicial dentro de Winlator.</p></article>
+            <article class="iteration-step"><p class="step-title">Observamos</p><p>Fallo de inicialización del heap y salida de CoreCLR.</p></article>
+            <article class="iteration-step"><p class="step-title">Investigamos</p><p>Memoria del GC, modo de publicación y configuración del runtime.</p></article>
+            <article class="iteration-step"><p class="step-title">Cambiamos</p><p>Publicación self-contained, GC workstation no concurrente y límite de heap.</p></article>
+            <article class="iteration-step"><p class="step-title">Resultado</p><p>Win2APKTest abrió y respondió a interacción en Lenovo.</p></article>
+          </div>
+          <div class="logline">GC heap initialization failed with error 0x8007000E<br>Failed to create CoreCLR, HRESULT: 0x8007000E</div>
+        </div>
+        <footer class="slide-foot"><span>Limitación 01 + EXEC-001 · Solución experimental, no garantía para toda aplicación .NET</span><span class="slide-no">09 / 12</span></footer>
+      </section>
+
+      <section class="slide" id="resultado-actual" data-title="Estado actual" aria-label="Resultado actual y límite reproducido">
+        <header class="slide-head">
+          <div>
+            <p class="eyebrow">Estado al 22.09.2026</p>
+            <h2>Un mismo prototipo puede divergir por dispositivo y estado instalado</h2>
+          </div>
+          <span class="label limit">Limitación abierta</span>
+        </header>
+        <div class="results-layout">
+          <div class="results-copy">
+            <div class="status-line"><b>Redmi Note 8</b><span>Pantalla de título, gamepad visible y procesos observables durante 120 s.</span></div>
+            <div class="status-line"><b>Lenovo TB-J606F</b><span>Error al recuperar <code>win2apk_payload_002</code> desde el proveedor de pruebas locales.</span></div>
+            <div class="status-line"><b>Decisión</b><span>Demo principal en Redmi; Lenovo queda como evidencia de una limitación reproducida.</span></div>
+          </div>
+          <div class="contrast-proof">
+            <figure class="contrast-shot">
+              <img src="assets/images/bomb-rush-redmi-t060.png" alt="Resultado observado en Redmi Note 8">
+              <figcaption class="evidence-caption">RESULTADO OBSERVADO · EXEC-075</figcaption>
+            </figure>
+            <figure class="contrast-shot">
+              <img src="assets/images/error-pack-lenovo-t060.png" alt="Error de Winlator Core observado en Lenovo TB-J606F">
+              <figcaption class="evidence-caption">LIMITACIÓN · EXEC-074 / informe 43</figcaption>
+            </figure>
+          </div>
+        </div>
+        <footer class="slide-foot"><span>La variación es parte del resultado, no una excepción ocultada</span><span class="slide-no">10 / 12</span></footer>
+      </section>
+
+      <section class="slide" id="coherencia" data-title="Coherencia e impacto" aria-label="Relación entre problema, resultados e impacto">
+        <header class="slide-head">
+          <div>
+            <p class="eyebrow">Coherencia e impacto</p>
+            <h2>El aporte medido es técnico; el impacto de adopción aún es potencial</h2>
+          </div>
+          <span class="label pending">Impacto no medido</span>
+        </header>
+        <div>
+          <div class="impact-line">
+            <article class="impact-node"><h3>Problema</h3><p>La ejecución manual exige configurar capas, rutas, gráficos y distribución.</p></article>
+            <div class="impact-link" aria-hidden="true"></div>
+            <article class="impact-node"><h3>Resultado actual</h3><p>CLI, paquete Core, segmentación de payload, arranque directo y evidencia reproducible.</p></article>
+            <div class="impact-link" aria-hidden="true"></div>
+            <article class="impact-node"><h3>Potencial</h3><p>Reducir pasos especializados y facilitar la reutilización de software Windows compatible.</p></article>
+          </div>
+          <p class="impact-note"><strong>No afirmamos todavía:</strong> compatibilidad universal, ahorro económico cuantificado, reducción ambiental ni adopción por usuarios finales.</p>
+        </div>
+        <footer class="slide-foot"><span>Evidencia > apariencia · alcance por aplicación, build y dispositivo</span><span class="slide-no">11 / 12</span></footer>
+      </section>
+
+      <section class="slide dark closing" id="cierre" data-title="Qué demostramos" aria-label="Cierre de la presentación">
+        <div class="closing-main">
+          <div>
+            <p class="eyebrow">¿Qué demostramos hasta ahora?</p>
+            <h2>Win2APK ya es un sistema experimental que construye, distribuye, ejecuta y aprende de sus límites.</h2>
+            <ul class="closing-points">
+              <li><strong>Existe:</strong> CLI, runtime configurado, artefactos y protocolo de medición.</li>
+              <li><strong>Validamos:</strong> aplicaciones de prueba, payloads grandes y ejecución en cuatro dispositivos.</li>
+              <li><strong>Permanece:</strong> compatibilidad variable, publicación moderna y validación con más aplicaciones y usuarios.</li>
+            </ul>
+          </div>
+          <img class="closing-symbol" src="assets/logo/win2apk-symbol.svg" alt="Símbolo de Win2APK">
+        </div>
+        <footer class="hero-meta"><span>Preguntas · tecla B para material de respaldo</span><span>Fin · 6:40</span></footer>
+      </section>
+
+      <section class="slide dark backup backup-divider" id="backup" data-title="Backup" data-section="backup" aria-label="Inicio del material de respaldo">
+        <div>
+          <p class="eyebrow">Fuera de los 7 minutos</p>
+          <h2>Backup / Preguntas</h2>
+          <p>Arquitectura, criterios, dispositivos, métricas, limitaciones, licencias y fuentes.</p>
+        </div>
+        <footer class="slide-foot"><span>Use ← y → para navegar</span><span class="slide-no">B1</span></footer>
+      </section>
+
+      <section class="slide backup" id="backup-arquitectura" data-title="Arquitectura ampliada" aria-label="Arquitectura ampliada">
+        <header class="slide-head"><div><p class="eyebrow">Backup · Arquitectura</p><h2>Qué hace cada capa y dónde termina Win2APK</h2></div><span class="label">Trazabilidad técnica</span></header>
+        <div class="backup-grid-2">
+          <article class="backup-block"><h3>Canalización propia</h3><ul><li>CLI Rust y esquema JSON v2.</li><li>Inventario, hashes, segmentación y staging.</li><li>Identidad de paquete, icono y firma.</li><li>Configuración Core, acceso directo y arranque.</li><li>Entrega, movimiento y limpieza de una copia final.</li><li>Perfiles gráficos y protocolo de medición.</li></ul></article>
+          <article class="backup-block"><h3>Componentes integrados</h3><ul><li><strong>Winlator:</strong> base Android y entorno de ejecución.</li><li><strong>Wine:</strong> API Windows sobre servicios POSIX.</li><li><strong>Box64:</strong> traducción de código x86-64 en hosts ARM64.</li><li><strong>DXVK / WineD3D:</strong> traducción gráfica.</li><li><strong>Mesa / Turnip / Vortek:</strong> acceso a GPU según dispositivo.</li><li><strong>Android App Bundle / PAD:</strong> distribución del payload.</li></ul></article>
+        </div>
+        <footer class="slide-foot"><span>No se ejecuta un kernel Windows ni se recompila la aplicación a Android nativo</span><span class="slide-no">B2</span></footer>
+      </section>
+
+      <section class="slide backup" id="backup-criterios" data-title="Criterios de aceptación" aria-label="Criterios de aceptación y método">
+        <header class="slide-head"><div><p class="eyebrow">Backup · Método</p><h2>Qué se considera evidencia y qué no</h2></div><span class="label result">Contrato de medición</span></header>
+        <div class="backup-grid-2">
+          <article class="backup-block"><h3>Criterios observables</h3><ul><li>Artefacto y SHA-256 identificados.</li><li>Instalación o modo preinstalado explícito.</li><li>Primer inicio y segundo inicio separados.</li><li>Proceso de app y proceso objetivo visibles.</li><li>Captura canónica T+60 clasificada.</li><li>CPU, memoria, temperatura y almacenamiento cuando están disponibles.</li><li>Logs y video conservados.</li></ul></article>
+          <article class="backup-block"><h3>Reglas de interpretación</h3><ul><li>Una pantalla negra no prueba por sí sola un cierre.</li><li>Sin fila de instalación no significa fallo si el modo es preinstalado.</li><li>FPS de carga o menú no equivale a jugabilidad.</li><li>Un dispositivo no representa compatibilidad universal.</li><li>Una hipótesis causal requiere una prueba que la aísle.</li><li>Los CSV históricos no se reescriben para “mejorar” un resultado.</li></ul></article>
+        </div>
+        <footer class="slide-foot"><span>Fuentes: especificaciones, plantilla de métricas y AGENTS.md del proyecto</span><span class="slide-no">B3</span></footer>
+      </section>
+
+      <section class="slide backup" id="backup-dispositivos" data-title="Dispositivos" aria-label="Muestra de dispositivos">
+        <header class="slide-head"><div><p class="eyebrow">Backup · Muestra</p><h2>Cuatro perfiles, no una muestra estadística de Android</h2></div><span class="label pending">Alcance experimental</span></header>
+        <div>
+          <table class="device-table" aria-label="Detalle de dispositivos">
+            <thead><tr><th>Equipo</th><th>SoC / GPU</th><th>Factor</th><th>Uso en el proyecto</th><th>Lectura correcta</th></tr></thead>
+            <tbody>
+              <tr><td>Google Pixel 9a</td><td>Tensor / Mali-G715</td><td>Teléfono</td><td>Memoria, drivers y BCn</td><td>Familia Mali moderna</td></tr>
+              <tr><td>Redmi Note 8</td><td>Snapdragon 665 / Adreno 610</td><td>Teléfono</td><td>Arranque, UI y gamepad</td><td>Demo actual</td></tr>
+              <tr><td>Xiaomi Mi A3</td><td>Snapdragon 665 / Adreno 610</td><td>Teléfono</td><td>PAD y payload grande</td><td>Entrega verificada</td></tr>
+              <tr><td>Lenovo TB-J606F</td><td>Snapdragon 662 / Adreno 610</td><td>Tablet</td><td>Core, layout y fallos</td><td>Factor tablet</td></tr>
+            </tbody>
+          </table>
+          <p class="objective-line" style="margin-top:34px"><strong>Propósito de la muestra:</strong> encontrar variación de GPU, sistema y factor de forma. No permite estimar una tasa poblacional de compatibilidad.</p>
+        </div>
+        <footer class="slide-foot"><span>Inventarios completos: metricas/catalogo/devices.csv</span><span class="slide-no">B4</span></footer>
+      </section>
+
+      <section class="slide backup" id="backup-payload" data-title="Payload grande" aria-label="Evidencia de distribución de payload grande">
+        <header class="slide-head"><div><p class="eyebrow">Backup · Distribución</p><h2>El límite de 4.45 GiB cambió la estrategia de empaquetado</h2></div><span class="label decision">Iteración 012 → 049</span></header>
+        <div class="backup-grid-2">
+          <article class="backup-block"><h3>Fallo inicial</h3><p>Un APK único no pudo comprimir un asset de 4,782,573,186 bytes y produjo <code>Required array size too large</code>.</p><p>La evidencia descartó el enfoque monolítico para payloads de ese tamaño.</p></article>
+          <article class="backup-block" style="border-color:var(--green);background:var(--green-soft)"><h3>Resultado posterior</h3><p>La CLI planificó Cuphead en asset packs y produjo:</p><ul><li>AAB: 5,494,326,036 bytes.</li><li>APKS: 6,424,836,814 bytes.</li><li>Entrega observada: 815 archivos, 5.847 GB.</li><li>Una copia final después de la limpieza.</li></ul></article>
+        </div>
+        <footer class="slide-foot"><span>EXEC-012, EXEC-047 y EXEC-049</span><span class="slide-no">B5</span></footer>
+      </section>
+
+      <section class="slide backup" id="backup-limitaciones" data-title="Limitaciones" aria-label="Limitaciones actuales">
+        <header class="slide-head"><div><p class="eyebrow">Backup · Límites</p><h2>Lo que todavía impide hablar de producto terminado</h2></div><span class="label limit">Estado real</span></header>
+        <div class="backup-grid-2">
+          <article class="backup-block"><h3>Compatibilidad y gráficos</h3><ul><li>Resultados dependientes de aplicación, GPU, driver y versión.</li><li>Pixel 9a presentó presión de memoria, pantallas negras y requisitos ADB en variantes.</li><li>Mi A3 mantuvo pantalla negra en una prueba reciente del gamepad.</li><li>Lenovo reprodujo un Unity Crash Handler y, después, un pack local-testing ausente.</li></ul></article>
+          <article class="backup-block"><h3>Distribución y validación</h3><ul><li><code>targetSdk 36</code> bloqueó experimentalmente la ejecución de Box64 desde datos de app; el prototipo actual usa 28.</li><li>Ese objetivo no satisface los requisitos modernos de publicación en Google Play.</li><li>No hay prueba de usuarios ni impacto económico medido.</li><li>Faltan más aplicaciones, reinstalaciones frías y criterios de éxito agregados.</li></ul></article>
+        </div>
+        <footer class="slide-foot"><span>43 informes numerados de limitaciones al 22.09.2026</span><span class="slide-no">B6</span></footer>
+      </section>
+
+      <section class="slide backup" id="backup-log" data-title="Log del fallo actual" aria-label="Log del fallo de asset pack">
+        <header class="slide-head"><div><p class="eyebrow">Backup · Evidencia</p><h2>El fallo de Lenovo está localizado, no resuelto</h2></div><span class="label limit">EXEC-074</span></header>
+        <div class="backup-grid-2">
+          <div class="code-panel">E/Win2APKAssetPack:
+java.util.concurrent.ExecutionException:
+com.google.android.play.core.common.LocalTestingException:
+No APKs available for pack
+'win2apk_payload_002'.
+
+Resultado visual:
+"Unable to create the configured
+container or shortcut."
+
+Método:
+preinstalled-no-reinstall
+Duración: 120 s
+Captura: T+60</div>
+          <article class="backup-block"><h3>Qué sabemos</h3><ul><li>Play Core no encontró el APK del pack solicitado.</li><li>El error ocurre antes de preparar el contenedor.</li><li>El estado instalado de Lenovo no sirve para la demo.</li></ul><h3 style="margin-top:28px">Qué no sabemos aún</h3><ul><li>Si la causa es residuo, instalación incompleta o variante.</li><li>Si una instalación fría controlada lo elimina.</li></ul></article>
+        </div>
+        <footer class="slide-foot"><span>Informe de limitación 43 · repetir con todos los splits y packs</span><span class="slide-no">B7</span></footer>
+      </section>
+
+      <section class="slide backup" id="backup-conceptos" data-title="Conceptos y licencias" aria-label="Conceptos y licencias">
+        <header class="slide-head"><div><p class="eyebrow">Backup · Dominio</p><h2>Compatibilidad, traducción y distribución no son sinónimos</h2></div><span class="label">Conceptos clave</span></header>
+        <div class="backup-grid-2">
+          <article class="backup-block"><h3>Distinciones</h3><ul><li><strong>Wine:</strong> traduce llamadas de API Windows a servicios POSIX; no es una máquina virtual.</li><li><strong>Box64:</strong> ejecuta código x86-64 de espacio de usuario sobre un host ARM64.</li><li><strong>DXVK:</strong> traduce Direct3D 8-11 a Vulkan para Wine.</li><li><strong>Win2APK:</strong> empaqueta y configura esas capacidades; no recompila la aplicación.</li></ul></article>
+          <article class="backup-block"><h3>Licencias y responsabilidad</h3><ul><li>El prototipo integra proyectos de código abierto con licencias propias.</li><li>La distribución debe conservar avisos y revisar compatibilidad de licencias por componente.</li><li>Win2APK no concede derechos sobre aplicaciones Windows empaquetadas.</li><li>El usuario debe tener autorización para redistribuir el software y sus datos.</li></ul></article>
+        </div>
+        <footer class="slide-foot"><span>Inventario técnico y procedencia en third_party/README.md y docs/fuentes.md</span><span class="slide-no">B8</span></footer>
+      </section>
+
+      <section class="slide backup" id="backup-fuentes" data-title="Fuentes" aria-label="Referencias principales">
+        <header class="slide-head"><div><p class="eyebrow">Backup · Referencias</p><h2>Fuentes primarias y evidencia local</h2></div><span class="label">APA 7 abreviado</span></header>
+        <div>
+          <ol class="reference-list">
+            <li>Android Developers. (2026). <em>About Android App Bundles</em>. https://developer.android.com/guide/app-bundle</li>
+            <li>Android Developers. (2026). <em>Play Asset Delivery</em>. https://developer.android.com/guide/playcore/asset-delivery</li>
+            <li>Android Developers. (2026). <em>Test asset delivery</em>. https://developer.android.com/guide/playcore/asset-delivery/test</li>
+            <li>Box64 contributors. (2026). <em>Box64</em> [Software]. GitHub. https://github.com/ptitSeb/box64</li>
+            <li>Rebohle, P., et al. (2026). <em>DXVK</em> [Software]. GitHub. https://github.com/doitsujin/dxvk</li>
+            <li>The Wine Project. (2026). <em>About Wine</em>. https://www.winehq.org/about</li>
+            <li>Winlator contributors. (2026). <em>Winlator</em> [Software]. GitHub. https://github.com/brunodev85/winlator</li>
+            <li>Win2APK. (2026). <em>Ejecuciones 001-075, especificaciones, limitaciones y código fuente</em> [Repositorio de investigación].</li>
+            <li>Win2APK. (2026). <em>Revisión PRISMA: 98 PDF, 92 estudios únicos y 48 estudios incluidos</em> [Informe interno].</li>
+          </ol>
+          <p class="objective-line" style="margin-top:28px"><strong>Trazabilidad completa:</strong> consulte <code>docs/fuentes.md</code> para URL, uso en diapositiva, archivos locales y alcance de cada afirmación.</p>
+        </div>
+        <footer class="slide-foot"><span>Las versiones consultadas y los accesos están registrados en el documento de fuentes</span><span class="slide-no">B9</span></footer>
+      </section>
+    </main>
+  </div>
+
+  <div class="progress" aria-hidden="true"><div></div></div>
+  <nav class="controls" aria-label="Controles de presentación">
+    <button id="previous" type="button" title="Anterior" aria-label="Diapositiva anterior">←</button>
+    <button id="next" type="button" title="Siguiente" aria-label="Diapositiva siguiente">→</button>
+    <button id="overview" type="button" title="Vista general (O)" aria-label="Alternar vista general">O</button>
+    <button id="fullscreen" type="button" title="Pantalla completa (F)" aria-label="Alternar pantalla completa">F</button>
+  </nav>
+  <div class="jump-notice" role="status" aria-live="polite"></div>
+  <script src="presentation.js"></script>
+</body>
+</html>

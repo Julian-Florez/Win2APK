@@ -108,6 +108,10 @@ Cada registro corresponde a un intento experimental independiente. Las matrices 
 
 | EXEC-073 | Validación del retorno visual del D-pad al soltar en Redmi Note 8 | Métricas automatizadas | redmi-note-8 | parcial; interacción visual suplementaria confirmada | [matriz.md](./73-metricas-gamepad-material3-dpad-release-v5-redmi-20260921/matriz.md) | [datos](../metricas/runs/RUN-20260921-008/) |
 
+| EXEC-074 | Observación reproducible del prototipo preinstalado para preparar la demo de sustentación en Lenovo TB-J606F | Métricas automatizadas | lenovo-tb-j606f | error reproducido; instalación no evaluada | [matriz.md](./74-metricas-sustentacion-demo-preinstalada-lenovo-20260922/matriz.md) | [datos](../metricas/runs/RUN-20260922-001/) |
+
+| EXEC-075 | Observación reproducible del prototipo preinstalado para preparar la demo de sustentación en Redmi Note 8 | Métricas automatizadas | redmi-note-8 | aprobado experimentalmente para demo; instalación no evaluada | [matriz.md](./75-metricas-sustentacion-demo-preinstalada-redmi-20260922/matriz.md) | [datos](../metricas/runs/RUN-20260922-002/) |
+
 ## Plantilla
 
 Usar [plantilla-metricas.md](./plantilla-metricas.md) para crear la matriz del siguiente intento. No completar campos con datos que no estén respaldados por la ejecución.
