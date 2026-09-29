@@ -1,4 +1,4 @@
-name: Deploy manual to GitHub Pages
+name: Deploy Win2APK site to GitHub Pages
 
 on:
   push:
@@ -35,19 +35,23 @@ jobs:
         run: |
           set -euo pipefail
           rm -rf _site
-          mkdir -p _site/documentacion _site/config
+          mkdir -p _site/assets/images _site/assets/logo _site/assets/video _site/manual _site/documentacion _site/config
 
-          cp documentacion/12-guia-empaquetado-win2apk.html _site/documentacion/
-          cp documentacion/12-guia-empaquetado-win2apk.html _site/index.html
+          cp sustentaciones/01-primera-sustentacion/presentacion-vigente.html _site/index.html
+          cp sustentaciones/01-primera-sustentacion/assets/images/cuphead-snapdragon-reference.png _site/assets/images/
+          cp sustentaciones/01-primera-sustentacion/assets/images/cuphead-pixel-mali-reference.png _site/assets/images/
+          cp sustentaciones/01-primera-sustentacion/assets/logo/win2apk-primary.svg _site/assets/logo/
+          cp sustentaciones/01-primera-sustentacion/assets/video/demo-cuphead-pixel-80s.mp4 _site/assets/video/
+          cp sustentaciones/01-primera-sustentacion/assets/video/demo-cuphead-pixel-poster.png _site/assets/video/
+
+          cp documentacion/12-guia-empaquetado-win2apk.html _site/manual/index.html
           cp documentacion/index.md _site/documentacion/
           cp config/win2apk.json config/example.testapp.json _site/config/
 
-          # El manual se sirve directamente en la raíz. Solo se ajustan sus
-          # enlaces relativos porque el archivo fuente vive en documentacion/.
+          # El manual conserva su ruta secundaria y enlaces relativos al sitio.
           sed -i \
-            -e 's#../config/#config/#g' \
-            -e 's#href="./index.md"#href="documentacion/index.md"#g' \
-            _site/index.html
+            -e 's#href="./index.md"#href="../documentacion/index.md"#g' \
+            _site/manual/index.html
 
           touch _site/.nojekyll
 

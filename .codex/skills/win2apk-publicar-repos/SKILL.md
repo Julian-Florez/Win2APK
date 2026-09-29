@@ -48,7 +48,7 @@ El script solo agrega por defecto las rutas del proyecto y las rutas funcionales
 - `app/build/`, `outputs/`, APK, AAB, APKS, keystores, logs temporales y cachés.
 - Contraseñas, tokens, claves privadas y archivos generados por herramientas locales.
 
-Si una ruta nueva debe publicarse, añadirla de forma explícita con `--root-path` o `--app-path`, revisar el diff y explicar por qué pertenece al repositorio. No ampliar el alcance con comodines amplios solo para evitar una revisión.
+Si una ruta nueva debe publicarse, añadirla de forma explícita con `--root-path` o `--app-path`, revisar el diff y explicar por qué pertenece al repositorio. Para una publicación acotada, combinar `--only-root-paths` con la lista explícita de rutas `--root-path`; así se dejan fuera los directorios predeterminados aunque tengan cambios. No ampliar el alcance con comodines amplios solo para evitar una revisión.
 
 ## Mensajes y separación
 

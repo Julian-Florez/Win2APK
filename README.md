@@ -1,6 +1,6 @@
 # Win2APK
 
-📖 **[Abrir el manual HTML en GitHub Pages](https://julian-florez.github.io/Win2APK/)**
+🎓 **[Abrir la presentación de sustentación](https://julian-florez.github.io/Win2APK/)** · 📖 [Manual del CLI](https://julian-florez.github.io/Win2APK/manual/)
 
 **Win2APK** es un proyecto de investigación y desarrollo orientado a facilitar la distribución de aplicaciones desarrolladas para Windows en dispositivos Android.
 

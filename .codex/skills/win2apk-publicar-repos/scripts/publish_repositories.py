@@ -205,6 +205,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--superproject-remote", default="julian")
     parser.add_argument("--message", help="mensaje base de los commits")
     parser.add_argument("--root-path", action="append", default=[], help="ruta adicional del repositorio raíz")
+    parser.add_argument("--only-root-paths", action="store_true", help="usar solo las rutas indicadas con --root-path")
     parser.add_argument("--app-path", action="append", default=[], help="ruta adicional de winlator/app")
     parser.add_argument("--execute", action="store_true", help="preparar y crear commits; sin esto solo inspecciona")
     parser.add_argument("--push", action="store_true", help="hacer push después de los commits")
@@ -227,7 +228,8 @@ def main() -> int:
         if not (repo.path / ".git").exists() and not (repo.path / "HEAD").exists():
             raise PublishError(f"{repo.name}: no parece un repositorio Git: {repo.path}")
 
-    root_paths, root_excluded = select_paths(root_repo, args.root_path, ROOT_DEFAULT_PATHS)
+    root_defaults = () if args.only_root_paths else ROOT_DEFAULT_PATHS
+    root_paths, root_excluded = select_paths(root_repo, args.root_path, root_defaults)
     app_paths, app_excluded = select_paths(app_repo, args.app_path, APP_DEFAULT_PATHS)
     show_repo(root_repo, root_paths, root_excluded)
     show_repo(app_repo, app_paths, app_excluded)

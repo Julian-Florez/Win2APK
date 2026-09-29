@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fffbf4">
+  <title>Win2APK · Sustentación</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,100..1000&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #fffbf4;
+      --ink: #252321;
+      --muted: #6f6b64;
+      --hairline: #e9e3d9;
+      --green: #3bac52;
+      --red: #a43c32;
+    }
+    * { box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+    body { color: var(--ink); background: var(--paper); font-family: "Google Sans Flex", "Segoe UI", Arial, sans-serif; font-optical-sizing: auto; }
+    button { font: inherit; }
+    .player { position: relative; width: 100vw; height: 100vh; height: 100dvh; overflow: hidden; background: var(--paper); }
+    .viewport { position: absolute; inset: 0; overflow: hidden; background: var(--paper); }
+    .canvas { position: absolute; top: 0; left: 0; width: 1440px; height: 810px; transform-origin: top left; }
+    .slide { position: absolute; inset: 0; width: 1440px; height: 810px; overflow: hidden; visibility: hidden; opacity: 0; background: var(--paper); }
+    .slide.is-active, .slide.is-leaving { visibility: visible; }
+    .slide.is-active { z-index: 2; opacity: 1; }
+    .slide.is-leaving { z-index: 1; opacity: 1; pointer-events: none; }
+    .slide.is-active.is-entering.from-next { animation: slide-from-next .62s cubic-bezier(.22,.72,.22,1) both; }
+    .slide.is-active.is-entering.from-prev { animation: slide-from-prev .62s cubic-bezier(.22,.72,.22,1) both; }
+    .slide.is-leaving.to-next { animation: slide-to-next .54s cubic-bezier(.4,0,.7,.25) both; }
+    .slide.is-leaving.to-prev { animation: slide-to-prev .54s cubic-bezier(.4,0,.7,.25) both; }
+    .header-rule { position: absolute; z-index: 1; top: 112px; left: 0; width: 1440px; height: 1px; background: var(--hairline); }
+    .brand-lockup { position: absolute; z-index: 9; top: 45px; left: 80px; display: flex; align-items: center; gap: 12px; pointer-events: none; }
+    .brand-symbol { display: block; flex: none; width: 64px; height: 64px; object-fit: cover; transform: translateY(9px); }
+    .brand-name { color: var(--ink); font-size: 24px; font-weight: 700; letter-spacing: -.025em; line-height: 1; white-space: nowrap; }
+    .slide-title { position: absolute; top: 146px; left: 80px; max-width: 1280px; margin: 0; font-size: 72px; font-weight: 700; line-height: .98; letter-spacing: -.045em; }
+    .slide-subtitle { position: absolute; top: 230px; left: 84px; margin: 0; color: var(--muted); font-size: 25px; line-height: 1.25; }
+    .intro-title { top: 146px; max-width: 1270px; font-size: 76px; }
+    .medium-title { font-size: 64px; }
+    .header-rule, .brand-lockup { pointer-events: none; }
+    .slide.is-entering .slide-title { animation: title-arrive .54s cubic-bezier(.2,.75,.25,1) .06s both; }
+    .slide.is-entering .reveal { animation: content-arrive .46s cubic-bezier(.2,.75,.25,1) .14s both; }
+    .slide.is-entering .evidence-photo { animation: photo-fade .46s ease-out .14s both; }
+    .slide.is-entering .manual-step { animation: step-arrive .4s cubic-bezier(.2,.75,.25,1) var(--delay) both; }
+    .slide.is-entering .manual-summary { animation: summary-arrive .38s cubic-bezier(.2,.75,.25,1) .36s both; }
+    .slide.is-entering .pipeline-stage { animation: content-arrive .42s cubic-bezier(.2,.75,.25,1) var(--delay) both; }
+    .slide.is-entering .validation-step { animation: step-arrive .4s cubic-bezier(.2,.75,.25,1) var(--delay) both; }
+    .slide.is-entering .case-row { animation: content-arrive .4s cubic-bezier(.2,.75,.25,1) var(--delay) both; }
+    .slide.is-entering .compat-figure { animation: photo-fade .46s ease-out var(--delay) both; }
+    .slide.is-entering .result-item { animation: content-arrive .4s cubic-bezier(.2,.75,.25,1) var(--delay) both; }
+
+    .platform-diagram { position: absolute; top: 438px; left: 80px; width: 1280px; height: 258px; display: grid; grid-template-columns: 350px 1fr 350px; align-items: center; gap: 30px; }
+    .platform { height: 214px; padding: 27px 34px; border: 2px solid var(--ink); border-radius: 30px; background: #fff; display: flex; flex-direction: column; justify-content: center; }
+    .platform-label { color: var(--muted); font-size: 19px; font-weight: 700; letter-spacing: .12em; }
+    .platform-main { margin-top: 8px; font-size: 52px; font-weight: 700; letter-spacing: -.035em; }
+    .platform-detail { margin-top: 5px; font-size: 24px; }
+    .platform.android { border-color: var(--green); }
+    .platform.android .platform-label, .platform.android .platform-main { color: #287a39; }
+    .barrier { text-align: center; }
+    .barrier-mark { width: 84px; height: 84px; margin: 0 auto 15px; border: 2px solid var(--ink); border-radius: 50%; display: grid; place-items: center; font-size: 52px; font-weight: 400; line-height: 1; }
+    .barrier-labels { display: flex; justify-content: center; gap: 12px; }
+    .barrier-labels span { padding: 9px 13px; border-radius: 20px; background: #ece8df; font-size: 18px; font-weight: 600; white-space: nowrap; }
+
+    .manual-flow { position: absolute; top: 355px; left: 80px; width: 1280px; display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
+    .manual-step { min-height: 156px; padding: 22px 18px; border: 1.5px solid #c9c3b8; border-radius: 26px; background: #fff; position: relative; display: flex; flex-direction: column; justify-content: space-between; }
+    .manual-step:not(:last-child)::after { content: "→"; position: absolute; top: 58px; right: -24px; width: 28px; text-align: center; color: var(--muted); font-size: 25px; }
+    .step-number { color: var(--muted); font-size: 16px; font-weight: 700; letter-spacing: .12em; }
+    .step-label { max-width: 150px; font-size: 23px; font-weight: 600; line-height: 1.12; }
+    .manual-summary { position: absolute; top: 558px; left: 80px; width: 1280px; padding: 22px 28px; border: 2px solid var(--ink); border-radius: 28px; text-align: center; font-size: 31px; font-weight: 700; }
+    .manual-summary span { color: var(--muted); font-size: 22px; font-weight: 500; }
+    .manual-context { position: absolute; top: 296px; left: 84px; font-size: 23px; color: var(--muted); }
+
+    .comparison { position: absolute; top: 303px; left: 80px; width: 1280px; display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+    .comparison-lane { min-height: 244px; padding: 25px 27px 27px; border: 1.5px solid #d2ccc1; border-radius: 30px; background: #fff; }
+    .comparison-lane.new { border: 2px solid var(--green); }
+    .lane-label { margin-bottom: 21px; color: var(--muted); font-size: 17px; font-weight: 700; letter-spacing: .13em; }
+    .comparison-lane.new .lane-label { color: #287a39; }
+    .lane-flow { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .lane-node { flex: 1; min-height: 93px; display: flex; align-items: center; justify-content: center; padding: 14px; border-radius: 20px; background: #f2efe9; text-align: center; font-size: 22px; font-weight: 600; line-height: 1.14; }
+    .comparison-lane.new .lane-node.accent { color: #fff; background: #2d873f; }
+    .lane-arrow { color: var(--muted); font-size: 26px; }
+    .boundary-note { position: absolute; top: 601px; left: 84px; width: 1272px; color: var(--muted); font-size: 24px; line-height: 1.3; }
+    .boundary-note strong { color: var(--ink); }
+
+    .pipeline { position: absolute; top: 314px; left: 80px; width: 1280px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+    .pipeline-stage { min-height: 228px; padding: 24px 20px; border: 1.5px solid #d2ccc1; border-radius: 26px; background: #fff; position: relative; }
+    .pipeline-stage:not(:last-child)::after { content: "→"; position: absolute; top: 91px; right: -23px; z-index: 2; color: var(--muted); font-size: 25px; }
+    .pipeline-number { color: #328444; font-size: 18px; font-weight: 700; letter-spacing: .1em; }
+    .pipeline-stage h2 { margin: 22px 0 10px; font-size: 26px; line-height: 1.08; letter-spacing: -.025em; }
+    .pipeline-stage p { margin: 0; color: var(--muted); font-size: 20px; line-height: 1.24; }
+    .outputs { position: absolute; top: 580px; left: 80px; width: 1280px; display: flex; align-items: center; gap: 18px; }
+    .output { padding: 15px 22px; border: 1.5px solid var(--ink); border-radius: 23px; background: #fff; font-size: 21px; }
+    .output strong { margin-right: 8px; font-size: 25px; }
+    .output-note { margin-left: auto; color: var(--muted); font-size: 19px; }
+
+    .demo-copy { position: absolute; top: 278px; left: 80px; width: 535px; }
+    .demo-flow { display: flex; align-items: center; gap: 12px; margin-bottom: 34px; }
+    .demo-node { padding: 16px 18px; border-radius: 23px; background: #efebe3; font-size: 21px; font-weight: 600; text-align: center; }
+    .demo-node.brand { color: #fff; background: #2d873f; }
+    .demo-arrow { color: var(--muted); font-size: 25px; }
+    .case-label { margin: 0 0 8px; color: var(--muted); font-size: 17px; font-weight: 700; letter-spacing: .11em; }
+    .case-names { margin: 0; font-size: 31px; font-weight: 700; line-height: 1.15; }
+    .launch-note { margin-top: 22px; font-size: 23px; line-height: 1.3; }
+    .demo-frame { position: absolute; top: 270px; left: 675px; width: 685px; }
+    .demo-frame video { display: block; width: 100%; height: 385px; border: 1px solid #d2ccc1; border-radius: 20px; background: #151515; object-fit: contain; }
+    .demo-toggle { margin-top: 13px; padding: 11px 18px; border: 1px solid #bbb4a9; border-radius: 23px; background: #fff; color: var(--ink); font-size: 18px; font-weight: 600; cursor: pointer; }
+    .demo-toggle:hover { border-color: var(--ink); }
+    .demo-evidence { position: absolute; top: 711px; left: 80px; margin: 0; color: var(--muted); font-size: 17px; }
+
+    .validation-flow { position: absolute; top: 340px; left: 80px; width: 1280px; display: grid; grid-template-columns: repeat(7, 1fr); gap: 12px; }
+    .validation-step { min-height: 175px; position: relative; padding: 21px 15px 20px; border-top: 2px solid var(--ink); display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between; }
+    .validation-step::before { content: ""; width: 17px; height: 17px; margin-top: -30px; border: 2px solid var(--ink); border-radius: 50%; background: var(--paper); }
+    .validation-step:not(:last-child)::after { content: "→"; position: absolute; top: -17px; right: -17px; color: var(--muted); font-size: 21px; }
+    .validation-step strong { font-size: 21px; line-height: 1.12; }
+    .validation-step small { color: var(--muted); font-size: 16px; line-height: 1.22; }
+    .metrics-note { position: absolute; top: 571px; left: 80px; width: 1280px; padding: 21px 25px; border-radius: 25px; background: #f0ece4; font-size: 22px; line-height: 1.32; }
+    .metrics-note strong { display: block; margin-bottom: 5px; font-size: 18px; letter-spacing: .07em; text-transform: uppercase; }
+    .protocol-note { position: absolute; top: 690px; left: 84px; color: var(--muted); font-size: 19px; }
+
+    .case-list { position: absolute; top: 264px; left: 80px; width: 1280px; display: grid; gap: 14px; }
+    .case-row { min-height: 132px; display: grid; grid-template-columns: 1fr 42px 1fr 42px 1.2fr; align-items: stretch; gap: 9px; }
+    .case-cell { padding: 18px 19px; border-radius: 22px; background: #fff; border: 1.5px solid #d2ccc1; display: flex; flex-direction: column; justify-content: center; }
+    .case-cell.problem { border-color: #c77870; }
+    .case-cell.decision { border-color: #75ad7e; }
+    .case-cell small { color: var(--muted); font-size: 15px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+    .case-cell strong { margin-top: 6px; font-size: 22px; line-height: 1.15; }
+    .case-arrow { align-self: center; color: var(--muted); text-align: center; font-size: 25px; }
+    .api-caveat { position: absolute; top: 710px; left: 84px; width: 1260px; color: var(--muted); font-size: 17px; }
+
+    .compatibility { position: absolute; top: 265px; left: 80px; width: 1280px; display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+    .compat-figure { margin: 0; }
+    .compat-label { display: flex; align-items: baseline; justify-content: space-between; margin: 0 0 12px; font-size: 23px; font-weight: 700; }
+    .compat-label span { color: var(--muted); font-size: 17px; font-weight: 500; }
+    .compat-figure img { display: block; width: 100%; height: 300px; border: 1px solid #d2ccc1; border-radius: 18px; background: var(--paper); object-fit: contain; }
+    .compat-caption { margin: 12px 0 0; font-size: 20px; line-height: 1.25; }
+    .compat-limit { position: absolute; top: 686px; left: 84px; width: 1260px; color: var(--muted); font-size: 20px; line-height: 1.25; }
+    .compat-limit strong { color: var(--ink); }
+
+    .takeaway { position: absolute; top: 274px; left: 80px; width: 1240px; font-size: 74px; font-weight: 700; line-height: .99; letter-spacing: -.045em; }
+    .result-list { position: absolute; top: 492px; left: 95px; width: 1220px; display: grid; gap: 20px; }
+    .result-item { display: grid; grid-template-columns: 34px 1fr; gap: 18px; align-items: start; font-size: 27px; line-height: 1.15; }
+    .result-mark { color: #287a39; font-size: 27px; font-weight: 700; }
+    .result-item.pending .result-mark { color: #8b6a25; }
+    .closing-word { position: absolute; right: 86px; bottom: 76px; color: var(--muted); font-size: 24px; }
+
+    .controls { position: absolute; z-index: 10; left: 50%; bottom: max(16px, env(safe-area-inset-bottom)); transform: translateX(-50%); width: min(520px, calc(100vw - 24px)); min-height: 52px; display: flex; align-items: center; gap: 10px; padding: 4px 6px; border: 1px solid rgba(129, 122, 111, .32); border-radius: 32px; background: rgba(255, 251, 244, .94); box-shadow: 0 5px 24px rgba(31, 29, 26, .14); backdrop-filter: blur(12px); color: #292724; font-size: 13px; }
+    .controls button { width: 44px; height: 44px; flex: none; display: grid; place-items: center; border: 1px solid #b8b2a8; border-radius: 50%; background: var(--paper); color: var(--ink); font: 500 22px/1 "Google Sans Flex", sans-serif; cursor: pointer; transition: background .16s ease, border-color .16s ease, transform .16s ease; }
+    .controls button:hover { background: #fff; border-color: #55514b; transform: translateY(-1px); }
+    .controls button:active { transform: translateY(0) scale(.97); }
+    .controls button:focus-visible, .demo-toggle:focus-visible { outline: 3px solid #69645c; outline-offset: 3px; }
+    .controls svg { width: 18px; height: 18px; stroke: currentColor; stroke-width: 1.8; fill: none; }
+    .counter { min-width: 62px; text-align: center; font-variant-numeric: tabular-nums; font-weight: 600; }
+    .progress { height: 3px; flex: 1; background: #d8d3ca; border-radius: 4px; overflow: hidden; }
+    .progress-fill { width: 11.111%; height: 100%; background: #343434; transition: width .25s ease; }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
+    @keyframes slide-from-next { from { opacity: .25; transform: translate3d(3vw, 0, 0); } to { opacity: 1; transform: translate3d(0, 0, 0); } }
+    @keyframes slide-from-prev { from { opacity: .25; transform: translate3d(-3vw, 0, 0); } to { opacity: 1; transform: translate3d(0, 0, 0); } }
+    @keyframes slide-to-next { from { opacity: 1; transform: translate3d(0, 0, 0); } to { opacity: 0; transform: translate3d(-2vw, 0, 0); } }
+    @keyframes slide-to-prev { from { opacity: 1; transform: translate3d(0, 0, 0); } to { opacity: 0; transform: translate3d(2vw, 0, 0); } }
+    @keyframes title-arrive { from { opacity: 0; transform: translate3d(18px, 12px, 0); } to { opacity: 1; transform: translate3d(0, 0, 0); } }
+    @keyframes content-arrive { from { opacity: 0; transform: translate3d(0, 10px, 0); } to { opacity: 1; transform: translate3d(0, 0, 0); } }
+    @keyframes photo-fade { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes step-arrive { from { opacity: 0; transform: translate3d(0, 9px, 0); } to { opacity: 1; transform: translate3d(0, 0, 0); } }
+    @keyframes summary-arrive { from { opacity: 0; transform: scaleX(.94); } to { opacity: 1; transform: scaleX(1); } }
+    @media (max-width: 520px) {
+      .controls { bottom: max(10px, env(safe-area-inset-bottom)); gap: 7px; }
+      .counter { min-width: 54px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+    @media print {
+      @page { size: 16in 9in; margin: 0; }
+      html, body, .player, .viewport { width: 1440px !important; height: 810px !important; overflow: visible !important; }
+      .player { position: static !important; }
+      .viewport { position: static !important; }
+      .canvas { position: static !important; width: 1440px !important; height: auto !important; transform: none !important; }
+      .slide { position: relative !important; display: block !important; visibility: visible !important; opacity: 1 !important; page-break-after: always; break-after: page; animation: none !important; }
+      .slide:last-child { page-break-after: auto; break-after: auto; }
+      .brand-lockup, .controls { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="player" aria-label="Sustentación de Win2APK">
+    <section class="viewport" id="viewport" aria-live="off">
+      <div class="canvas" id="canvas">
+        <article class="slide" aria-hidden="true" role="group" aria-label="Diapositiva 1 de 9">
+          <div class="header-rule" aria-hidden="true"></div>
+          <h1 class="slide-title intro-title">Copiar una aplicación de Windows<br>no basta para usarla en Android</h1>
+          <div class="platform-diagram reveal">
+            <div class="platform">
+              <span class="platform-label">WINDOWS</span>
+              <strong class="platform-main">.exe</strong>
+              <span class="platform-detail">x86 / x86-64</span>
+            </div>
+            <div class="barrier">
+              <div class="barrier-mark" aria-hidden="true">≠</div>
+              <div class="barrier-labels"><span>Sistema operativo</span><span>Arquitectura</span></div>
+            </div>
+            <div class="platform android">
+              <span class="platform-label">ANDROID</span>
+              <strong class="platform-main">ARM64</strong>
+              <span class="platform-detail">Teléfono o tableta</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="slide" aria-hidden="true" role="group" aria-label="Diapositiva 2 de 9">
+          <div class="header-rule" aria-hidden="true"></div>
+          <h1 class="slide-title medium-title">Ejecutar es posible; preparar la app sigue siendo complejo</h1>
+          <p class="manual-context">Antes de abrir el programa, el usuario suele:</p>
+          <div class="manual-flow">
+            <div class="manual-step" style="--delay:.08s"><span class="step-number">01</span><strong class="step-label">Instalar entorno</strong></div>
+            <div class="manual-step" style="--delay:.11s"><span class="step-number">02</span><strong class="step-label">Crear contenedor</strong></div>
+            <div class="manual-step" style="--delay:.14s"><span class="step-number">03</span><strong class="step-label">Copiar archivos</strong></div>
+            <div class="manual-step" style="--delay:.17s"><span class="step-number">04</span><strong class="step-label">Elegir componentes</strong></div>
+            <div class="manual-step" style="--delay:.20s"><span class="step-number">05</span><strong class="step-label">Ajustar compatibilidad</strong></div>
+            <div class="manual-step" style="--delay:.23s"><span class="step-number">06</span><strong class="step-label">Ejecutar</strong></div>
+          </div>
+          <div class="manual-summary">Configuración técnica <span>recae en quien instala y prepara la aplicación</span></div>
+        </article>
+
+        <article class="slide" aria-hidden="true" role="group" aria-label="Diapositiva 3 de 9">
+          <div class="header-rule" aria-hidden="true"></div>
+          <h1 class="slide-title">Win2APK traslada parte de esa configuración al empaquetado</h1>
+          <div class="comparison reveal">
+            <section class="comparison-lane">
+              <div class="lane-label">PREPARACIÓN MANUAL</div>
+              <div class="lane-flow">
+                <div class="lane-node">Aplicación Windows</div><span class="lane-arrow">→</span>
+                <div class="lane-node">Usuario configura entorno</div><span class="lane-arrow">→</span>
+                <div class="lane-node">Android</div>
+              </div>
+            </section>
+            <section class="comparison-lane new">
+              <div class="lane-label">CON WIN2APK</div>
+              <div class="lane-flow">
+                <div class="lane-node">Aplicación + configuración</div><span class="lane-arrow">→</span>
+                <div class="lane-node accent">Win2APK</div><span class="lane-arrow">→</span>
+                <div class="lane-node">Paquete preparado</div>
+              </div>
+            </section>
+          </div>
+          <p class="boundary-note"><strong>No convierte el programa en Android nativo.</strong> Automatiza la preparación de aplicaciones compatibles con el entorno seleccionado.</p>
+        </article>
+
+        <article class="slide" aria-hidden="true" role="group" aria-label="Diapositiva 4 de 9">
+          <div class="header-rule" aria-hidden="true"></div>
+          <h1 class="slide-title">El empaquetado de Win2APK</h1>
+          <p class="slide-subtitle">CLI en Rust · ejecutada desde Linux</p>
+          <div class="pipeline">
+            <section class="pipeline-stage" style="--delay:.08s"><span class="pipeline-number">01</span><h2>Configuración</h2><p>JSON y carpeta de la aplicación</p></section>
+            <section class="pipeline-stage" style="--delay:.13s"><span class="pipeline-number">02</span><h2>Preparación</h2><p>Validar e inventariar archivos</p></section>
+            <section class="pipeline-stage" style="--delay:.18s"><span class="pipeline-number">03</span><h2>Distribución</h2><p>Dividir payloads grandes</p></section>
+            <section class="pipeline-stage" style="--delay:.23s"><span class="pipeline-number">04</span><h2>Runtime</h2><p>Preparar Core e identidad</p></section>
+            <section class="pipeline-stage" style="--delay:.28s"><span class="pipeline-number">05</span><h2>Construcción</h2><p>Integrar, firmar y generar artefactos</p></section>
+          </div>
+          <div class="outputs reveal">
+            <div class="output"><strong>.APKS</strong> pruebas locales</div>
+            <div class="output"><strong>.AAB</strong> formato de distribución</div>
+            <div class="output-note">La publicación en Play Store no está validada</div>
+          </div>
+        </article>
+
+        <article class="slide" aria-hidden="true" role="group" aria-label="Diapositiva 5 de 9">
+          <div class="header-rule" aria-hidden="true"></div>
+          <h1 class="slide-title">Cuphead en ejecución</h1>
+          <p class="slide-subtitle">Prueba en Pixel</p>
+          <div class="demo-copy reveal">
+            <div class="demo-flow">
+              <span class="demo-node">Carpeta<br>Windows</span><span class="demo-arrow">→</span>
+              <span class="demo-node brand">Win2APK</span><span class="demo-arrow">→</span>
+              <span class="demo-node">App en<br>Android</span>
+            </div>
+            <p class="case-label">JUEGO DE PRUEBA</p>
+            <p class="case-names">Cuphead</p>
+            <p class="launch-note">Al abrir el paquete, el entorno se prepara y lanza el programa sin configurar un contenedor a mano.</p>
+          </div>
+          <div class="demo-frame reveal">
+            <video id="demoVideo" controls playsinline preload="none" poster="assets/video/demo-cuphead-pixel-poster.png" aria-label="Video de prueba de Cuphead en Pixel">
+              <source src="assets/video/demo-cuphead-pixel-80s.mp4" type="video/mp4">
+              Tu navegador no puede reproducir la grabación.
+            </video>
+            <button class="demo-toggle" id="demoToggle" type="button" aria-controls="demoVideo">Reproducir prueba en Pixel · V</button>
+          </div>
+          <p class="demo-evidence">Grabación de Cuphead en Pixel · fragmento: 00:02:32–00:03:52</p>
+        </article>
+
+        <article class="slide" aria-hidden="true" role="group" aria-label="Diapositiva 6 de 9">
+          <div class="header-rule" aria-hidden="true"></div>
+          <h1 class="slide-title">No basta con que abra una vez</h1>
+          <p class="slide-subtitle">Seguimos la aplicación durante el ciclo de uso</p>
+          <div class="validation-flow reveal">
+            <div class="validation-step" style="--delay:.09s"><strong>Construir</strong><small>Artefacto y configuración</small></div>
+            <div class="validation-step" style="--delay:.13s"><strong>Instalar</strong><small>Limpia o actualizar</small></div>
+            <div class="validation-step" style="--delay:.17s"><strong>Primer inicio</strong><small>Preparar entorno</small></div>
+            <div class="validation-step" style="--delay:.21s"><strong>Relanzar</strong><small>Comprobar reapertura</small></div>
+            <div class="validation-step" style="--delay:.25s"><strong>Ejecutar</strong><small>Iniciar app Windows</small></div>
+            <div class="validation-step" style="--delay:.29s"><strong>Persistir</strong><small>Conservar datos</small></div>
+            <div class="validation-step" style="--delay:.33s"><strong>Medir</strong><small>Guardar evidencia</small></div>
+          </div>
+          <div class="metrics-note reveal"><strong>Cuando el dispositivo lo permite</strong>Tiempo, CPU, memoria, GPU, FPS, temperatura y almacenamiento, junto con sus condiciones de prueba.</div>
+          <p class="protocol-note">Cada ejecución conserva logs y captura T+60, incluso cuando falla.</p>
+        </article>
+
+        <article class="slide" aria-hidden="true" role="group" aria-label="Diapositiva 7 de 9">
+          <div class="header-rule" aria-hidden="true"></div>
+          <h1 class="slide-title">Los errores cambiaron el diseño</h1>
+          <div class="case-list">
+            <div class="case-row" style="--delay:.10s">
+              <div class="case-cell problem"><small>Problema</small><strong>4,45 GiB en un solo archivo</strong></div><span class="case-arrow">→</span>
+              <div class="case-cell"><small>Observación</small><strong>El empaquetado monolítico falla</strong></div><span class="case-arrow">→</span>
+              <div class="case-cell decision"><small>Decisión</small><strong>Dividir el payload y reconstruirlo en Android</strong></div>
+            </div>
+            <div class="case-row" style="--delay:.22s">
+              <div class="case-cell problem"><small>Problema</small><strong>Android moderno bloquea Box64</strong></div><span class="case-arrow">→</span>
+              <div class="case-cell"><small>Observación</small><strong>La app queda preparando</strong></div><span class="case-arrow">→</span>
+              <div class="case-cell decision"><small>Decisión</small><strong>Cambiar el target recuperó el arranque probado</strong></div>
+            </div>
+            <div class="case-row" style="--delay:.34s">
+              <div class="case-cell problem"><small>Problema</small><strong>Rutas con ID de paquete fijo</strong></div><span class="case-arrow">→</span>
+              <div class="case-cell"><small>Observación</small><strong>Otro identificador rompe el entorno</strong></div><span class="case-arrow">→</span>
+              <div class="case-cell decision"><small>Decisión</small><strong>Adaptar rutas al identificador de cada app</strong></div>
+            </div>
+          </div>
+          <p class="api-caveat">El cambio de target es experimental; no demuestra que se cumplan los requisitos actuales de publicación.</p>
+        </article>
+
+        <article class="slide" aria-hidden="true" role="group" aria-label="Diapositiva 8 de 9">
+          <div class="header-rule" aria-hidden="true"></div>
+          <h1 class="slide-title">Compatibilidad por dispositivo</h1>
+          <p class="slide-subtitle">La referencia en Qualcomm no siempre se reproduce igual en Tensor/Mali.</p>
+          <div class="compatibility">
+            <figure class="compat-figure" style="--delay:.12s">
+              <figcaption class="compat-label">Xiaomi Mi A3 <span>Snapdragon · referencia visual</span></figcaption>
+              <img class="evidence-photo" src="assets/images/cuphead-snapdragon-reference.png" alt="Pantalla de título de Cuphead, referencia visual del Xiaomi Mi A3 con Snapdragon">
+              <p class="compat-caption">Cuphead y Bomb Rush Cyberfunk han tenido ejecución observada en dispositivos Snapdragon probados.</p>
+            </figure>
+            <figure class="compat-figure" style="--delay:.28s">
+              <figcaption class="compat-label">Pixel 9a <span>Tensor · Mali</span></figcaption>
+              <img class="evidence-photo" src="assets/images/cuphead-pixel-mali-reference.png" alt="Pantalla de título de Cuphead en Pixel 9a con Tensor y Mali, captura de referencia visual">
+              <p class="compat-caption">Se observaron bordes borrosos o pixelados en algunas transparencias.</p>
+            </figure>
+          </div>
+          <p class="compat-limit"><strong>No hay una causa única confirmada ni una solución integrada estable.</strong> El alcance se limita a las aplicaciones y dispositivos probados.</p>
+        </article>
+
+        <article class="slide" aria-hidden="true" role="group" aria-label="Diapositiva 9 de 9">
+          <div class="header-rule" aria-hidden="true"></div>
+          <h1 class="slide-title">¿Qué hemos demostrado hasta ahora?</h1>
+          <p class="takeaway reveal">De un proceso manual<br>a un paquete reproducible</p>
+          <div class="result-list">
+            <div class="result-item" style="--delay:.10s"><span class="result-mark">✓</span><span>Un prototipo funcional de extremo a extremo</span></div>
+            <div class="result-item" style="--delay:.22s"><span class="result-mark">✓</span><span>Empaquetado automatizado y ejecución en hardware real</span></div>
+            <div class="result-item pending" style="--delay:.34s"><span class="result-mark">○</span><span>Compatibilidad y validación siguen en expansión</span></div>
+          </div>
+          <span class="closing-word">Preguntas</span>
+        </article>
+        <div class="brand-lockup" role="img" aria-label="Win2APK">
+          <img class="brand-symbol" src="assets/logo/win2apk-primary.svg" alt="" aria-hidden="true">
+          <span class="brand-name" aria-hidden="true">Win2APK</span>
+        </div>
+      </div>
+    </section>
+    <nav class="controls" id="controls" aria-label="Navegación de la sustentación">
+      <button id="previous" type="button" aria-label="Diapositiva anterior" title="Anterior">‹</button>
+      <span class="counter" id="counter" aria-live="polite">01 / 09</span>
+      <div class="progress" role="progressbar" aria-label="Progreso" aria-valuemin="1" aria-valuemax="9" aria-valuenow="1"><div class="progress-fill" id="progressFill"></div></div>
+      <button id="next" type="button" aria-label="Siguiente diapositiva" title="Siguiente">›</button>
+      <button id="fullscreen" type="button" aria-label="Entrar a pantalla completa" title="Pantalla completa"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 3H3v4M13 3h4v4M3 13v4h4M17 13v4h-4"/></svg></button>
+    </nav>
+    <span class="sr-only" id="announcement" aria-live="polite">Diapositiva 1 de 9</span>
+  </main>
+  <script>
+    (() => {
+      const slides = [...document.querySelectorAll('.slide')];
+      const viewport = document.getElementById('viewport');
+      const canvas = document.getElementById('canvas');
+      const counter = document.getElementById('counter');
+      const progress = document.querySelector('.progress');
+      const progressFill = document.getElementById('progressFill');
+      const announcement = document.getElementById('announcement');
+      const demoVideo = document.getElementById('demoVideo');
+      const demoToggle = document.getElementById('demoToggle');
+      let current = 0;
+      let transitioning = false;
+      let transitionTimer = null;
+      let pending = null;
+
+      function fit() {
+        const availableWidth = viewport.clientWidth;
+        const availableHeight = viewport.clientHeight;
+        const scale = Math.min(availableWidth / 1440, availableHeight / 810);
+        const offsetX = (availableWidth - 1440 * scale) / 2;
+        const offsetY = (availableHeight - 810 * scale) / 2;
+        canvas.style.left = String(offsetX) + 'px';
+        canvas.style.top = String(offsetY) + 'px';
+        canvas.style.transform = 'scale(' + scale + ')';
+      }
+
+      function show(index, direction = 1, initial = false) {
+        const nextIndex = (index + slides.length) % slides.length;
+        if (transitioning && !initial) { pending = { index: nextIndex, direction }; return; }
+        if (!initial && nextIndex === current) return;
+        const outgoing = initial ? null : slides[current];
+        const incoming = slides[nextIndex];
+        current = nextIndex;
+        transitioning = true;
+
+        slides.forEach(slide => {
+          if (slide !== incoming && slide !== outgoing) {
+            slide.classList.remove('is-active', 'is-leaving', 'is-entering', 'from-next', 'from-prev', 'to-next', 'to-prev');
+            slide.setAttribute('aria-hidden', 'true');
+          }
+        });
+        if (outgoing) {
+          outgoing.classList.remove('is-active', 'is-entering', 'from-next', 'from-prev', 'to-next', 'to-prev');
+          outgoing.classList.add('is-leaving', direction > 0 ? 'to-next' : 'to-prev');
+          outgoing.setAttribute('aria-hidden', 'true');
+          if (demoVideo && outgoing.contains(demoVideo)) { demoVideo.pause(); demoVideo.currentTime = 0; }
+        }
+        incoming.classList.remove('is-leaving', 'to-next', 'to-prev', 'from-next', 'from-prev');
+        incoming.classList.add('is-active', 'is-entering', direction > 0 ? 'from-next' : 'from-prev');
+        incoming.setAttribute('aria-hidden', 'false');
+
+        if (transitionTimer) clearTimeout(transitionTimer);
+        transitionTimer = setTimeout(() => {
+          if (outgoing) outgoing.classList.remove('is-leaving', 'to-next', 'to-prev');
+          incoming.classList.remove('is-entering', 'from-next', 'from-prev');
+          transitioning = false;
+          transitionTimer = null;
+          if (pending) { const request = pending; pending = null; show(request.index, request.direction); }
+        }, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : initial ? 760 : 900);
+
+        const label = String(current + 1).padStart(2, '0') + ' / ' + slides.length;
+        counter.textContent = label;
+        progressFill.style.width = String(((current + 1) / slides.length) * 100) + '%';
+        progress.setAttribute('aria-valuenow', String(current + 1));
+        announcement.textContent = 'Diapositiva ' + (current + 1) + ' de ' + slides.length;
+      }
+
+      function toggleDemo() {
+        if (!demoVideo) return;
+        if (demoVideo.paused) demoVideo.play().catch(() => {});
+        else demoVideo.pause();
+      }
+      if (demoToggle) demoToggle.addEventListener('click', toggleDemo);
+      if (demoVideo && demoToggle) {
+        demoVideo.addEventListener('play', () => { demoToggle.textContent = 'Pausar prueba · V'; });
+        demoVideo.addEventListener('pause', () => { demoToggle.textContent = 'Reproducir prueba en Pixel · V'; });
+        demoVideo.addEventListener('ended', () => { demoToggle.textContent = 'Reproducir prueba en Pixel · V'; });
+      }
+
+      document.getElementById('previous').addEventListener('click', () => show(current - 1, -1));
+      document.getElementById('next').addEventListener('click', () => show(current + 1, 1));
+      document.getElementById('fullscreen').addEventListener('click', async () => {
+        try {
+          if (!document.fullscreenElement) await document.querySelector('.player').requestFullscreen();
+          else await document.exitFullscreen();
+        } catch { /* El navegador puede limitar la pantalla completa en una previsualización local. */ }
+      });
+      document.addEventListener('fullscreenchange', () => {
+        const button = document.getElementById('fullscreen');
+        const active = Boolean(document.fullscreenElement);
+        button.setAttribute('aria-label', active ? 'Salir de pantalla completa' : 'Entrar a pantalla completa');
+        button.title = active ? 'Salir de pantalla completa' : 'Pantalla completa';
+        requestAnimationFrame(fit);
+      });
+      document.addEventListener('keydown', event => {
+        if (event.altKey || event.ctrlKey || event.metaKey) return;
+        if (['ArrowRight', 'PageDown', ' ', 'Enter'].includes(event.key)) { event.preventDefault(); show(current + 1, 1); }
+        else if (['ArrowLeft', 'PageUp', 'Backspace'].includes(event.key)) { event.preventDefault(); show(current - 1, -1); }
+        else if (event.key === 'Home') show(0, -1);
+        else if (event.key === 'End') show(slides.length - 1, 1);
+        else if (event.key.toLowerCase() === 'f') document.getElementById('fullscreen').click();
+        else if (event.key.toLowerCase() === 'v' && current === 4) toggleDemo();
+      });
+      let touchStart = null;
+      viewport.addEventListener('touchstart', event => { touchStart = event.changedTouches[0].clientX; }, { passive: true });
+      viewport.addEventListener('touchend', event => {
+        if (touchStart === null) return;
+        const delta = event.changedTouches[0].clientX - touchStart;
+        if (Math.abs(delta) > 48) show(current + (delta < 0 ? 1 : -1), delta < 0 ? 1 : -1);
+        touchStart = null;
+      }, { passive: true });
+      window.addEventListener('resize', fit, { passive: true });
+      fit();
+      show(0, 1, true);
+    })();
+  </script>
+</body>
+</html>
