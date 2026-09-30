@@ -1,0 +1,44 @@
+ACTIVITY MANAGER PROCESS EXIT INFO (dumpsys activity exit-info)
+Last Timestamp of Persistence Into Persistent Storage: 2026-09-29 14:43:08.898
+  package: com.win2apk.bombrushcyberfunk
+    Historical Process Exit for uid=10412
+        ApplicationExitInfo #0:
+          timestamp=2026-09-29 15:00:49.272 pid=23723 realUid=10412 packageUid=10412 definingUid=10412 user=0
+          process=com.win2apk.bombrushcyberfunk reason=3 (LOW_MEMORY) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=0.00 rss=100MB description=null state=empty trace=null
+        ApplicationExitInfo #1:
+          timestamp=2026-09-29 14:56:12.722 pid=23384 realUid=10412 packageUid=10412 definingUid=10412 user=0
+          process=com.win2apk.bombrushcyberfunk reason=10 (USER REQUESTED) subreason=22 (REMOVE TASK) status=0
+          importance=400 pss=0.00 rss=187MB description=remove task state=empty trace=null
+        ApplicationExitInfo #2:
+          timestamp=2026-09-29 14:55:28.087 pid=17536 realUid=10412 packageUid=10412 definingUid=10412 user=0
+          process=com.win2apk.bombrushcyberfunk reason=3 (LOW_MEMORY) subreason=22 (REMOVE TASK) status=0
+          importance=400 pss=0.00 rss=103MB description=remove task state=empty trace=null
+        ApplicationExitInfo #3:
+          timestamp=2026-09-29 14:48:33.974 pid=14424 realUid=10412 packageUid=10412 definingUid=10412 user=0
+          process=com.win2apk.bombrushcyberfunk reason=10 (USER REQUESTED) subreason=22 (REMOVE TASK) status=0
+          importance=400 pss=0.00 rss=218MB description=remove task state=empty trace=null
+        ApplicationExitInfo #4:
+          timestamp=2026-09-29 14:25:43.684 pid=13709 realUid=10412 packageUid=10412 definingUid=10412 user=0
+          process=com.win2apk.bombrushcyberfunk reason=10 (USER REQUESTED) subreason=22 (REMOVE TASK) status=0
+          importance=400 pss=0.00 rss=195MB description=remove task state=empty trace=null
+        ApplicationExitInfo #5:
+          timestamp=2026-09-29 14:23:52.932 pid=13453 realUid=10412 packageUid=10412 definingUid=10412 user=0
+          process=com.win2apk.bombrushcyberfunk reason=10 (USER REQUESTED) subreason=22 (REMOVE TASK) status=0
+          importance=400 pss=0.00 rss=181MB description=remove task state=empty trace=null
+        ApplicationExitInfo #6:
+          timestamp=2026-09-29 14:23:34.715 pid=12535 realUid=10412 packageUid=10412 definingUid=10412 user=0
+          process=com.win2apk.bombrushcyberfunk reason=3 (LOW_MEMORY) subreason=0 (UNKNOWN) status=0
+          importance=400 pss=0.00 rss=117MB description=null state=empty trace=null
+        ApplicationExitInfo #7:
+          timestamp=2026-09-26 16:00:20.868 pid=625 realUid=10412 packageUid=10412 definingUid=10412 user=0
+          process=com.win2apk.bombrushcyberfunk reason=9 (EXCESSIVE RESOURCE USAGE) subreason=7 (EXCESSIVE CPU USAGE) status=0
+          importance=400 pss=0.00 rss=121MB description=Caused by child process: excessive cpu 42495110 during 300083 dur=225242 limit=25 state=empty trace=null
+        ApplicationExitInfo #8:
+          timestamp=2026-09-22 10:52:52.548 pid=32324 realUid=10412 packageUid=10412 definingUid=10412 user=0
+          process=com.win2apk.bombrushcyberfunk reason=10 (USER REQUESTED) subreason=22 (REMOVE TASK) status=0
+          importance=400 pss=0.00 rss=195MB description=remove task state=empty trace=null
+        ApplicationExitInfo #9:
+          timestamp=2026-09-22 10:49:11.370 pid=11761 realUid=10412 packageUid=10412 definingUid=10412 user=0
+          process=com.win2apk.bombrushcyberfunk reason=4 (APP CRASH(EXCEPTION)) subreason=0 (UNKNOWN) status=0
+          importance=400 pss=0.00 rss=117MB description=crash state=empty trace=null

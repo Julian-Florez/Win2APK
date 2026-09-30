@@ -63,4 +63,12 @@ movimiento de `STORAGE_FILES`, sin mezclar ese resultado con esta matriz histór
 ## Ejecuciones asociadas
 
 - [EXEC-036](../ejecuciones/36-metricas-titulo-instalacion-fria-5-min-20260919/matriz.md)
+- [EXEC-079](../ejecuciones/79-metricas-cuphead-installacion-dos-dispositivos-20260930/matriz.md)
 
+### Repetición en EXEC-079
+
+En `RUN-20260930-001`, la instalación en Redmi Note 8 terminó correctamente en
+228,000 s. Durante los 180 s de observación, la aplicación permaneció observable,
+pero no apareció `Cuphead.exe` y `delivery_to_first_frame_seconds` quedó `N/R`.
+La captura T+60 fue clasificada como `black_screen`. Esta repetición amplía la
+evidencia de la limitación; no corrige ni modifica la ejecución histórica de 300 s.

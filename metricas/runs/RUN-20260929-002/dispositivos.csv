@@ -1,0 +1,2 @@
+run_id,device_id,observed_at_utc,manufacturer,model,product,android_device,android_version,api_level,abi_list,hardware,soc_model,cpu_cores,cpu_max_freq_khz,ram_total_kib,gpu_vendor,gpu_renderer,gpu_version,vulkan_version,screen_resolution,screen_density_dpi,serial_hash
+RUN-20260929-002,lenovo-tb-j606f,2026-09-29T20:22:19.016Z,LENOVO,Lenovo TB-J606F,infinity_gsi_gapps,J606F,16,36,"arm64-v8a,armeabi-v7a,armeabi",qcom,bengal,8,2016000,5813780,Qualcomm,Adreno (TM) 610,"OpenGL ES 3.2 V@0502.0 (GIT@2bd16eb911, I3687d7cf91, 1613025020) (Date:02/10/21)",,1200x2000,240,a53ee063594e

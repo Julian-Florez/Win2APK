@@ -1,0 +1,6 @@
+run_id,device_id,timestamp_utc,elapsed_ms,event_type,severity,message,evidence_relpath
+RUN-20260929-001,redmi-note-8,2026-09-29T20:00:07.219Z,242,monitor_started,info,Monitoreo sin lanzamiento; inicio UTC 2026-09-29T20:00:06.977Z,
+RUN-20260929-001,redmi-note-8,2026-09-29T20:00:07.419Z,441,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20260929-001,redmi-note-8,2026-09-29T20:00:48.224Z,41247,app_process_disappeared,error,El proceso principal dejó de observarse,
+RUN-20260929-001,redmi-note-8,2026-09-29T20:01:09.693Z,62716,screenshot_captured,info,Captura canónica T+60s,metricas/runs/RUN-20260929-001/screenshots/redmi-note-8/t060.png
+RUN-20260929-001,redmi-note-8,2026-09-29T20:02:09.809Z,122832,monitor_finished,info,121 muestras registradas,metricas/runs/RUN-20260929-001/logs/redmi-note-8/exit-info.txt

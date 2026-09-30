@@ -1,0 +1,38 @@
+run_id,device_id,timestamp_utc,elapsed_ms,event_type,severity,message,evidence_relpath
+RUN-20260930-001,redmi-note-8,2026-09-30T23:04:49.074Z,1614,launch_requested,info,"bash arg: -p
+  bash arg: com.cuphead
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=64ms (0ms mobile, 0ms wifi, 64ms not connected)
+args: [-p, com.cuphead, -c, android.intent.category.LAUNCHER, 1]
+ arg: ""-p""
+ arg: ""com.cuphead""
+ arg: ""-c""
+ arg: ""android.intent.category.LAUNCHER""
+ arg: ""1""
+data=""com.cuphead""
+data=""android.intent.category.LAUNCHER""",metricas/runs/RUN-20260930-001/logs/redmi-note-8/launch.log
+RUN-20260930-001,redmi-note-8,2026-09-30T23:04:49.183Z,1722,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20260930-001,redmi-note-8,2026-09-30T23:05:48.804Z,61343,screenshot_captured,info,Captura canónica T+60s,metricas/runs/RUN-20260930-001/screenshots/redmi-note-8/t060.png
+RUN-20260930-001,redmi-note-8,2026-09-30T23:07:50.405Z,182945,monitor_finished,info,181 muestras registradas,metricas/runs/RUN-20260930-001/logs/redmi-note-8/exit-info.txt
+RUN-20260930-001,mi-a3,2026-09-30T23:08:10.842Z,1460,launch_requested,info,"bash arg: -p
+  bash arg: com.cuphead
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=61ms (0ms mobile, 0ms wifi, 61ms not connected)
+args: [-p, com.cuphead, -c, android.intent.category.LAUNCHER, 1]
+ arg: ""-p""
+ arg: ""com.cuphead""
+ arg: ""-c""
+ arg: ""android.intent.category.LAUNCHER""
+ arg: ""1""
+data=""com.cuphead""
+data=""android.intent.category.LAUNCHER""",metricas/runs/RUN-20260930-001/logs/mi-a3/launch.log
+RUN-20260930-001,mi-a3,2026-09-30T23:08:11.037Z,1655,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20260930-001,mi-a3,2026-09-30T23:09:10.652Z,61270,screenshot_captured,info,Captura canónica T+60s,metricas/runs/RUN-20260930-001/screenshots/mi-a3/t060.png
+RUN-20260930-001,mi-a3,2026-09-30T23:10:43.362Z,153981,app_process_disappeared,error,El proceso principal dejó de observarse,
+RUN-20260930-001,mi-a3,2026-09-30T23:11:12.007Z,182626,monitor_finished,info,181 muestras registradas,metricas/runs/RUN-20260930-001/logs/mi-a3/exit-info.txt

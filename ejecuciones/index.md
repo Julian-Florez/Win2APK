@@ -112,6 +112,10 @@ Cada registro corresponde a un intento experimental independiente. Las matrices 
 
 | EXEC-075 | Observación reproducible del prototipo preinstalado para preparar la demo de sustentación en Redmi Note 8 | Métricas automatizadas | redmi-note-8 | aprobado experimentalmente para demo; instalación no evaluada | [matriz.md](./75-metricas-sustentacion-demo-preinstalada-redmi-20260922/matriz.md) | [datos](../metricas/runs/RUN-20260922-002/) |
 
+| EXEC-077 | Validación de la compilación mostrada en la grabación del CLI, instalada en Lenovo TB-J606F | Métricas automatizadas | lenovo-tb-j606f | approved_experimental | [matriz.md](./77-metricas-cli-recording-bomb-rush-install-20260929-20260929/matriz.md) | [datos](../metricas/runs/RUN-20260929-002/) |
+
+| EXEC-079 | Instalación de Cuphead en Redmi Note 8 y Xiaomi Mi A3, seguida de primer arranque y observación | Métricas automatizadas | mi-a3, redmi-note-8 | install_2_of_2; Redmi black_screen en 180 s; Mi A3 inició después de la ventana | [matriz.md](./79-metricas-cuphead-installacion-dos-dispositivos-20260930/matriz.md) | [datos](../metricas/runs/RUN-20260930-001/) |
+
 ## Plantilla
 
 Usar [plantilla-metricas.md](./plantilla-metricas.md) para crear la matriz del siguiente intento. No completar campos con datos que no estén respaldados por la ejecución.
