@@ -3,7 +3,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 PRESENTATION_PORT="${PRESENTATION_PORT:-8765}"
-URL="http://127.0.0.1:${PRESENTATION_PORT}/"
+URL="http://127.0.0.1:${PRESENTATION_PORT}/presentacion-vigente.html"
 
 cd "$SCRIPT_DIR"
 

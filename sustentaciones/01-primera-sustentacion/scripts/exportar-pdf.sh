@@ -3,8 +3,8 @@ set -euo pipefail
 
 ROOT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
 PDF_PORT="${PDF_PORT:-8766}"
-PDF_URL="http://127.0.0.1:${PDF_PORT}/index.html?print=1"
-OUTPUT="$ROOT_DIR/presentacion-win2apk.pdf"
+PDF_URL="http://127.0.0.1:${PDF_PORT}/presentacion-vigente.html?print=1"
+OUTPUT="$ROOT_DIR/presentacion-vigente.pdf"
 
 if command -v google-chrome >/dev/null 2>&1; then
   BROWSER="$(command -v google-chrome)"
