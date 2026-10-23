@@ -100,7 +100,7 @@ def main() -> int:
     parser.add_argument("--duration", type=int, default=300)
     parser.add_argument("--interval", type=float, default=1.0)
     parser.add_argument("--screenshot-second", type=int, default=60)
-    parser.add_argument("--package", default="com.cuphead")
+    parser.add_argument("--package", required=True)
     parser.add_argument("--artifact", type=Path, required=True)
     parser.add_argument("--install-mode", default="bundletool-install-apks-cold")
     parser.add_argument("--notes", default="")
@@ -178,4 +178,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

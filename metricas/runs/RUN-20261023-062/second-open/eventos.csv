@@ -1,0 +1,22 @@
+run_id,device_id,timestamp_utc,elapsed_ms,event_type,severity,message,evidence_relpath
+RUN-20261023-062,pixel-9a,2026-10-23T22:38:56.024Z,0,second_open_preflight_passed,info,"Paquete instalado, proceso previo detenido y pantalla encendida; no se reinstala.",metricas/runs/RUN-20261023-062/logs/pixel-9a/second-open-preflight.txt
+RUN-20261023-062,pixel-9a,2026-10-23T22:38:57.332Z,1262,launch_requested,info,"bash arg: -p
+  bash arg: com.win2apk.bombrushcyberfunk
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=23ms (0ms mobile, 0ms wifi, 23ms not connected)
+args: [-p, com.win2apk.bombrushcyberfunk, -c, android.intent.category.LAUNCHER, 1]
+ arg: ""-p""
+ arg: ""com.win2apk.bombrushcyberfunk""
+ arg: ""-c""
+ arg: ""android.intent.category.LAUNCHER""
+ arg: ""1""
+data=""com.win2apk.bombrushcyberfunk""
+data=""android.intent.category.LAUNCHER""",metricas/runs/RUN-20261023-062/second-open/logs/pixel-9a/launch.log
+RUN-20261023-062,pixel-9a,2026-10-23T22:38:57.471Z,1401,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20261023-062,pixel-9a,2026-10-23T22:39:03.307Z,7237,game_process_first_seen,info,Bomb Rush Cyberfunk.exe observado: 1,
+RUN-20261023-062,pixel-9a,2026-10-23T22:39:13.724Z,17654,first_game_frame_observed,info,Primer timestamp de presentación observado en la superficie del juego,
+RUN-20261023-062,pixel-9a,2026-10-23T22:39:56.986Z,60915,screenshot_captured,info,Captura canónica T+60s,metricas/runs/RUN-20261023-062/second-open/screenshots/pixel-9a/t060.png
+RUN-20261023-062,pixel-9a,2026-10-23T22:43:57.986Z,301916,monitor_finished,info,301 muestras registradas,metricas/runs/RUN-20261023-062/second-open/logs/pixel-9a/exit-info.txt

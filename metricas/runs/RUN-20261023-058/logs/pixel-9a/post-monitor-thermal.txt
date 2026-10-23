@@ -1,0 +1,10 @@
+Post-monitor diagnostic (not part of the 97 s sample window)
+Host timestamp: 2026-10-23T21:45:43Z
+Device: pixel-9a
+ADB command: dumpsys battery | rg 'temperature:'
+Observed battery temperature: 446 deci-degrees Celsius = 44.6 °C
+ADB command: dumpsys thermalservice | rg -m 1 'Thermal Status:'
+Observed Android Thermal Status: 4 (CRITICAL)
+Cleanup: am force-stop com.win2apk.bombrushcyberfunk; input keyevent 26
+After cleanup: dumpsys power reported mWakefulness=Dozing.
+Interpretation: this observation occurred after the monitor session ended. It does not establish that thermal status caused the session interruption.

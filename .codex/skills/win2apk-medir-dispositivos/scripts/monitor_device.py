@@ -273,8 +273,8 @@ def main() -> int:
     parser.add_argument("--run-dir", type=Path, required=True)
     parser.add_argument("--device-id", required=True)
     parser.add_argument("--serial", required=True)
-    parser.add_argument("--package")
-    parser.add_argument("--game-process", default="Cuphead.exe")
+    parser.add_argument("--package", required=True)
+    parser.add_argument("--game-process", required=True)
     parser.add_argument("--duration", type=int)
     parser.add_argument("--interval", type=float)
     parser.add_argument("--screenshot-second", type=int)
@@ -285,7 +285,9 @@ def main() -> int:
     run_dir = args.run_dir.resolve()
     run = read_run(run_dir)
     repo = find_repo(run_dir)
-    package = args.package or run["package_name"]
+    package = args.package
+    if package != run["package_name"]:
+        parser.error("--package no coincide con package_name del run")
     duration = args.duration if args.duration is not None else int(run["duration_seconds"])
     interval = args.interval if args.interval is not None else float(run["sample_interval_seconds"])
     screenshot_second = args.screenshot_second if args.screenshot_second is not None else int(run["screenshot_second"])

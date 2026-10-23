@@ -1,0 +1,23 @@
+run_id,device_id,timestamp_utc,elapsed_ms,event_type,severity,message,evidence_relpath
+RUN-20261023-066,pixel-9a,2026-10-23T23:41:08.727Z,0,second_open_preflight_passed,info,"Paquete instalado, proceso previo detenido y pantalla encendida; no se reinstala.",metricas/runs/RUN-20261023-066/logs/pixel-9a/second-open-preflight.txt
+RUN-20261023-066,pixel-9a,2026-10-23T23:41:10.029Z,1259,launch_requested,info,"bash arg: -p
+  bash arg: com.win2apk.bombrushcyberfunk
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=42ms (0ms mobile, 0ms wifi, 42ms not connected)
+args: [-p, com.win2apk.bombrushcyberfunk, -c, android.intent.category.LAUNCHER, 1]
+ arg: ""-p""
+ arg: ""com.win2apk.bombrushcyberfunk""
+ arg: ""-c""
+ arg: ""android.intent.category.LAUNCHER""
+ arg: ""1""
+data=""com.win2apk.bombrushcyberfunk""
+data=""android.intent.category.LAUNCHER""",metricas/runs/RUN-20261023-066/second-open/logs/pixel-9a/launch.log
+RUN-20261023-066,pixel-9a,2026-10-23T23:41:10.148Z,1378,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20261023-066,pixel-9a,2026-10-23T23:41:13.939Z,5169,game_process_first_seen,info,Bomb Rush Cyberfunk.exe observado: 1,
+RUN-20261023-066,pixel-9a,2026-10-23T23:41:20.703Z,11933,first_game_frame_observed,info,Primer timestamp de presentación observado en la superficie del juego,
+RUN-20261023-066,pixel-9a,2026-10-23T23:42:09.485Z,60715,screenshot_captured,info,Captura canónica T+60s,metricas/runs/RUN-20261023-066/second-open/screenshots/pixel-9a/t060.png
+RUN-20261023-066,pixel-9a,2026-10-23T23:46:10.165Z,301395,monitor_finished,info,301 muestras registradas,metricas/runs/RUN-20261023-066/second-open/logs/pixel-9a/exit-info.txt
+RUN-20261023-066,pixel-9a,2026-10-23T23:47:31.725Z,,supplemental_screenshot_captured,info,"Captura suplementaria posterior al monitor; el logotipo seguía visible. No sustituye la captura canónica T+60.",metricas/runs/RUN-20261023-066/second-open/screenshots/pixel-9a/post-monitor-382s.png

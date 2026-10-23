@@ -1,0 +1,9 @@
+Post-capture screen-state diagnostic for RUN-20261023-059
+Host timestamp: 2026-10-23T21:53:29Z
+The canonical T+60 capture is entirely black. A later ADB query reported mWakefulness=Dozing.
+Wake attempt: adb shell input keyevent 26; subsequent dumpsys power reported mWakefulness=Awake.
+The resulting screen showed the Pixel lock screen, date Fri 23 Oct, and a fingerprint prompt. An upward swipe was attempted; the lock screen remained. No credential was entered and no lockscreen bypass was attempted.
+The monitor was intentionally stopped at elapsed_ms=166000 after 167 samples because the device could not be unlocked for a valid visible-state run. Last sample had app_alive=true and game_alive=true.
+Cleanup: am force-stop com.win2apk.bombrushcyberfunk; input keyevent 26. Battery then reported 38.5 °C and Thermal Status 1.
+The post-wake lockscreen screenshot is metricas/runs/RUN-20261023-059/screenshots/pixel-9a/after-wake-locked.png.
+Interpretation: the black T+60 capture is consistent with the display being asleep, but the exact display state at T+60 was not sampled. This is not evidence of a game rendering defect.

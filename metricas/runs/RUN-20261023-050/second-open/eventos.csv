@@ -1,0 +1,22 @@
+run_id,device_id,timestamp_utc,elapsed_ms,event_type,severity,message,evidence_relpath
+RUN-20261023-050,pixel-9a,2026-10-23T20:02:35.572Z,0,second_open_preflight_passed,info,"Paquete instalado, proceso previo detenido y pantalla encendida; no se reinstala.",metricas/runs/RUN-20261023-050/logs/pixel-9a/second-open-preflight.txt
+RUN-20261023-050,pixel-9a,2026-10-23T20:02:36.671Z,1055,launch_requested,info,"bash arg: -p
+  bash arg: org.win2apk.testapp
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=34ms (0ms mobile, 0ms wifi, 34ms not connected)
+args: [-p, org.win2apk.testapp, -c, android.intent.category.LAUNCHER, 1]
+ arg: ""-p""
+ arg: ""org.win2apk.testapp""
+ arg: ""-c""
+ arg: ""android.intent.category.LAUNCHER""
+ arg: ""1""
+data=""org.win2apk.testapp""
+data=""android.intent.category.LAUNCHER""",metricas/runs/RUN-20261023-050/second-open/logs/pixel-9a/launch.log
+RUN-20261023-050,pixel-9a,2026-10-23T20:02:36.833Z,1217,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20261023-050,pixel-9a,2026-10-23T20:02:40.688Z,5072,game_process_first_seen,info,Win2APKTest.exe observado: 1,
+RUN-20261023-050,pixel-9a,2026-10-23T20:02:42.149Z,6533,first_game_frame_observed,info,Primer timestamp de presentación observado en la superficie del juego,
+RUN-20261023-050,pixel-9a,2026-10-23T20:03:36.453Z,60837,screenshot_captured,info,Captura canónica T+60s,metricas/runs/RUN-20261023-050/second-open/screenshots/pixel-9a/t060.png
+RUN-20261023-050,pixel-9a,2026-10-23T20:07:37.234Z,301618,monitor_finished,info,301 muestras registradas,metricas/runs/RUN-20261023-050/second-open/logs/pixel-9a/exit-info.txt

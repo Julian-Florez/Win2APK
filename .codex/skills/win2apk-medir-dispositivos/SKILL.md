@@ -29,6 +29,8 @@ dispositivo en una afirmación universal.
    generar una colección APKS completa con `scripts/build_apks.py`.
 5. Definir el escenario sin anticipar el resultado: descripción, estado esperado,
    duración, intervalo y segundo de captura.
+6. Indicar siempre `--package` y el proceso Windows con `--game-process`; los
+   scripts no asumen que el artefacto sea Cuphead.
 
 Usar `title_screen`, `gameplay`, `loading`, etc. como `expected_state` cuando el
 estado esperado corresponda a la taxonomía visual.
@@ -50,6 +52,8 @@ python3 .codex/skills/win2apk-medir-dispositivos/scripts/run_experiment.py \
   --device pixel-9a=SERIAL_ADB \
   --scenario titulo-5-min \
   --description "Primer inicio observado durante cinco minutos" \
+  --package com.ejemplo.juego \
+  --game-process 'Juego.exe' \
   --expected-state title_screen \
   --duration 300 --interval 1 --screenshot-second 60 \
   --confirm-delete-all ELIMINAR-COMPLETO

@@ -1,0 +1,10 @@
+ACTIVITY MANAGER PROCESS EXIT INFO (dumpsys activity exit-info)
+Last Timestamp of Persistence Into Persistent Storage: 2026-10-23 15:07:56.028
+  package: org.win2apk.testapp
+    Historical Process Exit for uid=10318
+        ApplicationExitInfo #0:
+          timestamp=2026-10-23 15:13:32.319 pid=15763 realUid=10318 packageUid=10318 definingUid=10318 user=0 startSeq=5591
+          process=org.win2apk.testapp reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=100 pss=0,00 rss=0,00 state=empty trace=null
+          description=stop org.win2apk.testapp due to from pid 26687
+          anrInfo=null

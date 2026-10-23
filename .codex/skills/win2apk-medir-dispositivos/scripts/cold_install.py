@@ -79,7 +79,7 @@ def main() -> int:
     parser.add_argument("--serial", required=True)
     parser.add_argument("--apks", type=Path, required=True)
     parser.add_argument("--bundletool", type=Path, required=True)
-    parser.add_argument("--package")
+    parser.add_argument("--package", required=True)
     parser.add_argument("--java", default="java")
     parser.add_argument("--confirm-delete", required=True)
     args = parser.parse_args()
@@ -88,7 +88,12 @@ def main() -> int:
         parser.error("La eliminación fría requiere --confirm-delete ELIMINAR-COMPLETO")
     run_dir = args.run_dir.resolve()
     run = read_run(run_dir)
-    package = args.package or run["package_name"]
+    package = args.package
+    if package != run["package_name"]:
+        parser.error(
+            f"--package ({package}) no coincide con el paquete del run "
+            f"({run['package_name']}); no se desinstaló nada"
+        )
     apks = args.apks.resolve()
     bundletool = args.bundletool.resolve()
     if not apks.is_file() or not bundletool.is_file():

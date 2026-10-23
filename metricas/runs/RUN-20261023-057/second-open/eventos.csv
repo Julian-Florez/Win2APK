@@ -1,0 +1,22 @@
+run_id,device_id,timestamp_utc,elapsed_ms,event_type,severity,message,evidence_relpath
+RUN-20261023-057,pixel-9a,2026-10-23T21:34:41.872Z,0,second_open_preflight_passed,info,"Paquete instalado, proceso previo detenido y pantalla encendida; no se reinstala.",metricas/runs/RUN-20261023-057/logs/pixel-9a/second-open-preflight.txt
+RUN-20261023-057,pixel-9a,2026-10-23T21:34:43.117Z,1195,launch_requested,info,"bash arg: -p
+  bash arg: com.cuphead
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=32ms (0ms mobile, 0ms wifi, 32ms not connected)
+args: [-p, com.cuphead, -c, android.intent.category.LAUNCHER, 1]
+ arg: ""-p""
+ arg: ""com.cuphead""
+ arg: ""-c""
+ arg: ""android.intent.category.LAUNCHER""
+ arg: ""1""
+data=""com.cuphead""
+data=""android.intent.category.LAUNCHER""",metricas/runs/RUN-20261023-057/second-open/logs/pixel-9a/launch.log
+RUN-20261023-057,pixel-9a,2026-10-23T21:34:43.329Z,1408,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20261023-057,pixel-9a,2026-10-23T21:34:48.107Z,6185,game_process_first_seen,info,Cuphead.exe observado: 1,
+RUN-20261023-057,pixel-9a,2026-10-23T21:34:55.496Z,13575,first_game_frame_observed,info,Primer timestamp de presentación observado en la superficie del juego,
+RUN-20261023-057,pixel-9a,2026-10-23T21:35:43.571Z,61649,screenshot_captured,info,Captura canónica T+60s,metricas/runs/RUN-20261023-057/second-open/screenshots/pixel-9a/t060.png
+RUN-20261023-057,pixel-9a,2026-10-23T21:39:43.487Z,301566,monitor_finished,info,301 muestras registradas,metricas/runs/RUN-20261023-057/second-open/logs/pixel-9a/exit-info.txt

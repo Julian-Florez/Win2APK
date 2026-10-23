@@ -1,0 +1,6 @@
+Preflight RUN-20261023-054 / EXEC-133, segunda apertura sin reinstalación.
+Dispositivo: Pixel 9a (alias pixel-9a; serial no persistido).
+Pantalla antes/después de comprobar: True/True; acción wake: no requerido.
+pm path confirmó instalación: sí.
+am force-stop: exit=0; salida=sin salida.
+PID tras force-stop: app=absente; game=ausente.

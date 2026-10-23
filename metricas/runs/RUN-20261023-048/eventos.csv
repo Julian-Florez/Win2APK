@@ -1,0 +1,4 @@
+run_id,device_id,timestamp_utc,elapsed_ms,event_type,severity,message,evidence_relpath
+RUN-20261023-048,pixel-9a,2026-10-23T19:44:33.988Z,,install_failed,error,The APKs have been extracted in the directory: /tmp/6212451901389597367,metricas/runs/RUN-20261023-048/logs/pixel-9a/install-apks.log
+RUN-20261023-048,pixel-9a,2026-10-23T19:44:34.001Z,,device_skipped_after_install_failure,error,cold_install.py terminó con código 1,
+RUN-20261023-048,pixel-9a,2026-10-23T19:44:25.000Z,,play_protect_warning,error,"Google Play Protect mostró: Se bloqueó la app no segura. Esta app se diseñó para una versión anterior de Android, por lo que no incluye las protecciones de la privacidad más recientes.",metricas/runs/RUN-20261023-048/evidencias/pixel-9a/play-protect-block.png

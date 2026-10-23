@@ -1,0 +1,22 @@
+run_id,device_id,timestamp_utc,elapsed_ms,event_type,severity,message,evidence_relpath
+RUN-20261023-058,pixel-9a,2026-10-23T21:41:14.665Z,1583,launch_requested,info,"bash arg: -p
+  bash arg: com.win2apk.bombrushcyberfunk
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=84ms (0ms mobile, 0ms wifi, 84ms not connected)
+args: [-p, com.win2apk.bombrushcyberfunk, -c, android.intent.category.LAUNCHER, 1]
+ arg: ""-p""
+ arg: ""com.win2apk.bombrushcyberfunk""
+ arg: ""-c""
+ arg: ""android.intent.category.LAUNCHER""
+ arg: ""1""
+data=""com.win2apk.bombrushcyberfunk""
+data=""android.intent.category.LAUNCHER""",metricas/runs/RUN-20261023-058/logs/pixel-9a/launch.log
+RUN-20261023-058,pixel-9a,2026-10-23T21:41:14.931Z,1848,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20261023-058,pixel-9a,2026-10-23T21:42:01.281Z,48199,game_process_first_seen,info,Bomb Rush Cyberfunk.exe observado: 1,
+RUN-20261023-058,pixel-9a,2026-10-23T21:42:08.963Z,55880,first_game_frame_observed,info,Primer timestamp de presentación observado en la superficie del juego,
+RUN-20261023-058,pixel-9a,2026-10-23T21:42:14.617Z,61535,screenshot_captured,info,Captura canónica T+60s,metricas/runs/RUN-20261023-058/screenshots/pixel-9a/t060.png
+RUN-20261023-058,pixel-9a,2026-10-23T21:44:16.000Z,,monitor_interrupted,error,"La sesión del monitor dejó de estar disponible tras 98/301 muestras (índices 0–97); última muestra con app_alive=true y game_alive=true. No se observó un evento de salida del proceso; causa de la interrupción N/R.",metricas/runs/RUN-20261023-058/muestras.csv
+RUN-20261023-058,pixel-9a,2026-10-23T21:45:43.000Z,,post_monitor_device_state,warning,"Diagnóstico posterior al monitor: batería a 44.6 °C y Thermal Status 4 (CRITICAL). Se detuvo la app y se apagó la pantalla para enfriar; no demuestra causa del fin de sesión.",metricas/runs/RUN-20261023-058/logs/pixel-9a/post-monitor-thermal.txt

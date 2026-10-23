@@ -1,0 +1,2 @@
+run_id,device_id,captured_at_utc,elapsed_ms,scheduled_second,image_relpath,primary_class,secondary_class,description,visible_text,confidence,classification_method,classifier_model,classified_at_utc,human_review_status
+RUN-20261023-057,pixel-9a,2026-10-23T21:30:31.828Z,60000,60,metricas/runs/RUN-20261023-057/screenshots/pixel-9a/t060.png,loading,,"Pantalla de carga de Winlator/Cuphead con fondo negro, texto “Cargando” e indicador circular; aún no se ve el menú ni gameplay.",Cargando,high,ai_vision,Codex GPT-5 (revisión visual),2026-10-23T21:31:09.829Z,confirmed

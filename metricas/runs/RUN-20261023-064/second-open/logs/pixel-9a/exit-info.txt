@@ -1,0 +1,10 @@
+ACTIVITY MANAGER PROCESS EXIT INFO (dumpsys activity exit-info)
+Last Timestamp of Persistence Into Persistent Storage: 2026-10-23 18:07:53.588
+  package: com.win2apk.bombrushcyberfunk
+    Historical Process Exit for uid=10427
+        ApplicationExitInfo #0:
+          timestamp=2026-10-23 18:14:22.815 pid=11478 realUid=10427 packageUid=10427 definingUid=10427 user=0 startSeq=5829
+          process=com.win2apk.bombrushcyberfunk reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=100 pss=0,00 rss=1,2GB state=empty trace=null
+          description=stop com.win2apk.bombrushcyberfunk due to from pid 22822
+          anrInfo=AnrInfo(anrId=-2108740392, anrType=9, timeoutMillis=8000, isUserPerceptible=false)

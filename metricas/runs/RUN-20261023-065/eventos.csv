@@ -1,0 +1,3 @@
+run_id,device_id,timestamp_utc,elapsed_ms,event_type,severity,message,evidence_relpath
+RUN-20261023-065,pixel-9a,2026-10-23T23:29:01.249Z,,install_failed,error,Failed to remove working directory with local testing splits. Your app might still have been installed correctly but have previous version of dynamic feature modules. If you see legacy versions of dynamic feature modules installed try to uninstall and install the app again.,metricas/runs/RUN-20261023-065/logs/pixel-9a/install-apks.log
+RUN-20261023-065,pixel-9a,2026-10-23T23:29:01.259Z,,device_skipped_after_install_failure,error,cold_install.py terminó con código 1,

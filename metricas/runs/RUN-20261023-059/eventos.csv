@@ -1,0 +1,22 @@
+run_id,device_id,timestamp_utc,elapsed_ms,event_type,severity,message,evidence_relpath
+RUN-20261023-059,pixel-9a,2026-10-23T21:49:51.195Z,1665,launch_requested,info,"bash arg: -p
+  bash arg: com.win2apk.bombrushcyberfunk
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=33ms (0ms mobile, 0ms wifi, 33ms not connected)
+args: [-p, com.win2apk.bombrushcyberfunk, -c, android.intent.category.LAUNCHER, 1]
+ arg: ""-p""
+ arg: ""com.win2apk.bombrushcyberfunk""
+ arg: ""-c""
+ arg: ""android.intent.category.LAUNCHER""
+ arg: ""1""
+data=""com.win2apk.bombrushcyberfunk""
+data=""android.intent.category.LAUNCHER""",metricas/runs/RUN-20261023-059/logs/pixel-9a/launch.log
+RUN-20261023-059,pixel-9a,2026-10-23T21:49:51.307Z,1777,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20261023-059,pixel-9a,2026-10-23T21:50:50.906Z,61376,screenshot_captured,info,Captura canónica T+60s,metricas/runs/RUN-20261023-059/screenshots/pixel-9a/t060.png
+RUN-20261023-059,pixel-9a,2026-10-23T21:51:14.735Z,85205,game_process_first_seen,info,Bomb Rush Cyberfunk.exe observado: 1,
+RUN-20261023-059,pixel-9a,2026-10-23T21:52:36.942Z,167413,monitor_finished,info,167 muestras registradas,metricas/runs/RUN-20261023-059/logs/pixel-9a/exit-info.txt
+RUN-20261023-059,pixel-9a,2026-10-23T21:52:36.957Z,,monitor_failed,error,monitor_device.py terminó con código -2,
+RUN-20261023-059,pixel-9a,2026-10-23T21:53:29.000Z,166000,monitor_aborted_for_unlock,warning,"Monitoreo detenido intencionalmente tras 167 muestras: la pantalla siguió bloqueada con solicitud de huella tras despertarla; no se intentó omitir autenticación. Última muestra con app_alive=true y game_alive=true.",metricas/runs/RUN-20261023-059/logs/pixel-9a/post-monitor-screen-lock.txt
