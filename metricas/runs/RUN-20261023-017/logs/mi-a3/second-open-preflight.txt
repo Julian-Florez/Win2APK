@@ -1,0 +1,8 @@
+Preflight RUN-20261023-017 / EXEC-096, second-open.
+Dispositivo: Xiaomi Mi A3 (alias mi-a3; serial no persistido).
+Acción: am force-stop; exit=0; salida=
+pidof posterior: 
+pm path: package:/data/app/~~AN582dGxUl2DIz6pOqxdoQ==/org.win2apk.testapp-zDKLcdyf7exo6Q1g9xfwPQ==/base.apk
+package:/data/app/~~AN582dGxUl2DIz6pOqxdoQ==/org.win2apk.testapp-zDKLcdyf7exo6Q1g9xfwPQ==/split_config.arm64_v8a.apk
+package:/data/app/~~AN582dGxUl2DIz6pOqxdoQ==/org.win2apk.testapp-zDKLcdyf7exo6Q1g9xfwPQ==/split_config.es.apk
+package:/data/app/~~AN582dGxUl2DIz6pOqxdoQ==/org.win2apk.testapp-zDKLcdyf7exo6Q1g9xfwPQ==/split_config.xhdpi.apk

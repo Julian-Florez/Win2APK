@@ -1,0 +1,2 @@
+run_id,device_id,captured_at_utc,elapsed_ms,scheduled_second,image_relpath,primary_class,secondary_class,description,visible_text,confidence,classification_method,classifier_model,classified_at_utc,human_review_status
+RUN-20261023-012,lenovo-tb-j606f,2026-10-23T04:24:57.336Z,60000,60,metricas/runs/RUN-20261023-012/screenshots/lenovo-tb-j606f/t060.png,compatibility_ui,,"Interfaz de Winlator preparando la aplicación, con indicador giratorio; no se observa aún la pantalla del juego.",Preparing application...,high,ai_vision,human_visual_review,2026-10-23T04:29:06.940Z,confirmed

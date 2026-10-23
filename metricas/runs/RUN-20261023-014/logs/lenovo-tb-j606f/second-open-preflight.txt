@@ -1,0 +1,9 @@
+Preflight RUN-20261023-014 / EXEC-093, segunda apertura sin reinstalar.
+Dispositivo: HA1QXMW2, Lenovo TB-J606F USB.
+Acción: `am force-stop com.win2apk.bombrushcyberfunk`; `pidof` posterior sin salida.
+`pm path com.win2apk.bombrushcyberfunk`:
+package:/data/app/~~Sr0iYf1kzJIidnLiS_9W8g==/com.win2apk.bombrushcyberfunk-SmEfc7MUW0RRR_GYkwzmjQ==/base.apk
+package:/data/app/~~Sr0iYf1kzJIidnLiS_9W8g==/com.win2apk.bombrushcyberfunk-SmEfc7MUW0RRR_GYkwzmjQ==/split_config.arm64_v8a.apk
+package:/data/app/~~Sr0iYf1kzJIidnLiS_9W8g==/com.win2apk.bombrushcyberfunk-SmEfc7MUW0RRR_GYkwzmjQ==/split_config.es.apk
+package:/data/app/~~Sr0iYf1kzJIidnLiS_9W8g==/com.win2apk.bombrushcyberfunk-SmEfc7MUW0RRR_GYkwzmjQ==/split_config.hdpi.apk
+Conclusión: paquete instalado, proceso detenido; no se reinstala para second-open.

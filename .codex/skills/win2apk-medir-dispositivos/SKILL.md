@@ -63,6 +63,26 @@ Ejecutar `create_run.py`, `inventory_devices.py` y `monitor_device.py` por separ
 Usar `--no-launch` solo si la aplicación ya está en el estado que debe observarse.
 Registrar en `install_mode` que no se midió una instalación; no fabricar un tiempo.
 
+### Pareja de instalación fría y segunda apertura
+
+Cuando un protocolo pida medir ambas aperturas, cerrar primero la instalación
+fría: clasificar T+60, resumirla y validar el dataset. Después ejecutar
+`scripts/second_open.py` sobre el run frío; el helper verifica paquete, modelo,
+pantalla y `force-stop`, conserva la instalación y vuelve a lanzar/medir durante
+el mismo tiempo, con CSV, log y captura separados bajo `second-open/`.
+
+```bash
+python3 .codex/skills/win2apk-medir-dispositivos/scripts/second_open.py \
+  --run-dir metricas/runs/RUN-YYYYMMDD-NNN \
+  --device-id mi-a3 --serial SERIAL_ADB \
+  --game-process 'Cuphead.exe'
+```
+
+Clasificar y resumir la captura de `second-open/`, validar tanto esa fase como la
+fría y volver a resumir el run padre. El resumen del padre conserva el catálogo
+de instalación fría y genera una matriz con las dos fases. No sumar una segunda
+apertura al catálogo como si fuera otra instalación.
+
 ### Construcción de APKS
 
 `build_apks.py` recibe contraseñas únicamente mediante variables de entorno y usa
@@ -97,11 +117,16 @@ agente con capacidad visual; los scripts no requieren una API ni almacenan clave
 Por cada dispositivo:
 
 1. Abrir el PNG original indicado en `capturas.csv` con la herramienta visual.
-2. Describir primero lo literalmente visible y después escoger la clase que mejor
+2. Inspeccionar la imagen completa y, si la interfaz de la app podría ser pequeña,
+   estar centrada o confundirse con el fondo negro, revisar también un recorte
+   ampliado de esa zona. Contrastar OCR solo como ayuda; no usarlo como sustituto
+   de la imagen. No elegir `black_screen` hasta comprobar que la ventana del juego
+   no está visible en otra región de la captura.
+3. Describir primero lo literalmente visible y después escoger la clase que mejor
    lo representa según [clasificacion-pantallas.md](references/clasificacion-pantallas.md).
-3. Ejecutar `classify_screenshot.py` con una primaria, secundaria opcional,
+4. Ejecutar `classify_screenshot.py` con una primaria, secundaria opcional,
    descripción, texto visible, confianza cualitativa y nombre real del modelo.
-4. No inferir un crash solo por una pantalla negra; contrastar procesos, eventos y
+5. No inferir un crash solo por una pantalla negra; contrastar procesos, eventos y
    `exit-info.txt`.
 
 Ejemplo:
@@ -142,4 +167,5 @@ IA queda `unreviewed`.
 - `summarize_run.py`: calcula agregados, actualiza catálogos y reconstruye la matriz documental.
 - `validate_dataset.py`: detecta esquemas rotos, huecos temporales, duplicados y evidencias faltantes.
 - `run_experiment.py`: coordina de principio a fin la instalación y medición secuencial de varios dispositivos.
+- `second_open.py`: mide una reapertura con la instalación ya existente, tras verificar cierre previo y estado del dispositivo.
 - `common.py`: concentra esquemas CSV y utilidades compartidas para evitar divergencias.

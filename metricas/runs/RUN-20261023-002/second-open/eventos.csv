@@ -1,0 +1,21 @@
+run_id,device_id,timestamp_utc,elapsed_ms,event_type,severity,message,evidence_relpath
+RUN-20261023-002,lenovo-tb-j606f,2026-10-23T02:05:38.272Z,1421,launch_requested,info,"bash arg: -p
+  bash arg: org.win2apk.testapp
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=45ms (0ms mobile, 0ms wifi, 45ms not connected)
+args: [-p, org.win2apk.testapp, -c, android.intent.category.LAUNCHER, 1]
+ arg: ""-p""
+ arg: ""org.win2apk.testapp""
+ arg: ""-c""
+ arg: ""android.intent.category.LAUNCHER""
+ arg: ""1""
+data=""org.win2apk.testapp""
+data=""android.intent.category.LAUNCHER""",metricas/runs/RUN-20261023-002/second-open/logs/lenovo-tb-j606f/launch.log
+RUN-20261023-002,lenovo-tb-j606f,2026-10-23T02:05:38.421Z,1569,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20261023-002,lenovo-tb-j606f,2026-10-23T02:05:47.653Z,10802,game_process_first_seen,info,Win2APKTest.exe observado: 1,
+RUN-20261023-002,lenovo-tb-j606f,2026-10-23T02:05:51.939Z,15088,first_game_frame_observed,info,Primer timestamp de presentación observado en la superficie del juego,
+RUN-20261023-002,lenovo-tb-j606f,2026-10-23T02:06:37.573Z,60722,screenshot_captured,info,Captura canónica T+60s,metricas/runs/RUN-20261023-002/second-open/screenshots/lenovo-tb-j606f/t060.png
+RUN-20261023-002,lenovo-tb-j606f,2026-10-23T02:10:37.978Z,301127,monitor_finished,info,264 muestras registradas,metricas/runs/RUN-20261023-002/second-open/logs/lenovo-tb-j606f/exit-info.txt

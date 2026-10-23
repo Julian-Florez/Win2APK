@@ -1,0 +1,10 @@
+Preflight RUN-20261023-011 / EXEC-090, segunda apertura sin reinstalar.
+ADB serial: HA1QXMW2 (Lenovo TB-J606F, USB).
+Acción: `am force-stop com.cuphead`; `pidof com.cuphead` posterior sin salida.
+`pm path com.cuphead` posterior:
+package:/data/app/~~l1UPNS9iYHuOPeTnbfpU2g==/com.cuphead-dSuSFZUfbWA0pUiWL6gegw==/base.apk
+package:/data/app/~~l1UPNS9iYHuOPeTnbfpU2g==/com.cuphead-dSuSFZUfbWA0pUiWL6gegw==/split_config.arm64_v8a.apk
+package:/data/app/~~l1UPNS9iYHuOPeTnbfpU2g==/com.cuphead-dSuSFZUfbWA0pUiWL6gegw==/split_config.es.apk
+package:/data/app/~~l1UPNS9iYHuOPeTnbfpU2g==/com.cuphead-dSuSFZUfbWA0pUiWL6gegw==/split_config.hdpi.apk
+Pantalla: stay_on_while_plugged_in=3; mWakefulness=Awake; mInputRestricted=false.
+Conclusión: paquete instalado, proceso detenido; second-open se ejecutará sin reinstalación.

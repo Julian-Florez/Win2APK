@@ -20,6 +20,7 @@ Esta carpeta reúne las decisiones, avances y evidencias del desarrollo del proy
 13. [Manual HTML para empaquetar una carpeta e instalarla en Android](./12-guia-empaquetado-win2apk.html)
 14. [CLI Linux y configuración declarativa v2](./13-decision-cli-linux-configuracion-v2.md)
 15. [Interfaz Android Material 3 adaptativa](./14-decision-interfaz-material3-adaptativa.md)
+16. [Guía reproducible para instalar y usar Win2APK en WSL2](./15-guia-instalacion-win2apk-wsl.md)
 
 ## Criterio de organización
 

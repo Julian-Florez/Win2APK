@@ -1,0 +1,9 @@
+Preflight RUN-20261023-016 / EXEC-095, segunda apertura sin reinstalar.
+Dispositivo: HA1QXMW2, Lenovo TB-J606F USB.
+Acción: `am force-stop com.win2apk.bombrushcyberfunk`; `pidof` posterior sin salida.
+`pm path com.win2apk.bombrushcyberfunk`:
+package:/data/app/~~3nL_rlA_t56EbzdNbJ859w==/com.win2apk.bombrushcyberfunk-GOJUrjE_Hoxh_1nInDX-GA==/base.apk
+package:/data/app/~~3nL_rlA_t56EbzdNbJ859w==/com.win2apk.bombrushcyberfunk-GOJUrjE_Hoxh_1nInDX-GA==/split_config.arm64_v8a.apk
+package:/data/app/~~3nL_rlA_t56EbzdNbJ859w==/com.win2apk.bombrushcyberfunk-GOJUrjE_Hoxh_1nInDX-GA==/split_config.es.apk
+package:/data/app/~~3nL_rlA_t56EbzdNbJ859w==/com.win2apk.bombrushcyberfunk-GOJUrjE_Hoxh_1nInDX-GA==/split_config.hdpi.apk
+Conclusión: aplicación instalada, proceso detenido; reapertura sin reinstalación.

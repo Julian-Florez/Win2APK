@@ -1,0 +1,21 @@
+run_id,device_id,timestamp_utc,elapsed_ms,event_type,severity,message,evidence_relpath
+RUN-20261023-045,redmi-note-8,2026-10-23T18:55:15.166Z,2317,launch_requested,info,"bash arg: -p
+  bash arg: com.win2apk.bombrushcyberfunk
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=167ms (0ms mobile, 0ms wifi, 167ms not connected)
+args: [-p, com.win2apk.bombrushcyberfunk, -c, android.intent.category.LAUNCHER, 1]
+ arg: ""-p""
+ arg: ""com.win2apk.bombrushcyberfunk""
+ arg: ""-c""
+ arg: ""android.intent.category.LAUNCHER""
+ arg: ""1""
+data=""com.win2apk.bombrushcyberfunk""
+data=""android.intent.category.LAUNCHER""",metricas/runs/RUN-20261023-045/logs/redmi-note-8/launch.log
+RUN-20261023-045,redmi-note-8,2026-10-23T18:55:15.317Z,2468,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20261023-045,redmi-note-8,2026-10-23T18:56:17.207Z,64358,screenshot_captured,info,Captura canónica T+60s,metricas/runs/RUN-20261023-045/screenshots/redmi-note-8/t060.png
+RUN-20261023-045,redmi-note-8,2026-10-23T18:57:21.014Z,128165,game_process_first_seen,info,Bomb Rush Cyberfunk.exe observado: 1,
+RUN-20261023-045,redmi-note-8,2026-10-23T18:57:25.425Z,132575,first_game_frame_observed,info,Primer timestamp de presentación observado en la superficie del juego,
+RUN-20261023-045,redmi-note-8,2026-10-23T19:00:16.207Z,303358,monitor_finished,info,301 muestras registradas,metricas/runs/RUN-20261023-045/logs/redmi-note-8/exit-info.txt

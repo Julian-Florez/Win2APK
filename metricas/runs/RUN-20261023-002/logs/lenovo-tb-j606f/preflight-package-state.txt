@@ -1,0 +1,13 @@
+RUN-20261023-002 preflight package state
+Device alias: lenovo-tb-j606f
+Package: org.win2apk.testapp
+Command: adb shell pm path org.win2apk.testapp
+Observation: package present before the cold uninstall.
+Capture time: immediately before creating RUN-20261023-002, after completing RUN-20261023-001; exact host timestamp not retained (N/R).
+Output:
+package:/data/app/~~_XB9Wqf3tFkLV2mr6buscg==/org.win2apk.testapp-oCi8HqPNFoX2jcKmhVwzOw==/base.apk
+package:/data/app/~~_XB9Wqf3tFkLV2mr6buscg==/org.win2apk.testapp-oCi8HqPNFoX2jcKmhVwzOw==/split_config.arm64_v8a.apk
+package:/data/app/~~_XB9Wqf3tFkLV2mr6buscg==/org.win2apk.testapp-oCi8HqPNFoX2jcKmhVwzOw==/split_config.es.apk
+package:/data/app/~~_XB9Wqf3tFkLV2mr6buscg==/org.win2apk.testapp-oCi8HqPNFoX2jcKmhVwzOw==/split_config.hdpi.apk
+
+The ADB output was observed before RUN-20261023-002 began uninstalling. No ADB command is being issued while its timed monitor is active.

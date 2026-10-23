@@ -1,0 +1,10 @@
+Preflight before cold uninstall — RUN-20261023-009
+Device alias: lenovo-tb-j606f
+Package: com.cuphead
+Command: adb shell pm path com.cuphead
+Observed state: package PRESENT; four APK paths returned.
+package:/data/app/~~e-g2_LRrm8k6aAyugNCbJg==/com.cuphead-F_P_wTF-9_5oAxj1-pWc_g==/base.apk
+package:/data/app/~~e-g2_LRrm8k6aAyugNCbJg==/com.cuphead-F_P_wTF-9_5oAxj1-pWc_g==/split_config.arm64_v8a.apk
+package:/data/app/~~e-g2_LRrm8k6aAyugNCbJg==/com.cuphead-F_P_wTF-9_5oAxj1-pWc_g==/split_config.es.apk
+package:/data/app/~~e-g2_LRrm8k6aAyugNCbJg==/com.cuphead-F_P_wTF-9_5oAxj1-pWc_g==/split_config.hdpi.apk
+Display check: stay_on_while_plugged_in=3; mInputRestricted=false.

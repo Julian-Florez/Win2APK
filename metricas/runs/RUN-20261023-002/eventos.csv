@@ -1,0 +1,23 @@
+run_id,device_id,timestamp_utc,elapsed_ms,event_type,severity,message,evidence_relpath
+RUN-20261023-002,lenovo-tb-j606f,2026-10-23T01:58:31.228Z,1391,launch_requested,info,"bash arg: -p
+  bash arg: org.win2apk.testapp
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=65ms (0ms mobile, 0ms wifi, 65ms not connected)
+args: [-p, org.win2apk.testapp, -c, android.intent.category.LAUNCHER, 1]
+ arg: ""-p""
+ arg: ""org.win2apk.testapp""
+ arg: ""-c""
+ arg: ""android.intent.category.LAUNCHER""
+ arg: ""1""
+data=""org.win2apk.testapp""
+data=""android.intent.category.LAUNCHER""",metricas/runs/RUN-20261023-002/logs/lenovo-tb-j606f/launch.log
+RUN-20261023-002,lenovo-tb-j606f,2026-10-23T01:58:31.388Z,1551,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20261023-002,lenovo-tb-j606f,2026-10-23T01:59:03.766Z,33928,game_process_first_seen,info,Win2APKTest.exe observado: 1,
+RUN-20261023-002,lenovo-tb-j606f,2026-10-23T01:59:04.882Z,35045,first_game_frame_observed,info,Primer timestamp de presentación observado en la superficie del juego,
+RUN-20261023-002,lenovo-tb-j606f,2026-10-23T01:59:30.665Z,60828,screenshot_captured,info,Captura canónica T+60s,metricas/runs/RUN-20261023-002/screenshots/lenovo-tb-j606f/t060.png
+RUN-20261023-002,lenovo-tb-j606f,2026-10-23T02:03:30.876Z,301039,monitor_finished,info,266 muestras registradas,metricas/runs/RUN-20261023-002/logs/lenovo-tb-j606f/exit-info.txt
+RUN-20261023-002,lenovo-tb-j606f,,,package_present_before_uninstall,info,Preflight guardado antes de iniciar el ensayo: pm path devolvió las cuatro rutas registradas en logs/lenovo-tb-j606f/preflight-package-state.txt; estado: paquete presente.,metricas/runs/RUN-20261023-002/logs/lenovo-tb-j606f/preflight-package-state.txt
+RUN-20261023-002,lenovo-tb-j606f,2026-10-23T01:57:52.853Z,,package_absent_after_uninstall_before_install,info,adb uninstall finalizó con código 0 y salida Success. La comprobación pm path de cold_install.py quedó vacía antes de bundletool; el script solo continúa si el paquete está ausente.,metricas/runs/RUN-20261023-002/logs/lenovo-tb-j606f/post-uninstall-package-state.txt

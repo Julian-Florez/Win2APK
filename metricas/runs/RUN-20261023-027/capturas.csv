@@ -1,0 +1,2 @@
+run_id,device_id,captured_at_utc,elapsed_ms,scheduled_second,image_relpath,primary_class,secondary_class,description,visible_text,confidence,classification_method,classifier_model,classified_at_utc,human_review_status
+RUN-20261023-027,mi-a3,2026-10-23T15:04:48.908Z,60000,60,metricas/runs/RUN-20261023-027/screenshots/mi-a3/t060.png,loading,,"La captura T+60 muestra el cuadro Starting up... con un indicador circular sobre fondo negro, señal de que Winlator sigue preparando el arranque.",Starting up...,high,ai_vision,Xiaomi Mi A3,2026-10-23T15:08:59.029Z,unreviewed

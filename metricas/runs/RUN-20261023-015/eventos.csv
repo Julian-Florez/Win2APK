@@ -1,0 +1,21 @@
+run_id,device_id,timestamp_utc,elapsed_ms,event_type,severity,message,evidence_relpath
+RUN-20261023-015,lenovo-tb-j606f,2026-10-23T05:03:15.062Z,2312,launch_requested,info,"bash arg: -p
+  bash arg: com.win2apk.bombrushcyberfunk
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=106ms (0ms mobile, 0ms wifi, 106ms not connected)
+args: [-p, com.win2apk.bombrushcyberfunk, -c, android.intent.category.LAUNCHER, 1]
+ arg: ""-p""
+ arg: ""com.win2apk.bombrushcyberfunk""
+ arg: ""-c""
+ arg: ""android.intent.category.LAUNCHER""
+ arg: ""1""
+data=""com.win2apk.bombrushcyberfunk""
+data=""android.intent.category.LAUNCHER""",metricas/runs/RUN-20261023-015/logs/lenovo-tb-j606f/launch.log
+RUN-20261023-015,lenovo-tb-j606f,2026-10-23T05:03:15.665Z,2915,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20261023-015,lenovo-tb-j606f,2026-10-23T05:04:13.752Z,61002,screenshot_captured,info,Captura canónica T+60s,metricas/runs/RUN-20261023-015/screenshots/lenovo-tb-j606f/t060.png
+RUN-20261023-015,lenovo-tb-j606f,2026-10-23T05:04:30.156Z,77406,game_process_first_seen,info,Bomb Rush Cyberfunk.exe observado: 1,
+RUN-20261023-015,lenovo-tb-j606f,2026-10-23T05:04:36.418Z,83668,first_game_frame_observed,info,Primer timestamp de presentación observado en la superficie del juego,
+RUN-20261023-015,lenovo-tb-j606f,2026-10-23T05:08:13.483Z,300733,monitor_finished,info,268 muestras registradas,metricas/runs/RUN-20261023-015/logs/lenovo-tb-j606f/exit-info.txt

@@ -1,0 +1,22 @@
+run_id,device_id,timestamp_utc,elapsed_ms,event_type,severity,message,evidence_relpath
+RUN-20261023-038,redmi-note-8,2026-10-23T17:25:28.470Z,0,second_open_preflight_passed,info,"Paquete instalado, proceso previo detenido y pantalla encendida; no se reinstala.",metricas/runs/RUN-20261023-038/logs/redmi-note-8/second-open-preflight.txt
+RUN-20261023-038,redmi-note-8,2026-10-23T17:25:30.282Z,1769,launch_requested,info,"bash arg: -p
+  bash arg: com.cuphead
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=49ms (0ms mobile, 0ms wifi, 49ms not connected)
+args: [-p, com.cuphead, -c, android.intent.category.LAUNCHER, 1]
+ arg: ""-p""
+ arg: ""com.cuphead""
+ arg: ""-c""
+ arg: ""android.intent.category.LAUNCHER""
+ arg: ""1""
+data=""com.cuphead""
+data=""android.intent.category.LAUNCHER""",metricas/runs/RUN-20261023-038/second-open/logs/redmi-note-8/launch.log
+RUN-20261023-038,redmi-note-8,2026-10-23T17:25:30.419Z,1906,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20261023-038,redmi-note-8,2026-10-23T17:26:30.035Z,61522,screenshot_captured,info,Captura canónica T+60s,metricas/runs/RUN-20261023-038/second-open/screenshots/redmi-note-8/t060.png
+RUN-20261023-038,redmi-note-8,2026-10-23T17:29:00.955Z,212442,game_process_first_seen,info,Cuphead.exe observado: 1,
+RUN-20261023-038,redmi-note-8,2026-10-23T17:29:03.013Z,214500,first_game_frame_observed,info,Primer timestamp de presentación observado en la superficie del juego,
+RUN-20261023-038,redmi-note-8,2026-10-23T17:30:31.751Z,303238,monitor_finished,info,301 muestras registradas,metricas/runs/RUN-20261023-038/second-open/logs/redmi-note-8/exit-info.txt

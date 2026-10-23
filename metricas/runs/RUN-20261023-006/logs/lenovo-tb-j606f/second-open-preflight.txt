@@ -1,0 +1,11 @@
+Second-open preflight — RUN-20261023-006
+Device alias: lenovo-tb-j606f
+Package: org.win2apk.testapp
+Action: adb shell am force-stop org.win2apk.testapp
+Process check: adb shell pidof org.win2apk.testapp returned no PID (empty output).
+Package check: adb shell pm path org.win2apk.testapp returned four paths; package remains installed.
+Decision: launch the existing installation without uninstall or bundletool reinstall.
+package:/data/app/~~mD7ZR6nQBopPKvxoIH_VvA==/org.win2apk.testapp-e_htHv2RRVRtQJE2tNWa5A==/base.apk
+package:/data/app/~~mD7ZR6nQBopPKvxoIH_VvA==/org.win2apk.testapp-e_htHv2RRVRtQJE2tNWa5A==/split_config.arm64_v8a.apk
+package:/data/app/~~mD7ZR6nQBopPKvxoIH_VvA==/org.win2apk.testapp-e_htHv2RRVRtQJE2tNWa5A==/split_config.es.apk
+package:/data/app/~~mD7ZR6nQBopPKvxoIH_VvA==/org.win2apk.testapp-e_htHv2RRVRtQJE2tNWa5A==/split_config.hdpi.apk

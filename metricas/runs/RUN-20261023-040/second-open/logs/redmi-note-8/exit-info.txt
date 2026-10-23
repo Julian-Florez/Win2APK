@@ -1,0 +1,8 @@
+ACTIVITY MANAGER PROCESS EXIT INFO (dumpsys activity exit-info)
+Last Timestamp of Persistence Into Persistent Storage: 2026-10-23 12:47:48.656
+  package: com.cuphead
+    Historical Process Exit for uid=10421
+        ApplicationExitInfo #0:
+          timestamp=2026-10-23 12:56:30.274 pid=27474 realUid=10421 packageUid=10421 definingUid=10421 user=0
+          process=com.cuphead reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=100 pss=0.00 rss=0.00 description=stop com.cuphead due to from pid 5625 state=empty trace=null

@@ -1,0 +1,21 @@
+run_id,device_id,timestamp_utc,elapsed_ms,event_type,severity,message,evidence_relpath
+RUN-20261023-022,mi-a3,2026-10-23T13:52:51.183Z,1414,launch_requested,info,"bash arg: -p
+  bash arg: com.cuphead
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=82ms (0ms mobile, 0ms wifi, 82ms not connected)
+args: [-p, com.cuphead, -c, android.intent.category.LAUNCHER, 1]
+ arg: ""-p""
+ arg: ""com.cuphead""
+ arg: ""-c""
+ arg: ""android.intent.category.LAUNCHER""
+ arg: ""1""
+data=""com.cuphead""
+data=""android.intent.category.LAUNCHER""",metricas/runs/RUN-20261023-022/logs/mi-a3/launch.log
+RUN-20261023-022,mi-a3,2026-10-23T13:52:51.340Z,1572,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20261023-022,mi-a3,2026-10-23T13:53:50.976Z,61208,screenshot_captured,info,Captura canónica T+60s,metricas/runs/RUN-20261023-022/screenshots/mi-a3/t060.png
+RUN-20261023-022,mi-a3,2026-10-23T13:55:34.892Z,165124,game_process_first_seen,info,Cuphead.exe observado: 1,
+RUN-20261023-022,mi-a3,2026-10-23T13:55:37.273Z,167505,first_game_frame_observed,info,Primer timestamp de presentación observado en la superficie del juego,
+RUN-20261023-022,mi-a3,2026-10-23T13:57:52.736Z,302968,monitor_finished,info,301 muestras registradas,metricas/runs/RUN-20261023-022/logs/mi-a3/exit-info.txt

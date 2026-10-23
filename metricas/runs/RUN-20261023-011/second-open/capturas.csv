@@ -1,0 +1,2 @@
+run_id,device_id,captured_at_utc,elapsed_ms,scheduled_second,image_relpath,primary_class,secondary_class,description,visible_text,confidence,classification_method,classifier_model,classified_at_utc,human_review_status
+RUN-20261023-011,lenovo-tb-j606f,2026-10-23T04:17:19.727Z,60000,60,metricas/runs/RUN-20261023-011/second-open/screenshots/lenovo-tb-j606f/t060.png,title_screen,,"Pantalla de título de Cuphead: logotipo CUPHEAD y Cuphead, Mugman y Ms. Chalice; no se aprecia instrucción para continuar.",CUPHEAD,high,ai_vision,human_visual_review,2026-10-23T04:21:47.010Z,confirmed

@@ -1,0 +1,9 @@
+Preflight before cold uninstall — RUN-20261023-004
+Device alias: lenovo-tb-j606f
+Package: org.win2apk.testapp
+Command: adb shell pm path org.win2apk.testapp
+Observed state: package PRESENT; four APK paths returned.
+package:/data/app/~~9jn9uRUYD9917kcBf8m7rA==/org.win2apk.testapp-x4rRUAEFVCzHrlbbaBsZyw==/base.apk
+package:/data/app/~~9jn9uRUYD9917kcBf8m7rA==/org.win2apk.testapp-x4rRUAEFVCzHrlbbaBsZyw==/split_config.arm64_v8a.apk
+package:/data/app/~~9jn9uRUYD9917kcBf8m7rA==/org.win2apk.testapp-x4rRUAEFVCzHrlbbaBsZyw==/split_config.es.apk
+package:/data/app/~~9jn9uRUYD9917kcBf8m7rA==/org.win2apk.testapp-x4rRUAEFVCzHrlbbaBsZyw==/split_config.hdpi.apk

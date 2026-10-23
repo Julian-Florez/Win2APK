@@ -1,0 +1,21 @@
+run_id,device_id,timestamp_utc,elapsed_ms,event_type,severity,message,evidence_relpath
+RUN-20261023-029,mi-a3,2026-10-23T15:27:30.873Z,2197,launch_requested,info,"bash arg: -p
+  bash arg: com.win2apk.bombrushcyberfunk
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=109ms (0ms mobile, 0ms wifi, 109ms not connected)
+args: [-p, com.win2apk.bombrushcyberfunk, -c, android.intent.category.LAUNCHER, 1]
+ arg: ""-p""
+ arg: ""com.win2apk.bombrushcyberfunk""
+ arg: ""-c""
+ arg: ""android.intent.category.LAUNCHER""
+ arg: ""1""
+data=""com.win2apk.bombrushcyberfunk""
+data=""android.intent.category.LAUNCHER""",metricas/runs/RUN-20261023-029/logs/mi-a3/launch.log
+RUN-20261023-029,mi-a3,2026-10-23T15:27:33.645Z,4969,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20261023-029,mi-a3,2026-10-23T15:28:29.501Z,60825,screenshot_captured,info,Captura canónica T+60s,metricas/runs/RUN-20261023-029/screenshots/mi-a3/t060.png
+RUN-20261023-029,mi-a3,2026-10-23T15:28:32.835Z,64158,game_process_first_seen,info,Bomb Rush Cyberfunk.exe observado: 1,
+RUN-20261023-029,mi-a3,2026-10-23T15:28:36.175Z,67499,first_game_frame_observed,info,Primer timestamp de presentación observado en la superficie del juego,
+RUN-20261023-029,mi-a3,2026-10-23T15:32:31.853Z,303177,monitor_finished,info,301 muestras registradas,metricas/runs/RUN-20261023-029/logs/mi-a3/exit-info.txt

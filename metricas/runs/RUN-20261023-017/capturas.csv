@@ -1,0 +1,2 @@
+run_id,device_id,captured_at_utc,elapsed_ms,scheduled_second,image_relpath,primary_class,secondary_class,description,visible_text,confidence,classification_method,classifier_model,classified_at_utc,human_review_status
+RUN-20261023-017,mi-a3,2026-10-23T12:43:51.109Z,60000,60,metricas/runs/RUN-20261023-017/screenshots/mi-a3/t060.png,other,,En la captura T+60 se ve la consola de Win2APKTest.exe y una ventana Win2APK Test con Hola mundo y el botón Cambiar texto.,Win2APK Test; Hola mundo; Cambiar texto,high,ai_vision,GPT-5,2026-10-23T12:48:01.898Z,unreviewed

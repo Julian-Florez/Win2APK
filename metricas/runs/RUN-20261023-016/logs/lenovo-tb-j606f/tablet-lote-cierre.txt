@@ -1,0 +1,6 @@
+Cierre del lote Lenovo TB-J606F: 2026-10-23.
+Alcance completado: WinTest 5/5 parejas válidas (RUN-002 a RUN-006; RUN-001 excluido por instalación inválida); Cuphead 5/5 (RUN-007 a RUN-011); Bomb Rush Cyberfunk 5/5 (RUN-012 a RUN-016). Cada pareja válida conserva fase fría y second-open de 300 s, con PNG T+60, clasificación y CSV. El lote permaneció exclusivamente en la tablet Lenovo.
+RUN-016 second-open: 255 muestras; monitor_finished a 301.143 s; app y proceso de juego activos al cierre; captura T+60 clasificada title_screen y validación de dataset OK.
+Configuración stay-awake original, registrada antes de iniciar el lote: `stay_on_while_plugged_in=0`. Se restauró a `0` una vez concluidas todas las mediciones.
+Apagado de pantalla ejecutado con `input keyevent 26` tras restaurar el ajuste.
+Verificación posterior ADB: `settings get global stay_on_while_plugged_in` => `0`; PowerManager `mWakefulness=Dozing`; display integrado `state OFF, committedState OFF`; `mScreenState=OFF`.

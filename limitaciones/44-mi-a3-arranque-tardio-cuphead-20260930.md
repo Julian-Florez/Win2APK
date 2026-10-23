@@ -28,11 +28,29 @@ de los packs locales y el inicio de `XServerDisplayActivity`. Después se
 observaron `winhandler.exe` y `Cuphead.exe`. Esta observación confirma un arranque
 posterior, pero no permite asignar un tiempo a primer frame a `EXEC-079`.
 
+### Repetición con observación de 300 s
+
+En `RUN-20261023-022` / `EXEC-101`, la instalación fría desde bundletool finalizó
+en 190.300 s. `Cuphead.exe` apareció 165.124 s después de comenzar la medición
+posterior a la instalación y el primer frame se registró a 167.505 s de esa
+medición. El campo `delivery_to_first_frame_seconds`, medido desde el inicio de
+`bundletool install-apks`, fue 358.005 s. Por tanto, en este ensayo el primer
+frame excedió cinco minutos de extremo a extremo, aunque apareció dentro de la
+ventana de observación de 300 s iniciada tras instalar.
+
+La captura T+60 de la fase fría seguía en `loading`; la segunda apertura sin
+reinstalar llegó a `title_screen` y registró su primer frame a 12.483 s. Las dos
+fases se conservaron por separado y sus datasets pasaron validación. Esta
+repetición cuantifica un arranque tardío; no modifica retrospectivamente
+`EXEC-079`.
+
 ## Impacto
 
 El usuario puede interpretar la pantalla `Cargando` como un bloqueo o fallo si
-espera solo 180 s. La instalación sí finaliza, pero el tiempo de disponibilidad
-del juego no queda acotado por la ventana usada en esta ejecución.
+espera solo 180 s. En la repetición actual, el primer frame llegó a 358.005 s
+desde el inicio de la instalación, por encima de un objetivo extremo a extremo
+de 300 s. La ventana de monitor de 300 s posterior a la instalación no equivale
+a un timeout total de cinco minutos.
 
 ## Análisis técnico
 
@@ -51,18 +69,23 @@ separada.
 
 ## Resultado
 
-Limitación reproducida: el primer arranque del Mi A3 puede superar 180 s con este
-artefacto y estas condiciones. El juego llegó a iniciar posteriormente, pero no
-se dispone de un primer frame cronometrado en `EXEC-079`.
+Limitación reproducida: `EXEC-079` no observó el proceso en 180 s; `EXEC-101`
+midió el primer frame a 358.005 s desde el inicio de la instalación y dejó la
+captura T+60 en `loading`. La segunda apertura sí llegó a `title_screen` dentro
+de la ventana. Estas observaciones corresponden solo al Mi A3, artefacto y
+condiciones registrados.
 
 ## Limitaciones pendientes
 
-Repetir con una ventana superior a 180 s y capturas adicionales después de que
-aparezca `Cuphead.exe`, sin reemplazar la matriz histórica de esta ejecución.
+Determinar si se necesita una captura adicional posterior a la aparición del
+juego para comparar estados de pantalla, sin reemplazar las capturas canónicas
+T+60 ni las matrices históricas.
 
 ## Referencias
 
 - [Matriz EXEC-079](../ejecuciones/79-metricas-cuphead-installacion-dos-dispositivos-20260930/matriz.md)
+- [Matriz EXEC-101](../ejecuciones/101-metricas-cuphead-cold-second-open-trial-01-20261023/matriz.md)
+- [RUN-20261023-022, fase fría y segunda apertura](../metricas/runs/RUN-20261023-022/)
 - [Resumen de métricas](../metricas/runs/RUN-20260930-001/resumen.csv)
 - [Log de instalación Mi A3](../metricas/runs/RUN-20260930-001/logs/mi-a3-install.log)
 - [Taxonomía de pantallas](../.codex/skills/win2apk-medir-dispositivos/references/clasificacion-pantallas.md)

@@ -1,0 +1,21 @@
+run_id,device_id,timestamp_utc,elapsed_ms,event_type,severity,message,evidence_relpath
+RUN-20261023-036,redmi-note-8,2026-10-23T16:49:22.810Z,1419,launch_requested,info,"bash arg: -p
+  bash arg: org.win2apk.testapp
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=73ms (0ms mobile, 0ms wifi, 73ms not connected)
+args: [-p, org.win2apk.testapp, -c, android.intent.category.LAUNCHER, 1]
+ arg: ""-p""
+ arg: ""org.win2apk.testapp""
+ arg: ""-c""
+ arg: ""android.intent.category.LAUNCHER""
+ arg: ""1""
+data=""org.win2apk.testapp""
+data=""android.intent.category.LAUNCHER""",metricas/runs/RUN-20261023-036/logs/redmi-note-8/launch.log
+RUN-20261023-036,redmi-note-8,2026-10-23T16:49:22.931Z,1540,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20261023-036,redmi-note-8,2026-10-23T16:49:54.762Z,33371,game_process_first_seen,info,Win2APKTest.exe observado: 1,
+RUN-20261023-036,redmi-note-8,2026-10-23T16:49:57.173Z,35782,first_game_frame_observed,info,Primer timestamp de presentación observado en la superficie del juego,
+RUN-20261023-036,redmi-note-8,2026-10-23T16:50:22.434Z,61043,screenshot_captured,info,Captura canónica T+60s,metricas/runs/RUN-20261023-036/screenshots/redmi-note-8/t060.png
+RUN-20261023-036,redmi-note-8,2026-10-23T16:54:24.359Z,302968,monitor_finished,info,301 muestras registradas,metricas/runs/RUN-20261023-036/logs/redmi-note-8/exit-info.txt

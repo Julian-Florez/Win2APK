@@ -1,0 +1,7 @@
+Post-uninstall verification — RUN-20261023-007
+Device alias: lenovo-tb-j606f
+Package: com.cuphead
+Verification implemented by cold_install.py: adb shell pm path com.cuphead immediately after adb uninstall.
+Observed control-flow result: empty path output (otherwise cold_install.py raises before bundletool install); bundletool installation proceeded and later package verification succeeded.
+Raw pm path stdout was not persisted by cold_install.py; this note records the verification inferred from its successful control flow, not a separately captured transcript.
+Uninstall log: Success; exit code 0.

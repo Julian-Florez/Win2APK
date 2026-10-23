@@ -109,8 +109,9 @@ def summarize_device(
     final_app_alive = samples[-1].get("app_alive", "false") == "true" if samples else False
     primary = capture.get("primary_class", "")
     expected = run.get("expected_state", "")
-    install_result = install.get("result", "")
-    if install_result != "success":
+    no_install_required = run.get("install_mode") == "second_open_no_reinstall"
+    install_result = "N/A" if no_install_required else install.get("result", "")
+    if not no_install_required and install_result != "success":
         result = "failed_install"
         notes = "La instalación completa no quedó verificada."
     elif not samples:
@@ -179,8 +180,13 @@ def nr(value: str) -> str:
     return value if value not in {"", None} else "N/R"
 
 
-def render_matrix(run: dict[str, str], summaries: list[dict[str, str]], run_relpath: str) -> str:
-    results = {row["result"] for row in summaries}
+def render_matrix(
+    run: dict[str, str],
+    summaries: list[dict[str, str]],
+    run_relpath: str,
+    second_summaries: list[dict[str, str]],
+) -> str:
+    results = {row["result"] for row in summaries + second_summaries}
     if summaries and results == {"approved_experimental"}:
         overall = "aprobado experimentalmente en los dispositivos medidos"
     elif any(result.startswith("failed") for result in results):
@@ -189,10 +195,11 @@ def render_matrix(run: dict[str, str], summaries: list[dict[str, str]], run_relp
         overall = "pendiente de clasificación visual"
     else:
         overall = "parcial o no concluyente"
-    rows = []
+    cold_rows = []
+    warm_rows = []
     evidence = []
     for item in summaries:
-        rows.append(
+        cold_rows.append(
             f"| {item['device_id']} | {nr(item['install_result'])} | {nr(item['install_seconds'])} s | "
             f"{nr(item['delivery_to_first_frame_seconds'])} s | "
             f"{nr(item['app_first_seen_ms'])} ms | {nr(item['game_first_seen_ms'])} ms | "
@@ -200,14 +207,25 @@ def render_matrix(run: dict[str, str], summaries: list[dict[str, str]], run_relp
             f"{nr(item['screen_primary_class'])} | {item['result']} |"
         )
         evidence.append(
-            f"- `{item['device_id']}`: [captura y CSV]({run_relpath}); "
+            f"- `{item['device_id']}`: [evidencias frías]({run_relpath}); "
+            f"descripción: {nr(item['screen_description'])}."
+        )
+    for item in second_summaries:
+        warm_rows.append(
+            f"| {item['device_id']} | {nr(item['observed_seconds'])} s | "
+            f"{nr(item['first_frame_seen_ms'])} ms | {nr(item['app_alive_ratio'])} | "
+            f"{nr(item['game_alive_ratio'])} | {nr(item['fps_mean'])} | "
+            f"{nr(item['screen_primary_class'])} | {item['result']} |"
+        )
+        evidence.append(
+            f"- `{item['device_id']}`: [evidencias second-open]({run_relpath}/second-open/); "
             f"descripción: {nr(item['screen_description'])}."
         )
     return f"""# {run['exec_id']}: {run['scenario_description']}
 
 - **Run de métricas:** `{run['run_id']}`
 - **Fecha:** {run['created_at_utc'][:10]}
-- **Tipo:** automatizada, instalación fría y medición temporal
+- **Tipo:** instalación fría seguida de segunda apertura sin reinstalación; medición temporal
 - **Resultado general:** {overall}
 - **Método:** `{run['install_mode']}`, secuencial, sin root
 
@@ -224,11 +242,17 @@ def render_matrix(run: dict[str, str], summaries: list[dict[str, str]], run_relp
 | Intervalo nominal | {run['sample_interval_seconds']} s | ADB sin root |
 | Captura canónica | T+{run['screenshot_second']} s | Clasificación visual posterior |
 
-## Métricas por dispositivo
+## Instalación fría
 
 | Dispositivo | Instalación | Tiempo instalación | Envío a primer frame | App visible | Juego visible | FPS medio | PSS app máx. KiB | Captura T+60 | Resultado |
 |---|---|---:|---:|---:|---:|---:|---:|---|---|
-{chr(10).join(rows) if rows else '| N/R | N/R | N/R | N/R | N/R | N/R | N/R | N/R | N/R | N/R |'}
+{chr(10).join(cold_rows) if cold_rows else '| N/R | N/R | N/R | N/R | N/R | N/R | N/R | N/R | N/R | N/R |'}
+
+## Segunda apertura sin reinstalar
+
+| Dispositivo | Tiempo observado | Primer frame | App activa | Juego activo | FPS medio | Captura T+60 | Resultado |
+|---|---:|---:|---:|---:|---:|---|---|
+{chr(10).join(warm_rows) if warm_rows else '| N/R | N/R | N/R | N/R | N/R | N/R | N/R | N/R |'}
 
 ## Observación
 
@@ -254,25 +278,35 @@ descartar una configuración para otra familia de dispositivos.
 """
 
 
-def update_index(repo: Path, run: dict[str, str], summaries: list[dict[str, str]], exec_dir: Path) -> None:
+def update_index(
+    repo: Path,
+    run: dict[str, str],
+    summaries: list[dict[str, str]],
+    second_summaries: list[dict[str, str]],
+    exec_dir: Path,
+) -> None:
     index = repo / "ejecuciones/index.md"
     content = index.read_text(encoding="utf-8")
-    if f"| {run['exec_id']} |" in content:
-        return
     devices = ", ".join(row["device_id"] for row in summaries) or "N/R"
-    results = ", ".join(sorted({row["result"] for row in summaries})) or "N/R"
+    results = ", ".join(sorted({row["result"] for row in summaries + second_summaries})) or "N/R"
     rel = exec_dir.relative_to(repo / "ejecuciones")
     row = (
         f"| {run['exec_id']} | {run['scenario_description']} | Métricas automatizadas | "
         f"{devices} | {results} | [matriz.md](./{rel}/matriz.md) | "
         f"[datos](../metricas/runs/{run['run_id']}/) |\n"
     )
-    marker = "\n## Plantilla"
-    if marker in content:
-        content = content.replace(marker, "\n" + row + marker, 1)
+    lines = content.splitlines(keepends=True)
+    target = f"| {run['exec_id']} |"
+    existing = next((position for position, line in enumerate(lines) if line.startswith(target)), None)
+    if existing is not None:
+        lines[existing] = row
     else:
-        content += "\n" + row
-    index.write_text(content, encoding="utf-8")
+        marker = next((position for position, line in enumerate(lines) if line.startswith("## Plantilla")), None)
+        if marker is None:
+            lines.extend(["\n", row])
+        else:
+            lines.insert(marker, row)
+    index.write_text("".join(lines), encoding="utf-8")
 
 
 def main() -> int:
@@ -301,14 +335,23 @@ def main() -> int:
         )
     rewrite_csv(run_dir / "resumen.csv", SUMMARY_HEADER, summaries)
     pending = any(row["result"] == "pending_classification" for row in summaries)
-    set_run_status(run_dir, "awaiting_classification" if pending else "summarized")
+    status = "awaiting_classification" if pending else "summarized"
+    if run.get("install_mode") == "second_open_no_reinstall":
+        run["status"] = status
+        rewrite_csv(run_dir / "run.csv", RUN_HEADER, [run])
+        print(f"{run['run_id']}: fase second-open resumida sin modificar el catálogo frío")
+        return 0
+    set_run_status(run_dir, status)
     run = read_run(run_dir)
 
     exec_relpath = (run_dir / "execution-link.txt").read_text(encoding="utf-8").strip()
     exec_dir = repo / exec_relpath
     run_relpath = str(Path("../../metricas/runs") / run["run_id"])
-    (exec_dir / "matriz.md").write_text(render_matrix(run, summaries, run_relpath), encoding="utf-8")
-    update_index(repo, run, summaries, exec_dir)
+    second_summaries = read_csv(run_dir / "second-open" / "resumen.csv")
+    (exec_dir / "matriz.md").write_text(
+        render_matrix(run, summaries, run_relpath, second_summaries), encoding="utf-8"
+    )
+    update_index(repo, run, summaries, second_summaries, exec_dir)
     print(f"{run['run_id']}: {len(summaries)} dispositivos resumidos")
     return 0
 

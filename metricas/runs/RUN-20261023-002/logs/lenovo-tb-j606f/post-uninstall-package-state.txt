@@ -1,0 +1,7 @@
+RUN-20261023-002 post-uninstall package state
+Device alias: lenovo-tb-j606f
+Package: org.win2apk.testapp
+Check: cold_install.py called `pm path org.win2apk.testapp` after `adb uninstall` and before bundletool.
+Observation: output was empty; cold_install.py sets removed=true when this output is empty and stops if the package remains. It proceeded to bundletool, which began at 2026-10-23T01:57:52.853Z.
+Uninstall command: exit 0; exact output `Success` (see uninstall.log).
+Scope: package path absence was verified before installation. No claim is made about non-package shared storage outside Android's uninstall behavior.

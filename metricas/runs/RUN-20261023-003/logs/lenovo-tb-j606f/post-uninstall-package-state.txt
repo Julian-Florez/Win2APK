@@ -1,0 +1,5 @@
+RUN-20261023-003 post-uninstall package state
+Package: org.win2apk.testapp
+Uninstall output: `Success`; exit code 0 (see uninstall.log).
+Check: cold_install.py queried `pm path org.win2apk.testapp` after uninstall and before bundletool. Output was empty; the script continues only when no package path remains.
+Bundletool install started at 2026-10-23T02:12:39.163Z.

@@ -1,0 +1,21 @@
+run_id,device_id,timestamp_utc,elapsed_ms,event_type,severity,message,evidence_relpath
+RUN-20261023-017,mi-a3,2026-10-23T12:48:51.547Z,1576,launch_requested,info,"bash arg: -p
+  bash arg: org.win2apk.testapp
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=76ms (0ms mobile, 0ms wifi, 76ms not connected)
+args: [-p, org.win2apk.testapp, -c, android.intent.category.LAUNCHER, 1]
+ arg: ""-p""
+ arg: ""org.win2apk.testapp""
+ arg: ""-c""
+ arg: ""android.intent.category.LAUNCHER""
+ arg: ""1""
+data=""org.win2apk.testapp""
+data=""android.intent.category.LAUNCHER""",metricas/runs/RUN-20261023-017/second-open/logs/mi-a3/launch.log
+RUN-20261023-017,mi-a3,2026-10-23T12:48:51.770Z,1799,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20261023-017,mi-a3,2026-10-23T12:49:00.093Z,10122,game_process_first_seen,info,Win2APKTest.exe observado: 1,
+RUN-20261023-017,mi-a3,2026-10-23T12:49:02.347Z,12376,first_game_frame_observed,info,Primer timestamp de presentación observado en la superficie del juego,
+RUN-20261023-017,mi-a3,2026-10-23T12:49:50.589Z,60618,screenshot_captured,info,Captura canónica T+60s,metricas/runs/RUN-20261023-017/second-open/screenshots/mi-a3/t060.png
+RUN-20261023-017,mi-a3,2026-10-23T12:53:52.507Z,302536,monitor_finished,info,301 muestras registradas,metricas/runs/RUN-20261023-017/second-open/logs/mi-a3/exit-info.txt

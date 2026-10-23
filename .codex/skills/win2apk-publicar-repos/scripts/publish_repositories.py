@@ -133,11 +133,21 @@ def matches_path(path: str, pathspec: str) -> bool:
     return normalized == spec or normalized.startswith(f"{spec}/")
 
 
-def select_paths(repo: Repo, extra_paths: list[str], defaults: tuple[str, ...]) -> tuple[list[str], list[str]]:
+def select_paths(
+    repo: Repo,
+    extra_paths: list[str],
+    defaults: tuple[str, ...],
+    excluded_specs: list[str] | None = None,
+) -> tuple[list[str], list[str]]:
     status = git_status(repo.path)
     paths = changed_paths(status)
     pathspecs = list(defaults) + extra_paths
     selected = [path for path in paths if any(matches_path(path, spec) for spec in pathspecs)]
+    exclusions = excluded_specs or []
+    explicitly_excluded = [
+        path for path in selected if any(matches_path(path, spec) for spec in exclusions)
+    ]
+    selected = [path for path in selected if path not in explicitly_excluded]
     generated = [path for path in selected if is_generated(path)]
     selected = [path for path in selected if not is_generated(path)]
     excluded = [path for path in paths if path not in selected]
@@ -205,6 +215,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--superproject-remote", default="julian")
     parser.add_argument("--message", help="mensaje base de los commits")
     parser.add_argument("--root-path", action="append", default=[], help="ruta adicional del repositorio raíz")
+    parser.add_argument(
+        "--exclude-root-path",
+        action="append",
+        default=[],
+        help="ruta o patrón que se omite del repositorio raíz",
+    )
     parser.add_argument("--only-root-paths", action="store_true", help="usar solo las rutas indicadas con --root-path")
     parser.add_argument("--app-path", action="append", default=[], help="ruta adicional de winlator/app")
     parser.add_argument("--execute", action="store_true", help="preparar y crear commits; sin esto solo inspecciona")
@@ -229,7 +245,9 @@ def main() -> int:
             raise PublishError(f"{repo.name}: no parece un repositorio Git: {repo.path}")
 
     root_defaults = () if args.only_root_paths else ROOT_DEFAULT_PATHS
-    root_paths, root_excluded = select_paths(root_repo, args.root_path, root_defaults)
+    root_paths, root_excluded = select_paths(
+        root_repo, args.root_path, root_defaults, args.exclude_root_path
+    )
     app_paths, app_excluded = select_paths(app_repo, args.app_path, APP_DEFAULT_PATHS)
     show_repo(root_repo, root_paths, root_excluded)
     show_repo(app_repo, app_paths, app_excluded)

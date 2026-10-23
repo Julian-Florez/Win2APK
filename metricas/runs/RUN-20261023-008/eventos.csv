@@ -1,0 +1,21 @@
+run_id,device_id,timestamp_utc,elapsed_ms,event_type,severity,message,evidence_relpath
+RUN-20261023-008,lenovo-tb-j606f,2026-10-23T03:24:10.559Z,1697,launch_requested,info,"bash arg: -p
+  bash arg: com.cuphead
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=63ms (0ms mobile, 0ms wifi, 63ms not connected)
+args: [-p, com.cuphead, -c, android.intent.category.LAUNCHER, 1]
+ arg: ""-p""
+ arg: ""com.cuphead""
+ arg: ""-c""
+ arg: ""android.intent.category.LAUNCHER""
+ arg: ""1""
+data=""com.cuphead""
+data=""android.intent.category.LAUNCHER""",metricas/runs/RUN-20261023-008/logs/lenovo-tb-j606f/launch.log
+RUN-20261023-008,lenovo-tb-j606f,2026-10-23T03:24:10.746Z,1883,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20261023-008,lenovo-tb-j606f,2026-10-23T03:25:10.020Z,61157,screenshot_captured,info,Captura canónica T+60s,metricas/runs/RUN-20261023-008/screenshots/lenovo-tb-j606f/t060.png
+RUN-20261023-008,lenovo-tb-j606f,2026-10-23T03:26:59.055Z,170192,game_process_first_seen,info,Cuphead.exe observado: 1,
+RUN-20261023-008,lenovo-tb-j606f,2026-10-23T03:27:02.682Z,173820,first_game_frame_observed,info,Primer timestamp de presentación observado en la superficie del juego,
+RUN-20261023-008,lenovo-tb-j606f,2026-10-23T03:29:09.927Z,301065,monitor_finished,info,287 muestras registradas,metricas/runs/RUN-20261023-008/logs/lenovo-tb-j606f/exit-info.txt

@@ -1,0 +1,8 @@
+Preflight RUN-20261023-014 / EXEC-093 (Bomb Rush ensayo 3).
+Dispositivo: HA1QXMW2, Lenovo TB-J606F USB; stay_on_while_plugged_in=3; mWakefulness=Awake; mInputRestricted=false.
+Estado previo de com.win2apk.bombrushcyberfunk:
+package:/data/app/~~5tOZmsaNVwRXDtjbNPIVzA==/com.win2apk.bombrushcyberfunk-P5Vpkx6rfvLWSRYeodg6OA==/base.apk
+package:/data/app/~~5tOZmsaNVwRXDtjbNPIVzA==/com.win2apk.bombrushcyberfunk-P5Vpkx6rfvLWSRYeodg6OA==/split_config.arm64_v8a.apk
+package:/data/app/~~5tOZmsaNVwRXDtjbNPIVzA==/com.win2apk.bombrushcyberfunk-P5Vpkx6rfvLWSRYeodg6OA==/split_config.es.apk
+package:/data/app/~~5tOZmsaNVwRXDtjbNPIVzA==/com.win2apk.bombrushcyberfunk-P5Vpkx6rfvLWSRYeodg6OA==/split_config.hdpi.apk
+Proceso previo: pidof devolvió 5604; cold_install retirará paquete y verificará ausencia.

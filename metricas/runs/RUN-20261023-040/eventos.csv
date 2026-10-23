@@ -1,0 +1,19 @@
+run_id,device_id,timestamp_utc,elapsed_ms,event_type,severity,message,evidence_relpath
+RUN-20261023-040,redmi-note-8,2026-10-23T17:51:18.585Z,1757,launch_requested,info,"bash arg: -p
+  bash arg: com.cuphead
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=58ms (0ms mobile, 0ms wifi, 58ms not connected)
+args: [-p, com.cuphead, -c, android.intent.category.LAUNCHER, 1]
+ arg: ""-p""
+ arg: ""com.cuphead""
+ arg: ""-c""
+ arg: ""android.intent.category.LAUNCHER""
+ arg: ""1""
+data=""com.cuphead""
+data=""android.intent.category.LAUNCHER""",metricas/runs/RUN-20261023-040/logs/redmi-note-8/launch.log
+RUN-20261023-040,redmi-note-8,2026-10-23T17:51:18.712Z,1883,app_process_first_seen,info,Proceso principal observado: 1,
+RUN-20261023-040,redmi-note-8,2026-10-23T17:52:18.347Z,61519,screenshot_captured,info,Captura canónica T+60s,metricas/runs/RUN-20261023-040/screenshots/redmi-note-8/t060.png
+RUN-20261023-040,redmi-note-8,2026-10-23T17:56:19.453Z,302625,monitor_finished,info,301 muestras registradas,metricas/runs/RUN-20261023-040/logs/redmi-note-8/exit-info.txt

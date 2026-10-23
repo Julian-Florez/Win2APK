@@ -1,0 +1,11 @@
+Second-open preflight — RUN-20261023-009
+Device alias: lenovo-tb-j606f
+Package: com.cuphead
+Action: adb shell am force-stop com.cuphead
+Process check: adb shell pidof com.cuphead returned no PID (empty output).
+Package check: adb shell pm path com.cuphead returned four paths; package remains installed.
+Decision: launch the existing installation without uninstall or bundletool reinstall.
+package:/data/app/~~IXJBSny-qAATAYkN6xJ_8Q==/com.cuphead-sRXyL2Oc4l58lRkg-tiglg==/base.apk
+package:/data/app/~~IXJBSny-qAATAYkN6xJ_8Q==/com.cuphead-sRXyL2Oc4l58lRkg-tiglg==/split_config.arm64_v8a.apk
+package:/data/app/~~IXJBSny-qAATAYkN6xJ_8Q==/com.cuphead-sRXyL2Oc4l58lRkg-tiglg==/split_config.es.apk
+package:/data/app/~~IXJBSny-qAATAYkN6xJ_8Q==/com.cuphead-sRXyL2Oc4l58lRkg-tiglg==/split_config.hdpi.apk

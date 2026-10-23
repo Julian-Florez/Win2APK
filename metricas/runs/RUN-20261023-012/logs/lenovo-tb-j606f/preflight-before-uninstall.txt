@@ -1,0 +1,10 @@
+Preflight RUN-20261023-012 / EXEC-091 (Bomb Rush Cyberfunk ensayo 1).
+Dispositivo seleccionado: serial HA1QXMW2, Lenovo TB-J606F por USB.
+Estado pantalla/entrada: stay_on_while_plugged_in=3; mWakefulness=Awake; mInputRestricted=false.
+Estado previo de com.win2apk.bombrushcyberfunk (`pm path`):
+package:/data/app/~~3c2vcLVPcgloswncipQb6Q==/com.win2apk.bombrushcyberfunk-zGs2ohKeKqQdiurcn8N3fg==/base.apk
+package:/data/app/~~3c2vcLVPcgloswncipQb6Q==/com.win2apk.bombrushcyberfunk-zGs2ohKeKqQdiurcn8N3fg==/split_config.arm64_v8a.apk
+package:/data/app/~~3c2vcLVPcgloswncipQb6Q==/com.win2apk.bombrushcyberfunk-zGs2ohKeKqQdiurcn8N3fg==/split_config.es.apk
+package:/data/app/~~3c2vcLVPcgloswncipQb6Q==/com.win2apk.bombrushcyberfunk-zGs2ohKeKqQdiurcn8N3fg==/split_config.hdpi.apk
+Proceso previo: `pidof com.win2apk.bombrushcyberfunk` sin salida.
+Conclusión previa: juego instalado, sin proceso activo; cold_install registrará su retirada y ausencia.

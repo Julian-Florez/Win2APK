@@ -1,0 +1,9 @@
+RUN-20261023-003 second-open preflight
+Action: adb shell am force-stop org.win2apk.testapp
+Process check: `pidof org.win2apk.testapp` and `ps -A | grep -i Win2APKTest` produced no matching process output.
+Package check: `pm path org.win2apk.testapp` confirmed the installed package:
+package:/data/app/~~9jn9uRUYD9917kcBf8m7rA==/org.win2apk.testapp-x4rRUAEFVCzHrlbbaBsZyw==/base.apk
+package:/data/app/~~9jn9uRUYD9917kcBf8m7rA==/org.win2apk.testapp-x4rRUAEFVCzHrlbbaBsZyw==/split_config.arm64_v8a.apk
+package:/data/app/~~9jn9uRUYD9917kcBf8m7rA==/org.win2apk.testapp-x4rRUAEFVCzHrlbbaBsZyw==/split_config.es.apk
+package:/data/app/~~9jn9uRUYD9917kcBf8m7rA==/org.win2apk.testapp-x4rRUAEFVCzHrlbbaBsZyw==/split_config.hdpi.apk
+Result: ready for second-open without reinstall.

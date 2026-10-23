@@ -1,0 +1,11 @@
+Preflight RUN-20261023-011 / EXEC-090 (ensayo 5 Cuphead)
+Consulta: 2026-10-23, antes de iniciar instalación fría.
+Dispositivo seleccionado: serial HA1QXMW2, Lenovo TB-J606F, USB.
+Estado pantalla/entrada: stay_on_while_plugged_in=3; mWakefulness=Awake; mInputRestricted=false.
+Estado previo del paquete com.cuphead (`adb shell pm path com.cuphead`):
+package:/data/app/~~bhDCXEnhzofvhnIv5-7Srg==/com.cuphead-iGEMwdhRAmyI5xQb8AziFg==/base.apk
+package:/data/app/~~bhDCXEnhzofvhnIv5-7Srg==/com.cuphead-iGEMwdhRAmyI5xQb8AziFg==/split_config.arm64_v8a.apk
+package:/data/app/~~bhDCXEnhzofvhnIv5-7Srg==/com.cuphead-iGEMwdhRAmyI5xQb8AziFg==/split_config.es.apk
+package:/data/app/~~bhDCXEnhzofvhnIv5-7Srg==/com.cuphead-iGEMwdhRAmyI5xQb8AziFg==/split_config.hdpi.apk
+Proceso previo: pidof com.cuphead devolvió 3463.
+Conclusión previa: com.cuphead está instalado y activo; cold_install registrará retirada y ausencia antes de instalar el artefacto medido.
